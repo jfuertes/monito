@@ -2,11 +2,11 @@
 
 
     // include ngRoute for all our routing needs
-    var demoApp = angular.module('demoApp', ['ngRoute']);
+var demoApp = angular.module('demoApp', ['ngRoute']);
 
     // configure our routes
-    demoApp.config(function($routeProvider) {
-  $routeProvider
+demoApp.config(function($routeProvider) {
+$routeProvider
 
             // route for the home page
             .when('/', {
