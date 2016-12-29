@@ -45,7 +45,20 @@ demoApp.controller('mainCtrl', function($scope) {
         $scope.message = 'Hello world, this is the home page!';
     });
 
+<<<<<<< HEAD
 demoApp.controller('alumnoCtrl', function($scope,$http) {
+=======
+    demoApp.controller('alumnoCtrl', function($scope, $http, $rootScope) {
+
+           $scope.cursos= function(id){
+            alert(id);
+            $rootScope.nivel=id;
+           window.location.href='#cursos';
+            console.log($rootScope.nivel);
+      }
+
+
+>>>>>>> 0f9ac11e8d0af0f9105ce9a547f4a13c4706276f
         $scope.message = 'Hi! This is the about page.';
          $scope.getNivel= function(){
              $http.post('api/getNivel.php' )
@@ -69,13 +82,14 @@ demoApp.controller('temasCtrl', function($scope) {
   $scope.message = 'Would you like to contact us?';
     });
 
-demoApp.controller('cursosCtrl', function($scope, $http) {
+
+    demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
         $scope.cursos= function(){
             window.location.href='#';
             console.log("entra en la consola scope boton1");
       }
        $scope.getCursos= function(){
-             $http.post('api/getCursos.php' )
+             $http.post('api/getCursosByNivel.php',{nivel:$rootScope.nivel} )
                 .success(function(data) {
                   console.log(data);
                   $scope.Cursos=data;
