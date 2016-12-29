@@ -31,16 +31,26 @@
                 templateUrl : 'pages/cursos.html',
                 controller  : 'cursosCtrl'
 
+            })
+            .when('/temas', {
+                templateUrl : 'pages/temas.html',
+                controller  : 'temasCtrl'
+
+            })
+            .when('/metodo', {
+                templateUrl : 'pages/metodo.html',
+                controller  : 'metodoCtrl'
+
             });
     });
 
     // create the controller and inject Angular's $scope
- demoApp.controller('mainCtrl', function($scope) {
+demoApp.controller('mainCtrl', function($scope) {
         // create a message to display in our view
         $scope.message = 'Hello world, this is the home page!';
     });
 
-    demoApp.controller('alumnoCtrl', function($scope, $http, $rootScope) {
+demoApp.controller('alumnoCtrl', function($scope, $http, $rootScope) {
 
            $scope.cursos= function(id){
             
@@ -65,16 +75,19 @@
 
     });
 
-    demoApp.controller('profesorCtrl', function($scope) {
+demoApp.controller('profesorCtrl', function($scope) {
   $scope.message = 'Would you like to contact us?';
     });
 
-    demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
-        $scope.VerSubcursos=false;
-        $scope.getSubcursos= function(id, seccion){
 
-            
+demoApp.controller('temasCtrl', function($scope) {
+  $scope.message = 'Would you like to contact us?';
+    });
 
+
+ demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
+        $scope.cursos= function(){
+            window.location.href='#';
             console.log("entra en la consola scope boton1");
       };
       $scope.ejecutar=function(id, seccion){
@@ -107,4 +120,8 @@
                   });
          };
          $scope.getCursos();
+    });
+
+demoApp.controller('metodoCtrl', function($scope) {
+  $scope.message = 'Would you like to contact us?';
     });

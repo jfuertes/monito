@@ -1,37 +1,50 @@
+.btn_temas {
+  display: inline-block;
+  padding: 14px 13px 14px 13px;
+  margin-bottom: 0;
+  font-style: roman;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 33px;}
 
-body {
-	margin: 40;
-	padding: 10px 30px 10px 30px;
-	font-family: Helvetica, Arial, sans-serif;
-	color: #666;
-	background: #f2f2f2; 
-	font-size: 1em;
-	line-height: 1.5em;
-	padding-top: 55px; /* Relleno superior igual a la altura de la cabecera*/
+  .btn-inicio {
+  color: #fff;
+  background-color: #f46042;
+  border-color: #2e6da4;
+  
+}
+.btn-inicio:focus,
+.btn-inicio.focus {
+  color: #fff;
+  background-color: #FF8C0F;
+  border-color: #FF8C0F;
+}
+.btn-inicio:hover {
+  color: #fff;
+  background-color: #FF8C0F;
+  border-color: #204d74;
 }
 
-button.inicio{
-  background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 20px;
-  padding: 10px 30px 10px 30px;
-  text-decoration: none;
+.redondo {
+    /* cambia estos dos valores para definir el tamaño de tu círculo */
+    height: 180px; 
+    width: 175px;
+    /* los siguientes valores son independientes del tamaño del círculo */
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
 }
-/*
-Contenido (content): se trata del contenido HTML del elemento (las palabras de un párrafo, una imagen, el texto de una lista de elementos, etc.)
-Relleno (padding): espacio libre opcional existente entre el contenido y el borde.
-Borde (border): línea que encierra completamente el contenido y su relleno.
-Imagen de fondo (background image): imagen que se muestra por detrás del contenido y el espacio de relleno.
-Color de fondo (background color): color que se muestra por detrás del contenido y el espacio de relleno.
-Margen (margin): separación opcional existente entre la caja y el resto de cajas adyacentes.
-
-*/

@@ -17,7 +17,7 @@ function controlador1 ($scope) {
 				console.log("variable2",$scope.variable2);
 			};
 		}
-		}
+	}
 
 
 
