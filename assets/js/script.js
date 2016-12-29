@@ -40,7 +40,16 @@
         $scope.message = 'Hello world, this is the home page!';
     });
 
-    demoApp.controller('alumnoCtrl', function($scope,$http) {
+    demoApp.controller('alumnoCtrl', function($scope, $http, $rootScope) {
+
+           $scope.cursos= function(id){
+            alert(id);
+            $rootScope.nivel=id;
+           window.location.href='#cursos';
+            console.log($rootScope.nivel);
+      }
+
+
         $scope.message = 'Hi! This is the about page.';
          $scope.getNivel= function(){
              $http.post('api/getNivel.php' )
@@ -60,13 +69,13 @@
   $scope.message = 'Would you like to contact us?';
     });
 
-    demoApp.controller('cursosCtrl', function($scope, $http) {
+    demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
         $scope.cursos= function(){
             window.location.href='#';
             console.log("entra en la consola scope boton1");
       }
        $scope.getCursos= function(){
-             $http.post('api/getCursos.php' )
+             $http.post('api/getCursosByNivel.php',{nivel:$rootScope.nivel} )
                 .success(function(data) {
                   console.log(data);
                   $scope.Cursos=data;
