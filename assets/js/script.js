@@ -32,9 +32,10 @@
                 controller  : 'cursosCtrl'
 
             })
-            .when('/temas', {
-                templateUrl : 'pages/temas.html',
-                controller  : 'temasCtrl'
+
+            .when('/listaProf', {
+                templateUrl : 'pages/listaProf.html',
+                controller  : 'listaProfCtrl'
 
             })
             .when('/metodo', {
@@ -75,16 +76,16 @@ demoApp.controller('alumnoCtrl', function($scope, $http, $rootScope) {
 
     });
 
+demoApp.controller('listaProfCtrl', function($scope) {
+  $scope.message = 'Would you like to contact us?';
+    });
+
 demoApp.controller('profesorCtrl', function($scope) {
   $scope.message = 'Would you like to contact us?';
     });
 
-demoApp.controller('temasCtrl', function($scope) {
-  $scope.message = 'Would you like to contact us?';
-    });
 
-
- demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
+demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
         $scope.cursos= function(){
             window.location.href='#';
             console.log("entra en la consola scope boton1");
