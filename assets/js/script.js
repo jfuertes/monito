@@ -94,7 +94,7 @@ demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
       };
       $scope.ejecutar=function(id, seccion){
             if(seccion=="0"){
-                    alert(id);
+                   // alert(id);
                      $http.post('api/getSubcursos.php',{id:id} )
                     .success(function(data) {
                       console.log(data);
