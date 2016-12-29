@@ -40,17 +40,40 @@
         $scope.message = 'Hello world, this is the home page!';
     });
 
-    demoApp.controller('alumnoCtrl', function($scope) {
-  $scope.message = 'Hi! This is the about page.';
+    demoApp.controller('alumnoCtrl', function($scope,$http) {
+        $scope.message = 'Hi! This is the about page.';
+         $scope.getNivel= function(){
+             $http.post('api/getNivel.php' )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.Nivel=data;
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+         };
+         $scope.getNivel();
+
     });
 
     demoApp.controller('profesorCtrl', function($scope) {
   $scope.message = 'Would you like to contact us?';
     });
 
-    demoApp.controller('cursosCtrl', function($scope) {
-    $scope.cursos= function(){
-        window.location.href='#';
-        console.log("entra en la consola scope boton1");
-  }
+    demoApp.controller('cursosCtrl', function($scope, $http) {
+        $scope.cursos= function(){
+            window.location.href='#';
+            console.log("entra en la consola scope boton1");
+      }
+       $scope.getCursos= function(){
+             $http.post('api/getCursos.php' )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.Cursos=data;
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+         };
+         $scope.getCursos();
     });

@@ -2,52 +2,17 @@
         <div class="container" >
             <div >
                 <div class="pading2" >
-                    <div class="col-md-2">
+                    <div class="col-md-3" ng-repeat="c in Cursos">
                         <button  class="btn4 boton-grande"ng-click="cursos()"onclick="window.location.href='#cursos'">
                             <div>
                                 <IMG SRC="IMG/mono.png" WIDTH=178 HEIGHT=180>
                             </div>
                             <div>
-                                <p> primaria</p>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="col-md-2">
-                        <button  class="btn4 boton-grande"ng-click="cursos()"onclick="window.location.href='#cursos'">
-                            <div>
-                                <IMG SRC="IMG/mono.png" WIDTH=178 HEIGHT=180>
-                            </div>
-                            <div>
-                                <p> secundaria</p>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="col-md-2">
-                        <button  class="btn4 boton-grande"ng-click="cursos()"onclick="window.location.href='#cursos'">
-                            <div>
-                                <IMG SRC="IMG/mono.png" WIDTH=178 HEIGHT=180>
-                            </div>
-                            <div>
-                                <p>pre</p>
-
-                            </div>
-                        </button>
-                    </div>
-                    <div class="col-md-2">
-                        <button  class="btn4 boton-grande"ng-click="cursos()"onclick="window.location.href='#cursos'">
-                            <div>
-                                <IMG SRC="IMG/mono.png" WIDTH=178 HEIGHT=180>
-                            </div>
-                            <div>
-                                <p> superior</p>
+                                <p> {{c.nombre}}</p>
                             </div>
                         </button>
                     </div>
                 </div>
             </div>
-            
         </div>
-
-
-
     </section>
