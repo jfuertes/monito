@@ -31,16 +31,21 @@
                 templateUrl : 'pages/cursos.html',
                 controller  : 'cursosCtrl'
 
+            })
+            .when('/temas', {
+                templateUrl : 'pages/temas.html',
+                controller  : 'temasCtrl'
+
             });
     });
 
     // create the controller and inject Angular's $scope
- demoApp.controller('mainCtrl', function($scope) {
+demoApp.controller('mainCtrl', function($scope) {
         // create a message to display in our view
         $scope.message = 'Hello world, this is the home page!';
     });
 
-    demoApp.controller('alumnoCtrl', function($scope,$http) {
+demoApp.controller('alumnoCtrl', function($scope,$http) {
         $scope.message = 'Hi! This is the about page.';
          $scope.getNivel= function(){
              $http.post('api/getNivel.php' )
@@ -56,11 +61,15 @@
 
     });
 
-    demoApp.controller('profesorCtrl', function($scope) {
+demoApp.controller('profesorCtrl', function($scope) {
   $scope.message = 'Would you like to contact us?';
     });
 
-    demoApp.controller('cursosCtrl', function($scope, $http) {
+demoApp.controller('temasCtrl', function($scope) {
+  $scope.message = 'Would you like to contact us?';
+    });
+
+demoApp.controller('cursosCtrl', function($scope, $http) {
         $scope.cursos= function(){
             window.location.href='#';
             console.log("entra en la consola scope boton1");
