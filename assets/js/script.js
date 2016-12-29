@@ -36,6 +36,11 @@
                 templateUrl : 'pages/temas.html',
                 controller  : 'temasCtrl'
 
+            })
+            .when('/metodo', {
+                templateUrl : 'pages/metodo.html',
+                controller  : 'metodoCtrl'
+
             });
     });
 
@@ -45,8 +50,7 @@ demoApp.controller('mainCtrl', function($scope) {
         $scope.message = 'Hello world, this is the home page!';
     });
 
-
-    demoApp.controller('alumnoCtrl', function($scope, $http, $rootScope) {
+demoApp.controller('alumnoCtrl', function($scope, $http, $rootScope) {
 
            $scope.cursos= function(id){
             alert(id);
@@ -80,7 +84,7 @@ demoApp.controller('temasCtrl', function($scope) {
     });
 
 
-    demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
+ demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
         $scope.cursos= function(){
             window.location.href='#';
             console.log("entra en la consola scope boton1");
@@ -96,4 +100,8 @@ demoApp.controller('temasCtrl', function($scope) {
                   });
          };
          $scope.getCursos();
+    });
+
+demoApp.controller('metodoCtrl', function($scope) {
+  $scope.message = 'Would you like to contact us?';
     });

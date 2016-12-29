@@ -37,3 +37,14 @@
   background-color: #FF8C0F;
   border-color: #204d74;
 }
+
+.redondo {
+    /* cambia estos dos valores para definir el tamaño de tu círculo */
+    height: 180px; 
+    width: 175px;
+    /* los siguientes valores son independientes del tamaño del círculo */
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+}
