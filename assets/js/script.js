@@ -54,7 +54,7 @@ demoApp.controller('mainCtrl', function($scope) {
 demoApp.controller('alumnoCtrl', function($scope, $http, $rootScope) {
 
            $scope.cursos= function(id){
-            alert(id);
+            
             $rootScope.nivel=id;
            window.location.href='#cursos';
             console.log($rootScope.nivel);
@@ -80,7 +80,9 @@ demoApp.controller('listaProfCtrl', function($scope) {
   $scope.message = 'Would you like to contact us?';
     });
 
-demoApp.controller('profesorCtrl', function($scope) {
+
+
+demoApp.controller('temasCtrl', function($scope) {
   $scope.message = 'Would you like to contact us?';
     });
 
@@ -89,7 +91,26 @@ demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
         $scope.cursos= function(){
             window.location.href='#';
             console.log("entra en la consola scope boton1");
-      }
+      };
+      $scope.ejecutar=function(id, seccion){
+            if(seccion=="0"){
+                    alert(id);
+                     $http.post('api/getSubcursos.php',{id:id} )
+                    .success(function(data) {
+                      console.log(data);
+                      $scope.Subcursos=data;
+                    })
+                    .error(function(data) {
+                      console.log('Error: ' + data);
+                      });
+
+                 $scope.VerSubcursos=true;
+            }
+              if(seccion!="0"){
+                window.location.href='#metodo';
+            }
+
+      };
        $scope.getCursos= function(){
              $http.post('api/getCursosByNivel.php',{nivel:$rootScope.nivel} )
                 .success(function(data) {

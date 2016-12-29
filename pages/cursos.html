@@ -2,15 +2,25 @@
         <div class="container" >
             <div >
                 <div class="pading2" >
-                    <div class="col-md-3" ng-repeat="c in Cursos">
-                        <button  class="btn4 boton-grande" ng-click="cursos()" onclick="window.location.href='#cursos'">
+                    <div class="col-md-3" ng-repeat="c in Cursos" ng-show="!VerSubcursos">
+                        <a  class="btn4 boton-grande" ng-click="ejecutar(c.id_curso, c.seccion)">
                             <div>
                                 <IMG SRC="IMG/mono.png" WIDTH=178 HEIGHT=180>
                             </div>
                             <div>
                                 <p> {{c.nombre}}</p>
                             </div>
-                        </button>
+                        </a>
+                    </div>
+                     <div class="col-md-3" ng-repeat="s in Subcursos" ng-hide="!VerSubcursos">
+                        <a  class="btn4 boton-grande" ng-click="ejecutar(s.id_curso, s.seccion)">
+                            <div>
+                                <IMG SRC="IMG/mono.png" WIDTH=178 HEIGHT=180>
+                            </div>
+                            <div>
+                                <p> {{s.nombre}}</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
