@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html ng-app="loginApp">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link rel="shortcut icon" href="../IMG/logo.png">
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="I
+        E=edge,chrome=1">
+        <![endif]-->
+    <title>MiProfe: Aprende con los mejores profesores</title>
+    <link href="../assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="../assets/css/estilos.css" rel="stylesheet" />
+
+</head>
+<body ng-controller="mainCtrl">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <form action="" class="navbar-form navbar-right">
+                            <a href="login.html" class="btn btn-primary">  Ingresar   </a>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+    <h4>.</h4>
+    <div id="main">
+        <div ng-view>
+
+        </div>
+    </div>
+      
+
+    <script src="../assets/plugins/jquery-1.10.2.js"></script>
+    <script src="../assets/plugins/bootstrap.js"></script>
+    <script src="../assets/plugins/angular.min.js" type="text/javascript"></script>
+    <script src="../assets/plugins/angular-route.js" type="text/javascript"></script>
+    <script src="assets/js/script.js" type="text/javascript"></script>
+
+</body>
+</html>
