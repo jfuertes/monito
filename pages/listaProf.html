@@ -2,13 +2,13 @@
         <div class="container" >
             <div >
                 <div class="pading2" >
-                    <div class="col-md-3">
-                        <button  class="btn4 boton-grande"ng-click="cursos()"onclick="window.location.href='#cursos'">
+                    <div class="col-md-3" ng-repeat="p in Profes">
+                        <button  class="btn4 boton-grande" ng-click="perfilProfe()">
                             <div>
                                 <IMG  class="redondo" SRC="IMG/doki.jpg">
                             </div>
                             <div>
-                                <p>--nombre--</p>
+                                <p>{{p.username}}</p>
                             </div>
                         </button>
                     </div>

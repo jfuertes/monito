@@ -76,14 +76,20 @@ demoApp.controller('alumnoCtrl', function($scope, $http, $rootScope) {
 
     });
 
-demoApp.controller('listaProfCtrl', function($scope) {
-  $scope.message = 'Would you like to contact us?';
+demoApp.controller('listaProfCtrl', function($scope, $http, $rootScope) {
+
+    $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso} )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.Profes=data;
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
     });
 
 
-
 demoApp.controller('temasCtrl', function($scope) {
-  $scope.message = 'Would you like to contact us?';
     });
 
 
@@ -108,6 +114,7 @@ demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
             }
               if(seccion!="0"){
                 window.location.href='#metodo';
+                $rootScope.idcurso=id;
             }
 
       };
@@ -124,6 +131,12 @@ demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
          $scope.getCursos();
     });
 
-demoApp.controller('metodoCtrl', function($scope) {
-  $scope.message = 'Would you like to contact us?';
+demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
+
+  $scope.listProf= function(){
+              window.location.href='#listaProf';
+         };
+         
+
+
     });
