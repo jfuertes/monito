@@ -2,10 +2,10 @@
 
 
     // include ngRoute for all our routing needs
-var demoApp = angular.module('demoApp', ['ngRoute']);
+var loginApp = angular.module('loginApp', ['ngRoute']);
 
     // configure our routes
-demoApp.config(function($routeProvider) {
+loginApp.config(function($routeProvider) {
 $routeProvider
 
             // route for the home page
@@ -46,12 +46,12 @@ $routeProvider
     });
 
     // create the controller and inject Angular's $scope
-demoApp.controller('mainCtrl', function($scope) {
+loginApp.controller('mainCtrl', function($scope) {
         // create a message to display in our view
         $scope.message = 'Hello world, this is the home page!';
     });
 
-demoApp.controller('alumnoCtrl', function($scope, $http, $rootScope) {
+loginApp.controller('alumnoCtrl', function($scope, $http, $rootScope) {
 
            $scope.cursos= function(id){
             
@@ -76,18 +76,18 @@ demoApp.controller('alumnoCtrl', function($scope, $http, $rootScope) {
 
     });
 
-demoApp.controller('listaProfCtrl', function($scope) {
+loginApp.controller('listaProfCtrl', function($scope) {
   $scope.message = 'Would you like to contact us?';
     });
 
 
 
-demoApp.controller('temasCtrl', function($scope) {
+loginApp.controller('temasCtrl', function($scope) {
   $scope.message = 'Would you like to contact us?';
     });
 
 
-demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
+loginApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
         $scope.cursos= function(){
             window.location.href='#';
             console.log("entra en la consola scope boton1");
@@ -124,6 +124,6 @@ demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
          $scope.getCursos();
     });
 
-demoApp.controller('metodoCtrl', function($scope) {
+loginApp.controller('metodoCtrl', function($scope) {
   $scope.message = 'Would you like to contact us?';
     });
