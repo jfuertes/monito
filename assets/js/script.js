@@ -45,9 +45,7 @@ demoApp.controller('mainCtrl', function($scope) {
         $scope.message = 'Hello world, this is the home page!';
     });
 
-<<<<<<< HEAD
-demoApp.controller('alumnoCtrl', function($scope,$http) {
-=======
+
     demoApp.controller('alumnoCtrl', function($scope, $http, $rootScope) {
 
            $scope.cursos= function(id){
@@ -58,7 +56,6 @@ demoApp.controller('alumnoCtrl', function($scope,$http) {
       }
 
 
->>>>>>> 0f9ac11e8d0af0f9105ce9a547f4a13c4706276f
         $scope.message = 'Hi! This is the about page.';
          $scope.getNivel= function(){
              $http.post('api/getNivel.php' )
