@@ -3,14 +3,14 @@
             <div >
                 <div class="pading2" >
                     <div class="col-md-3" ng-repeat="n in Nivel">
-                        <button  class="btn4 boton-grande" ng-click="cursos()" onclick="window.location.href='#cursos'">
+                        <a href="" class="btn4 boton-grande" ng-click="cursos(n.id_nivel)" >
                             <div>
                                 <IMG SRC="IMG/mono.png" WIDTH=178 HEIGHT=180>
                             </div>
                             <div>
                                 <p> {{n.nombre}}</p>
                             </div>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
