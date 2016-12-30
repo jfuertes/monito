@@ -43,16 +43,32 @@ $routeProvider
                 controller  : 'metodoCtrl'
 
             });
+             .when('/perfilprofe', {
+                templateUrl : 'pages/perfilprofe.html',
+                controller  : 'perfilprofeCtrl'
+
+            });
+              .otherwise({ templateUrl : 'pages/notfound.html' });
     });
 
     // create the controller and inject Angular's $scope
 demoApp.controller('mainCtrl', function($scope) {
-        // create a message to display in our view
-        $scope.message = 'Hello world, this is the home page!';
+ console.log("mainCtrl");
+          $scope.inicio= function(id){
+           window.location.href='#alumno';
+            console.log("volvi :)");
+      }
+
+
+    });
+demoApp.controller('perfilprofeCtrl', function($scope) {
+   console.log("perfilprofe");
+
     });
 
-demoApp.controller('alumnoCtrl', function($scope, $http, $rootScope) {
 
+demoApp.controller('alumnoCtrl', function($scope, $http, $rootScope) {
+$scope.cambiarcurso=true;
            $scope.cursos= function(id){
             
             $rootScope.nivel=id;
