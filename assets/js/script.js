@@ -42,12 +42,12 @@ $routeProvider
                 templateUrl : 'pages/metodo.html',
                 controller  : 'metodoCtrl'
 
-            });
+            })
              .when('/perfilprofe', {
                 templateUrl : 'pages/perfilprofe.html',
                 controller  : 'perfilprofeCtrl'
 
-            });
+            })
               .otherwise({ templateUrl : 'pages/notfound.html' });
     });
 
