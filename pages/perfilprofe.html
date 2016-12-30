@@ -2,19 +2,11 @@
         <div class="container" >
                <table class="table table-striped">
 					<tbody>
-					  <!-- Aplicadas en las filas -->
-					  <tr class="active">...</tr>
-					  <tr class="success">...</tr>
-					  <tr class="warning">...</tr>
-					  <tr class="danger">...</tr>
-					 
-					  <!-- Aplicadas en las celdas (<td> o <th>) -->
-					  <tr>
-					    <td class="active">...</td>
-					    <td class="success">...</td>
-					    <td class="warning">...</td>
-					    <td class="danger">...</td>
+					 <tr ng-repeat="(key, value) in Atributo">
+					    <td class="active">{{key}}</td>
+					    <td class="success">{{value}}</td>
 					  </tr>
+					 
 					</tbody>
 				</table>
 
