@@ -5,20 +5,15 @@
 
 	$db  = new dbConnect();
 	$dbh = $db->conectardb();
-
-
-	$rspta = json_decode(file_get_contents("php://input"));
-	$seccion= $rspta->id;
-	
+	$username = "jfuertes";
 
 	$q = 'SELECT *
-		from mp_curso where seccion=:seccion';
+		from mp_profesor where username=:username';
 	$stmt = $dbh->prepare($q);
-	$stmt->bindParam(':seccion', $seccion, PDO::PARAM_INT);
+	$stmt->bindParam(':username', $username, PDO::PARAM_STR);
 	$stmt->execute();
 	$r = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	
-
+	$r=$r[0];
 	//var_dump($r);
 	echo json_encode($r);
 

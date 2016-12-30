@@ -61,8 +61,19 @@ demoApp.controller('mainCtrl', function($scope) {
 
 
     });
-demoApp.controller('perfilprofeCtrl', function($scope) {
+demoApp.controller('perfilprofeCtrl', function($scope, $http) {
    console.log("perfilprofe");
+    $scope.getProfe= function(){
+             $http.post('api/getProfe.php' )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.Atributo=data;
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+         };
+         $scope.getProfe();
 
     });
 
