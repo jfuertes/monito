@@ -78,3 +78,7 @@
   border: 1px solid transparent;
   border-radius: 33px;
 }
+.centrado{
+  top:50%;
+  left:50%;
+}
