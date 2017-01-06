@@ -25,7 +25,7 @@
                 <div class="topbar-username dropdown click-trigger" style="padding-bottom: 15px;">
                     <div class="topbar-buttons" style="margin-top: 1px;">
                         <span class="sign-in relative">
-                            <span class="btn sign-in-btn btn-white" id="sign-in-btn" data-track-click="topbar toggle">Login</span>
+                            <span class="btn sign-in-btn btn-white" id="sign-in-btn" data-track-click="topbar toggle">Iniciar Sesion</span>
                             <button class="btn btn-solid register btn-monument-color btn-start-learning hidden" data-track-click="course begin loggedout topbar">Start learning</button>
                             <ul class="popover arrow-top login-popover hidden" id="login-modal" style="width: 250px; top: 15px; right: -90px; left: auto; display: block;">
 
@@ -64,30 +64,8 @@
 
     
 
-
-    <div id="site">
-        <div id="wrapper">
-            <div id="app">
-                <section dir="ltr" class="monument-carousel dark-theme">
-                    <div dir="ltr" class="signup">
-                    <div id="signup-main" class="">
-                        <section class="section-white dark-theme">
-                            <div class="section-inner center fold">
-                            
-                            <div class="cta-container">
-                                <h1 class="splash">Quieres aprender mono?</h1>
-                                <div class="email-div">
-                                    
-
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
-                </section>
-            </div>
+    <div id="main">
+        <div ng-view>
         </div>
     </div>
 
@@ -123,7 +101,7 @@
                     <ul><li><a href="#">Equipo</a></li><li><a href="#">Contáctanos</a></li></ul>
                     </div><div class="footer-column">
                 <h3>Productos</h3>
-                    <ul><li><a href="#">Duolingo</a></li><li><a href="#">Duolingo para Escuelas</a></li></ul>
+                    <ul><li><a href="#">Miprofe</a></li><li><a href="#">Miprofe para Escuelas</a></li></ul>
                     </div><div class="footer-column">
 
                 <h3>Ayuda y Soporte</h3><ul>
@@ -134,5 +112,11 @@
                 </div>
     </div>
     </div>
+
+    <script src="assets/plugins/jquery-1.10.2.js"></script>
+    <script src="assets/plugins/bootstrap.js"></script>
+    <script src="assets/plugins/angular.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/angular-route.js" type="text/javascript"></script>
+    <script src="assets/js/script.js" type="text/javascript"></script>
     </body>
 </html>
