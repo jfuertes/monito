@@ -13,8 +13,6 @@
     <link href="/images/favicon.ico?v=3" rel="shortcut icon" type="image/x-icon">
     <style type="text/css"></style>
     <style  href="assets/css/miprofe.css" type="text/css"></style>
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <link href="assets/css/estilos.css" rel="stylesheet" />
     </head>
     <body  ng-controller="mainCtrl" class="global-es logged-out splash-2014 compact-enabled" style="overflow: auto;">
     <header class="topbar topbar-blue-dark">
@@ -75,10 +73,11 @@
                 <div class="text">
                     <h2>Como funciona mi profe???.</h2
                     ><p>mi profe es una plataforma quw mi mi profe es una plataforma quw mi mi profe es una plataforma quw mi mi profe es una plataforma quw mi mi profe es una plataforma quw mi mi profe es una plataforma quw mi  <a href="/effectiveness-study"> video demostrativo</a>.
-                    </p><a href="javascript:;" id="video-toggle" class="play-video">
+                    </p><a style="cursor: hand;" id="video-toggle" class="play-video" ng-click="showvideo()">
                     <div class="play-border">
                         <div class="play-button"></div>
                     </div><strong>Ve cómo lo hacemos</strong>
+                    <div id="videoDemostrativo" ng-show="showvideohep"><iframe width="560" height="315" src="https://www.youtube.com/embed/4gr6_yOoMQc?autoplay=1" frameborder="0" allowfullscreen></iframe></div>
                     </a>
                 </div>
             </div>
