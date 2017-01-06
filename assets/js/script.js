@@ -53,11 +53,18 @@ $routeProvider
 
     // create the controller and inject Angular's $scope
 demoApp.controller('mainCtrl', function($scope) {
+  $scope.showvideohep=false;
  console.log("mainCtrl");
           $scope.inicio= function(id){
            window.location.href='#alumno';
             console.log("volvi :)");
-      }
+      };
+      $scope.showvideo=function(){
+        $scope.showvideohep=true;
+        //alert("prueba");
+        //$("body").addClass("backgroundDark");
+        //$("#videoDemostrativo").addClass("sobretodo");
+      };
 
 
     });
