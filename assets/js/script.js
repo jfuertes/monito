@@ -54,6 +54,7 @@ $routeProvider
     // create the controller and inject Angular's $scope
 demoApp.controller('mainCtrl', function($scope) {
   $scope.showvideohep=false;
+  
  console.log("mainCtrl");
           $scope.inicio= function(id){
            window.location.href='#alumno';
@@ -65,9 +66,30 @@ demoApp.controller('mainCtrl', function($scope) {
         //$("body").addClass("backgroundDark");
         //$("#videoDemostrativo").addClass("sobretodo");
       };
+        
 
 
     });
+demoApp.controller('loginCtrl', function($scope, $http) {
+  $scope.showformini=false;
+  $scope.showformini=function(){
+          alert($scope.showformin);
+          if($scope.showformini==false){
+              $scope.showformini=true;
+              alert("true");
+          }
+           else{
+              $scope.showformini=false;
+              alert("false");
+          }
+        
+        //alert("prueba");
+        //$("body").addClass("backgroundDark");
+        //$("#videoDemostrativo").addClass("sobretodo");
+      };
+
+    });
+
 demoApp.controller('perfilprofeCtrl', function($scope, $http) {
    console.log("perfilprofe");
     $scope.getProfe= function(){
