@@ -21,28 +21,12 @@ $routeProvider
             })
 
             // route for the contact page
-            .when('/profesor', {
-                templateUrl : 'pages/profesor.html',
-                controller  : 'profesorCtrl'
+            .when('/forgot_password', {
+                templateUrl : 'pages/forgot_password.html',
+                controller  : 'forgot_passwordCtrl'
             })
-
-
-            .when('/cursos', {
-                templateUrl : 'pages/cursos.html',
-                controller  : 'cursosCtrl'
-
-            })
-
-            .when('/listaProf', {
-                templateUrl : 'pages/listaProf.html',
-                controller  : 'listaProfCtrl'
-
-            })
-            .when('/metodo', {
-                templateUrl : 'pages/metodo.html',
-                controller  : 'metodoCtrl'
-
-            });
+            .otherwise({ templateUrl : 'pages/notfound.html' 
+        });
     });
 
     // create the controller and inject Angular's $scope
@@ -53,5 +37,9 @@ loginApp.controller('mainCtrl', function($scope) {
 
 
 loginApp.controller('formularioCtrl', function($scope) {
+  $scope.message = 'Would you like to contact us?';
+    });
+
+loginApp.controller('forgot_passwordCtrl', function($scope) {
   $scope.message = 'Would you like to contact us?';
     });
