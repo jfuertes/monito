@@ -6,16 +6,19 @@ text-align: left; font-size: 13px; }
 .footer-container a:hover { text-decoration: underline; } 
 .footer-container a:active { text-decoration: underline; } 
  /* The main sitemap part */ 
-.sitemap { padding-right: 30px; padding-left: 30px; 
-margin: 65px auto 30px auto; max-width: 1000px; 
-display: flex; display: -ms-flexbox; 
-display: -webkit-box; display: -webkit-flex; 
-flex-flow: row; flex-wrap:wrap;
- -ms-flex-wrap: wrap; -ms-flex-direction: row; 
- -webkit-flex-flow: row wrap; justify-content: space-between;
- webkit-justify-content:space-between; 
- -webkit-box-pack:justify; -ms-flex-pack: justify; } 
- .footer-column { padding-right: 15px; 
+.sitemap {
+    padding-right: 30px; 
+    padding-left: 30px; 
+    margin: 65px auto 0px auto; max-width: 1000px; 
+    display: flex; display: -ms-flexbox; 
+    display: -webkit-box; display: -webkit-flex; 
+    flex-flow: row; flex-wrap:wrap;
+    -ms-flex-wrap: wrap; -ms-flex-direction: row; 
+    -webkit-flex-flow: row wrap; justify-content: space-between;
+    webkit-justify-content:space-between; 
+    -webkit-box-pack:justify; -ms-flex-pack: justify;
+} 
+.footer-column { padding-right: 15px; 
  padding-bottom: 40px; width: 160px; } /* Responsively adjust width for aligning columns nicely */ 
  @media (max-width: 1050px) { 
 

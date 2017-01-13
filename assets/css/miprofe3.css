@@ -257,6 +257,15 @@ width:80px;
 height:80px;
 ackground-size:626px;
 background-position:-250px -375px}
+
+.flag-flex-dibujos{
+	margin:0;display:inline-block;vertical-align:middle;
+	-webkit-border-radius:200px;
+	-moz-border-radius:200px;
+	border-radius:200px;
+	height:80px;
+	background-size:626px;
+	background-position:-250px -375px}
 .splash-2014 .monument-carousel.choose-course-by-flag .login-signup-flag-list-container .choose-language-flag-container .flag-flex-size.flag-fr{
 background-position:0 0}
 .splash-2014 .monument-carousel.choose-course-by-flag .login-signup-flag-list-container .choose-language-flag-container .flag-flex-size.flag-es{
