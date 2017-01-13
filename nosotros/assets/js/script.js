@@ -31,7 +31,6 @@ $routeProvider
                 templateUrl : 'pages/miprofe_escuelas.html',
                 controller  : 'miprofe_escuelasCtrl'
             })
-            // r
             .when('/soluciones', {
                 templateUrl : 'pages/soluciones.html',
                 controller  : 'solucionesCtrl'
