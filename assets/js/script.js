@@ -110,7 +110,6 @@ demoApp.controller('perfilprofeCtrl', function($scope, $http) {
 demoApp.controller('alumnoCtrl', function($scope, $http, $rootScope) {
 $scope.cambiarcurso=true;
            $scope.cursos= function(id){
-            
             $rootScope.nivel=id;
            window.location.href='#cursos';
             console.log($rootScope.nivel);

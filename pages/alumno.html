@@ -8,48 +8,18 @@
                                     <div class="language-selection-container">
                                         <h1 class="course-picker">Quiero aprender...</h1>
                                         <div class="login-signup-flag-list-container  ">
-                                            <a href="#cursos">
-                                                <div class="choose-language-flag-container choose-language" >
-                                                    <div class="vertical-align">
+                                            
+                                                <div class="choose-language-flag-container choose-language" ng-repeat="n in Nivel" >
+                                                    <div class="vertical-align" ng-click="cursos(n.id_nivel)">
                                                         <div class="flag-box">
-                                                            <img class="flag-svg-dibujos flag-flex-dibujos" src="IMG/temas/primaria.png">
+                                                            <img class="flag-svg-dibujos flag-flex-dibujos" src="IMG/temas/{{n.nombre}}.png">
                                                         </div>
-                                                        <h2 class="white course-name">Primaria</h2>
+                                                        <h2 class="white course-name">{{n.nombre}}</h2>
                                                     <!--<p class="num-learners">estudiantes</p>-->
                                                     </div>
                                                 </div>
-                                            </a> <a href="#cursos">
-                                                <div class="choose-language-flag-container choose-language" >
-                                                    <div class="vertical-align">
-                                                        <div class="flag-box">
-                                                            <img class="flag-svg-dibujos flag-flex-dibujos" src="IMG/temas/secundaria.png">
-                                                        </div>
-                                                        <h2 class="white course-name">Secundaria</h2>
-                                                    <!--<p class="num-learners">estudiantes</p>-->
-                                                    </div>
-                                                </div>
-                                            </a> <a href="#cursos">
-                                                <div class="choose-language-flag-container choose-language" >
-                                                    <div class="vertical-align">
-                                                        <div class="flag-box">
-                                                            <img class="flag-svg-dibujos flag-flex-dibujos" src="IMG/temas/pre.png">
-                                                        </div>
-                                                        <h2 class="white course-name">Postulante</h2>
-                                                    <!--<p class="num-learners">estudiantes</p>-->
-                                                    </div>
-                                                </div>
-                                            </a> 
-                                            <a href="#cursos">
-                                                <div class="choose-language-flag-container choose-language" >
-                                                    <div class="vertical-align">
-                                                        <div class="flag-box">
-                                                            <img class="flag-svg-dibujos flag-flex-dibujos" src="IMG/temas/uni.png">
-                                                        </div>
-                                                        <h2 class="white course-name">Universitario</h2>
-                                                    <!--<p class="num-learners">estudiantes</p>-->
-                                                    </div>
-                                                </div>
-                                            </a> 
+                                             
+                                        
                                         </div>
                                     </div>
                                 </div>
