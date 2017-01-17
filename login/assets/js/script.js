@@ -30,9 +30,49 @@ $routeProvider
     });
 
     // create the controller and inject Angular's $scope
-loginApp.controller('mainCtrl', function($scope) {
+loginApp.controller('mainCtrl', function($scope, $http) {
         // create a message to display in our view
-        $scope.message = 'Hello world, this is the home page!';
+        $scope.getDistritos= function(){
+             $http.post('api/getDistritos.php' )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.Distritos=data;
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+         };
+         $scope.getDistritos();
+
+            $scope.funcion=function(){
+                        alert("ola");
+            };
+
+                $scope.formNewProf= function(nu){
+                  console.log(nu);
+
+                  $http.post('api/nuevoprofe.php', {nu :nu} )
+                          .success(function(data) {
+                            console.log(data);
+                            if(data.success){
+                                console.log("data.succesees :)");
+                                document.getElementById("formNProfe").reset();
+                                delete $scope.nu;
+                                window.location.href='#loginCursos';
+                            }
+                            else{
+                                console.log("error!!");
+                            }
+                            
+                          })
+                          .error(function(data) {
+                            console.log('Error: ' + data);
+                            });
+                                       
+
+                 };
+
+
     });
 
 
