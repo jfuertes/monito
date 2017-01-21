@@ -1,31 +1,179 @@
 <div id="site">
-        <div id="wrapper">
-            <div id="app">
-                <section dir="ltr" class="monument-carousel dark-theme ">
-                    <div dir="ltr" class="signup">
-                    <div id="signup-main" class="">
-                        <section class="section-white dark-theme ">
-                            <div class="section-inner center fold">
-                            <div class="earth-container">
-                                <span class="splash-globe"></span>
+    <div id="wrapper">
+        <div id="app">
+            <section dir="ltr" class="monument-carousel dark-theme ">
+                <div dir="ltr" class="signup">
+                <div id="signup-main" class="">
+                    <section class="section-white dark-theme ">
+                        <div class="section-inner center fold">
+                        <div class="earth-container">
+                            <span class="splash-globe"></span>
+                        </div>
+                        <div class="cta-container">
+                            <h1 class="splash">Quieres aprender?</h1>
+                            <div class="email-div">
+                                <a class="btn btn-green sign-up signup-trial" href="#alumno" id="signup-link" style="margin-bottom: 15px;" data-track-click="splash page register facebook">Aprender</a>
                             </div>
-                            <div class="cta-container">
-                                <h1 class="splash">Quieres aprender?</h1>
-                                <div class="email-div">
-                                    <a class="btn btn-green sign-up signup-trial" href="#alumno" id="signup-link" style="margin-bottom: 15px;" data-track-click="splash page register facebook">Aprender</a>
-                                </div>
 
-                                <h1 class="splash">Quieres enseñar?</h1>
-                                <div class="email-div">
-                                    <a class="btn btn-green sign-up signup-trial" href="#alumno" id="signup-link" style="margin-bottom: 15px;" data-track-click="splash page register facebook">Enseñar</a>
-                                </div>
+                            <h1 class="splash">Quieres enseñar?</h1>
+                            <div class="email-div">
+                                <a class="btn btn-green sign-up signup-trial" href="#alumno" id="signup-link" style="margin-bottom: 15px;" data-track-click="splash page register facebook">Enseñar</a>
                             </div>
                         </div>
-                    </section>
-                </div>
-            </div>
-        </div>
+                    </div>
                 </section>
             </div>
         </div>
+            </section>
+        </div>
     </div>
+</div>
+
+
+
+<div>
+    <div class="modal hidden fade in" id="signup-modal" style="display: block;">
+        <div class="close" data-dismiss="modal">
+        </div>
+            <div id="register-view">
+                <div id="signup-modal-body">
+                    <div class="modal-header">
+                        <h1>Regístrate<div class="owl owl-pointing-small img-flipped"></div>
+                        </h1>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="login-signup-list ">
+                            <li style="margin-bottom: 20px;" id="register-form-container">
+                                <div>
+                                    <form action="/welcome" method="post" id="register-form">
+                                        <table border="0" cellspacing="0" cellpadding="0" class="form-table">
+                                            <input name="learning_language" type="hidden" value="en">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="input-label" for="fullname">
+                                                        <strong>Nombre completo</strong>
+                                                    </td>
+                                                    <td>
+                                                        <input class="input-block" id="fullname" name="fullname" size="30" type="text" value="" autofocus="autofocus">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="input-label" for="email">
+                                                        <strong>Correo</strong>
+                                                        </td>
+                                                        <td>
+                                                        <div class="relative">
+                                                            <input class="input-block" id="email" name="email" size="30" type="text" value="">
+                                                            <div class="error-flag" id="invalid-email-error">
+                                                                <span class="arrow-left-container">
+                                                                    <span class="arrow">
+                                                                        
+                                                                    </span>
+                                                                </span>La dirección de correo electrónico es inválida
+                                                            </div>
+                                                            <div class="error-flag" id="taken-email-error">
+                                                                <span class="arrow-left-container">
+                                                                    <span class="arrow">
+                                                                    </span>
+                                                                </span>La dirección de correo electrónico ya existe
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="input-label" for="password">
+                                                        <strong>Contraseña</strong>
+                                                    </td>
+                                                    <td>
+                                                        <div class="relative">
+                                                            <input class="input-block" id="password" name="register_password" size="30" type="password">
+                                                            <div class="error-flag" id="invalid-password-error">
+                                                                <span class="arrow-left-container">
+                                                                    <span class="arrow">
+                                                                    </span>
+                                                                </span>La contraseña es muy corta
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <input name="ui_language" type="hidden" value="es">
+                                        <input name="invite" type="hidden" value="">
+                                        <input name="invited_by" type="hidden" value="">
+                                        <input name="invited_via" type="hidden" value="">
+                                    </form> 
+                                </div>
+                            </li>
+                            <li style="text-align: center;">
+                                <a id="register-button" href="javascript:;" class="btn btn-blue  btn-lg btn-block" data-track-click="course register submit ">Crear cuenta</a>
+                            </li>
+                            <li class="signup-social-buttons">
+                                <a class="btn btn-fbblue-dark signup-facebook" href="javascript:;" data-track-click="splash page register facebook">
+                                    <span class="icon icon-fb-small"></span>Regístrate con Facebook
+                                </a>
+                                <a class="btn btn-googlered-new signup-google" href="javascript:;" data-track-click="splash page register google ">
+                                    <span class="icon icon-google-small">
+                                    </span>Regístrate con Google
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="login-view" class="hidden" style="display: none;">
+                <div id="signup-modal-body">
+                    <div class="modal-header">
+                        <h1>Ingresar
+                            <div class="owl owl-pointing-small img-flipped">
+                            </div>
+                        </h1>
+                    </div>
+                    <div class="modal-body">
+                    <ul class="login-signup-list">
+                        <form action="/login" method="post" id="login-form">
+                            <table border="0" cellspacing="0" cellpadding="0" class="form-table" style="margin-bottom: 20px;">
+                                <input type="hidden" name="came_from" value="">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <strong>Usuario</strong>
+                                        </td>
+                                        <td>
+                                            <input id="login" name="login" style="width: 230px;" type="text">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Contraseña</strong>
+                                        </td>
+                                        <td>
+                                            <input id="password" name="password" style="width: 230px;" type="password">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div id="message" class="warning-message hidden margin-bottom"></div>
+                            <input id="login-button" type="submit" class="btn btn-lg btn-blue btn-block more-margin-bottom" value="Ingresar">
+                                <p class="center no-margin">
+                                <a href="/forgot_password" class="forgot-password">¿Olvidaste tu contraseña?</a></p>
+                        </form>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="modal-footer">
+            <div id="user-login">¿Ya tienes una cuenta?
+                <a href="javascript:;" class="existing-login">Ingresar</a>
+            </div>
+            <div id="create-account" style="display:none;">
+                <a href="javascript:;" class="create-profile">Crear una cuenta
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-backdrop fade in"></div>
+
+
