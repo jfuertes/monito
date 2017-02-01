@@ -1,14 +1,136 @@
+<!--
+<div id="app" class="page-login">
+  <main class="main-center-narrow">
+    <section class="page-main">
+          <h3>Registro de Profesor</h3>
+            <form id="formNProfe" class="form-horizontal" role="form" ng-submit="formNewProf(nu)">
 
-<section dir="ltr" class="monument-carousel  choose-course-by-flag fit-to-4-source-langs">
-    <div dir="ltr" class="signup">
-        <div class="hidden splash-signup-form" id="signup-language" style="display: block;">
-            <section class="section-white space">
-                <div class="section-inner-wide section-inner">
-                    <div class="language-selection-container">
-                        <h1 class="course-picker">loginalumno</h1>
-                    </div>
-                </div>
-            </section>
+        <div class="form-group">
+            <label class="control-label col-lg-2" >Login de usuario:</label>
+            <div class="col-lg-4">
+              <input type="text" pattern="[a-zA-Z-]+" title="Solo se admiten letras" class="form-control" placeholder="login" ng-model="nu.username" required>
+            </div>
         </div>
-    </div>
+
+
+        <div class="form-group" >
+            <label class="control-label col-lg-2" >Contraseña:</label>
+            <div class="col-lg-4">
+              <input type="password" class="form-control" placeholder="contraseña" ng-model="nu.password">
+            </div>
+        </div>
+
+       <div class="form-group">
+            <label class="control-label col-lg-2" >Nombres</label>
+            <div class="col-lg-4">
+             <input type="text" pattern="[a-zA-Z-]+" title="Solo se admiten letras" class="form-control" placeholder="nombres" ng-model="nu.nombres" required>
+            </div>
+        </div>
+         <div class="form-group">
+            <label class="control-label col-lg-2" >Apellido Paterno</label>
+            <div class="col-lg-4">
+             <input type="text" pattern="[a-zA-Z-]+" title="Solo se admiten letras" class="form-control" placeholder="apellidos" ng-model="nu.ape_paterno" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-lg-2" >Apellido Materno</label>
+            <div class="col-lg-4">
+             <input type="text" pattern="[a-zA-Z-]+" title="Solo se admiten letras" class="form-control" placeholder="apellidos" 10>
+            </div>
+        </div>
+          <div class="form-group">
+            <label class="control-label col-lg-2" >Distrito</label>
+            <div class="col-lg-4">
+            <select class="form-control" ng-model="nu.distritos" required>
+            <option value="">- Selecciones el Distrito -</option>
+              <option ng-repeat="d in Distritos" value="{{d.id_distrito}}">{{d.nombre}}</option>
+            </select>
+            </div>
+        </div>
+          
+        <div class="form-group">
+            <label class="control-label col-lg-2" >Email</label>
+            <div class="col-lg-4">
+             <input type="email" class="form-control" placeholder="email" ng-model="nu.email" required>
+            </div>
+        </div>
+
+        <div class="form-group"> 
+            <div class="col-lg-offset-2 col-lg-6">
+              <button type="submit" class="btn btn-primary col-lg-4">Crear Usuario</button>
+              <div class="col-lg-2"></div>
+              
+            </div>
+        </div>
+    </form>
+
+    </section>
+  </main>
+</div>
+-->
+
+<section dir="ltr" class="monument-cfondo  choose-course-by-flag fit-to-4-source-langs">
+
+  <div id="app" class="settings">
+  <main class="main-right">
+    <section class="page-main main-right">
+      <div id="tab-container">
+        <div id="profile-content" class="settings-content">
+          <h1>Registro de Alumno</h1>
+          <ul class="list-settings language-direction">
+            <li>
+              <label class="label">Usuario</label>
+              <div class="input">
+                <input style="width: 334px;" class="large"type="text" value="" placeholder="nombre">
+              </div>
+            </li>
+            <li>
+              <label class="label">Nombre</label>
+              <div class="input">
+                <input style="width: 334px;" class="large"type="text" value="" placeholder="nombre">
+              </div>
+            </li>
+            <li>
+              <label class="label">Apellido Paterno</label>
+              <div class="input">
+                <input style="width: 334px;" class="large"type="text" value="" placeholder="nombre">
+              </div>
+            </li>
+            <li>
+              <label class="label">Apellido Materno</label>
+              <div class="input">
+                <input style="width: 334px;" class="large"type="text" value="" placeholder="nombre">
+              </div>
+            </li>
+            <li>
+              <label class="label">Distrito</label>
+              <div class="input">
+                <label class="blue-select no-focus smaller fixed-width">
+                    <select name="language_direction" id="language_direction">
+                    <option value="es_en">Quiero aprender inglés</option>
+                    <option value="es_gn">Quiero aprender Guaraní</option>
+                    <option value="es_eo">Quiero aprender esperanto</option>
+                  </select>
+                </label>
+              </div>
+            </li>
+            <li>
+              <label class="label">Email</label>
+              <div class="input">
+                <input style="width: 334px;" class="large"type="text" value="" placeholder="nombre" >
+              </div>
+            </li>
+            <li>
+              <div class="input" >
+                <div style="margin: 10px 0 0 0;">
+                  <a href="/courses" class="btn btn-blue">Crear Usuario en Mi Profe</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
 </section>
