@@ -1,0 +1,100 @@
+<div id="app" class="page-login" ng-hide="registroExitoso">
+  <main class="main-center-narrow">
+    <section class="page-main">
+          <h3>Registro de Profesor</h3>
+            <form id="formNProfe" class="form-horizontal" role="form" ng-submit="formNewProf(nu)">
+
+        <div class="form-group">
+            <label class="control-label col-lg-2" >Login de usuario:</label>
+            <div class="col-lg-4">
+              <input type="text" pattern="[a-zA-Z-]+" title="Solo se admiten letras" class="form-control" placeholder="login" ng-model="nu.username" required>
+            </div>
+        </div>
+
+
+        <div class="form-group" >
+            <label class="control-label col-lg-2" >Contraseña:</label>
+            <div class="col-lg-4">
+              <input type="password" class="form-control" placeholder="contraseña" ng-model="nu.password">
+            </div>
+        </div>
+
+       <div class="form-group">
+            <label class="control-label col-lg-2" >Nombres</label>
+            <div class="col-lg-4">
+             <input type="text" pattern="[a-zA-Z-]+" title="Solo se admiten letras" class="form-control" placeholder="nombres" ng-model="nu.nombres" required>
+            </div>
+        </div>
+         <div class="form-group">
+            <label class="control-label col-lg-2" >Apellido Paterno</label>
+            <div class="col-lg-4">
+             <input type="text" pattern="[a-zA-Z-]+" title="Solo se admiten letras" class="form-control" placeholder="apellidos" ng-model="nu.ape_paterno" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-lg-2" >Apellido Materno</label>
+            <div class="col-lg-4">
+             <input type="text" pattern="[a-zA-Z-]+" title="Solo se admiten letras" class="form-control" placeholder="apellidos" ng-model="nu.ape_materno" required>
+            </div>
+        </div>
+          <div class="form-group">
+            <label class="control-label col-lg-2" >Distrito</label>
+            <div class="col-lg-4">
+            <select class="form-control" ng-model="nu.distritos" required>
+            <option value="">- Selecciones el Distrito -</option>
+              <option ng-repeat="d in Distritos" value="{{d.id_distrito}}">{{d.nombre}}</option>
+            </select>
+            </div>
+        </div>
+          
+        <div class="form-group">
+            <label class="control-label col-lg-2" >Email</label>
+            <div class="col-lg-4">
+             <input type="email" class="form-control" placeholder="email" ng-model="nu.email" required>
+            </div>
+        </div>
+
+        <div class="form-group"> 
+            <div class="col-lg-offset-2 col-lg-6">
+              <button type="submit" class="btn btn-primary col-lg-4">Crear Usuario</button>
+              <div class="col-lg-2"></div>
+              
+            </div>
+        </div>
+    </form>
+
+    </section>
+  </main>
+</div>
+<div id="app" class="page-login" ng-show="registroExitoso">
+ <main class="main-center-narrow">
+    <section class="page-main">
+      <p>Registro Exitoso :D</p>
+       <form id="formNProfe" class="form-horizontal" role="form" ng-submit="login(us)">
+
+        <div class="form-group">
+            <label class="control-label col-lg-2" >Login de usuario:</label>
+            <div class="col-lg-4">
+              <input type="text" pattern="[a-zA-Z-]+" title="Solo se admiten letras" class="form-control" placeholder="login" ng-model="us.username" required>
+            </div>
+        </div>
+
+        <div class="form-group" >
+            <label class="control-label col-lg-2" >Contraseña:</label>
+            <div class="col-lg-4">
+              <input type="password" class="form-control" placeholder="contraseña" ng-model="us.password">
+            </div>
+        </div>
+
+        <div class="form-group"> 
+            <div class="col-lg-offset-2 col-lg-6">
+              <button type="submit" class="btn btn-primary col-lg-4">Ingresar</button>
+              <div class="col-lg-2"></div>
+              
+            </div>
+        </div>
+    </form>
+       </section>
+  </main>
+
+</div>
