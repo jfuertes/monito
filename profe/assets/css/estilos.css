@@ -1,0 +1,84 @@
+.btn_temas {
+  display: inline-block;
+  padding: 14px 13px 14px 13px;
+  margin-bottom: 0;
+  font-style: roman;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+ touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 33px;}
+
+  .btn-inicio {
+  color: #fff;
+  background-color: #f46042;
+  border-color: #2e6da4;
+  
+}
+.btn-inicio:focus,
+.btn-inicio.focus {
+  color: #fff;
+  background-color: #FF8C0F;
+  border-color: #FF8C0F;
+}
+.btn-inicio:hover {
+  color: #fff;
+  background-color: #FF8C0F;
+  border-color: #204d74;
+}
+
+.redondo {
+    /* cambia estos dos valores para definir el tamaño de tu círculo */
+    height: 180px; 
+    width: 175px;
+    /* los siguientes valores son independientes del tamaño del círculo */
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+}
+.alto{
+  min-height: 950px;
+  background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+}
+.btn4 {
+  display: inline-block;
+  padding: 14px 130px 14px 130px;
+  margin-bottom: 0;
+  font-style: roman;
+  color: #000;
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 33px;
+}
+.centrado{
+  top:50%;
+  left:50%;
+}

@@ -52,7 +52,7 @@ $routeProvider
     });
 
     // create the controller and inject Angular's $scope
-demoApp.controller('mainCtrl', function($scope, $http) {
+demoApp.controller('mainCtrl', function($scope) {
   $scope.showvideohep=false;
   
  console.log("mainCtrl");
@@ -66,28 +66,7 @@ demoApp.controller('mainCtrl', function($scope, $http) {
         //$("body").addClass("backgroundDark");
         //$("#videoDemostrativo").addClass("sobretodo");
       };
-          $scope.login= function(us){
-                  console.log(us);
-
-                  $http.post('login/api/loginprofe.php', {us :us} )
-                          .success(function(data) {
-                            console.log(data);
-                            if(data.success){
-                                console.log("data.succesees :)");
-                                delete $scope.us;
-                               window.location.href='profe/';
-                            }
-                            else{
-                                console.log("error!!");
-                            }
-                            
-                          })
-                          .error(function(data) {
-                            console.log('Error: ' + data);
-                            });
-                                       
-
-        };
+        
 
 
     });
@@ -109,7 +88,6 @@ demoApp.controller('loginCtrl', function($scope, $http) {
         //$("#videoDemostrativo").addClass("sobretodo");
       };
 
-      
     });
 
 demoApp.controller('perfilprofeCtrl', function($scope, $http) {
