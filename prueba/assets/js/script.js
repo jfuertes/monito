@@ -29,6 +29,10 @@ $routeProvider
                 templateUrl : 'pages/formulario.html',
                 controller  : 'formularioCtrl'
             })
+            .when('/login', {
+                templateUrl : 'pages/login.html',
+                controller  : 'formularioCtrl'
+            })
              
 
 
