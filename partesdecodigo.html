@@ -96,4 +96,49 @@
                             </div>
                         </h1>
                     </div>
-                    <div class="modal-body"><ul class="login-signup-list"><form action="/login" method="post" id="login-form"><table border="0" cellspacing="0" cellpadding="0" class="form-table" style="margin-bottom: 20px;"><input type="hidden" name="came_from" value=""><tbody><tr><td><strong>Usuario</strong></td><td><input id="login" name="login" style="width: 230px;" type="text"></td></tr><tr><td><strong>Contraseña</strong></td><td><input id="password" name="password" style="width: 230px;" type="password"></td></tr></tbody></table><div id="message" class="warning-message hidden margin-bottom"></div><input id="login-button" type="submit" class="btn btn-lg btn-blue btn-block more-margin-bottom" value="Ingresar"><p class="center no-margin"><a href="/forgot_password" class="forgot-password">¿Olvidaste tu contraseña?</a></p></form></ul></div></div></div><div id="modal-footer"><div id="user-login">¿Ya tienes una cuenta? <a href="javascript:;" class="existing-login">Ingresar</a></div><div id="create-account" style="display:none;"><a href="javascript:;" class="create-profile">Crear una cuenta</a></div></div></div> </div>
+                    <div class="modal-body">
+                    <ul class="login-signup-list">
+                        <form action="/login" method="post" id="login-form">
+                            <table border="0" cellspacing="0" cellpadding="0" class="form-table" style="margin-bottom: 20px;">
+                                <input type="hidden" name="came_from" value="">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <strong>Usuario</strong>
+                                        </td>
+                                        <td>
+                                            <input id="login" name="login" style="width: 230px;" type="text">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Contraseña</strong>
+                                        </td>
+                                        <td>
+                                            <input id="password" name="password" style="width: 230px;" type="password">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div id="message" class="warning-message hidden margin-bottom"></div>
+                            <input id="login-button" type="submit" class="btn btn-lg btn-blue btn-block more-margin-bottom" value="Ingresar">
+                                <p class="center no-margin">
+                                <a href="/forgot_password" class="forgot-password">¿Olvidaste tu contraseña?</a></p>
+                        </form>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="modal-footer">
+            <div id="user-login">¿Ya tienes una cuenta?
+                <a href="javascript:;" class="existing-login">Ingresar</a>
+            </div>
+            <div id="create-account" style="display:none;">
+                <a href="javascript:;" class="create-profile">Crear una cuenta
+                </a>
+            </div>
+        </div>
+    </div>
+</div><!--parte login dentro-->
+
+<div class="modal-backdrop fade in"></div> <!--parte login dentro-->

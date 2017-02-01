@@ -31,8 +31,19 @@
                 <div class="topbar-username dropdown click-trigger" style="padding-bottom: 15px;">
                    <div id="showloginpop" class="topbar-buttons" style="margin-top: 1px;" >
                         <span class="sign-in relative"></span>
-                            <span class="btn sign-in-btn btn-white" id="sign-in-btn" data-track-click="topbar toggle" ><?php echo $_SESSION['nombres'] ?></span>
+                            <span class="btn sign-in-btn btn-white" id="sign-in-btn" data-track-click="topbar toggle" ><?php echo $_SESSION['nombres']." ".$_SESSION['ape_paterno'] ?></span>
                             </div>
+                            <div id="loginpop">
+                            <ul  class="popover arrow-top login-popover hidden" id="login-modal" style="width: 250px; top: 42px; right: 20px; left: auto; display: block;">
+                                                            
+                                <li class="center">
+                                    <a href="login/#forgot_password">ver perfil</a>
+                                </li>
+                                <li class="center">
+                                    <a >Salir</a>
+                                </li>
+                            
+                        </ul></div>
                              
                     
                 </div>

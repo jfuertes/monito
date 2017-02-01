@@ -10,8 +10,18 @@ $routeProvider
 
             // route for the home page
             .when('/', {
-                templateUrl : 'pages/login.html',
+                templateUrl : 'pages/inicio.html',
                 controller  : 'mainCtrl'
+            })
+
+            .when('/loginalumno', {
+                templateUrl : 'pages/loginalumno.html',
+                controller  : 'loginalumnoCtrl'
+            })
+
+            .when('/loginprofesor', {
+                templateUrl : 'pages/loginprofesor.html',
+                controller  : 'loginprofesorCtrl'
             })
 
             // route for the about page
@@ -32,8 +42,12 @@ $routeProvider
     });
 
     // create the controller and inject Angular's $scope
+
 loginApp.controller('mainCtrl', function($scope, $http) {
-  $scope.registroExitoso=false;
+  
+});
+loginApp.controller('loginprofesorCtrl', function($scope, $http) {
+$scope.registroExitoso=false;
         // create a message to display in our view
         $scope.getDistritos= function(){
              $http.post('api/getDistritos.php' )
@@ -107,5 +121,13 @@ loginApp.controller('formularioCtrl', function($scope) {
 
 
 loginApp.controller('forgot_passwordCtrl', function($scope) {
+  $scope.message = 'Would you like to contact us?';
+    });
+
+loginApp.controller('mainCtrl', function($scope) {
+  $scope.message = 'Would you like to contact us?';
+    });
+
+loginApp.controller('loginalumnoCtrl', function($scope) {
   $scope.message = 'Would you like to contact us?';
     });
