@@ -52,7 +52,7 @@ $routeProvider
     });
 
     // create the controller and inject Angular's $scope
-demoApp.controller('mainCtrl', function($scope) {
+demoApp.controller('mainCtrl', function($scope, $http) {
   $scope.showvideohep=false;
   
  console.log("mainCtrl");
@@ -66,9 +66,21 @@ demoApp.controller('mainCtrl', function($scope) {
         //$("body").addClass("backgroundDark");
         //$("#videoDemostrativo").addClass("sobretodo");
       };
-        
+        $scope.logout=function() {
+          if (confirm("esta seguro que desea salir?")) {
+          // Respuesta afirmativa...
+           $http.post('api/logout.php' )
+                .success(function(data) {
+                  console.log(data);
+                  window.location.href='../';
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+        };
+      };
 
-
+      
     });
 demoApp.controller('loginCtrl', function($scope, $http) {
   $scope.showformini=false;

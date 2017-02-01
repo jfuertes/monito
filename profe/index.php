@@ -40,7 +40,7 @@
                                     <a href="login/#forgot_password">ver perfil</a>
                                 </li>
                                 <li class="center">
-                                    <a >Salir</a>
+                                    <button ng-click="logout()">Salir</button>
                                 </li>
                             
                         </ul></div>
