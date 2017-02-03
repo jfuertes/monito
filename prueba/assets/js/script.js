@@ -14,32 +14,20 @@ $routeProvider
                 controller  : 'mainCtrl'
             })
 
-            .when('/loginalumno', {
-                templateUrl : 'pages/loginalumno.html',
-                controller  : 'loginalumnoCtrl'
+            .when('/pass', {
+                templateUrl : 'pages/pass.html',
+                controller  : 'passCtrl'
             })
 
-            .when('/loginprofesor', {
-                templateUrl : 'pages/loginprofesor.html',
-                controller  : 'loginprofesorCtrl'
+            .when('/cursos', {
+                templateUrl : 'pages/cursos.html',
+                controller  : 'cursosCtrl'
             })
 
             // route for the about page
-            .when('/formulario', {
-                templateUrl : 'pages/formulario.html',
-                controller  : 'formularioCtrl'
-            })
-            .when('/login', {
-                templateUrl : 'pages/login.html',
-                controller  : 'formularioCtrl'
-            })
-             
-
-
-            // route for the contact page
-            .when('/forgot_password', {
-                templateUrl : 'pages/forgot_password.html',
-                controller  : 'forgot_passwordCtrl'
+            .when('/perfil', {
+                templateUrl : 'pages/perfil.html',
+                controller  : 'perfilCtrl'
             })
             .otherwise({ templateUrl : 'pages/notfound.html' 
         });
