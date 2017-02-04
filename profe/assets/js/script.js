@@ -68,11 +68,12 @@ demoApp.controller('mainCtrl', function($scope, $http) {
 
 
 demoApp.controller('passCtrl', function($scope, $http, $rootScope) {
+  $scope.error=false;
 
-          $scope.newpass= function(us){
+          $scope.formNewPass= function(us){
                   console.log(us);
 
-                  $http.post('login/api/newpass.php', {us :us} )
+                  $http.post('api/newpass.php', {us :us} )
                           .success(function(data) {
                             console.log(data);
                             if(data.success){
@@ -82,6 +83,7 @@ demoApp.controller('passCtrl', function($scope, $http, $rootScope) {
                             }
                             else{
                                 console.log("error!!");
+                                $scope.error=true;
                             }
                             
                           })
@@ -93,4 +95,8 @@ demoApp.controller('passCtrl', function($scope, $http, $rootScope) {
         };
 
 
+    });
+demoApp.controller('perfilCtrl', function($scope, $http, $rootScope) {
+
+    
     });

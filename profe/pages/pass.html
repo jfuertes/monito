@@ -25,8 +25,8 @@
     <section class="page-main main-right">
       <div id="tab-container">
         <div id="password-content">
-        <form >
-          <button id="submit_button" type="submit" class="btn btn-green right" >Guardar cambios</button>
+        <form id="formNPass" ng-submit="formNewPass(us)">
+          <button id="submit_button" type="submit" class="btn btn-green right"  ng-if="us.newpassword==us.newpassword2 && us.newpassword!=null">Guardar cambios</button>
           <!--mansaje de errores-->
           <div id="confirmation-message" class="hidden save-message">Tus cambios han sido guardados.</div>
           <div id="error-message" class="hidden error-message">Error</div>
@@ -48,11 +48,12 @@
             <li>
               <label class="label">Confirmar nueva contraseña</label><!--falta la verificacio nn-->
               <div class="input">
-                <input class="large" id="confirm-new-password" name="confirm-new-password" size="30" type="password">
+                <input class="large" id="confirm-new-password" name="confirm-new-password" size="30" type="password" ng-model="us.newpassword2">
               </div>
             </li>
           </ul>
           </form>
+          <button ng-show="error">Contraseña invalida</button>
         </div>
       </div>
     </section>
