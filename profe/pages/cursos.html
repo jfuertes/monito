@@ -1,31 +1,41 @@
-<section dir="ltr" class="monument-carousel  choose-course-by-flag fit-to-6-source-langs">
-    <div dir="ltr" class="signup">
-        <div class="hidden splash-signup-form" id="signup-language" style="display: block;">
-            <section class="section-white space">
-                <div class="section-inner-wide section-inner">
-                    <div class="language-selection-container">
-                        <h1 class="course-picker">Quiero aprender...</h1>
-                        <div class="login-signup-flag-list-container  ">
-                            <div class="choose-language-flag-container choose-language" ng-repeat="c in Cursos" ng-show="!VerSubcursos" >
-                                <div class="vertical-align" ng-click="ejecutar(c.id_curso, c.seccion)">
-                                    <div class="flag-box">
-                                        <img class="flag-svg-large flag-flex-size" src="IMG/temas/{{c.nombre}}.png">
-                                    </div>
-                                    <h2 class="white course-name">{{c.nombre}}</h2>
-                                </div>
-                            </div>
-                            <div class="choose-language-flag-container choose-language" ng-repeat="s in Subcursos" ng-hide="!VerSubcursos" >
-                                <div class="vertical-align" ng-click="ejecutar(s.id_curso, s.seccion)">
-                                    <div class="flag-box">
-                                        <img class="flag-svg-large flag-flex-size" src="IMG/temas/{{s.nombre}}.png">
-                                    </div>
-                                    <h2 class="white course-name">{{s.nombre}}</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+
+<section dir="ltr" class="monument-cfondo  choose-course-by-flag fit-to-4-source-langs">
+<div id="app" class="settings">
+    <main class="main-left">
+        
+        <section class="page-main main-right"><div id="tab-container"><div id="profile-content" class="settings-content"><button id="submit_button" type="submit" class="btn btn-green right" disabled="">Guardar cambios</button><div id="confirmation-message" class="hidden save-message">Tus cambios han sido guardados.</div><div id="error-message" class="hidden error-message">Error</div><h1>Perfil</h1><ul class="list-settings"><li><label class="label">Nombre</label><div class="input"><input class="large" id="fullname" name="fullname" size="30" type="text" style="width: 334px;" value="luis linares"></div></li><li><label class="label">Ubicación</label><div class="input"><input class="large" id="location" name="location" size="30" type="text" style="width: 334px;" value=""></div></li><li><label class="label">Biografía</label><div class="input"><textarea id="bio" name="bio" rows="3" cols="40" style="margin-bottom: 10px; width: 334px;"></textarea><p class="gray"><span id="bio-count">140</span> caracteres restantes</p></div></li><li><label class="label">Aprendiendo desde</label><div class="input" style="padding-top:5px; width: 334px;">2017-01-19</div></li><li><label class="label">Conectar a Facebook</label><div class="input"><input id="facebook_id" name="facebook_id" size="30" type="hidden" style="margin-bottom: 10px; width: 334px;" value="417948448539757"><a id="facebook-disconnect" href="javascript:;" class="btn btn-standard btn-small">Desconectar</a></div></li><li><label class="label">Compartir automáticamente en Facebook</label><div class="input"><ul class="radio-buttons"><li><label><input class="" id="auto_facebook_post_on" name="auto_facebook_post" type="radio" value="true"> sí</label></li><li><label><input class="" id="auto_facebook_post_off" name="auto_facebook_post" type="radio" value="false" checked=""> no</label></li></ul></div></li></ul></div> </div></section>
+
+        <section class="page-sidebar sidebar-right">
+            <div class="inner">
+                <div class="box-colored bg-white">
+                    <h2 class="view-profile-headline">
+                        <a href="/nombredeusuario" class="avatar avatar-small " title="nombredeusuario">  <img src="//s3.amazonaws.com/duolingo-images/avatar/default_2/large"><span class="ring"></span></a>  nombredeusuario <a href="/nombredeusuario" class="username">Ver tu perfil</a>
+                    </h2>
+                    <ul id="settings_tab" class="nav-sidebar">
+                        <li class="active">
+                            <a href="">Cuenta</a>
+                        </li>
+                        <li class="">
+                            <a href="" >Idioma</a>
+                        </li>
+                        <li class="">
+                            <a href="">Perfil </span></a>
+                        </li>
+                        <li class="">
+                            <a href="">Contraseña</a>
+                        </li>
+                        <li class="">
+                            <a href="">Notificaciones</a>
+                        </li>
+                        <li class="">
+                            <a href="">Entrenador</a>
+                        </li>
+                    </ul>
                 </div>
-            </section>
-        </div>
-    </div>
+            </div>
+        </section>
+        
+    </main>
+</div>
 </section>

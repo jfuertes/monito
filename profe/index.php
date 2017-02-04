@@ -34,16 +34,18 @@
                             <span class="btn sign-in-btn btn-white" id="sign-in-btn" data-track-click="topbar toggle" ><?php echo $_SESSION['nombres']." ".$_SESSION['ape_paterno'] ?></span>
                             </div>
                             <div id="loginpop">
-                            <ul  class="popover arrow-top login-popover hidden" id="login-modal" style="width: 250px; top: 42px; right: 20px; left: auto; display: block;">
-                                                            
-                                <li class="center">
-                                    <a href="login/#forgot_password">ver perfil</a>
+                             <ul class="dropdown-menu arrow-top" role="menu" aria-labelledby="dLabel" style="display: block;">
+                                <li>
+                                    <a href="#/">Perfil Profesor</a>
                                 </li>
-                                <li class="center">
-                                    <button ng-click="logout()">Salir</button>
+                                <li>
+                                    <a href="#/perfil">Configuracion</a>
                                 </li>
-                            
-                        </ul></div>
+                                <li>
+                                    <a ng-click="logout()">Cerrar sesión</a>
+                                </li>
+                            </ul>
+                                </div>
                              
                     
                 </div>

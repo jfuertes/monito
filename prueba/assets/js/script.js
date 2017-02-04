@@ -1,6 +1,6 @@
 // script.js
 
-
+ 
     // include ngRoute for all our routing needs
 var loginApp = angular.module('loginApp', ['ngRoute']);
 
