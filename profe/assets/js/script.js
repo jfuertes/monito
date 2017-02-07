@@ -36,19 +36,22 @@ $routeProvider
 
     // create the controller and inject Angular's $scope
 demoApp.controller('mainCtrl', function($scope, $http) {
-  $scope.showvideohep=false;
   
  console.log("mainCtrl");
-          $scope.inicio= function(id){
-           window.location.href='#alumno';
-            console.log("volvi :)");
-      };
-      $scope.showvideo=function(){
-        $scope.showvideohep=true;
-        //alert("prueba");
-        //$("body").addClass("backgroundDark");
-        //$("#videoDemostrativo").addClass("sobretodo");
-      };
+          
+     $scope.getProfe= function(){
+         $http.post('api/getdataProfe.php' )
+                          .success(function(data) {
+                            console.log(data);
+                            $scope.pro=data;
+                           
+                          })
+                          .error(function(data) {
+                            console.log('Error: ' + data);
+                            });
+    }
+    $scope.getProfe();
+
         $scope.logout=function() {
           if (confirm("esta seguro que desea salir?")) {
           // Respuesta afirmativa...
@@ -97,6 +100,7 @@ demoApp.controller('passCtrl', function($scope, $http, $rootScope) {
 
     });
 demoApp.controller('perfilCtrl', function($scope, $http, $rootScope) {
+   $scope.correcto=false;
     $scope.getProfe= function(){
          $http.post('api/getdataProfe.php' )
                           .success(function(data) {
@@ -109,7 +113,28 @@ demoApp.controller('perfilCtrl', function($scope, $http, $rootScope) {
                             });
     }
     $scope.getProfe();
-      $scope.perfilprofesor =function(us){
+     $scope.getDistritos= function(){
+             $http.post('../login/api/getDistritos.php' )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.Distritos=data;
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+         };
+         $scope.getDistritos();
+      $scope.updateProfesor =function(pro){ 
+        console.log(pro);
+               $http.post('api/updateProfe.php', {pro:pro} )
+                          .success(function(data) {
+                            console.log(data);
+                            $scope.correcto=true;
+                            //location.reload();
+                          })
+                          .error(function(data) {
+                            console.log('Error: ' + data);
+                            });
 
       };
 
