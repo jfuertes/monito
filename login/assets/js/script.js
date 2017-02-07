@@ -10,8 +10,18 @@ $routeProvider
 
             // route for the home page
             .when('/', {
-                templateUrl : 'pages/login.html',
+                templateUrl : 'pages/inicio.html',
                 controller  : 'mainCtrl'
+            })
+
+            .when('/loginalumno', {
+                templateUrl : 'pages/loginalumno.html',
+                controller  : 'loginalumnoCtrl'
+            })
+
+            .when('/loginprofesor', {
+                templateUrl : 'pages/loginprofesor.html',
+                controller  : 'loginprofesorCtrl'
             })
 
             // route for the about page
@@ -19,6 +29,8 @@ $routeProvider
                 templateUrl : 'pages/formulario.html',
                 controller  : 'formularioCtrl'
             })
+             
+
 
             // route for the contact page
             .when('/forgot_password', {
@@ -30,7 +42,12 @@ $routeProvider
     });
 
     // create the controller and inject Angular's $scope
+
 loginApp.controller('mainCtrl', function($scope, $http) {
+  
+});
+loginApp.controller('loginprofesorCtrl', function($scope, $http) {
+$scope.registroExitoso=false;
         // create a message to display in our view
         $scope.getDistritos= function(){
              $http.post('api/getDistritos.php' )
@@ -58,7 +75,28 @@ loginApp.controller('mainCtrl', function($scope, $http) {
                                 console.log("data.succesees :)");
                                 document.getElementById("formNProfe").reset();
                                 delete $scope.nu;
-                                window.location.href='#loginCursos';
+                                $scope.registroExitoso=true;
+                            }
+                            else{
+                                console.log("error!!");
+                            }
+                            
+                          })
+                          .error(function(data) {
+                            console.log('Error: ' + data);
+                            });
+                };
+
+                    $scope.login= function(us){
+                  console.log(us);
+
+                  $http.post('api/loginprofe.php', {us :us} )
+                          .success(function(data) {
+                            console.log(data);
+                            if(data.success){
+                                console.log("data.succesees :)");
+                                delete $scope.us;
+                               window.location.href='../';
                             }
                             else{
                                 console.log("error!!");
@@ -70,7 +108,7 @@ loginApp.controller('mainCtrl', function($scope, $http) {
                             });
                                        
 
-                 };
+                };
 
 
     });
@@ -80,6 +118,16 @@ loginApp.controller('formularioCtrl', function($scope) {
   $scope.message = 'Would you like to contact us?';
     });
 
+
+
 loginApp.controller('forgot_passwordCtrl', function($scope) {
+  $scope.message = 'Would you like to contact us?';
+    });
+
+loginApp.controller('mainCtrl', function($scope) {
+  $scope.message = 'Would you like to contact us?';
+    });
+
+loginApp.controller('loginalumnoCtrl', function($scope) {
   $scope.message = 'Would you like to contact us?';
     });
