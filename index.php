@@ -28,7 +28,7 @@
     <body class="global-es logged-out splash-2014 compact-enabled" style="overflow: auto;">
     <header ng-controller="mainCtrl" class="topbar topbar-blue-dark">
         <div class="container">
-        <a href="#/" > <img src="IMG/logo.png" WIDTH=100 HEIGHT=80></a>
+        <a href="#/" class="topbar-brand navigate-home track-click white smaller-logo"> <img src="IMG/logo.png" WIDTH=100 HEIGHT=80></a>
             <div class="topbar-right">
                 
                 <div class="topbar-username dropdown click-trigger" style="padding-bottom: 15px;">
