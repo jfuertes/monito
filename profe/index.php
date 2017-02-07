@@ -58,24 +58,6 @@
         </div>
     </div>
 
-    <section dir="ltr" class="duo-info">
-        <div class="section-inner">
-            <!--<span > <img src="IMG/mono.png"></span>-->
-                <div class="text">
-                    <h2>Como funciona mi profe???.</h2
-                    ><p>mi profe es una plataforma quw mi mi profe es una plataforma quw mi mi profe es una plataforma quw mi mi profe es una plataforma quw mi mi profe es una plataforma quw mi mi 
-                    </p><a style="cursor: hand;" id="video-toggle" class="play-video" ng-click="showvideo()">
-                    <div class="play-border">
-                        <div class="play-button"></div>
-                    </div><strong>Ve cómo lo hacemos</strong>
-                    <!--<div id="videoDemostrativo" ng-show="showvideohep"><iframe width="560" height="315" src="https://www.youtube.com/embed/4gr6_yOoMQc?autoplay=1" frameborder="0" allowfullscreen></iframe></div>-->
-
-                    </a>
-                </div>
-            </div>
-        </section>
-
-    <section dir="ltr" class="website"><div class="section-inner"><h2 class="splash">Cada lección es como un juego.</h2><div class="callout-wrapper"><div class="callout-container-left scroll-animate slide-in"><span class="callout challenges"><span class="splash-icon challenges"></span><div class="text"><h4>Leer, escuchar y escribir</h4><p>Cada lección incluye una variedad de ejercicios de hablar, escuchar, traducción y opción múltiple.</p></div></span><span class="callout grading"><span class="splash-icon check"></span><div class="text"><h4>Evaluación durante la lección</h4><p>Puedes ver tus respuestas correctas al instante. Cuando fallas un ejercicio, te mostramos cómo mejorar rápidamente.</p></div></span></div><span class="left-line-container scroll-animate slide-in"><div class="challenges line"></div><div class="grading line"></div></span><span class="splash-icon computer "></span><span class="right-line-container scroll-animate slide-in"><div class="streak line"></div><div class="heart line"></div></span><div class="callout-container-right scroll-animate slide-in"><span class="callout streak"><span class="splash-icon streak"></span><div class="text"><h4>Tu racha</h4><p>Duolingo te motiva a ir bien registrando cuántos días seguidos aprendes un idioma.</p></div></span><span class="callout heart"><span class="splash-icon heart"></span><div class="text"><h4>Vidas</h4><p>¡Los corazones te mantienen vivo! Los pierdes cuando tu respuesta es incorrecta. Cuando se te acaban debes empezar de nuevo.</p></div></span></div></div></div></section>
 
 
     <section dir="ltr" class="footer dark-theme">
