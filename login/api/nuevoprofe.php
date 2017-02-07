@@ -14,11 +14,12 @@
 	$distritos= $rspta->nu->distritos;
 	$password= md5($rspta->nu->password);
 	$email= $rspta->nu->email;
+	$type= "profesor";
 	
 
 	//verificando si usuario ya existe
 	$q = 'SELECT 1 as RESULTADO
-			FROM mp_profesor
+			FROM mp_login
 			where LOWER(username) = LOWER(:username)';
 	$stmt = $dbh->prepare($q);
 	$stmt->bindParam(':username',  $username, PDO::PARAM_STR);
@@ -33,15 +34,24 @@
 
 		//////////////////////////////////
 
-		$q = 'INSERT into mp_profesor (username, nombres, ape_paterno, ape_materno, password, email, distritos)
-				VALUES (:username, :nombres, :ape_paterno, :ape_materno, :password, :email, :distritos)';
+		$q = 'INSERT into mp_login (username, password, type)
+				VALUES (:username, :password, :type)';
+			
+			$stmt = $dbh->prepare($q);
+			$stmt->bindParam(':username',  $username, PDO::PARAM_STR);
+			$stmt->bindParam(':password',  $password, PDO::PARAM_INT);
+			$stmt->bindParam(':type',  $type, PDO::PARAM_INT);
+
+			$stmt->execute();
+
+		$q = 'INSERT into mp_profesor (username, nombres, ape_paterno, ape_materno, email, distritos)
+				VALUES (:username, :nombres, :ape_paterno, :ape_materno, :email, :distritos)';
 			
 			$stmt = $dbh->prepare($q);
 			$stmt->bindParam(':username',  $username, PDO::PARAM_STR);
 			$stmt->bindParam(':nombres',  $nombres, PDO::PARAM_STR);
 			$stmt->bindParam(':ape_paterno',  $ape_paterno, PDO::PARAM_STR);
 			$stmt->bindParam(':ape_materno',  $ape_materno, PDO::PARAM_STR);
-			$stmt->bindParam(':password',  $password, PDO::PARAM_INT);
 			$stmt->bindParam(':email',  $email, PDO::PARAM_INT);
 			$stmt->bindParam(':distritos',  $distritos, PDO::PARAM_INT);
 		

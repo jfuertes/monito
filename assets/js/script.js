@@ -80,13 +80,13 @@ demoApp.controller('mainCtrl', function($scope, $http) {
           $scope.login= function(us){
                   console.log(us);
 
-                  $http.post('login/api/loginprofe.php', {us :us} )
+                  $http.post('login/api/loginGeneric.php', {us :us} )
                           .success(function(data) {
                             console.log(data);
                             if(data.success){
                                 console.log("data.succesees :)");
                                 delete $scope.us;
-                               window.location.href='profe/';
+                               location.reload();
                             }
                             else{
                                 console.log("error!!");

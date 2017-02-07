@@ -1,0 +1,74 @@
+.footer-container {
+text-align: left; font-size: 13px; } 
+.footer-container a:link { text-decoration: none; } 
+
+.footer-container a:visited { text-decoration: none; } 
+.footer-container a:hover { text-decoration: underline; } 
+.footer-container a:active { text-decoration: underline; } 
+ /* The main sitemap part */ 
+.sitemap {
+    padding-right: 30px; 
+    padding-left: 30px; 
+    margin: 65px auto 0px auto; max-width: 1000px; 
+    display: flex; display: -ms-flexbox; 
+    display: -webkit-box; display: -webkit-flex; 
+    flex-flow: row; flex-wrap:wrap;
+    -ms-flex-wrap: wrap; -ms-flex-direction: row; 
+    -webkit-flex-flow: row wrap; justify-content: space-between;
+    webkit-justify-content:space-between; 
+    -webkit-box-pack:justify; -ms-flex-pack: justify;
+} 
+.footer-column { padding-right: 15px; 
+ padding-bottom: 40px; width: 160px; } /* Responsively adjust width for aligning columns nicely */ 
+ @media (max-width: 1050px) { 
+
+ .footer-column { width: 250px; } } 
+ @media (max-width: 850px) { 
+ .footer-column { width: 280px; } }
+  @media (max-width: 690px) { 
+ .footer-column { width: 200px; } } 
+
+ @media (max-width: 560px) { 
+ .footer-column { width: 170px; } } 
+ @media (max-width: 440px) { 
+
+ .footer-column { width: 130px; } } 
+ .footer-column h3 { color: #ffffff; font-size: 16px;
+  text-transform: none; margin-bottom: 3px; } 
+ .footer-column a { color: #ffffff; } 
+ .footer-column ul { line-height: 110%; } 
+.footer-column li { padding-top: 5px; padding-bottom: 5px; }
+.footer-column .spacer { height: 26px; } 
+/* Site language section for switching UI language */ 
+
+.footer-language-options { 
+	max-width: 1000px; padding: 10px 30px 40px 30px;
+	 margin: 0 auto; color: #ffffff; 
+	 border-top: solid 1px #2B7ABA; direction: ltr; } 
+.footer-language-options h3 { font-size: inherit;
+	text-transform: none; margin-top: 5px;
+	margin-bottom: 0; white-space: nowrap; } 
+.footer-language-options li { display: inline-block; padding-top: 6px; padding-right: 20px; } 
+.footer-language-options a { color: inherit; }
+
+.backgroundDark{
+ position   : absolute;
+    top        : 0;
+    left       : 0;
+    width      : 100%;
+    height     : 100% ;
+    background : #000 !important ;
+    opacity    : 0.6 !important ;
+    filter     : alpha(opacity=60) !important;
+    z-index    : 5;
+    display    : none;
+}
+.sobretodo{
+	  position : absolute;
+    top      : 0;
+    left     : 0;
+    width    : 100%;
+    height   : 100%;
+    z-index  : 10;
+    display  : none;
+}

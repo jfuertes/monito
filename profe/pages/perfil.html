@@ -24,6 +24,7 @@
 
     <section class="page-main main-right">
       <div id="tab-container">
+      <form ng-submit="updateProfesor(pro)">
         <div id="account-content" class="settings-content">
           <button id="submit_button" type="submit" class="btn btn-green right" >Guardar cambios</button>
           <!--mansaje de errores-->
@@ -31,25 +32,32 @@
           <div id="error-message" class="hidden error-message">Error</div>
 
           <h1>Configuración de cuenta</h1>
+          
           <ul class="list-settings">
             <li>
               <label class="label">Usuario</label>
               <div class="input">
-                <input style="width: 334px;" class="large" id="username" name="username" type="text" value="monopajero1234">
+                <input style="width: 334px;" class="large" id="username" ng-model="pro.username" name="username" type="text" disabled>
+              </div>
+            </li>
+            <li>
+              <label class="label">Nombres</label>
+              <div class="input">
+                <input style="width: 334px;" class="large" id="Nombres" ng-model="pro.nombres" name="username" type="text" >
               </div>
             </li>
 
             <li>
               <label class="label">Enlace de youtube</label>
               <div class="input">
-                <input style="width: 334px;" class="large" id="email" name="email" size="30" type="text" value="------------">
+                <input style="width: 334px;" class="large" id="email" name="email" ng-model="pro.link" size="30" type="text" >
               </div>
             </li>
 
             <li>
               <label class="label">Reseña</label>
               <div class="input">
-                <textarea id="bio" name="bio" rows="3" cols="40" style="margin-bottom: 10px; width: 334px;">
+                <textarea id="bio" name="bio" rows="3" cols="40" ng-model="pro.descripcion" style="margin-bottom: 10px; width: 334px;">
                 </textarea>
                 <p class="gray">
                 <span id="bio-count">100</span> caracteres restantes</p>
@@ -62,12 +70,12 @@
                 <ul class="radio-buttons">
                   <li>
                     <label>
-                      <input class="border" id="microphone_on" name="microphone" type="radio" value="true" checked=""> sí</label>
+                      <input class="border" id="microphone_on" type="radio" name="online" value="1" ng-model="pro.online" ng-checked="pro.online!=0"> sí</label>
                   </li>
 
                   <li>
                     <label>
-                    <input class="border" id="microphone_off" name="microphone" type="radio" value="false"> no</label>
+                    <input class="border" id="microphone_off" type="radio" name="online" value="0" ng-model="pro.online" ng-checked="pro.online==0"> no</label>
                   </li>
                 </ul>
               </div>
@@ -77,8 +85,8 @@
               <label class="label">Distrito</label>
               <div class="input">
                 <label class="blue-select no-focus smaller fixed-width">
-                   <select  ng-model="nu.distritos" required>
-                    <option value="">- Selecciones el Distrito -</option>
+                   <select  ng-model="pro.distritos" ng-value="pro.distritos" required>
+                    
                     <option ng-repeat="d in Distritos" value="{{d.id_distrito}}">{{d.nombre}}</option>
                   </select>
                 </label>
@@ -100,7 +108,9 @@
                 </form>
               </div>
             </li>
+            <button ng-show="correcto">cambios actualizados</button>
           </ul>
+          </form>
         </div>
       </div>
     </section>

@@ -1,12 +1,12 @@
 <?php
     session_start();
-    if($_SESSION['type']=="profe"){    
+    if($_SESSION['type']=="profesor"){    
      header('location:profe/');
         //echo "entro";
         //echo "acceso correcto".$_SESSION['login'];
     }
-    else{
-    echo "no hay usuario";
+    else if ($_SESSION['type']=="alumno"){
+        header('location:alumno/');
     }
 ?>
 
