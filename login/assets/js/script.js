@@ -61,10 +61,6 @@ $scope.registroExitoso=false;
          };
          $scope.getDistritos();
 
-            $scope.funcion=function(){
-                        alert("ola");
-            };
-
                 $scope.formNewProf= function(nu){
                   console.log(nu);
 
@@ -128,6 +124,66 @@ loginApp.controller('mainCtrl', function($scope) {
   $scope.message = 'Would you like to contact us?';
     });
 
-loginApp.controller('loginalumnoCtrl', function($scope) {
-  $scope.message = 'Would you like to contact us?';
+loginApp.controller('loginalumnoCtrl', function($scope, $http) {
+  $scope.registroExitoso=false;
+        // create a message to display in our view
+        $scope.getDistritos= function(){
+             $http.post('api/getDistritos.php' )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.Distritos=data;
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+         };
+         $scope.getDistritos();
+
+           
+
+                $scope.formNewAlu= function(nu){
+                  console.log(nu);
+
+                  $http.post('api/nuevoalumno.php', {nu :nu} )
+                          .success(function(data) {
+                            console.log(data);
+                            if(data.success){
+                                console.log("data.succesees :)");
+                                document.getElementById("formNAlu").reset();
+                                delete $scope.nu;
+                                $scope.registroExitoso=true;
+                            }
+                            else{
+                                console.log("error!!");
+                            }
+                            
+                          })
+                          .error(function(data) {
+                            console.log('Error: ' + data);
+                            });
+                };
+
+                    $scope.loginalu= function(us){
+                  console.log(us);
+
+                  $http.post('api/loginalumno.php', {us :us} )
+                          .success(function(data) {
+                            console.log(data);
+                            if(data.success){
+                                console.log("data.succesees :)");
+                                delete $scope.us;
+                               window.location.href='../';
+                            }
+                            else{
+                                console.log("error!!");
+                            }
+                            
+                          })
+                          .error(function(data) {
+                            console.log('Error: ' + data);
+                            });
+                                       
+
+                };
+  
     });

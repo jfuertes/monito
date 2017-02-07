@@ -97,6 +97,21 @@ demoApp.controller('passCtrl', function($scope, $http, $rootScope) {
 
     });
 demoApp.controller('perfilCtrl', function($scope, $http, $rootScope) {
+    $scope.getProfe= function(){
+         $http.post('api/getdataProfe.php' )
+                          .success(function(data) {
+                            console.log(data);
+                            $scope.pro=data;
+                           
+                          })
+                          .error(function(data) {
+                            console.log('Error: ' + data);
+                            });
+    }
+    $scope.getProfe();
+      $scope.perfilprofesor =function(us){
+
+      };
 
     
     });
