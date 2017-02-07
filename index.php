@@ -66,7 +66,7 @@
                                     <a href="login/#forgot_password">Olide mi contraseña</a>
                                 </li>
                                 <li class="center">
-                                    <a href="login/#">Registrate</a>
+                                    <a href="#login">Registrate</a>
                                 </li>
                             
                         </ul></div>
