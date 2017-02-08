@@ -20,6 +20,11 @@ $routeProvider
                 controller  : 'alumnoCtrl'
             })
 
+            .when('/login', {
+                templateUrl : 'pages/login.html',
+                controller  : 'loginCtrl'
+            })
+
             // route for the contact page
             .when('/profesor', {
                 templateUrl : 'pages/profesor.html',
@@ -33,9 +38,15 @@ $routeProvider
 
             })
 
-            .when('/listaProf', {
+            .when('/listaprof', {
                 templateUrl : 'pages/listaProf.html',
                 controller  : 'listaProfCtrl'
+
+            })
+
+            .when('/cursosprof', {
+                templateUrl : 'pages/cursosprof.html',
+                controller  : 'cursosProfCtrl'
 
             })
             .when('/metodo', {
