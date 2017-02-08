@@ -26,13 +26,16 @@
       <div id="tab-container">
       <form ng-submit="updateProfesor(pro)">
         <div id="account-content" class="settings-content">
+
           <button id="submit_button" type="submit" class="btn btn-green right" >Guardar cambios</button>
           <!--mansaje de errores-->
           <div id="confirmation-message" class="hidden save-message">Tus cambios han sido guardados.</div>
           <div id="error-message" class="hidden error-message">Error</div>
 
           <h1>Configuración de cuenta</h1>
-          
+
+          <button  class="btn btn-blue left" ng-show="correcto">Edicion Correcta</button>
+          <hr>
           <ul class="list-settings">
             <li>
               <label class="label">Usuario</label>
