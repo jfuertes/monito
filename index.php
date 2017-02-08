@@ -1,12 +1,14 @@
 <?php
     session_start();
-    if($_SESSION['type']=="profesor"){    
-     header('location:profe/');
-        //echo "entro";
-        //echo "acceso correcto".$_SESSION['login'];
-    }
-    else if ($_SESSION['type']=="alumno"){
-        header('location:alumno/');
+    if(isset($_SESSION['type'])){
+        if($_SESSION['type']=="profesor"){    
+         header('location:profe/');
+            //echo "entro";
+            //echo "acceso correcto".$_SESSION['login'];
+        }
+        else if ($_SESSION['type']=="alumno"){
+            header('location:alumno/');
+        }
     }
 ?>
 
