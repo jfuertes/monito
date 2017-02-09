@@ -104,7 +104,8 @@ $scope.registroExitoso=false;
                             if(data.success){
                                 console.log("data.succesees :)");
                                 delete $scope.us;
-                               window.location.href='../';
+                                location.href=location.protocol+"//"+location.hostname+location.pathname+"../";
+                               //window.location.href='../';
                             }
                             else{
                                 console.log("error!!");
@@ -184,7 +185,8 @@ loginApp.controller('loginalumnoCtrl', function($scope, $http) {
                             if(data.success){
                                 console.log("data.succesees :)");
                                 delete $scope.us;
-                               window.location.href='../';
+                                location.href=location.protocol+"//"+location.hostname+location.pathname+"../";
+                               //window.location.href='../';
                             }
                             else{
                                 console.log("error!!");

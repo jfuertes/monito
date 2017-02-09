@@ -72,7 +72,8 @@ demoApp.controller('mainCtrl', function($scope, $http, $rootScope) {
            $http.post('api/logout.php' )
                 .success(function(data) {
                   console.log(data);
-                  window.location.href='../';
+                  location.href=location.protocol+"//"+location.hostname+location.pathname+"../";
+                  //window.location.href='../';
                 })
                 .error(function(data) {
                   console.log('Error: ' + data);
@@ -96,7 +97,8 @@ demoApp.controller('passCtrl', function($scope, $http, $rootScope) {
                             if(data.success){
                                 console.log("data.succesees :)");
                                 delete $scope.us;
-                               window.location.href='#';
+                               location.href=location.protocol+"//"+location.hostname+location.pathname+"#";
+                               //window.location.href='#';
                             }
                             else{
                                 console.log("error!!");
@@ -118,7 +120,8 @@ demoApp.controller('nivelCtrl', function($scope, $http, $rootScope) {
 $scope.cambiarcurso=true;
            $scope.cursos= function(id){
             $rootScope.cursoxprofe.nivel=id;
-           window.location.href='#cursos';
+            location.href=location.protocol+"//"+location.hostname+location.pathname+"#/cursos";
+           //window.location.href='#cursos';
             console.log($rootScope.cursoxprofe.nivel);
       }
 
@@ -155,11 +158,11 @@ demoApp.controller('listcursosCtrl', function($scope, $http, $rootScope) {
 demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
         
          $scope.presencial= function(){
-            $rootScope.cursoxprofe.modalidad=0;
+            $rootScope.cursoxprofe.modalidad=1;
              $scope.guardarcurso();
          };
           $scope.online= function(){
-            $rootScope.cursoxprofe.modalidad=1;
+            $rootScope.cursoxprofe.modalidad=0;
             $scope.guardarcurso();
          };
            $scope.guardarcurso= function(){
@@ -178,7 +181,8 @@ demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
                     .error(function(data) {
                       console.log('Error: ' + data);
                       });
-            window.location.href='#listcursos';
+                    location.href=location.protocol+"//"+location.hostname+location.pathname+"#/listcursos";
+            //window.location.href='#listcursos';
          };
          
 
@@ -203,7 +207,8 @@ demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
               if(seccion!="0"){
                 
                 $rootScope.cursoxprofe.idcurso=id;
-                window.location.href='#metodo';
+                location.href=location.protocol+"//"+location.hostname+location.pathname+"#/metodo";
+                //window.location.href='#metodo';
             }
 
       };
@@ -275,7 +280,7 @@ demoApp.controller('perfilCtrl', function($scope, $http, $rootScope, upload) {
                           .success(function(data) {
                             console.log(data);
                             $scope.correcto=true;
-                            //location.reload();
+                            location.reload();
                           })
                           .error(function(data) {
                             console.log('Error: ' + data);

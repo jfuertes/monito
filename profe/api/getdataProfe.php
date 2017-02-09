@@ -25,6 +25,9 @@ $look_for = "watch?v=";
 $change_to = "v/";
 
 $changed_text = str_replace($look_for, $change_to, $r["link"]);
+if($r['extension_img']==null){
+	$r['extension_img']="png";
+}
 
 $_SESSION['link2view']=$changed_text;
 	

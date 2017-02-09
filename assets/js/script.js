@@ -72,12 +72,6 @@ $routeProvider
 
             })
 
-            .when('/metodo', {
-                templateUrl : 'pages/metodo.html',
-                controller  : 'metodoCtrl'
-
-            })
-
              .when('/perfilprofe', {
                 templateUrl : 'pages/perfilprofe.html',
                 controller  : 'perfilprofeCtrl'
@@ -168,7 +162,8 @@ demoApp.controller('alumnoCtrl', function($scope, $http, $rootScope) {
 $scope.cambiarcurso=true;
            $scope.cursos= function(id){
             $rootScope.nivel=id;
-           window.location.href='#cursos';
+            location.href=location.protocol+"//"+location.hostname+location.pathname+"#/cursos";
+           //window.location.href='#cursos';
             console.log($rootScope.nivel);
       }
 
@@ -199,6 +194,21 @@ demoApp.controller('listaProfCtrl', function($scope, $http, $rootScope) {
                   console.log('Error: ' + data);
                   });
     });
+demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
+      $scope.online=function(){
+            $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso} )
+                        .success(function(data) {
+                          console.log(data);
+                          $scope.Profes=data;
+                          location.href=location.protocol+"//"+location.hostname+location.pathname+"#/listaprof";
+                          // window.location.href='#listaprof';
+
+                        })
+                        .error(function(data) {
+                          console.log('Error: ' + data);
+                          });
+            };
+    });
 
 
 demoApp.controller('temasCtrl', function($scope) {
@@ -221,7 +231,8 @@ demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
                  $scope.VerSubcursos=true;
             }
               if(seccion!="0"){
-                window.location.href='#metodo';
+                location.href=location.protocol+"//"+location.hostname+location.pathname+"#/metodo";
+                //window.location.href='#metodo';
                 $rootScope.idcurso=id;
             }
 
@@ -252,7 +263,8 @@ demoApp.controller('loginprofesorCtrl', function($scope, $http) {
                         console.log("data.succesees :)");
                         delete $scope.us;
                        //location.reload();
-                       window.location.href='profe/';
+                       location.href=location.protocol+"//"+location.hostname+location.pathname+"profe/";
+                       //window.location.href='profe/';
                     }
                     else{
                         console.log("error!!");
