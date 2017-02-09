@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="assets/css/miprofe2.css">
     <link rel="stylesheet" href="assets/css/miprofe3.css">
     <link rel="stylesheet" href="assets/css/miprofe4.css">
-    <link href="/images/favicon.ico?v=3" rel="shortcut icon" type="image/x-icon">
+    <link href="IMG/logo.png" rel="shortcut icon" type="image/x-icon">
     <style type="text/css"></style>
     <style  href="assets/css/miprofe.css" type="text/css"></style>
     </head>
