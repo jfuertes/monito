@@ -26,11 +26,21 @@
     <header ng-controller="mainCtrl" class="topbar topbar-blue-dark">
         <div class="container">
         <a href="#/" class="topbar-brand navigate-home track-click white smaller-logo"> <img src="IMG/logo.png" WIDTH=100 HEIGHT=80></a>
-        <nav class="topbar-nav">
+        <!--<nav class="topbar-nav">
             <ul class="topbar-nav-main" style="font-size: 15px">
                 <li id="home-nav" class="active">
                     <a href="/">Inicio</a></li>
-                <li id="vocab-nav"><a href="/words">Palabras</a></li><li id="stream-nav"><a href="/activity_stream">Actividad</a></li><li id="questions-nav"><a href="/discussion">Foro</a></li></ul></nav>
+                <li id="vocab-nav">
+                    <a href="/words">Palabras</a>
+                </li>
+                <li id="stream-nav">
+                    <a href="/activity_stream">Actividad</a>
+                </li>
+                <li id="questions-nav">
+                    <a href="/discussion">Foro</a>
+                </li>
+            </ul>
+        </nav>-->
         <div class="topbar-right">
             <div class="topbar-username dropdown click-trigger" style="padding-bottom: 15px;">
                <div id="showloginpop" class="topbar-buttons" style="margin-top: 1px;" >
@@ -81,7 +91,7 @@
                             <h3>Sobre nosotros</h3>
                             <ul>
                                 <li>
-                                   <a href="nosotros/#equipo"">Equipo</a>
+                                   <a href="nosotros/#equipo">Equipo</a>
                                 </li>
                                 <li>
                                     <a href="nosotros/#contactanos">Contáctanos</a>
