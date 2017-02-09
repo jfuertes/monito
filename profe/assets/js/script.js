@@ -163,11 +163,14 @@ demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
             $scope.guardarcurso();
          };
            $scope.guardarcurso= function(){
-            console.log($rootScope.cursoxprofe);
-             id = JSON.stringify($rootScope.cursoxprofe);
-         
-            console.log(id);
-            $http.post('api/guardarcurso.php',{id :id} )
+            console.log($rootScope.cursoxprofe);//que pasa aki!!!
+           //  JSON.stringify($rootScope.cursoxprofe);
+         id= {};
+         id["nivel"]=$rootScope.cursoxprofe.nivel;
+         id["id_curso"]=$rootScope.cursoxprofe.idcurso;
+         id["modalidad"]=$rootScope.cursoxprofe.modalidad;
+            //console.log(id);//locomaricon!!no vas a entender!
+            $http.post('api/guardarcurso.php',{id :id})
                     .success(function(data) {
                       console.log(data);
                      // $scope.Subcursos=data;
@@ -323,7 +326,7 @@ demoApp.controller('perfilCtrl', function($scope, $http, $rootScope, upload) {
 demoApp.filter('filternivel', function() {
   return function(id){
     var niveles = ['Primaria', 'Secundaria', 'Pre', 'Universitario'];
-      return niveles[id];
+      return niveles[id-1];
     };
  
     });

@@ -9,7 +9,7 @@
 	var_dump($rspta);
 	$modalidad= $rspta->id->modalidad;
 
-	$id_curso= $rspta->id->idcurso;
+	$id_curso= $rspta->id->id_curso;
 
 	session_start();
 	$username=$_SESSION['username'];
