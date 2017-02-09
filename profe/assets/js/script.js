@@ -23,7 +23,20 @@ $routeProvider
                 templateUrl : 'pages/cursos.html',
                 controller  : 'cursosCtrl'
             })
+              .when('/nivel', {
+                templateUrl : 'pages/nivel.html',
+                controller  : 'nivelCtrl'
+            })
+               .when('/metodo', {
+                templateUrl : 'pages/metodo.html',
+                controller  : 'metodoCtrl'
 
+            })
+                 .when('/listcursos', {
+                templateUrl : 'pages/listcursos.html',
+                controller  : 'listcursosCtrl'
+
+            })
             // route for the about page
             .when('/perfil', {
                 templateUrl : 'pages/perfil.html',
@@ -100,6 +113,110 @@ demoApp.controller('passCtrl', function($scope, $http, $rootScope) {
 
 
     });
+demoApp.controller('nivelCtrl', function($scope, $http, $rootScope) {
+  $rootScope.cursoxprofe=[];
+$scope.cambiarcurso=true;
+           $scope.cursos= function(id){
+            $rootScope.cursoxprofe.nivel=id;
+           window.location.href='#cursos';
+            console.log($rootScope.cursoxprofe.nivel);
+      }
+
+
+        $scope.message = 'Hi! This is the about page.';
+         $scope.getNivel= function(){
+             $http.post('api/getNivel.php' )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.Nivel=data;
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+         };
+         $scope.getNivel();
+
+    });
+demoApp.controller('listcursosCtrl', function($scope, $http, $rootScope) {
+        
+         $scope.getCursos= function(){
+             $http.post('api/CursosxProfe.php' )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.cursosxprofe=data;
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+         };
+         $scope.getCursos();
+
+    });
+demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
+        
+         $scope.presencial= function(){
+            $rootScope.cursoxprofe.modalidad=0;
+             $scope.guardarcurso();
+         };
+          $scope.online= function(){
+            $rootScope.cursoxprofe.modalidad=1;
+            $scope.guardarcurso();
+         };
+           $scope.guardarcurso= function(){
+            console.log($rootScope.cursoxprofe);
+             id = JSON.stringify($rootScope.cursoxprofe);
+         
+            console.log(id);
+            $http.post('api/guardarcurso.php',{id :id} )
+                    .success(function(data) {
+                      console.log(data);
+                     // $scope.Subcursos=data;
+                    })
+                    .error(function(data) {
+                      console.log('Error: ' + data);
+                      });
+            window.location.href='#listcursos';
+         };
+         
+
+    });
+
+
+demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
+      $scope.ejecutar=function(id, seccion){
+            if(seccion=="0"){
+                   // alert(id);
+                     $http.post('api/getSubcursos.php',{id:id} )
+                    .success(function(data) {
+                      console.log(data);
+                      $scope.Subcursos=data;
+                    })
+                    .error(function(data) {
+                      console.log('Error: ' + data);
+                      });
+
+                 $scope.VerSubcursos=true;
+            }
+              if(seccion!="0"){
+                
+                $rootScope.cursoxprofe.idcurso=id;
+                window.location.href='#metodo';
+            }
+
+      };
+       $scope.getCursos= function(){
+             $http.post('api/getCursosByNivel.php',{nivel:$rootScope.cursoxprofe.nivel} )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.Cursos=data;
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+         };
+         $scope.getCursos();
+    });
+
 demoApp.controller('perfilCtrl', function($scope, $http, $rootScope, upload) {
 
   $scope.uploadFile = function()
@@ -202,3 +319,18 @@ demoApp.controller('perfilCtrl', function($scope, $http, $rootScope, upload) {
     return deferred.promise;
   } 
 }]);
+
+demoApp.filter('filternivel', function() {
+  return function(id){
+    var niveles = ['Primaria', 'Secundaria', 'Pre', 'Universitario'];
+      return niveles[id];
+    };
+ 
+    });
+demoApp.filter('filtermodalidad', function() {
+  return function(id){
+    var niveles = ['online', 'presencial'];
+      return niveles[id];
+    };
+ 
+    });

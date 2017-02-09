@@ -251,7 +251,8 @@ demoApp.controller('loginprofesorCtrl', function($scope, $http) {
                     if(data.success){
                         console.log("data.succesees :)");
                         delete $scope.us;
-                       location.reload();
+                       //location.reload();
+                       window.location.href='profe/';
                     }
                     else{
                         console.log("error!!");
