@@ -1,0 +1,31 @@
+
+<section dir="ltr" class="monument-carousel  choose-course-by-flag fit-to-4-source-langs">
+    <div dir="ltr" class="signup">
+        <div class="hidden splash-signup-form" id="signup-language" style="display: block;">
+            <section class="section-white space">
+                <div class="section-inner-wide section-inner">
+                 <table class="table table-striped">
+				    <thead>
+				      <tr>
+				        <th>Curso</th>
+				        <th>Nivel</th>
+				        <th>Modalidad</th>
+				        <th>opciones</th>
+				      </tr>
+				    </thead>
+				    <tbody>
+				      <tr ng-repeat="cu in cursosxprofe">
+				        <td>{{cu.nombre}}</td>
+				        <td>{{cu.nivel | filternivel}}</td>
+				        <td>{{cu.modalidad | filtermodalidad}}</td>
+				        <td><button ng-click="eliminar($index)">eliminar</button></td>
+				      </tr>
+				     
+				    </tbody>
+  				</table>
+                </div>
+                <div><a href="#nivel"><button btn btn-green right >agregar curso</button></a></div>
+            </section>
+        </div>
+    </div>
+</section>
