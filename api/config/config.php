@@ -2,7 +2,7 @@
 
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
-define('DB_HOST', 'localhost');
+define('DB_HOST', '52.43.220.123);
 define('DB_NAME', 'miprofe');
 
 

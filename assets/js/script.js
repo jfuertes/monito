@@ -54,6 +54,30 @@ $routeProvider
                 controller  : 'metodoCtrl'
 
             })
+            .when('/loginprofesor', {
+                templateUrl : 'pages/loginprofesor.html',
+                controller  : 'loginprofesorCtrl'
+
+            })
+
+            .when('/loginuser', {
+                templateUrl : 'pages/login2.html',
+                controller  : 'login2Ctrl'
+
+            })
+
+            .when('/loginalumno', {
+                templateUrl : 'pages/loginalumno.html',
+                controller  : 'loginalumnoCtrl'
+
+            })
+
+            .when('/metodo', {
+                templateUrl : 'pages/metodo.html',
+                controller  : 'metodoCtrl'
+
+            })
+
              .when('/perfilprofe', {
                 templateUrl : 'pages/perfilprofe.html',
                 controller  : 'perfilprofeCtrl'
@@ -215,8 +239,59 @@ demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
          $scope.getCursos();
     });
 
-demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
-         
+
+demoApp.controller('loginprofesorCtrl', function($scope, $http) {
+
+  $scope.login= function(us){
+          console.log(us);
+
+          $http.post('login/api/loginGeneric.php', {us :us} )
+                  .success(function(data) {
+                    console.log(data);
+                    if(data.success){
+                        console.log("data.succesees :)");
+                        delete $scope.us;
+                       location.reload();
+                    }
+                    else{
+                        console.log("error!!");
+                    }
+                    
+                  })
+                  .error(function(data) {
+                    console.log('Error: ' + data);
+                    });
+                               
+
+  };
+
+
+    });
+
+demoApp.controller('loginalumnoCtrl', function($scope, $http) {
+  
+  $scope.login= function(us){
+          console.log(us);
+
+          $http.post('login/api/loginGeneric.php', {us :us} )
+                  .success(function(data) {
+                    console.log(data);
+                    if(data.success){
+                        console.log("data.succesees :)");
+                        delete $scope.us;
+                       location.reload();
+                    }
+                    else{
+                        console.log("error!!");
+                    }
+                    
+                  })
+                  .error(function(data) {
+                    console.log('Error: ' + data);
+                    });
+                               
+
+  };
 
 
     });

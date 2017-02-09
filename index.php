@@ -14,6 +14,7 @@
 
 <html ng-app="demoApp" class="mobile" dir="ltr" style="height: 100%" lang="es">
     <head>
+    <meta name="theme-color" content="#216b07" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="NOODP">
@@ -36,10 +37,10 @@
                 <div class="topbar-username dropdown click-trigger" style="padding-bottom: 15px;">
                    <div id="showloginpop" class="topbar-buttons" style="margin-top: 1px;" >
                         <span class="sign-in relative"></span>
-                            <span class="btn sign-in-btn btn-white" id="sign-in-btn" data-track-click="topbar toggle" >Iniciar Sesion</span>
+                            <a href="#loginuser"><span class="btn sign-in-btn btn-white" id="sign-in-btn" data-track-click="topbar toggle" >Iniciar Sesion</span></a>
                             </div>
                              <div id="loginpop">
-                            <ul  class="popover arrow-top login-popover hidden" id="login-modal" style="width: 250px; top: 42px; right: 20px; left: auto; display: block;">
+                            <ul  class="popover arrow-top login-popover hidden" id="login-modal" style="width: 250px; top: 42px; right: 20px; left: auto; display: none;">
 
                             <form id="login-form" action="" method="post" accept-charset="utf-8" style="margin: 0;" ng-submit="login(us)">
                                 
