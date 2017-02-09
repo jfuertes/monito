@@ -40,6 +40,17 @@
                 <input style="width: 334px;" class="large" type="text" value="" placeholder="apellido materno" ng-model="nu.ape_materno" required>
               </div>
             </li>
+             <li>
+              <label class="label">Universidad</label>
+              <div class="input">
+                <label class="blue-select no-focus smaller fixed-width">
+                   <select  ng-model="nu.id_uni" required>
+                    <option value="">- Selecciones su UNIversidad -</option>
+                    <option ng-repeat="u in UNI" value="{{u.id_uni}}">{{u.nombre}}</option>
+                  </select>
+                </label>
+              </div>
+            </li>
             <li>
               <label class="label">Distrito</label>
               <div class="input">

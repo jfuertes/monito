@@ -36,7 +36,7 @@
                <div id="showloginpop" class="topbar-buttons" style="margin-top: 1px;" >
                     <span class="sign-in relative"></span>
                         <a href="#/" class="avatar avatar-small " title="monito">
-                        <img src="//s3.amazonaws.com/duolingo-images/avatar/default_2/large">
+                        <img src="../IMG/profes/{{pro.username}}.{{pro.extension_img}}">
                         <span class="ring"></span>
                         </a>
                         <span class="name"><?php echo $_SESSION['nombres']." ".$_SESSION['ape_paterno'] ?></span>

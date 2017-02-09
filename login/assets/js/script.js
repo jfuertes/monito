@@ -61,6 +61,18 @@ $scope.registroExitoso=false;
          };
          $scope.getDistritos();
 
+           $scope.getUNI= function(){
+             $http.post('api/getUNI.php' )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.UNI=data;
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+         };
+         $scope.getUNI();
+
                 $scope.formNewProf= function(nu){
                   console.log(nu);
 

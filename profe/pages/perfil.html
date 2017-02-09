@@ -5,7 +5,7 @@
       <div class="inner">
           <div class="box-colored bg-white">
               <h2 class="view-profile-headline">
-                  <a href="/nombredeusuario" class="avatar avatar-small " title="nombredeusuario">  <img src="//s3.amazonaws.com/duolingo-images/avatar/default_2/large"><span class="ring"></span></a>  nombredeusuario <a href="#/" class="username">Ver tu perfil</a>
+                  <a class="avatar avatar-small " title="nombredeusuario">  <img src="../IMG/profes/{{pro.username}}.{{pro.extension_img}}"><span class="ring"></span></a>  {{pro.username}} <a href="#/" class="username">Ver tu perfil</a>
               </h2>
               <ul id="settings_tab" class="nav-sidebar">
                   <li class="active">
@@ -96,24 +96,18 @@
               </div>
             </li>
             <li>
-              <label class="label">Imagen de perfil</label>
-              <div class="input">
-                <div class="avatar-large left" style="margin-right: 15px;">
-                  <a href="/luislinare375596" class="avatar avatar-large  " src="undefined?1486114299650">
-                    <img src="//s3.amazonaws.com/duolingo-images/avatar/default_2/xlarge">
-                    <span class="ring"></span>
-                  </a>
-                </div>
-                <form id="avatar-upload" action="/avatars" method="post" enctype="multipart/form-data">
-                  <input type="hidden" name="user_id" value="248186213">
-                  <input id="image-file" type="file" name="image" class="">
-                  <br>tamaño máximo = 1 MB
-                </form>
-              </div>
+             
             </li>
             <button ng-show="correcto">cambios actualizados</button>
           </ul>
           </form>
+            <form name="upload" ng-submit="uploadFile()">
+             <label class="label">Imagen de perfil</label>
+              
+                  <input type="file" name="file" uploader-model="file" /> <br>
+                  <br>tamaño máximo = 10 MB
+                   <input type="submit" value="Enviar"> 
+                </form>
         </div>
       </div>
     </section>
