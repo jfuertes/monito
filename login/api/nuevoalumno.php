@@ -59,6 +59,7 @@
 
 			$stmt->execute();
 			$rpta=array('success' => 'El usuario fue creado exitosamente');
+			copy("../../IMG/mono.png", "../../IMG/alumnos/".$username.".png");
 	}
 	echo json_encode($rpta);
 ?>

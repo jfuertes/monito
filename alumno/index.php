@@ -25,27 +25,46 @@
     <body class="global-es logged-out splash-2014 compact-enabled" style="overflow: auto;">
     <header ng-controller="mainCtrl" class="topbar topbar-blue-dark">
         <div class="container">
-        <a href="#/" > <img src="IMG/logo.png" WIDTH=100 HEIGHT=80></a>
-            <div class="topbar-right">
-                
-                <div class="topbar-username dropdown click-trigger" style="padding-bottom: 15px;">
-                   <div id="showloginpop" class="topbar-buttons" style="margin-top: 1px;" >
-                        <span class="sign-in relative"></span>
-                            <span class="btn sign-in-btn btn-white" id="sign-in-btn" data-track-click="topbar toggle" ><?php echo $_SESSION['nombres']." ".$_SESSION['ape_paterno'] ?></span>
+        <a href="#/" class="topbar-brand navigate-home track-click white smaller-logo"> <img src="IMG/logo.png" WIDTH=100 HEIGHT=80></a>
+        <!--<nav class="topbar-nav">
+            <ul class="topbar-nav-main" style="font-size: 15px">
+                <li id="home-nav" class="active">
+                    <a href="/">Inicio</a></li>
+                <li id="vocab-nav">
+                    <a href="/words">Palabras</a>
+                </li>
+                <li id="stream-nav">
+                    <a href="/activity_stream">Actividad</a>
+                </li>
+                <li id="questions-nav">
+                    <a href="/discussion">Foro</a>
+                </li>
+            </ul>
+        </nav>-->
+        <div class="topbar-right">
+            <div class="topbar-username dropdown click-trigger" style="padding-bottom: 15px;">
+               <div id="showloginpop" class="topbar-buttons" style="margin-top: 1px;" >
+                    <span class="sign-in relative"></span>
+                        <a href="#/" class="avatar avatar-small " title="monito">
+                        <img src="../IMG/alumnos/{{alu.username}}.{{alu.extension_img}}">
+                        <span class="ring"></span>
+                        </a>
+                        <span class="name"><?php echo $_SESSION['nombres']." ".$_SESSION['ape_paterno'] ?></span>
+                        <span class="icon icon-arrow-down-white"></span>
+                        </div>
+                        <div id="loginpop">
+                         <ul class="dropdown-menu arrow-top" role="menu" aria-labelledby="dLabel" style="display: block;">
+                            <li>
+                                <a href="#/">Perfil De Alumno</a>
+                            </li>
+                            <li>
+                                <a href="#/perfil">Configuracion</a>
+                            </li>
+                            <li>
+                                <a ng-click="logout()">Cerrar sesión</a>
+                            </li>
+                        </ul>
                             </div>
-                            <div id="loginpop">
-                             <ul class="dropdown-menu arrow-top" role="menu" aria-labelledby="dLabel" style="display: block;">
-                                <li>
-                                    <a href="#/">Perfil Profesor</a>
-                                </li>
-                                <li>
-                                    <a href="#/perfil">Configuracion</a>
-                                </li>
-                                <li>
-                                    <a ng-click="logout()">Cerrar sesión</a>
-                                </li>
-                            </ul>
-                                </div>
                              
                     
                 </div>

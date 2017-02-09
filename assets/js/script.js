@@ -292,7 +292,8 @@ demoApp.controller('loginalumnoCtrl', function($scope, $http) {
                     if(data.success){
                         console.log("data.succesees :)");
                         delete $scope.us;
-                       location.reload();
+                         location.href=location.protocol+"//"+location.hostname+location.pathname+"alumno/";
+                       //location.reload();
                     }
                     else{
                         console.log("error!!");
