@@ -208,6 +208,19 @@ demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
                           console.log('Error: ' + data);
                           });
             };
+              $scope.presencial=function(){
+            $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso} )
+                        .success(function(data) {
+                          console.log(data);
+                          $scope.Profes=data;
+                          location.href=location.protocol+"//"+location.hostname+location.pathname+"#/listaprof";
+                          // window.location.href='#listaprof';
+
+                        })
+                        .error(function(data) {
+                          console.log('Error: ' + data);
+                          });
+            };
     });
 
 
