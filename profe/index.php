@@ -16,7 +16,7 @@
     <link rel="shortcut icon" href="IMG/logo.png">
     <link rel="stylesheet" href="assets/css/miprofe.css">
     <link rel="stylesheet" href="assets/css/miprofe2.css">
-    <link rel="stylesheet" href="../assets/css/miprofe3.css">
+    <link rel="stylesheet" href="assets/css/miprofe3.css">
     <link rel="stylesheet" href="assets/css/miprofe4.css">
     <link href="/images/favicon.ico?v=3" rel="shortcut icon" type="image/x-icon">
     <style type="text/css"></style>
@@ -82,60 +82,6 @@
     <section dir="ltr" class="footer dark-theme">
         <div class="section-inner">
             <h2>Empieza a aprender con los profesores</h2>
-                <footer id="footer-sitemap">
-                <link href="assets/css/miprofe.css" type="text/css"> </link>
-
-                <div class="footer-container">
-                    <div class="sitemap">
-                        <div class="footer-column">
-                            <h3>Sobre nosotros</h3>
-                            <ul>
-                                <li>
-                                   <a href="nosotros/#equipo">Equipo</a>
-                                </li>
-                                <li>
-                                    <a href="nosotros/#contactanos">Contáctanos</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="footer-column">
-                            <h3>Productos</h3>
-                            <ul>
-                                <li>
-                                    <a href="nosotros/#miprofe">Miprofe</a>
-                                </li>
-                                <li>
-                                    <a href="nosotros/#miprofe_escuelas">Miprofe  para Escuelas</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="footer-column">
-                            <h3>Ayuda y Soporte</h3>
-                            <ul>
-                                <li>
-                                    <a href="nosotros/#soluciones">Solución de problemas</a>
-                                </li>
-                                <li>
-                                    <a href="nosotros/#ayuda_escuelas">Ayuda  Escuelas</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="footer-column">
-                            <h3>Social</h3>
-                            <ul>
-                                <li>
-                                    <a href="https://www.facebook.com/">Facebook</a>
-                                </li>
-                                <li>
-                                    <a href="https://twitter.com/">Twitter</a>
-                                </li>
-                                <li><a href="https://www.youtube.com/">YouTube</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
     </section>
     <script src="assets/plugins/jquery-1.10.2.js"></script>
