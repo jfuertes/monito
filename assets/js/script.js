@@ -184,11 +184,15 @@ $scope.cambiarcurso=true;
     });
 
 demoApp.controller('listaProfCtrl', function($scope, $http, $rootScope) {
-
+  $scope.SinProfes=false;
     $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso} )
                 .success(function(data) {
                   console.log(data);
                   $scope.Profes=data;
+                  if(data.length==0){
+                    $scope.SinProfes=true;
+                  }
+
                 })
                 .error(function(data) {
                   console.log('Error: ' + data);
