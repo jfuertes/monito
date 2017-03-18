@@ -165,6 +165,7 @@ loginApp.controller('loginalumnoCtrl', function($scope, $http) {
                                 document.getElementById("formNAlu").reset();
                                 delete $scope.nu;
                                 $scope.registroExitoso=true;
+                                console.log(  $scope.registroExitoso);
                             }
                             else{
                                 console.log("error!!");

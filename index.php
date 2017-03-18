@@ -6,9 +6,9 @@
             //echo "entro";
             //echo "acceso correcto".$_SESSION['login'];
         }
-       // else if ($_SESSION['type']=="alumno"){
-       //     header('location:alumno/');
-       // }
+        else if ($_SESSION['type']=="alumno"){
+           header('location:alumno/');
+        }
     }
 ?>
 
