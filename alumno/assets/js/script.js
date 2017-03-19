@@ -2,7 +2,7 @@
 
 
     // include ngRoute for all our routing needs
-var demoApp = angular.module('demoApp', ['ngRoute']);
+var demoApp = angular.module('demoApp', ['ngRoute','ui.bootstrap']);
 
     // configure our routes
 demoApp.config(function($routeProvider) {
@@ -73,6 +73,21 @@ demoApp.controller('mainCtrl', function($scope, $http) {
 demoApp.controller('passCtrl', function($scope, $http, $rootScope) {
   $scope.error=false;
 
+   $scope.alerts = [];
+
+    $scope.newAlert = function(mensaje, tipo, tiempo) {
+        $scope.alerts.push({msg: mensaje, type: tipo, tiempo: tiempo});
+
+        $('html,body').animate({
+            scrollTop: $("#alerta").offset().top
+        }, 500);
+    };
+
+    $scope.closeAlert = function(index) {
+      $scope.alerts.splice(index, 1);
+    };
+
+
           $scope.formNewPass= function(us){
                   console.log(us);
 
@@ -82,7 +97,9 @@ demoApp.controller('passCtrl', function($scope, $http, $rootScope) {
                             if(data.success){
                                 console.log("data.succesees :)");
                                 delete $scope.us;
-                                location.href=location.protocol+"//"+location.hostname+location.pathname+"#";
+                                
+                                $scope.newAlert('La importación se realizó correctamente','success','3000');
+                                //location.href=location.protocol+"//"+location.hostname+location.pathname+"#";
                                //window.location.href='#';
                             }
                             else{

@@ -88,9 +88,17 @@
     </section>
     <script src="assets/plugins/jquery-1.10.2.js"></script>
     <script src="assets/plugins/bootstrap.js"></script>
+ <link rel="stylesheet" href="assets/plugins/bootstrap.min.css">
+    
     <script src="assets/plugins/angular.min.js" type="text/javascript"></script>
+
+    <script src="assets/plugins/angular-touch.min.js"></script>
+    <script src="assets/plugins/angular-animate.min.js"></script>
+
     <script src="assets/plugins/angular-route.js" type="text/javascript"></script>
     <script src="assets/js/script.js" type="text/javascript"></script>
+       <script src="assets/plugins/ui-bootstrap.min.js"></script>
+       <script src="assets/plugins/ui-bootstrap.min.js"></script>
     <script type="text/javascript">
      $("#loginpop").fadeOut();
         $(document).ready(function(){

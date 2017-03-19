@@ -1,3 +1,4 @@
+<div class="container-fluid" id="alerta">
 <div id="app" class="settings">
   <main class="main-right">
 
@@ -21,8 +22,14 @@
           </div>
       </div>
     </section>
-
+    
+    <!-- Alertas -->
+    <div>
+        <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" dismiss-on-timeout="{{alert.tiempo}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+    </div>
+    <!-- /Alertas -->
     <section class="page-main main-right">
+    
       <div id="tab-container">
         <div id="password-content">
         <form id="formNPass" ng-submit="formNewPass(us)">
