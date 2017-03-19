@@ -300,7 +300,7 @@ demoApp.controller('perfilCtrl', function($scope, $http, $rootScope, upload) {
                           .success(function(data) {
                             console.log(data);
                             $scope.correcto=true;
-                            location.reload();
+                           // location.reload();
                           })
                           .error(function(data) {
                             console.log('Error: ' + data);
