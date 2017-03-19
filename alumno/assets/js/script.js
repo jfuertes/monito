@@ -2,7 +2,7 @@
 
 
     // include ngRoute for all our routing needs
-var demoApp = angular.module('demoApp', ['ngRoute','ui.bootstrap']);
+var demoApp = angular.module('demoApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap']);
 
     // configure our routes
 demoApp.config(function($routeProvider) {
@@ -31,6 +31,32 @@ $routeProvider
             .when('/perfil', {
                 templateUrl : 'pages/perfil.html',
                 controller  : 'perfilCtrl'
+            })
+            .when('/alumno', {
+                templateUrl : 'pages/alumno.html',
+                controller  : 'alumnoCtrl'
+            })
+
+                   // route for the contact page
+       
+                     .when('/listaprof', {
+                templateUrl : 'pages/listaProf.html',
+                controller  : 'listaProfCtrl'
+
+            })
+
+       
+            .when('/metodo', {
+                templateUrl : 'pages/metodo.html',
+                controller  : 'metodoCtrl'
+
+            })
+        
+          
+             .when('/perfilprofe', {
+                templateUrl : 'pages/perfilprofe.html',
+                controller  : 'perfilprofeCtrl'
+
             })
             .otherwise({ templateUrl : 'pages/notfound.html' 
         });
@@ -70,6 +96,111 @@ demoApp.controller('mainCtrl', function($scope, $http) {
     });
 
 
+demoApp.controller('alumnoCtrl', function($scope, $http, $rootScope) {
+$scope.cambiarcurso=true;
+           $scope.cursos= function(id){
+            $rootScope.nivel=id;
+            location.href=location.protocol+"//"+location.hostname+location.pathname+"#/cursos";
+           //window.location.href='#cursos';
+            console.log($rootScope.nivel);
+      }
+
+
+        $scope.message = 'Hi! This is the about page.';
+         $scope.getNivel= function(){
+             $http.post('api/getNivel.php' )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.Nivel=data;
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+         };
+         $scope.getNivel();
+
+    });
+demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
+      $scope.ejecutar=function(id, seccion){
+            if(seccion=="0"){
+                   // alert(id);
+                     $http.post('api/getSubcursos.php',{id:id} )
+                    .success(function(data) {
+                      console.log(data);
+                      $scope.Subcursos=data;
+                    })
+                    .error(function(data) {
+                      console.log('Error: ' + data);
+                      });
+
+                 $scope.VerSubcursos=true;
+            }
+              if(seccion!="0"){
+                location.href=location.protocol+"//"+location.hostname+location.pathname+"#/metodo";
+                //window.location.href='#metodo';
+                $rootScope.idcurso=id;
+            }
+
+      };
+       $scope.getCursos= function(){
+             $http.post('api/getCursosByNivel.php',{nivel:$rootScope.nivel} )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.Cursos=data;
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+         };
+         $scope.getCursos();
+    });
+
+
+demoApp.controller('listaProfCtrl', function($scope, $http, $rootScope) {
+  $scope.SinProfes=false;
+    $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso} )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.Profes=data;
+                  if(data.length==0){
+                    $scope.SinProfes=true;
+                  }
+
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+    });
+demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
+      $scope.online=function(){
+            $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso} )
+                        .success(function(data) {
+                          console.log(data);
+                          $scope.Profes=data;
+                          location.href=location.protocol+"//"+location.hostname+location.pathname+"#/listaprof";
+                          // window.location.href='#listaprof';
+
+                        })
+                        .error(function(data) {
+                          console.log('Error: ' + data);
+                          });
+            };
+              $scope.presencial=function(){
+            $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso} )
+                        .success(function(data) {
+                          console.log(data);
+                          $scope.Profes=data;
+                          location.href=location.protocol+"//"+location.hostname+location.pathname+"#/listaprof";
+                          // window.location.href='#listaprof';
+
+                        })
+                        .error(function(data) {
+                          console.log('Error: ' + data);
+                          });
+            };
+    });
+
+
 demoApp.controller('passCtrl', function($scope, $http, $rootScope) {
   $scope.error=false;
 
@@ -87,7 +218,18 @@ demoApp.controller('passCtrl', function($scope, $http, $rootScope) {
       $scope.alerts.splice(index, 1);
     };
 
+   $scope.getAlumno= function(){
+         $http.post('api/getdataAlumno.php' )
+                          .success(function(data) {
+                            console.log(data);
+                            $scope.alu=data;
 
+                          })
+                          .error(function(data) {
+                            console.log('Error: ' + data);
+                            });
+    }
+    $scope.getAlumno();
           $scope.formNewPass= function(us){
                   console.log(us);
 
@@ -170,6 +312,7 @@ demoApp.controller('perfilCtrl', function($scope, $http, $rootScope, upload) {
                             });
       };
     })
+
 .directive('uploaderModel', ["$parse", function ($parse) {
   return {
     restrict: 'A',

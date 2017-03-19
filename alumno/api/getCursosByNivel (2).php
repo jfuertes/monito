@@ -8,15 +8,12 @@
 
 
 	$rspta = json_decode(file_get_contents("php://input"));
-	$id_curso= $rspta->id_curso;
-	
+	$nivel= $rspta->nivel;
 
-	$q = 'SELECT profecurso.*, mp_profesor.*
-		from profecurso inner join mp_profesor
-		on profecurso.username = mp_profesor.username
-where id_curso=:id_curso';
+	$q = "SELECT *
+		from mp_curso where nivel=:nivel and (seccion='0' OR seccion IS NULL)";
 	$stmt = $dbh->prepare($q);
-	$stmt->bindParam(':id_curso', $id_curso, PDO::PARAM_INT);
+	$stmt->bindParam(':nivel', $nivel, PDO::PARAM_INT);
 	$stmt->execute();
 	$r = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

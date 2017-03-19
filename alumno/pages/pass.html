@@ -2,18 +2,18 @@
 <div id="app" class="settings">
   <main class="main-right">
 
-    <section class="page-sidebar sidebar-right">
+   <section class="page-sidebar sidebar-right">
       <div class="inner">
           <div class="box-colored bg-white">
               <h2 class="view-profile-headline">
-                  <a href="/nombredeusuario" class="avatar avatar-small " title="nombredeusuario">  <img src="//s3.amazonaws.com/duolingo-images/avatar/default_2/large"><span class="ring"></span></a>  nombredeusuario <a href="#/" class="username">Ver tu perfil</a>
+                  <a class="avatar avatar-small " title="nombredeusuario">  <img src="../IMG/alumnos/{{alu.username}}.{{alu.extension_img}}"><span class="ring"></span></a>  {{alu.username}} <a href="#/" class="username">Ver tu perfil</a>
               </h2>
               <ul id="settings_tab" class="nav-sidebar">
                   <li class="">
                       <a href="#perfil">Perfil</a>
                   </li>
                   <li class="">
-                      <a href="../#/alumno" >Cursos</a>
+                      <a href="../#buscarcurso" >Buscar Cursos</a>
                   </li>
                   <li class="active">
                       <a href="#pass">Contraseña</a>
@@ -22,14 +22,13 @@
           </div>
       </div>
     </section>
-    
     <!-- Alertas -->
     <div>
         <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" dismiss-on-timeout="{{alert.tiempo}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
     </div>
     <!-- /Alertas -->
     <section class="page-main main-right">
-    
+
       <div id="tab-container">
         <div id="password-content">
         <form id="formNPass" ng-submit="formNewPass(us)">
