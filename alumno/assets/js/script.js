@@ -28,11 +28,7 @@ $routeProvider
                 controller  : 'perfilCtrl'
             })
             // route for the about page
-            .when('/perfil', {
-                templateUrl : 'pages/perfil.html',
-                controller  : 'perfilCtrl'
-            })
-            .when('/alumno', {
+           .when('/alumno', {
                 templateUrl : 'pages/alumno.html',
                 controller  : 'alumnoCtrl'
             })
@@ -54,7 +50,7 @@ $routeProvider
         
           
              .when('/perfilprofe', {
-                templateUrl : 'pages/perfilprofe.html',
+                templateUrl : 'pages/perfilprofe.php',
                 controller  : 'perfilprofeCtrl'
 
             })
@@ -156,7 +152,7 @@ demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
     });
 
 
-demoApp.controller('listaProfCtrl', function($scope, $http, $rootScope) {
+demoApp.controller('listaProfCtrl', function($scope, $http, $rootScope) { 
   $scope.SinProfes=false;
     $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso} )
                 .success(function(data) {
@@ -170,6 +166,12 @@ demoApp.controller('listaProfCtrl', function($scope, $http, $rootScope) {
                 .error(function(data) {
                   console.log('Error: ' + data);
                   });
+
+    $scope.ejecutar=function(username){
+         location.href=location.protocol+"//"+location.hostname+location.pathname+"#/perfilprofe";
+                //window.location.href='#metodo';
+                $rootScope.usernameprofe=username;
+    }
     });
 demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
       $scope.online=function(){
@@ -259,7 +261,21 @@ demoApp.controller('passCtrl', function($scope, $http, $rootScope) {
 
 
     });
+demoApp.controller('perfilprofeCtrl', function($scope, $http, $rootScope) { 
+$scope.antesContactar=true;
+    $http.post('api/getProfeByusername.php', {username: $rootScope.usernameprofe} )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.pro=data;
+                  if(data.length==0){
+                    $scope.SinProfes=true;
+                  }
 
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+    });
 demoApp.controller('perfilCtrl', function($scope, $http, $rootScope, upload) {
 
   $scope.uploadFile = function()

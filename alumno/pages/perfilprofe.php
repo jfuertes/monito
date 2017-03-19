@@ -55,22 +55,27 @@
             <h1 class="profile-header-username">{{pro.username}}</h1>
             <h2 class="profile-header-subline ">
                 <span class="real-name">{{pro.nombres}}  {{pro.ape_paterno}}</span>
-                <ul class="user-social-links">
-                    <li><a href="http://www.facebook.com/" rel="nofollow" target="_blank"><span class="icon icon-fb-white-small"></span></a>
-                    </li>
-                </ul>
+                
 
             </h2>
            
             </header>
             <?php
    session_start();
-       echo '<iframe width="560" height="315" src="'.$_SESSION['link2view'].'" frameborder="0" allowfullscreen></iframe>';
+        echo '<iframe width="560" height="315" src="'.$_SESSION['link2view'].'" frameborder="0" allowfullscreen></iframe>';
     
  ?>
+ <div ng-show="antesContactar">
+ <p>para mostrar numeros telefonicos, correo y chat contactelo si esta seguro de quere hacerlo</p>
+             <button id="submit_button" type="submit" class="btn btn-green right" ng-click="antesContactar = false">Contactar</button></div>
 
 
-             
+        <div ng-show="!antesContactar">
+            <h2 class="profile-header-subline ">
+                <span class="real-name">{{pro.celular}} - {{pro.telefono}}</span>
+                <span class="real-name">{{pro.email}} }</span>
+            </h2>
+        </div>
         </section>
     </main>
 </div>

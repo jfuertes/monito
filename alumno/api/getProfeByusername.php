@@ -6,8 +6,10 @@
 	$db  = new dbConnect();
 	$dbh = $db->conectardb();
 	
+		
+	$rspta = json_decode(file_get_contents("php://input"));
+	$username= $rspta->username;
 	
-	session_start();
 
 	$q = 'SELECT mp_uni.*, mp_profesor.* 
 			FROM mp_profesor INNER JOIN mp_uni 
@@ -15,7 +17,7 @@
 			where mp_profesor.username=:username';
 			
 	$stmt = $dbh->prepare($q);
-	$stmt->bindParam(':username', $_SESSION['username'], PDO::PARAM_STR);
+	$stmt->bindParam(':username', $username, PDO::PARAM_STR);
 	$stmt->execute();
 	$r = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	$r=$r[0];
