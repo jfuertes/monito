@@ -27,6 +27,16 @@ $routeProvider
                 templateUrl : 'pages/perfil.html',
                 controller  : 'perfilCtrl'
             })
+
+          .when('/comentario', {
+                templateUrl : 'pages/comentario.html',
+                controller  : 'comentarioCtrl'
+            })
+
+            .when('/historial', {
+                templateUrl : 'pages/historial.html',
+                controller  : 'historialCtrl'
+            })
             // route for the about page
            .when('/alumno', {
                 templateUrl : 'pages/alumno.html',
