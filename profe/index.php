@@ -8,7 +8,8 @@
  ?>
 
 <html ng-app="demoApp" class="mobile" dir="ltr" style="height: 100%" lang="es">
-    <head>
+
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="NOODP">
@@ -21,13 +22,15 @@
     <link rel="stylesheet" href="assets/css/miprofe4.css">
     <link href="/images/favicon.ico?v=3" rel="shortcut icon" type="image/x-icon">
     <style type="text/css"></style>
-    <style  href="assets/css/miprofe.css" type="text/css"></style>
-    </head>
-    <body class="global-es logged-out splash-2014 compact-enabled" style="overflow: auto;">
+    <style href="assets/css/miprofe.css" type="text/css"></style>
+</head>
+
+<body class="global-es logged-out splash-2014 compact-enabled" style="overflow: auto;">
     <header ng-controller="mainCtrl" class="topbar topbar-blue-dark">
         <div class="container">
-        <a href="#/" class="topbar-brand navigate-home track-click white smaller-logo"> <img src="IMG/logo.png" WIDTH=100 HEIGHT=80></a>
-        <!--<nav class="topbar-nav">
+            <a href="#/" class="topbar-brand navigate-home track-click white smaller-logo"> <img src="IMG/logo.png" WIDTH=100 HEIGHT=80>
+            </a>
+            <!--<nav class="topbar-nav">
             <ul class="topbar-nav-main" style="font-size: 15px">
                 <li id="home-nav" class="active">
                     <a href="/">Inicio</a></li>
@@ -42,19 +45,19 @@
                 </li>
             </ul>
         </nav>-->
-        <div class="topbar-right">
-            <div class="topbar-username dropdown click-trigger" style="padding-bottom: 15px;">
-               <div id="showloginpop" class="topbar-buttons" style="margin-top: 1px;" >
-                    <span class="sign-in relative"></span>
+            <div class="topbar-right">
+                <div class="topbar-username dropdown click-trigger" style="padding-bottom: 15px;">
+                    <div id="showloginpop" class="topbar-buttons" style="margin-top: 1px;">
+                        <span class="sign-in relative"></span>
                         <a href="#/" class="avatar avatar-small " title="monito">
-                        <img src="../IMG/profes/{{pro.username}}.{{pro.extension_img}}">
-                        <span class="ring"></span>
+                            <img src="../IMG/profes/{{pro.username}}.{{pro.extension_img}}">
+                            <span class="ring"></span>
                         </a>
                         <span class="name"><?php echo $_SESSION['nombres']." ".$_SESSION['ape_paterno'] ?></span>
                         <span class="icon icon-arrow-down-white"></span>
-                        </div>
-                        <div id="loginpop">
-                         <ul class="dropdown-menu arrow-top" role="menu" aria-labelledby="dLabel" style="display: block;">
+                    </div>
+                    <div id="loginpop">
+                        <ul class="dropdown-menu arrow-top" role="menu" aria-labelledby="dLabel" style="display: block;">
                             <li>
                                 <a href="#/">Perfil Profesor</a>
                             </li>
@@ -65,9 +68,9 @@
                                 <a ng-click="logout()">Cerrar sesión</a>
                             </li>
                         </ul>
-                            </div>
-                             
-                    
+                    </div>
+
+
                 </div>
             </div>
         </div>
@@ -91,18 +94,18 @@
     <script src="assets/plugins/angular-route.js" type="text/javascript"></script>
     <script src="assets/js/script.js" type="text/javascript"></script>
     <script type="text/javascript">
-     $("#loginpop").fadeOut();
-        $(document).ready(function(){
+        $("#loginpop").fadeOut();
+        $(document).ready(function() {
             $("#loginpop").fadeOut(0);
-            $("#showloginpop").click(function(){
-                if( $('#loginpop').is(":visible")==false){
+            $("#showloginpop").click(function() {
+                if ($('#loginpop').is(":visible") == false) {
                     $("#loginpop").fadeIn();
-                }
-                else{
-                $("#loginpop").fadeOut();
+                } else {
+                    $("#loginpop").fadeOut();
                 }
             });
         });
     </script>
-    </body>
+</body>
+
 </html>
