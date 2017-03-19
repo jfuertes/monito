@@ -1,10 +1,10 @@
 <?php
-    session_start();
+    /*session_start();
     if($_SESSION['type']!="profesor"){    
      header('location:../');
         //echo "entro";
         //echo "acceso correcto".$_SESSION['login'];
-    }
+    }*/
  ?>
 
 <html ng-app="demoApp" class="mobile" dir="ltr" style="height: 100%" lang="es">
@@ -14,6 +14,7 @@
     <meta name="robots" content="NOODP">
     <title>MiProfe.club</title>
     <link rel="shortcut icon" href="IMG/logo.png">
+    <link rel="stylesheet" href="../assets/css/estilos.css">
     <link rel="stylesheet" href="assets/css/miprofe.css">
     <link rel="stylesheet" href="assets/css/miprofe2.css">
     <link rel="stylesheet" href="assets/css/miprofe3.css">

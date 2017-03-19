@@ -23,6 +23,16 @@ $routeProvider
                 templateUrl : 'pages/cursos.html',
                 controller  : 'cursosCtrl'
             })
+
+            .when('/comentario', {
+                templateUrl : 'pages/comentario.html',
+                controller  : 'comentarioCtrl'
+            })
+
+            .when('/historial', {
+                templateUrl : 'pages/historial.html',
+                controller  : 'historialCtrl'
+            })
               .when('/nivel', {
                 templateUrl : 'pages/nivel.html',
                 controller  : 'nivelCtrl'
