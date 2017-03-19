@@ -2,12 +2,13 @@
 
 <section dir="ltr" class="monument-cfondo  choose-course-by-flag fit-to-4-source-langs">
 
-  <div id="app" class="settings" ng-hide="registroExitoso">
+  <div id="app" class="settings" >
   <main class="main-right">
     <section class="page-main main-right">
       <div id="tab-container">
         <div id="profile-content" class="settings-content">
           <h1>Registro de Profesor</h1>
+          <div  class="settings" ng-show="errorCrear"><p style="color:red">usuario ya existe intentelo de nuevo</p></div>
           <form id="formNProfe" ng-submit="formNewProf(nu)">
           <ul class="list-settings language-direction">
             <li>
