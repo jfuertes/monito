@@ -49,7 +49,7 @@ $routeProvider
             })
         
           
-             .when('/perfilprofe', {
+             .when('/perfilprofe/:id', {
                 templateUrl : 'pages/perfilprofe.php',
                 controller  : 'perfilprofeCtrl'
 
@@ -261,12 +261,16 @@ demoApp.controller('passCtrl', function($scope, $http, $rootScope) {
 
 
     });
-demoApp.controller('perfilprofeCtrl', function($scope, $http, $rootScope) { 
+demoApp.controller('perfilprofeCtrl', function($scope, $http, $rootScope, $routeParams) { 
 $scope.antesContactar=true;
-    $http.post('api/getProfeByusername.php', {username: $rootScope.usernameprofe} )
+   $scope.init = function(){
+          var username = $routeParams.id;
+          //console.log(id);
+          
+        $http.post('api/getProfeByusername.php', {username: username} )
                 .success(function(data) {
                   console.log(data);
-                  $scope.pro=data;
+                  $rootScope.pro=data;
                   if(data.length==0){
                     $scope.SinProfes=true;
                   }
@@ -275,6 +279,9 @@ $scope.antesContactar=true;
                 .error(function(data) {
                   console.log('Error: ' + data);
                   });
+              }
+              $scope.init();
+    
     });
 demoApp.controller('perfilCtrl', function($scope, $http, $rootScope, upload) {
 
@@ -316,6 +323,17 @@ demoApp.controller('perfilCtrl', function($scope, $http, $rootScope, upload) {
     }
     $scope.getAlumno();
       $scope.updateAlumno =function(alu){ 
+
+        if($scope.file!=null){
+          var name = $scope.name;
+          var file = $scope.file;
+          
+          upload.uploadFile(file, name).then(function(res)
+          {
+            console.log(res);
+          })
+        }
+        
         console.log(alu);
                $http.post('api/updateAlumno.php', {alu:alu} )
                           .success(function(data) {

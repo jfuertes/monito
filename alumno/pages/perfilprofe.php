@@ -60,9 +60,15 @@
             </h2>
            
             </header>
+
+            
             <?php
    session_start();
-        echo '<iframe width="560" height="315" src="'.$_SESSION['link2view'].'" frameborder="0" allowfullscreen></iframe>';
+   if(isset($_SESSION['link2view'])){
+    echo '<iframe width="560" height="315" src="'.$_SESSION['link2view'].'" frameborder="0" allowfullscreen></iframe>';
+   }
+        
+   
     
  ?>
  <div ng-show="antesContactar">

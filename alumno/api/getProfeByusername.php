@@ -6,7 +6,8 @@
 	$db  = new dbConnect();
 	$dbh = $db->conectardb();
 	
-		
+		session_start();
+
 	$rspta = json_decode(file_get_contents("php://input"));
 	$username= $rspta->username;
 	
@@ -22,17 +23,23 @@
 	$r = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	$r=$r[0];
 	
-	
-$look_for = "watch?v=";
-$change_to = "embed/";
+	if(isset( $r["link"])){
+		$look_for = "watch?v=";
+		$change_to = "embed/";
+		//echo $r["link"];
+		$changed_text = str_replace($look_for, $change_to, $r["link"]);
+		//echo $changed_text;
 
-$changed_text = str_replace($look_for, $change_to, $r["link"]);
-if($r['extension_img']==null){
+		list($aa, $codi) = explode("watch?v=", $r["link"]);
+		$r['link2view']=$codi;
+		$_SESSION['link2view']=$changed_text;
+			
+	}
+
+	if($r['extension_img']==null){
 	$r['extension_img']="png";
-}
+	}
 
-$_SESSION['link2view']=$changed_text;
-	
 	echo json_encode($r);
 
 ?>

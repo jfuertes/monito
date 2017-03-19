@@ -285,6 +285,16 @@ demoApp.controller('perfilCtrl', function($scope, $http, $rootScope, upload) {
     }
     $scope.getProfe();
       $scope.updateProfesor =function(pro){ 
+
+        if($scope.file!=null){
+          var name = $scope.name;
+          var file = $scope.file;
+          
+          upload.uploadFile(file, name).then(function(res)
+          {
+            console.log(res);
+          })
+        }
         console.log(pro);
                $http.post('api/updateProfe.php', {pro:pro} )
                           .success(function(data) {
