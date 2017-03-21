@@ -63,10 +63,24 @@
                   </table>
                   <div id="message" class="warning-message hidden margin-bottom"></div>
                   <button type="submit" class="btn btn-lg btn-blue btn-block more-margin-bottom" >Ingresar</button>
+                   <section>
+                <article><li><p>entra con facebook:</p>
+                  <fb:login-button 
+                    appId="1112702552191988" 
+                    scope="public_profile,email" 
+                    id="facebook-login-button">
+                  </fb:login-button></li>
+                  <div id="fbStatus">
+                  </div>
+                </article>
+              </section>
+              
+              <script src="js/facebookSDKpro.js"></script>
                   <p class="center no-margin">
                     <a href="login/#forgot_password" class="forgot-password">¿Olvidaste tu contraseña?</a>
                   </p>
                 </form>
+                 <div ng-show="logeoIncorrecto"><p style="color:red">usuario o contraseña incorrecta.</p></div>
               </ul>
             </div>
           </div>

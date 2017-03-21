@@ -10,47 +10,31 @@
                         </div>
                         <div id="session-element-container" class="">
                             <div class="challenge-translate">
-                                <h1 class="player">Historial de Profesores y Cursos</h1>
+                                <h1 class="player">Historial de clases</h1>
                                 <table class="table table-striped">
                         <thead>
                           <tr>
-                            <th>Profesor</th>
-                            <th>Puntuacion</th>
-                            <th>Curso</th>
-                            <th>Fecha</th>
-                            <th>Comentario</th>
+                            <th>alumno</th>
+                            <th>curso</th>
+                            
+                            <th>fecha</th>
+                            <th>opciones</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr >
-                            <td>Luis Linares</td>
-                            <td><img src="../IMG/profes/3estrellas.png" HEIGHT=16></td>
-                            <td>Alebra</td>
-                            <td>15/03/17</td>
-                            <td>Las olas son ondas que se desplazan a través de la superficie de mares, océanos, ríos, lagos, canales, etc. Índice. [ocultar]. 1 Explicación física. 1.1 Causa</td>
+                          <tr ng-repeat="c in clases">
+                            <td>{{c.username_alu}}</td>
+                            <td>{{c.id_curso}}</td>
+                           
+                            <!--<td><img src="../IMG/profes/{{c.puntuacion}}estrellas.png" HEIGHT=16></td>
+                             <td>{{c.comentario}}</td>-->
+                             <td>{{c.fecha}}</td>
+                            <td><button class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20" ng-click="revisardetalle(c.id)">revisar detalles</button></td>
                           </tr>
                          
                         </tbody>
-                        <tbody>
-                          <tr >
-                            <td>Jair Fuertes</td>
-                            <td><img src="../IMG/profes/noestrellas.png" HEIGHT=16></td>
-                            <td>Alebra</td>
-                            <td>15/03/17</td>
-                            <td> son ondas que se desplazan a través través de la superficie de mares, océanos,  son ondas que se desplazan a través. 1 Explicación física. 1.1 Causa</td>
-                          </tr>
-                         
-                        </tbody>
-                        <tbody>
-                          <tr >
-                            <td>Luis Linares</td>
-                            <td><img src="../IMG/profes/5estrellas.png" HEIGHT=16></td>
-                            <td>Historia</td>
-                            <td>15/03/17</td>
-                            <td>desplazan a través. 1 Explicación físic se desplazan a través través de la superficie de mares, océanos,  son ondas que se desplazan a través. 1 Explicación física. 1.1</td>
-                          </tr>
-                         
-                        </tbody>
+                       
+                       
                     </table>
 
                             </div>
@@ -60,7 +44,7 @@
                     <footer id="controls" class="player-footer " style="display: block;">
                         <div class="col-right action-panel hidden" style="display: block;">
                             <span class="more-padding-left">
-                                <a href="#/perfil"><button    class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Volver</button></a>
+                                <a href="#/"><button    class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Volver</button></a>
                             </span>
                         </div>
                     </footer>

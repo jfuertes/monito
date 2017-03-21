@@ -18,7 +18,9 @@
 	$stmt->bindParam(':username', $_SESSION['username'], PDO::PARAM_STR);
 	$stmt->execute();
 	$r = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	//var_dump($r);
 	$r=$r[0];
+
 	
 	
 $look_for = "watch?v=";

@@ -154,7 +154,6 @@ demoApp.controller('perfilprofeCtrl', function($scope, $http) {
                   });
          };
          $scope.getProfe();
-
     });
 
 
@@ -269,7 +268,7 @@ demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
 
 
 demoApp.controller('loginprofesorCtrl', function($scope, $http) {
-
+ $scope.logeoIncorrecto=false;
   $scope.login= function(us){
           console.log(us);
 
@@ -284,6 +283,7 @@ demoApp.controller('loginprofesorCtrl', function($scope, $http) {
                        //window.location.href='profe/';
                     }
                     else{
+                       $scope.logeoIncorrecto=true;
                         console.log("error!!");
                     }
                     
@@ -299,7 +299,7 @@ demoApp.controller('loginprofesorCtrl', function($scope, $http) {
     });
 
 demoApp.controller('loginalumnoCtrl', function($scope, $http) {
-  
+  $scope.logeoIncorrecto=false;
   $scope.login= function(us){
           console.log(us);
 
@@ -313,6 +313,8 @@ demoApp.controller('loginalumnoCtrl', function($scope, $http) {
                        //location.reload();
                     }
                     else{
+                       $scope.logeoIncorrecto=true;
+                      // alert("cagao");
                         console.log("error!!");
                     }
                     

@@ -47,6 +47,7 @@ loginApp.controller('mainCtrl', function($scope, $http) {
   
 });
 loginApp.controller('loginprofesorCtrl', function($scope, $http) {
+  $scope.errorCrear=false;
 $scope.registroExitoso=false;
         // create a message to display in our view
         $scope.getDistritos= function(){
@@ -83,14 +84,17 @@ $scope.registroExitoso=false;
                                 console.log("data.succesees :)");
                                 document.getElementById("formNProfe").reset();
                                 delete $scope.nu;
-                                $scope.registroExitoso=true;
+                                 window.location.href = '../#/loginprofesor'
+                              //  $scope.registroExitoso=true;
                             }
                             else{
+                              $scope.errorCrear=true;
                                 console.log("error!!");
                             }
                             
                           })
                           .error(function(data) {
+                            
                             console.log('Error: ' + data);
                             });
                 };
@@ -138,7 +142,8 @@ loginApp.controller('mainCtrl', function($scope) {
     });
 
 loginApp.controller('loginalumnoCtrl', function($scope, $http) {
-  $scope.registroExitoso=false;
+ 
+  $scope.errorCrear=false;
         // create a message to display in our view
         $scope.getDistritos= function(){
              $http.post('api/getDistritos.php' )
@@ -164,10 +169,13 @@ loginApp.controller('loginalumnoCtrl', function($scope, $http) {
                                 console.log("data.succesees :)");
                                 document.getElementById("formNAlu").reset();
                                 delete $scope.nu;
-                                $scope.registroExitoso=true;
-                                console.log(  $scope.registroExitoso);
+                                //$scope.registroExitoso=true;
+                                //redirigir
+                               window.location.href = '../#/loginalumno'
+                               
                             }
                             else{
+                               $scope.errorCrear=true;
                                 console.log("error!!");
                             }
                             

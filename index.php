@@ -19,6 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="NOODP">
     <title>MiProfe.club</title>
+ 
     <link rel="shortcut icon" href="IMG/logo.png">
     <link rel="stylesheet" href="assets/css/estilos.css">
     <link rel="stylesheet" href="assets/css/miprofe.css">
@@ -199,6 +200,7 @@
     <script src="assets/plugins/angular-route.js" type="text/javascript"></script>
     <script src="assets/js/script.js" type="text/javascript"></script>
     <script src="assets/js/script2.js" type="text/javascript"></script>
+    <script src="js/facebookSDK.js"></script>
     <script type="text/javascript">
      $("#loginpop").fadeOut();
         $(document).ready(function(){

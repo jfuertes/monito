@@ -10,31 +10,20 @@
                         </div>
                         <div id="session-element-container" class="">
                             <div class="challenge-translate">
-                                <h1 class="player">Historial de Profesores y Cursos</h1>
+                                <h1 class="player">Detalles:</h1>
                                 <table class="table table-striped">
-                        <thead>
-                          <tr>
-                            <th>Profesor</th>
-                            <th>curso</th>
+                          <!--que sea table ordenadito-->
+                          <ul ng-repeat="c in clase">
+                            <li>{{c.username_alu}}</li>
+                            <li>{{c.id_curso}}</li>
+                            <li><img src="../IMG/profes/{{c.puntuacion}}estrellas.png" HEIGHT=16></li>
+                             <li>{{c.comentario}}</li>
+                             <li>{{c.fecha}}</li>
+                             <li>{{c.status}}</li>
                             
-                            <th>fecha</th>
-                            <th>opciones</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr ng-repeat="c in clases">
-                            <td>{{c.username_pro}}</td>
-                            <td>{{c.id_curso}}</td>
-                           
-                            <!--<td><img src="../IMG/profes/{{c.puntuacion}}estrellas.png" HEIGHT=16></td>
-                             <td>{{c.comentario}}</td>-->
-                             <td>{{c.fecha}}</td>
-                            <td><button class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20" ng-click="revisardetalle(c.id)">revisar detalles</button></td>
-                          </tr>
-                         
+                            <li><button class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20" ng-click="revisardetalle($index)">algo esta mal?</button></li>
+                            </ul>
                         </tbody>
-                       
-                       
                     </table>
 
                             </div>

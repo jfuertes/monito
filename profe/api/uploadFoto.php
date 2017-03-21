@@ -32,6 +32,8 @@ require_once('../../api/config/mysql.php');
 	$stmt->bindParam(':username', $username, PDO::PARAM_INT);
 	$stmt->execute();
 	$r = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	var_dump($r);
+	var_dump($file);
 	
 if(isset($r[0]["extension_img"])){
 	if (file_exists("../../IMG/profes/".$username.".".$r[0]["extension_img"])) {
