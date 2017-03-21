@@ -37,6 +37,10 @@ $routeProvider
                 templateUrl : 'pages/historial.html',
                 controller  : 'historialCtrl'
             })
+             .when('/clase/:id', {
+                templateUrl : 'pages/clase.html',
+                controller  : 'claseCtrl'
+            })
             // route for the about page
            .when('/alumno', {
                 templateUrl : 'pages/alumno.html',
@@ -211,7 +215,42 @@ demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
                           });
             };
     });
+demoApp.controller('historialCtrl', function($scope, $http, $rootScope) {
+      $scope.getclases=function(){
+            $http.post('api/getclases.php' )
+                        .success(function(data) {
+                          console.log(data);
+                          $scope.clases=data;
+                          
+                        })
+                        .error(function(data) {
+                          console.log('Error: ' + data);
+                          });
+            };
+           $scope.getclases();
 
+           $scope.revisardetalle=function(id){
+               location.href=location.protocol+"//"+location.hostname+location.pathname+"#/clase/"+id;
+                         
+           };
+
+    });
+
+demoApp.controller('claseCtrl', function($scope, $http, $rootScope, $routeParams) {
+   $scope.init = function(){
+          var id_clase = $routeParams.id;
+          //console.log(id);
+        $http.post('api/getclase.php', {id_clase: id_clase} )
+                .success(function(data) {
+                  console.log(data);
+                  $rootScope.clase=data;
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+              }
+              $scope.init();
+    });
 
 demoApp.controller('passCtrl', function($scope, $http, $rootScope) {
   $scope.error=false;
