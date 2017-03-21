@@ -171,6 +171,19 @@ demoApp.controller('listcursosCtrl', function($scope, $http, $rootScope) {
                   });
          };
          $scope.getCursos();
+         $scope.eliminar = function(index, codigo){
+               if ( confirm("¿Está seguro que desea eliminar el usuario seleccionado?") ) {
+            $scope.cursosxprofe.splice(index,1);
+            $http.post('api/eliminarcurso.php', { id: codigo } )
+              .success(function(data) {
+                console.log(data);
+              })
+              .error(function(data) {
+                console.log('Error: ' + data);
+                //Materialize.toast('Se encontró un problema al tratar de eliminar el usuario.', 3000);
+              });
+        }
+         }
 
     });
 demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
