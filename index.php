@@ -101,9 +101,9 @@
 
 <div id="mobile-menu" class="mobile-menu open">
             <ul class="mobile-menu-listing">
-                <li><a href="javascript:;" class="show-log-in">Ingresar como Profesor</a>
+                <li><a href="#loginprofesor" class="show-log-in">Ingresar como Profesor</a>
                 </li>
-                <li><a href="/register">Ingresar como Alumno</a>
+                <li><a href="#loginalumno">Ingresar como Alumno</a>
                 </li>
                 
             </ul>

@@ -1,10 +1,10 @@
-<?php/*
+<?php
     session_start();
     if($_SESSION['type']!="alumno"){    
      header('location:../');
         //echo "entro";
         //echo "acceso correcto".$_SESSION['login'];
-    }*/
+    }
  ?>
 
 <html ng-app="demoApp" class="mobile" dir="ltr" style="height: 100%" lang="es">
@@ -98,7 +98,7 @@
             </li>
             <li><a href="#/perfil">Configuracion</a>
             </li>
-            <li><a href="#/alumno" >Buscar Cursos</a>
+            <li><a href="javascript:;" >Buscar Cursos</a>
             </li>
             <li><a ng-click="logout()">Cerrar sesión</a>
             </li>
