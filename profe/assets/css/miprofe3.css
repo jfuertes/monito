@@ -4969,7 +4969,7 @@ only screen and (min-resolution: 2dppx) {
         margin: 0 auto
     }
     .compact-enabled .mobile-menu.logged-in {
-        background-color: #1091d0
+        background-color: #6c4696
     }
     .compact-enabled .mobile-menu.logged-in .mobile-menu-listing .mobile-menu-stats {
         background-color: #1091d0;
