@@ -105,6 +105,23 @@
             
         </ul>
     </div>
+        <div id="mobile-menu" class="mobile-menu logged-in open">
+        <ul class="mobile-menu-listing">
+            
+            <li id="home-nav" class="active"><a href="#/" >Inicio</a>
+            </li>
+            <li id="questions-nav"><a href="#/alumno" >Buscar cursos</a>
+            </li>
+            <li id="courses-nav"><a href="#/historial" >Historial</a>
+            </li>
+            <li id="settings-nav"><a href="#/pass" >Contraseña</a>
+            </li>
+            <li id="see-full-site"><a href="#/perfil" >Datos</a>
+            </li>
+            <li><a ng-click="logout()">Cerrar sesión</a>
+            </li>
+        </ul>
+    </div>
     <div id="main">
         <div ng-view>
         </div>
