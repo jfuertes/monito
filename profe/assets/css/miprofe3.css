@@ -12894,7 +12894,7 @@ html[dir=rtl] .popover-blue .arrow-bottom-container {
 .course-splash-page #app,
 .splash-2014 .monument-carousel,
 .course-splash-page .monument-carousel {
-    height: 180%
+    min-height: 100%
 }
 .splash-2014 .topbar .container,
 .course-splash-page .topbar .container {
