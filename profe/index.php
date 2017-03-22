@@ -1,16 +1,11 @@
 <?php
     session_start();
-    if(isset($_SESSION['type'])){
-        if($_SESSION['type']=="profesor"){    
-         header('location:profe/');
-            //echo "entro";
-            //echo "acceso correcto".$_SESSION['login'];
-        }
-        else if ($_SESSION['type']=="alumno"){
-           header('location:alumno/');
-        }
+    if($_SESSION['type']!="profesor"){    
+     header('location:../');
+        //echo "entro";
+        //echo "acceso correcto".$_SESSION['login'];
     }
-?>
+ ?>
 
 <html ng-app="demoApp" class="mobile" dir="ltr" style="height: 100%" lang="es">
     <head>
