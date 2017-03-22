@@ -4864,7 +4864,7 @@ only screen and (min-resolution: 2dppx) {
     }
     .compact-enabled #app main.main-right .page-main.main-right {
         position: absolute;
-        margin: 50px 0 0 0;
+        margin: 80px 0 0 0;
         width: 100%;
         padding: 0 0 20px 0
     }
@@ -9754,7 +9754,6 @@ html[dir=rtl] .progress-bar-dynamic.strength-bar .bar {
     border-bottom: 23px solid #dd381d
 }
 .progress-bar-dynamic.strength-bar .bar.purple {
-
     background-color: #c870ca;
     background-image: -webkit-gradient(linear, left top, right top, from(#c870ca), to(#9b5fca));
     background-image: -webkit-linear-gradient(left, #c870ca, #9b5fca);
@@ -10394,7 +10393,7 @@ html[dir=rtl] .player-header-hearts>li:first-child {
 }
 #session-element-container,
 #prev-session-element-container {
-    position: absolute;
+    
     width: 100%
 }
 .challenge-row {
@@ -12891,12 +12890,10 @@ html[dir=rtl] .popover-blue .arrow-bottom-container {
 .course-splash-page #site,
 .splash-2014 #wrapper,
 .course-splash-page #wrapper,
+.splash-2014 #app,
 .course-splash-page #app,
 .splash-2014 .monument-carousel,
 .course-splash-page .monument-carousel {
-    min-height: 100%
-}
-.splash-2014 #app{
     min-height: 100%
 }
 .splash-2014 .topbar .container,
@@ -13216,9 +13213,13 @@ html[dir=rtl] .course-splash-page .choose-course-by-flag .splash-signup-form .ui
 }
 .splash-2014 .monument-carousel,
 .course-splash-page .monument-carousel {
-    background-color: #239edb;
-    background: -webkit-gradient(linear, left top, left bottom, from(#216b07), to(#35bd10));
-    ackground: -webkit-linear-gradient(top, #239edb, #4dccff);
+    background-color: #e7efe4;
+    background-color: #59c4f8 padding: 80px 0 0 0
+}
+.monument-cfondo {
+    background-color: #555;
+    //background:-webkit-gradient(linear, left top, left bottom, from(#216b07), to(#35bd10));
+    background: -webkit-linear-gradient(top, #239edb, #4dccff);
     background: -moz-linear-gradient(top, #239edb, #4dccff);
     background: -ms-linear-gradient(top, #239edb, #4dccff);
     background: -o-linear-gradient(top, #239edb, #4dccff);
@@ -13344,7 +13345,7 @@ html[dir=rtl] .course-splash-page .choose-course-by-flag .splash-signup-form .ui
 }
 .splash-2014 .monument-carousel .section-inner,
 .course-splash-page .monument-carousel .section-inner {
-    padding: 0;
+    padding: 500px;
     max-width: none
 }
 .splash-2014 .monument-carousel div.signup,
@@ -13891,15 +13892,15 @@ html[dir=rtl] .course-splash-page .website .section-inner .heart.line {
 .splash-2014 .footer,
 .course-splash-page .footer {
     background-color: none;
-    background: -webkit-gradient(linear, left top, left bottom, #2fadeb, #2fadeb, #2fadeb);
-    background: -webkit-linear-gradient(top, #35b5b1, #35b5b1, #35b5b1);
+    background: -webkit-gradient(linear, left top, left bottom, #66686b, #66686b, #66686b);
+    background: -webkit-linear-gradient(top, #66686b, #66686b, #66686b);
     background: -moz-linear-gradient(top, #2fadeb, #48c2f3, #4dccff);
     background: -ms-linear-gradient(top, #2fadeb, #48c2f3, #4dccff);
     background: -o-linear-gradient(top, #2fadeb, #48c2f3, #4dccff);
     padding: 30px 0 0 0
 }
 //.splash-2014 .footer.dark-theme,.course-splash-page .footer.dark-theme{
-//  background:#ED1C24;
+//	background:#ED1C24;
 //background-image:url("//d7mj4aqfscim2.cloudfront.net/images/splash-2014/star-pattern1.svg");
 //background-image:url("//d7mj4aqfscim2.cloudfront.net/images/splash-2014/star-pattern1.svg"),-webkit-gradient(linear, left top, left bottom, from(#0b3e71), to(#0d64b0));
 //background-image:url("//d7mj4aqfscim2.cloudfront.net/images/splash-2014/star-pattern1.svg"),-webkit-linear-gradient(top, #0b3e71, #0d64b0);
@@ -14130,124 +14131,124 @@ html[dir=rtl] .course-splash-page .website .section-inner .heart.line {
 }
 @media screen and (min-width: 940px) {
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-1-source-langs {
-        height: 655px
+        min-height: 655px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-1-source-langs.with-additional-course {
-        height: 855px
+        min-height: 855px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-2-source-langs {
-        height: 655px
+        min-height: 655px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-2-source-langs.with-additional-course {
-        height: 855px
+        min-height: 855px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-3-source-langs {
-        height: 655px
+        min-height: 655px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-3-source-langs.with-additional-course {
-        height: 855px
+        min-height: 855px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-4-source-langs {
-        height: 655px
+        min-height: 655px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-4-source-langs.with-additional-course {
-        height: 855px
+        min-height: 855px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-5-source-langs {
-        height: 910px
+        min-height: 910px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-5-source-langs.with-additional-course {
-        height: 1110px
+        min-height: 1110px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-6-source-langs {
-        height: 910px
+        min-height: 910px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-6-source-langs.with-additional-course {
-        height: 1110px
+        min-height: 1110px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-7-source-langs {
-        height: 910px
+        min-height: 910px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-7-source-langs.with-additional-course {
-        height: 1110px
+        min-height: 1110px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-8-source-langs {
-        height: 910px
+        min-height: 910px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-8-source-langs.with-additional-course {
-        height: 1110px
+        min-height: 1110px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-9-source-langs {
-        height: 1165px
+        min-height: 1165px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-9-source-langs.with-additional-course {
-        height: 1365px
+        min-height: 1365px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-10-source-langs {
-        height: 1165px
+        min-height: 1165px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-10-source-langs.with-additional-course {
-        height: 1365px
+        min-height: 1365px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-11-source-langs {
-        height: 1165px
+        min-height: 1165px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-11-source-langs.with-additional-course {
-        height: 1365px
+        min-height: 1365px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-12-source-langs {
-        height: 1165px
+        min-height: 1165px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-12-source-langs.with-additional-course {
-        height: 1365px
+        min-height: 1365px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-13-source-langs {
-        height: 1420px
+        min-height: 1420px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-13-source-langs.with-additional-course {
-        height: 1620px
+        min-height: 1620px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-14-source-langs {
-        height: 1420px
+        min-height: 1420px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-14-source-langs.with-additional-course {
-        height: 1620px
+        min-height: 1620px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-15-source-langs {
-        height: 1420px
+        min-height: 1420px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-15-source-langs.with-additional-course {
-        height: 1620px
+        min-height: 1620px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-16-source-langs {
-        height: 1420px
+        min-height: 1420px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-16-source-langs.with-additional-course {
-        height: 1620px
+        min-height: 1620px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-17-source-langs {
-        height: 1675px
+        min-height: 1675px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-17-source-langs.with-additional-course {
-        height: 1875px
+        min-height: 1875px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-18-source-langs {
-        height: 1675px
+        min-height: 1675px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-18-source-langs.with-additional-course {
-        height: 1875px
+        min-height: 1875px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-19-source-langs {
-        height: 1675px
+        min-height: 1675px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-19-source-langs.with-additional-course {
-        height: 1875px
+        min-height: 1875px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-20-source-langs {
-        height: 1675px
+        min-height: 1675px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-20-source-langs.with-additional-course {
-        height: 1875px
+        min-height: 1875px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-21-source-langs {
         min-height: 1930px
@@ -14616,154 +14617,154 @@ html[dir=rtl] .course-splash-page .website .section-inner .heart.line {
 }
 @media screen and (min-width: 720px) and (max-width: 890px) {
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-1-source-langs {
-        height: 600px
+        min-height: 600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-1-source-langs.with-additional-course {
-        height: 800px
+        min-height: 800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-2-source-langs {
-        height: 600px
+        min-height: 600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-2-source-langs.with-additional-course {
-        height: 800px
+        min-height: 800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-3-source-langs {
-        height: 600px
+        min-height: 600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-3-source-langs.with-additional-course {
-        height: 800px
+        min-height: 800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-4-source-langs {
-        height: 600px
+        min-height: 600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-4-source-langs.with-additional-course {
-        height: 800px
+        min-height: 800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-5-source-langs {
-        height: 800px
+        min-height: 800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-5-source-langs.with-additional-course {
-        height: 1000px
+        min-height: 1000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-6-source-langs {
-        height: 800px
+        min-height: 800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-6-source-langs.with-additional-course {
-        height: 1000px
+        min-height: 1000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-7-source-langs {
-        height: 800px
+        min-height: 800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-7-source-langs.with-additional-course {
-        height: 1000px
+        min-height: 1000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-8-source-langs {
-        height: 800px
+        min-height: 800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-8-source-langs.with-additional-course {
-        height: 1000px
+        min-height: 1000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-9-source-langs {
-        height: 1000px
+        min-height: 1000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-9-source-langs.with-additional-course {
-        height: 1200px
+        min-height: 1200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-10-source-langs {
-        height: 1000px
+        min-height: 1000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-10-source-langs.with-additional-course {
-        height: 1200px
+        min-height: 1200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-11-source-langs {
-        height: 1000px
+        min-height: 1000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-11-source-langs.with-additional-course {
-        height: 1200px
+        min-height: 1200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-12-source-langs {
-        height: 1000px
+        min-height: 1000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-12-source-langs.with-additional-course {
-        height: 1200px
+        min-height: 1200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-13-source-langs {
-        height: 1200px
+        min-height: 1200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-13-source-langs.with-additional-course {
-        height: 1400px
+        min-height: 1400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-14-source-langs {
-        height: 1200px
+        min-height: 1200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-14-source-langs.with-additional-course {
-        height: 1400px
+        min-height: 1400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-15-source-langs {
-        height: 1200px
+        min-height: 1200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-15-source-langs.with-additional-course {
-        height: 1400px
+        min-height: 1400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-16-source-langs {
-        height: 1200px
+        min-height: 1200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-16-source-langs.with-additional-course {
-        height: 1400px
+        min-height: 1400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-17-source-langs {
-        height: 1400px
+        min-height: 1400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-17-source-langs.with-additional-course {
-        height: 1600px
+        min-height: 1600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-18-source-langs {
-        height: 1400px
+        min-height: 1400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-18-source-langs.with-additional-course {
-        height: 1600px
+        min-height: 1600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-19-source-langs {
-        height: 1400px
+        min-height: 1400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-19-source-langs.with-additional-course {
-        height: 1600px
+        min-height: 1600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-20-source-langs {
-        height: 1400px
+        min-height: 1400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-20-source-langs.with-additional-course {
-        height: 1600px
+        min-height: 1600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-21-source-langs {
-        height: 1600px
+        min-height: 1600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-21-source-langs.with-additional-course {
-        height: 1800px
+        min-height: 1800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-22-source-langs {
-        height: 1600px
+        min-height: 1600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-22-source-langs.with-additional-course {
-        height: 1800px
+        min-height: 1800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-23-source-langs {
-        height: 1600px
+        min-height: 1600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-23-source-langs.with-additional-course {
-        height: 1800px
+        min-height: 1800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-24-source-langs {
-        height: 1600px
+        min-height: 1600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-24-source-langs.with-additional-course {
-        height: 1800px
+        min-height: 1800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-25-source-langs {
-        height: 1800px
+        min-height: 1800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-25-source-langs.with-additional-course {
-        height: 2000px
+        min-height: 2000px
     }
 }
 @media screen and (max-width: 720px) {
@@ -14773,458 +14774,458 @@ html[dir=rtl] .course-splash-page .website .section-inner .heart.line {
 }
 @media screen and (max-width: 720px) and (min-width: 550px) {
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-1-source-langs {
-        height: 600px
+        min-height: 600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-1-source-langs.with-additional-course {
-        height: 800px
+        min-height: 800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-2-source-langs {
-        height: 600px
+        min-height: 600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-2-source-langs.with-additional-course {
-        height: 800px
+        min-height: 800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-3-source-langs {
-        height: 600px
+        min-height: 600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-3-source-langs.with-additional-course {
-        height: 800px
+        min-height: 800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-4-source-langs {
-        height: 800px
+        min-height: 800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-4-source-langs.with-additional-course {
-        height: 1000px
+        min-height: 1000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-5-source-langs {
-        height: 800px
+        min-height: 800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-5-source-langs.with-additional-course {
-        height: 1000px
+        min-height: 1000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-6-source-langs {
-        height: 800px
+        min-height: 800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-6-source-langs.with-additional-course {
-        height: 1000px
+        min-height: 1000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-7-source-langs {
-        height: 1000px
+        min-height: 1000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-7-source-langs.with-additional-course {
-        height: 1200px
+        min-height: 1200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-8-source-langs {
-        height: 1000px
+        min-height: 1000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-8-source-langs.with-additional-course {
-        height: 1200px
+        min-height: 1200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-9-source-langs {
-        height: 1000px
+        min-height: 1000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-9-source-langs.with-additional-course {
-        height: 1200px
+        min-height: 1200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-10-source-langs {
-        height: 1200px
+        min-height: 1200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-10-source-langs.with-additional-course {
-        height: 1400px
+        min-height: 1400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-11-source-langs {
-        height: 1200px
+        min-height: 1200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-11-source-langs.with-additional-course {
-        height: 1400px
+        min-height: 1400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-12-source-langs {
-        height: 1200px
+        min-height: 1200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-12-source-langs.with-additional-course {
-        height: 1400px
+        min-height: 1400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-13-source-langs {
-        height: 1400px
+        min-height: 1400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-13-source-langs.with-additional-course {
-        height: 1600px
+        min-height: 1600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-14-source-langs {
-        height: 1400px
+        min-height: 1400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-14-source-langs.with-additional-course {
-        height: 1600px
+        min-height: 1600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-15-source-langs {
-        height: 1400px
+        min-height: 1400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-15-source-langs.with-additional-course {
-        height: 1600px
+        min-height: 1600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-16-source-langs {
-        height: 1600px
+        min-height: 1600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-16-source-langs.with-additional-course {
-        height: 1800px
+        min-height: 1800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-17-source-langs {
-        height: 1600px
+        min-height: 1600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-17-source-langs.with-additional-course {
-        height: 1800px
+        min-height: 1800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-18-source-langs {
-        height: 1600px
+        min-height: 1600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-18-source-langs.with-additional-course {
-        height: 1800px
+        min-height: 1800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-19-source-langs {
-        height: 1800px
+        min-height: 1800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-19-source-langs.with-additional-course {
-        height: 2000px
+        min-height: 2000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-20-source-langs {
-        height: 1800px
+        min-height: 1800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-20-source-langs.with-additional-course {
-        height: 2000px
+        min-height: 2000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-21-source-langs {
-        height: 1800px
+        min-height: 1800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-21-source-langs.with-additional-course {
-        height: 2000px
+        min-height: 2000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-22-source-langs {
-        height: 2000px
+        min-height: 2000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-22-source-langs.with-additional-course {
-        height: 2200px
+        min-height: 2200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-23-source-langs {
-        height: 2000px
+        min-height: 2000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-23-source-langs.with-additional-course {
-        height: 2200px
+        min-height: 2200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-24-source-langs {
-        height: 2000px
+        min-height: 2000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-24-source-langs.with-additional-course {
-        height: 2200px
+        min-height: 2200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-25-source-langs {
-        height: 2200px
+        min-height: 2200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-25-source-langs.with-additional-course {
-        height: 2400px
+        min-height: 2400px
     }
 }
 @media screen and (min-width: 380px) and (max-width: 550px) {
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-1-source-langs {
-        height: 600px
+        min-height: 600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-1-source-langs.with-additional-course {
-        height: 800px
+        min-height: 800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-2-source-langs {
-        height: 600px
+        min-height: 600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-2-source-langs.with-additional-course {
-        height: 800px
+        min-height: 800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-3-source-langs {
-        height: 800px
+        min-height: 800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-3-source-langs.with-additional-course {
-        height: 1000px
+        min-height: 1000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-4-source-langs {
-        height: 800px
+        min-height: 800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-4-source-langs.with-additional-course {
-        height: 1000px
+        min-height: 1000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-5-source-langs {
-        height: 1000px
+        min-height: 1000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-5-source-langs.with-additional-course {
-        height: 1200px
+        min-height: 1200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-6-source-langs {
-        height: 1000px
+        min-height: 1000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-6-source-langs.with-additional-course {
-        height: 1200px
+        min-height: 1200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-7-source-langs {
-        height: 1200px
+        min-height: 1200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-7-source-langs.with-additional-course {
-        height: 1400px
+        min-height: 1400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-8-source-langs {
-        height: 1200px
+        min-height: 1200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-8-source-langs.with-additional-course {
-        height: 1400px
+        min-height: 1400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-9-source-langs {
-        height: 1400px
+        min-height: 1400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-9-source-langs.with-additional-course {
-        height: 1600px
+        min-height: 1600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-10-source-langs {
-        height: 1400px
+        min-height: 1400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-10-source-langs.with-additional-course {
-        height: 1600px
+        min-height: 1600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-11-source-langs {
-        height: 1600px
+        min-height: 1600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-11-source-langs.with-additional-course {
-        height: 1800px
+        min-height: 1800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-12-source-langs {
-        height: 1600px
+        min-height: 1600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-12-source-langs.with-additional-course {
-        height: 1800px
+        min-height: 1800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-13-source-langs {
-        height: 1800px
+        min-height: 1800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-13-source-langs.with-additional-course {
-        height: 2000px
+        min-height: 2000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-14-source-langs {
-        height: 1800px
+        min-height: 1800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-14-source-langs.with-additional-course {
-        height: 2000px
+        min-height: 2000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-15-source-langs {
-        height: 2000px
+        min-height: 2000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-15-source-langs.with-additional-course {
-        height: 2200px
+        min-height: 2200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-16-source-langs {
-        height: 2000px
+        min-height: 2000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-16-source-langs.with-additional-course {
-        height: 2200px
+        min-height: 2200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-17-source-langs {
-        height: 2200px
+        min-height: 2200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-17-source-langs.with-additional-course {
-        height: 2400px
+        min-height: 2400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-18-source-langs {
-        height: 2200px
+        min-height: 2200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-18-source-langs.with-additional-course {
-        height: 2400px
+        min-height: 2400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-19-source-langs {
-        height: 2400px
+        min-height: 2400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-19-source-langs.with-additional-course {
-        height: 2600px
+        min-height: 2600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-20-source-langs {
-        height: 2400px
+        min-height: 2400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-20-source-langs.with-additional-course {
-        height: 2600px
+        min-height: 2600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-21-source-langs {
-        height: 2600px
+        min-height: 2600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-21-source-langs.with-additional-course {
-        height: 2800px
+        min-height: 2800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-22-source-langs {
-        height: 2600px
+        min-height: 2600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-22-source-langs.with-additional-course {
-        height: 2800px
+        min-height: 2800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-23-source-langs {
-        height: 2800px
+        min-height: 2800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-23-source-langs.with-additional-course {
-        height: 3000px
+        min-height: 3000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-24-source-langs {
-        height: 2800px
+        min-height: 2800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-24-source-langs.with-additional-course {
-        height: 3000px
+        min-height: 3000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-25-source-langs {
-        height: 3000px
+        min-height: 3000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-25-source-langs.with-additional-course {
-        height: 3200px
+        min-height: 3200px
     }
 }
 @media screen and (max-width: 380px) {
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-1-source-langs {
-        height: 600px
+        min-height: 600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-1-source-langs.with-additional-course {
-        height: 800px
+        min-height: 800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-2-source-langs {
-        height: 800px
+        min-height: 800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-2-source-langs.with-additional-course {
-        height: 1000px
+        min-height: 1000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-3-source-langs {
-        height: 1000px
+        min-height: 1000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-3-source-langs.with-additional-course {
-        height: 1200px
+        min-height: 1200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-4-source-langs {
-        height: 1200px
+        min-height: 1200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-4-source-langs.with-additional-course {
-        height: 1400px
+        min-height: 1400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-5-source-langs {
-        height: 1400px
+        min-height: 1400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-5-source-langs.with-additional-course {
-        height: 1600px
+        min-height: 1600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-6-source-langs {
-        height: 1600px
+        min-height: 1600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-6-source-langs.with-additional-course {
-        height: 1800px
+        min-height: 1800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-7-source-langs {
-        height: 1800px
+        min-height: 1800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-7-source-langs.with-additional-course {
-        height: 2000px
+        min-height: 2000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-8-source-langs {
-        height: 2000px
+        min-height: 2000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-8-source-langs.with-additional-course {
-        height: 2200px
+        min-height: 2200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-9-source-langs {
-        height: 2200px
+        min-height: 2200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-9-source-langs.with-additional-course {
-        height: 2400px
+        min-height: 2400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-10-source-langs {
-        height: 2400px
+        min-height: 2400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-10-source-langs.with-additional-course {
-        height: 2600px
+        min-height: 2600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-11-source-langs {
-        height: 2600px
+        min-height: 2600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-11-source-langs.with-additional-course {
-        height: 2800px
+        min-height: 2800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-12-source-langs {
-        height: 2800px
+        min-height: 2800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-12-source-langs.with-additional-course {
-        height: 3000px
+        min-height: 3000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-13-source-langs {
-        height: 3000px
+        min-height: 3000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-13-source-langs.with-additional-course {
-        height: 3200px
+        min-height: 3200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-14-source-langs {
-        height: 3200px
+        min-height: 3200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-14-source-langs.with-additional-course {
-        height: 3400px
+        min-height: 3400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-15-source-langs {
-        height: 3400px
+        min-height: 3400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-15-source-langs.with-additional-course {
-        height: 3600px
+        min-height: 3600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-16-source-langs {
-        height: 3600px
+        min-height: 3600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-16-source-langs.with-additional-course {
-        height: 3800px
+        min-height: 3800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-17-source-langs {
-        height: 3800px
+        min-height: 3800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-17-source-langs.with-additional-course {
-        height: 4000px
+        min-height: 4000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-18-source-langs {
-        height: 4000px
+        min-height: 4000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-18-source-langs.with-additional-course {
-        height: 4200px
+        min-height: 4200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-19-source-langs {
-        height: 4200px
+        min-height: 4200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-19-source-langs.with-additional-course {
-        height: 4400px
+        min-height: 4400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-20-source-langs {
-        height: 4400px
+        min-height: 4400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-20-source-langs.with-additional-course {
-        height: 4600px
+        min-height: 4600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-21-source-langs {
-        height: 4600px
+        min-height: 4600px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-21-source-langs.with-additional-course {
-        height: 4800px
+        min-height: 4800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-22-source-langs {
-        height: 4800px
+        min-height: 4800px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-22-source-langs.with-additional-course {
-        height: 5000px
+        min-height: 5000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-23-source-langs {
-        height: 5000px
+        min-height: 5000px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-23-source-langs.with-additional-course {
-        height: 5200px
+        min-height: 5200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-24-source-langs {
-        height: 5200px
+        min-height: 5200px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-24-source-langs.with-additional-course {
-        height: 5400px
+        min-height: 5400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-25-source-langs {
-        height: 5400px
+        min-height: 5400px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-25-source-langs.with-additional-course {
-        height: 5600px
+        min-height: 5600px
     }
 }
 @media screen and (max-width: 980px) {
