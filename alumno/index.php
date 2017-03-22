@@ -5,7 +5,6 @@
         //echo "entro";
         //echo "acceso correcto".$_SESSION['login'];
     }
-    
  ?>
 
 <html ng-app="demoApp" class="mobile" dir="ltr" style="height: 100%" lang="es">
@@ -93,19 +92,19 @@
         </div>
     </header>
     </div>
-    <!--<div id="mobile-menu" class="mobile-menu open">
+    <div id="mobile-menu" class="mobile-menu open">
         <ul class="mobile-menu-listing">
             <li><a href="#/" >Perfil De Alumno</a>
             </li>
             <li><a href="#/perfil">Configuracion</a>
             </li>
             <li><a href="#/alumno" >Buscar Cursos</a>
-            </li>
+            </li><!--
             <li><a ng-click="logout()">Cerrar sesión</a>
-            </li>
+            </li>-->
             
         </ul>
-    </div>-->
+    </div>
     <div id="main">
         <div ng-view>
         </div>
