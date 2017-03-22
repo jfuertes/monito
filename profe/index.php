@@ -79,6 +79,17 @@
 </div>
     <div id="mobile-menu" class="mobile-menu open">
         <ul class="mobile-menu-listing">
+            <div class="mobile-menu-stats"><span class="user-info"><a href="/settings/direction"><span class="flag flag-svg-small flag-en skill-tree-header-language"></span>
+    </a>
+    </span>
+    <li class="streak" data-toggle="tooltip" title="racha de 0 días" data-placement="bottom"><span class="icon icon-streak-small "></span> 0</li>
+    <li class="lingots" data-toggle="tooltip" title="" data-placement="bottom" data-original-title="Lingots"><a href="/show_store"><span class="icon icon-lingot-small"></span><span id="num_lingots"> 0</span></a>
+    </li>
+    <div class="tooltip fade bottom in" style="top: 106px; left: 322.047px; display: block;">
+        <div class="tooltip-arrow"></div>
+        <div class="tooltip-inner">Lingots</div>
+    </div>
+</div>
             <li id="home-nav" class="active"><a href="#/" >Inicio</a>
             </li>
             <li id="questions-nav"><a href="#/listcursos" >Cursos</a>
