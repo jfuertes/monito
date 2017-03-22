@@ -30,7 +30,7 @@
     <style type="text/css"></style>
     <style  href="assets/css/miprofe.css" type="text/css"></style>
     </head>
-<body class="global-es logged-out splash-2014 compact-enabled" style="overflow: auto;">
+    <body class="global-es logged-out splash-2014 compact-enabled" style="overflow: auto;">
     <div id="fb-root" class=" fb_reset fb_reset fb_reset">
         <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
             <div>
@@ -50,7 +50,7 @@
     <div id="topbar">
         <header ng-controller="mainCtrl" class="topbar topbar-blue-dark">
         <div class="container">
-        <a href="#/" class="topbar-brand navigate-home track-click white smaller-logo"> <img src="IMG/logo.png" WIDTH=100 HEIGHT=80></a>
+        <a href="#/" class="topbar-brand navigate-home track-click white smaller-logo"> <img src="IMG/logo.png" WIDTH=40 HEIGHT=40></a>
             <div class="topbar-right">
                 
                 <div class="topbar-username dropdown click-trigger" style="padding-bottom: 15px;">
@@ -97,6 +97,7 @@
             </div>
         </div>
     </header>
+</div>
 
 <div id="mobile-menu" class="mobile-menu open">
             <ul class="mobile-menu-listing">
@@ -106,7 +107,7 @@
                 </li>
                 
             </ul>
-        </div>
+</div>
     <div id="main">
         <div ng-view>
         </div>
