@@ -92,19 +92,19 @@
         </div>
     </header>
     </div>
-    <div id="mobile-menu" class="mobile-menu open">
+    <!--<div id="mobile-menu" class="mobile-menu open">
         <ul class="mobile-menu-listing">
             <li><a href="#/" >Perfil De Alumno</a>
             </li>
             <li><a href="#/perfil">Configuracion</a>
             </li>
-            <li><a href="javascript:;" >Buscar Cursos</a>
+            <li><a href="#/alumno" >Buscar Cursos</a>
             </li>
             <li><a ng-click="logout()">Cerrar sesión</a>
             </li>
             
         </ul>
-    </div>
+    </div>-->
     <div id="main">
         <div ng-view>
         </div>
