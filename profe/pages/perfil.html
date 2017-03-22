@@ -102,12 +102,12 @@
              
               <div class="input">
               <label class="label">Imagen de perfil</label>
-              
-                  <input type="file" name="file" uploader-model="file" /> <br>
+                  <input class="btn btn-green right" type="file"  uploader-model="file"  />
                   </div>
            
             </li>
-            <button ng-show="correcto">cambios actualizados</button>
+            
+            <div ng-show="correcto" id="confirmation-message" class="hidden save-message">Tus cambios han sido guardados.</div>
           </ul>
           </form>
            
