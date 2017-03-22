@@ -79,17 +79,18 @@
 </div>
     <div id="mobile-menu" class="mobile-menu open">
         <ul class="mobile-menu-listing">
-            <li><a href="#/" >Perfil De Profesor</a>
+            <li id="home-nav" class="active"><a href="#/" >Inicio</a>
             </li>
-            <li><a href="#/perfil">Configuracion</a>
+            <li id="questions-nav"><a href="#/listcursos" >Cursos</a>
             </li>
-            <li><a href="#/listcursos" >Cursos</a>
+            <li id="courses-nav"><a href="#/historial" >Historial</a>
             </li>
-            <li><a href="#/pass" >Contraseña</a>
-            </li><!--
+            <li id="settings-nav"><a href="#/pass" >Contraseña</a>
+            </li>
+            <li id="see-full-site"><a href="#/perfil" >Datos</a>
+            </li>
             <li><a ng-click="logout()">Cerrar sesión</a>
-            </li>-->
-            
+            </li>
         </ul>
     </div>
     <div id="main">
