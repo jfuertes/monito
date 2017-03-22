@@ -14148,7 +14148,7 @@ html[dir=rtl] .course-splash-page .website .section-inner .heart.line {
         min-height: 855px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-4-source-langs {
-        min-height: 655px
+        height: 655px
     }
     .splash-2014 .monument-carousel.choose-course-by-flag.fit-to-4-source-langs.with-additional-course {
         min-height: 855px
