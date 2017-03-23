@@ -171,7 +171,17 @@ loginApp.controller('loginalumnoCtrl', function($scope, $http) {
                                 delete $scope.nu;
                                 //$scope.registroExitoso=true;
                                 //redirigir
-                               window.location.href = '../#/loginalumno'
+                                     
+                                       $http.post('../api/email/gmail.php', {reci: nu.email, mensaje:"bienvenida"} )
+                                        .success(function(data) {
+                                          console.log(data);
+                                         // $scope.resp=data;
+                                        })
+                                        .error(function(data) {
+                                          console.log('Error: ' + data);
+                                          });
+                               
+//                              window.location.href = '../#/loginalumno'
                                
                             }
                             else{

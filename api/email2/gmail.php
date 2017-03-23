@@ -52,7 +52,7 @@ $mail->setFrom('soporte@miprofe.club', 'MiProfe.club');
 $mail->addReplyTo('soporte@miprofe.club', 'MiProfe.club');
 
 //Set who the message is to be sent to
-$mail->addAddress('luislinaresburnes@gmail.com', 'Nombre Apellido');// direccion de envio  correo y nombre...
+$mail->addAddress('jfuertesl2@gmail.com', 'Nombre Apellido');// direccion de envio  correo y nombre...
 
 //Set the subject line
 $mail->Subject = 'Bienvenido a MiProfe.club el club de los mejores profesores';
