@@ -168,11 +168,11 @@ loginApp.controller('loginalumnoCtrl', function($scope, $http) {
                             if(data.success){
                                 console.log("data.succesees :)");
                                 document.getElementById("formNAlu").reset();
-                                delete $scope.nu;
+                                //delete $scope.nu;
                                 //$scope.registroExitoso=true;
                                 //redirigir
                                      
-                                       $http.post('../api/email/gmail.php', {reci: nu.email, mensaje:"bienvenida"} )
+                                       $http.post('../api/email2/gmail.php', {reci: nu.email, mensaje:"bienvenida"} )
                                         .success(function(data) {
                                           console.log(data);
                                          // $scope.resp=data;
@@ -180,7 +180,7 @@ loginApp.controller('loginalumnoCtrl', function($scope, $http) {
                                         .error(function(data) {
                                           console.log('Error: ' + data);
                                           });
-                               
+                               delete $scope.nu;
 //                              window.location.href = '../#/loginalumno'
                                
                             }

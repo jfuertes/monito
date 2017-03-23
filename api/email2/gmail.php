@@ -15,6 +15,9 @@ $mail = new PHPMailer;
 //Tell PHPMailer to use SMTP
 $mail->isSMTP();
 
+$rspta = json_decode(file_get_contents("php://input"));
+$mensaje= $rspta->mensaje;
+$reci= $rspta->reci;
 //Enable SMTP debugging
 // 0 = off (for production use)
 // 1 = client messages
@@ -59,7 +62,8 @@ $mail->Subject = 'Bienvenido a MiProfe.club el club de los mejores profesores';
 
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
-$mail->msgHTML(file_get_contents('bienvenida.html'), dirname(__FILE__));// archivo que envio
+$mail->msgHTML(file_get_contents(''.$mensaje.'.html'), dirname(__FILE__));// archivo que envio
+echo $mensaje;
 
 //Replace the plain text body with one created manually
 $mail->AltBody = 'This is a plain-text message body';
