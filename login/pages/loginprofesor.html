@@ -2,12 +2,13 @@
 
 <section dir="ltr" class="monument-cfondo  choose-course-by-flag fit-to-4-source-langs">
 
-  <div id="app" class="settings" ng-hide="registroExitoso">
+  <div id="app" class="settings" >
   <main class="main-right">
     <section class="page-main main-right">
       <div id="tab-container">
         <div id="profile-content" class="settings-content">
           <h1>Registro de Profesor</h1>
+          <div  class="settings" ng-show="errorCrear"><p style="color:red">usuario ya existe intentelo de nuevo</p></div>
           <form id="formNProfe" ng-submit="formNewProf(nu)">
           <ul class="list-settings language-direction">
             <li>
@@ -38,6 +39,17 @@
               <label class="label">Apellido Materno</label>
               <div class="input">
                 <input style="width: 334px;" class="large" type="text" value="" placeholder="apellido materno" ng-model="nu.ape_materno" required>
+              </div>
+            </li>
+             <li>
+              <label class="label">Universidad</label>
+              <div class="input">
+                <label class="blue-select no-focus smaller fixed-width">
+                   <select  ng-model="nu.id_uni" required>
+                    <option value="">- Selecciones su UNIversidad -</option>
+                    <option ng-repeat="u in UNI" value="{{u.id_uni}}">{{u.nombre_uni}}</option>
+                  </select>
+                </label>
               </div>
             </li>
             <li>

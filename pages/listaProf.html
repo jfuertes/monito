@@ -2,16 +2,16 @@
     <section dir="ltr" class="monument-carousel  choose-course-by-flag fit-to-4-source-langs">
         <div dir="ltr" class="signup">
             <div class="hidden splash-signup-form" id="signup-language" style="display: block;">
-                <section class="section-white space">
+                <section class="section-white space slide-in">
                     <div class="section-inner-wide section-inner">
-                        <div class="language-selection-container">
+                        <div class="language-selection-container" ng-hide="SinProfes">
                             <h1 class="course-picker">Elige tu profesor favorito</h1>
                             <div class="login-signup-flag-list-container  ">
-                                <a href="#listaProf">
+                                <a href="#loginalumno">
                                     <div class="choose-language-flag-container choose-language" ng-repeat="p in Profes" >
                                         <div class="vertical-align" >
                                             <div class="flag-box">
-                                                <img class="flag-svg-large flag-flex-size" src="IMG/temas/{{p.username}}.png">
+                                                <img class="flag-svg-large flag-flex-size" src="IMG/profes/{{p.username}}.{{p.extension_img}}">
                                             </div>
                                             <h2 class="white course-name">{{p.username}}</h2>
                                         <!--<p class="num-learners">estudiantes</p>-->
@@ -20,6 +20,11 @@
                                 </a> 
                             </div>
                         </div>
+                        <div class="language-selection-container" ng-show="SinProfes">
+                            <h1 class="course-picker">lastimosamente ningun profesor esta disponible para esta materia :/</h1>
+                            
+                        </div>
+
                     </div>
                 </section>
             </div>

@@ -54,6 +54,24 @@ $routeProvider
                 controller  : 'metodoCtrl'
 
             })
+            .when('/loginprofesor', {
+                templateUrl : 'pages/loginprofesor.html',
+                controller  : 'loginprofesorCtrl'
+
+            })
+
+            .when('/loginuser', {
+                templateUrl : 'pages/login2.html',
+                controller  : 'login2Ctrl'
+
+            })
+
+            .when('/loginalumno', {
+                templateUrl : 'pages/loginalumno.html',
+                controller  : 'loginalumnoCtrl'
+
+            })
+
              .when('/perfilprofe', {
                 templateUrl : 'pages/perfilprofe.html',
                 controller  : 'perfilprofeCtrl'
@@ -136,7 +154,6 @@ demoApp.controller('perfilprofeCtrl', function($scope, $http) {
                   });
          };
          $scope.getProfe();
-
     });
 
 
@@ -144,7 +161,8 @@ demoApp.controller('alumnoCtrl', function($scope, $http, $rootScope) {
 $scope.cambiarcurso=true;
            $scope.cursos= function(id){
             $rootScope.nivel=id;
-           window.location.href='#cursos';
+            location.href=location.protocol+"//"+location.hostname+location.pathname+"#/cursos";
+           //window.location.href='#cursos';
             console.log($rootScope.nivel);
       }
 
@@ -165,15 +183,47 @@ $scope.cambiarcurso=true;
     });
 
 demoApp.controller('listaProfCtrl', function($scope, $http, $rootScope) {
-
+  $scope.SinProfes=false;
     $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso} )
                 .success(function(data) {
                   console.log(data);
                   $scope.Profes=data;
+                  if(data.length==0){
+                    $scope.SinProfes=true;
+                  }
+
                 })
                 .error(function(data) {
                   console.log('Error: ' + data);
                   });
+    });
+demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
+      $scope.online=function(){
+            $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso} )
+                        .success(function(data) {
+                          console.log(data);
+                          $scope.Profes=data;
+                          location.href=location.protocol+"//"+location.hostname+location.pathname+"#/listaprof";
+                          // window.location.href='#listaprof';
+
+                        })
+                        .error(function(data) {
+                          console.log('Error: ' + data);
+                          });
+            };
+              $scope.presencial=function(){
+            $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso} )
+                        .success(function(data) {
+                          console.log(data);
+                          $scope.Profes=data;
+                          location.href=location.protocol+"//"+location.hostname+location.pathname+"#/listaprof";
+                          // window.location.href='#listaprof';
+
+                        })
+                        .error(function(data) {
+                          console.log('Error: ' + data);
+                          });
+            };
     });
 
 
@@ -197,7 +247,8 @@ demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
                  $scope.VerSubcursos=true;
             }
               if(seccion!="0"){
-                window.location.href='#metodo';
+                location.href=location.protocol+"//"+location.hostname+location.pathname+"#/metodo";
+                //window.location.href='#metodo';
                 $rootScope.idcurso=id;
             }
 
@@ -215,8 +266,65 @@ demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
          $scope.getCursos();
     });
 
-demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
-         
+
+demoApp.controller('loginprofesorCtrl', function($scope, $http) {
+ $scope.logeoIncorrecto=false;
+  $scope.login= function(us){
+          console.log(us);
+
+          $http.post('login/api/loginGeneric.php', {us :us} )
+                  .success(function(data) {
+                    console.log(data);
+                    if(data.success){
+                        console.log("data.succesees :)");
+                        delete $scope.us;
+                       //location.reload();
+                       location.href=location.protocol+"//"+location.hostname+location.pathname+"profe/";
+                       //window.location.href='profe/';
+                    }
+                    else{
+                       $scope.logeoIncorrecto=true;
+                        console.log("error!!");
+                    }
+                    
+                  })
+                  .error(function(data) {
+                    console.log('Error: ' + data);
+                    });
+                               
+
+  };
+
+
+    });
+
+demoApp.controller('loginalumnoCtrl', function($scope, $http) {
+  $scope.logeoIncorrecto=false;
+  $scope.login= function(us){
+          console.log(us);
+
+          $http.post('login/api/loginGeneric.php', {us :us} )
+                  .success(function(data) {
+                    console.log(data);
+                    if(data.success){
+                        console.log("data.succesees :)");
+                        delete $scope.us;
+                         location.href=location.protocol+"//"+location.hostname+location.pathname+"alumno/";
+                       //location.reload();
+                    }
+                    else{
+                       $scope.logeoIncorrecto=true;
+                      // alert("cagao");
+                        console.log("error!!");
+                    }
+                    
+                  })
+                  .error(function(data) {
+                    console.log('Error: ' + data);
+                    });
+                               
+
+  };
 
 
     });

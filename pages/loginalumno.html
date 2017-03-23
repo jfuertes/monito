@@ -1,0 +1,105 @@
+<div id="site">
+    <div id="wrapper">
+        <div id="app">
+            <section dir="ltr" class="monument-carousel dark-theme ">
+                <div dir="ltr" class="signup">
+                <div id="signup-main" class="">
+                    <section class="section-white dark-theme ">
+                        <div class="section-inner center fold">
+                        <div class="earth-container">
+                            <span class="splash-globe"></span>
+                        </div>
+                        <div class="cta-container">
+                            <h1 class="splash">Quieres aprender?</h1>
+                            <div class="email-div">
+                                <a class="btn btn-green sign-up signup-trial" href="#alumno" id="signup-link" style="margin-bottom: 15px;" data-track-click="splash page register facebook">Aprender</a>
+                            </div>
+
+                            <h1 class="splash">Quieres enseñar?</h1>
+                            <div class="email-div">
+                                <a class="btn btn-green sign-up signup-trial" href="#profesor" id="signup-link" style="margin-bottom: 15px;" data-track-click="splash page register facebook">Enseñar</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<div class="modal hidden fade in slide-in" id="signup-modal" style="display: block;">
+      <a href="#/"><div class="close" data-dismiss="modal">
+      </div></a>
+        <div id="login-view" class="hidden" style="display: block;">
+          <div id="signup-modal-body">
+            <div class="modal-header">
+              <h1>Ingresar<div class="owl owl-pointing-small img-flipped"></div></h1>
+            </div>
+            <div class="modal-body">
+              <ul class="login-signup-list">
+                <form  id="login-form" ng-submit="login(us)">
+                  <table border="0" cellspacing="0" cellpadding="0" class="form-table" style="margin-bottom: 20px;">
+                    <input type="hidden" name="came_from" value="">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <strong>Usuario</strong>
+                        </td>
+                        <td>
+                          <input id="login" name="login" style="width: 230px;" ng-model="us.username" type="text">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <strong>Contraseña</strong>
+                        </td>
+                        <td>
+                          <input id="password" name="password" style="width: 230px;" ng-model="us.password" type="password">
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div id="message" class="warning-message hidden margin-bottom" ng-show="logeoIncorrecto"><p>usuario o contraseña incorrecta.</p></div>
+
+                  <button type="submit" class="btn btn-lg btn-blue btn-block more-margin-bottom" >Ingresar</button>
+                  <section>
+                <article><li>
+                  
+                    <fb:login-button type="submit" class="btn btn-lg btn-blue btn-block more-margin-bottom"  style="background: #4763b2;"
+                    appId="1112702552191988" 
+                    scope="public_profile,email" 
+                    id="facebook-login-button">
+                  </fb:login-button>
+                  
+                  </li>
+                  <div id="fbStatus">
+                  </div>
+                </article>
+              </section>
+              <script src="js/facebookSDKalu.js"></script>
+              <script src="js/facebookSDKpro.js"></script>
+                  <p class="center no-margin">
+                    <a href="login/#forgot_password" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                  </p>
+                </form>
+                <div ng-show="logeoIncorrecto"><p style="color:red">usuario o contraseña incorrecta.</p></div>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="modal-footer">
+          <div id="create-account" style="display: block;">
+            <a href="login/#loginalumno" class="create-profile">Crear una cuenta alumno</a>
+          </div>
+        </div>
+      </div>
+    <a href="#/"><div class="modal-backdrop fade in"></div></a>
+
+
+
+
+
+
+

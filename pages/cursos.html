@@ -1,12 +1,12 @@
 <section dir="ltr" class="monument-carousel  choose-course-by-flag fit-to-6-source-langs">
     <div dir="ltr" class="signup">
         <div class="hidden splash-signup-form" id="signup-language" style="display: block;">
-            <section class="section-white space">
+            <section class="section-white space slide-in">
                 <div class="section-inner-wide section-inner">
                     <div class="language-selection-container">
                         <h1 class="course-picker">Quiero aprender...</h1>
                         <div class="login-signup-flag-list-container  ">
-                            <div class="choose-language-flag-container choose-language" ng-repeat="c in Cursos" ng-show="!VerSubcursos" >
+                            <div class="choose-language-flag-container choose-language scroll-animate" ng-repeat="c in Cursos" ng-show="!VerSubcursos" >
                                 <div class="vertical-align" ng-click="ejecutar(c.id_curso, c.seccion)">
                                     <div class="flag-box">
                                         <img class="flag-svg-large flag-flex-size" src="IMG/temas/{{c.nombre}}.png">

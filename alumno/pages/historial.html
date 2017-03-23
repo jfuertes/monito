@@ -1,0 +1,59 @@
+<div  id="app" class="settings">
+  <main class="main-right">
+
+    <section class="page-sidebar sidebar-right">
+      <div class="inner">
+          <div class="box-colored bg-white">
+              <h2 class="view-profile-headline">
+                  <a class="avatar avatar-small " title="nombredeusuario">  <img src="../IMG/alumnos/{{alu.username}}.{{alu.extension_img}}"><span class="ring"></span></a>  {{alu.username}} <a href="#/" class="username">Ver tu perfil</a>
+              </h2>
+              <ul id="settings_tab" class="nav-sidebar">
+                  <li class="">
+                      <a href="#perfil">Perfil</a>
+                  </li>
+                  <li class="active">
+                      <a href="#historial" >Historial</a>
+                  </li>
+                  <li class="">
+                      <a href="#pass">Contraseña</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+    </section>
+
+    <section class="page-main main-right">
+      <div id="tab-container">
+      <form ng-submit="updateAlumno(alu)">
+        <div id="account-content" class="settings-content">
+
+          <!--<button id="submit_button" type="submit" class="btn btn-green right" >Guardar cambios</button>-->
+          <h1>Historial Profesores</h1>
+          <hr> </hr>
+          <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Profesor</th>
+                                            <th>curso</th>
+                                            <th>fecha</th>
+                                            <th>opciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="c in clases">
+                                            <td>{{c.username_pro}}</td>
+                                            <td>{{c.id_curso}}</td>
+
+                                            <!--<td><img src="../IMG/profes/{{c.puntuacion}}estrellas.png" HEIGHT=16></td>
+                             <td>{{c.comentario}}</td>-->
+                                            <td>{{c.fecha}}</td>
+                                            <td>
+                                                <button class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20" ng-click="revisardetalle(c.id)">revisar detalles</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+      </div>
+    </section>
+  </main>
+</div>

@@ -5,14 +5,17 @@
       <div class="inner">
           <div class="box-colored bg-white">
               <h2 class="view-profile-headline">
-                  <a href="/nombredeusuario" class="avatar avatar-small " title="nombredeusuario">  <img src="//s3.amazonaws.com/duolingo-images/avatar/default_2/large"><span class="ring"></span></a>  nombredeusuario <a href="#/" class="username">Ver tu perfil</a>
+                  <a class="avatar avatar-small " title="nombredeusuario">  <img src="../IMG/profes/{{pro.username}}.{{pro.extension_img}}"><span class="ring"></span></a>  {{pro.username}} <a href="#/" class="username">Ver tu perfil</a>
               </h2>
               <ul id="settings_tab" class="nav-sidebar">
                   <li class="active">
                       <a href="#perfil">Perfil</a>
                   </li>
                   <li class="">
-                      <a href="" >Cursos</a>
+                      <a href="#listcursos" >Cursos</a>
+                  </li>
+                  <li class="">
+                      <a href="#historial" >Clases Dictadas</a>
                   </li>
                   <li class="">
                       <a href="#pass">Contraseña</a>
@@ -26,13 +29,16 @@
       <div id="tab-container">
       <form ng-submit="updateProfesor(pro)">
         <div id="account-content" class="settings-content">
+
           <button id="submit_button" type="submit" class="btn btn-green right" >Guardar cambios</button>
           <!--mansaje de errores-->
           <div id="confirmation-message" class="hidden save-message">Tus cambios han sido guardados.</div>
           <div id="error-message" class="hidden error-message">Error</div>
 
           <h1>Configuración de cuenta</h1>
-          
+
+          <button  class="btn btn-blue left" ng-show="correcto">Edicion Correcta</button>
+          <hr>
           <ul class="list-settings">
             <li>
               <label class="label">Usuario</label>
@@ -57,10 +63,10 @@
             <li>
               <label class="label">Reseña</label>
               <div class="input">
-                <textarea id="bio" name="bio" rows="3" cols="40" ng-model="pro.descripcion" style="margin-bottom: 10px; width: 334px;">
+                <textarea maxlength="100" id="bio" name="bio" rows="3" cols="40" ng-model="pro.descripcion" style="margin-bottom: 10px; width: 334px;">
                 </textarea>
                 <p class="gray">
-                <span id="bio-count">100</span> caracteres restantes</p>
+                <span id="bio-count"></span> 100 caracteres maximo</p>
               </div>
             </li>
 
@@ -91,26 +97,19 @@
                   </select>
                 </label>
               </div>
-            </li>
+               </li>
             <li>
-              <label class="label">Imagen de perfil</label>
+             
               <div class="input">
-                <div class="avatar-large left" style="margin-right: 15px;">
-                  <a href="/luislinare375596" class="avatar avatar-large  " src="undefined?1486114299650">
-                    <img src="//s3.amazonaws.com/duolingo-images/avatar/default_2/xlarge">
-                    <span class="ring"></span>
-                  </a>
-                </div>
-                <form id="avatar-upload" action="/avatars" method="post" enctype="multipart/form-data">
-                  <input type="hidden" name="user_id" value="248186213">
-                  <input id="image-file" type="file" name="image" class="">
-                  <br>tamaño máximo = 1 MB
-                </form>
-              </div>
+              <label class="label">Imagen de perfil</label>
+                  <input class="btn btn-green right" type="file"  uploader-model="file"  />
+                  </div>
+           
             </li>
-            <button ng-show="correcto">cambios actualizados</button>
+            
           </ul>
           </form>
+           
         </div>
       </div>
     </section>

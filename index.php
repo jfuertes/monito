@@ -1,43 +1,65 @@
 <?php
     session_start();
-    if($_SESSION['type']=="profesor"){    
-     header('location:profe/');
-        //echo "entro";
-        //echo "acceso correcto".$_SESSION['login'];
-    }
-    else if ($_SESSION['type']=="alumno"){
-        header('location:alumno/');
+    if(isset($_SESSION['type'])){
+        if($_SESSION['type']=="profesor"){    
+         header('location:profe/');
+            //echo "entro";
+            //echo "acceso correcto".$_SESSION['login'];
+        }
+        else if ($_SESSION['type']=="alumno"){
+           header('location:alumno/');
+        }
     }
 ?>
 
 <html ng-app="demoApp" class="mobile" dir="ltr" style="height: 100%" lang="es">
     <head>
+    <meta name="theme-color" content="#216b07" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="NOODP">
     <title>MiProfe.club</title>
+ 
     <link rel="shortcut icon" href="IMG/logo.png">
+    <link rel="stylesheet" href="assets/css/estilos.css">
     <link rel="stylesheet" href="assets/css/miprofe.css">
     <link rel="stylesheet" href="assets/css/miprofe2.css">
     <link rel="stylesheet" href="assets/css/miprofe3.css">
     <link rel="stylesheet" href="assets/css/miprofe4.css">
-    <link href="/images/favicon.ico?v=3" rel="shortcut icon" type="image/x-icon">
+    <link href="IMG/logo.png" rel="shortcut icon" type="image/x-icon">
     <style type="text/css"></style>
     <style  href="assets/css/miprofe.css" type="text/css"></style>
     </head>
     <body class="global-es logged-out splash-2014 compact-enabled" style="overflow: auto;">
-    <header ng-controller="mainCtrl" class="topbar topbar-blue-dark">
+    <div id="fb-root" class=" fb_reset fb_reset fb_reset">
+        <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
+            <div>
+                <iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="https://staticxx.facebook.com/connect/xd_arbiter/r/1FegrZjPbq3.js?version=42#channel=f230bca32c29598&amp;origin=https%3A%2F%2Fwww.duolingo.com" style="border: none;"></iframe>
+            </div>
+        </div>
+        <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
+            <div></div>
+        </div>
+        <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
+            <div></div>
+        </div>
+        <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
+            <div></div>
+        </div>
+    </div>
+    <div id="topbar">
+        <header ng-controller="mainCtrl" class="topbar topbar-blue-dark">
         <div class="container">
-        <a href="#/" class="topbar-brand navigate-home track-click white smaller-logo"> <img src="IMG/logo.png" WIDTH=100 HEIGHT=80></a>
+        <a href="#/" class="topbar-brand navigate-home track-click white smaller-logo"> <img src="IMG/logo.png" WIDTH=40 HEIGHT=40></a>
             <div class="topbar-right">
                 
                 <div class="topbar-username dropdown click-trigger" style="padding-bottom: 15px;">
                    <div id="showloginpop" class="topbar-buttons" style="margin-top: 1px;" >
                         <span class="sign-in relative"></span>
-                            <span class="btn sign-in-btn btn-white" id="sign-in-btn" data-track-click="topbar toggle" >Iniciar Sesion</span>
+                            <a href="#loginuser"><span class="btn sign-in-btn btn-white" id="sign-in-btn" data-track-click="topbar toggle" >Iniciar Sesion</span></a>
                             </div>
                              <div id="loginpop">
-                            <ul  class="popover arrow-top login-popover hidden" id="login-modal" style="width: 250px; top: 42px; right: 20px; left: auto; display: block;">
+                            <ul  class="popover arrow-top login-popover hidden" id="login-modal" style="width: 250px; top: 42px; right: 20px; left: auto; display: none;">
 
                             <form id="login-form" action="" method="post" accept-charset="utf-8" style="margin: 0;" ng-submit="login(us)">
                                 
@@ -75,7 +97,17 @@
             </div>
         </div>
     </header>
+</div>
 
+<div id="mobile-menu" class="mobile-menu open">
+            <ul class="mobile-menu-listing">
+                <li><a href="#loginprofesor" class="show-log-in">Ingresar como Profesor</a>
+                </li>
+                <li><a href="#loginalumno">Ingresar como Alumno</a>
+                </li>
+                
+            </ul>
+</div>
     <div id="main">
         <div ng-view>
         </div>
@@ -98,8 +130,37 @@
             </div>
         </section>
 
-    <section dir="ltr" class="website"><div class="section-inner"><h2 class="splash">Cada lección es como un juego.</h2><div class="callout-wrapper"><div class="callout-container-left scroll-animate slide-in"><span class="callout challenges"><span class="splash-icon challenges"></span><div class="text"><h4>Leer, escuchar y escribir</h4><p>Cada lección incluye una variedad de ejercicios de hablar, escuchar, traducción y opción múltiple.</p></div></span><span class="callout grading"><span class="splash-icon check"></span><div class="text"><h4>Evaluación durante la lección</h4><p>Puedes ver tus respuestas correctas al instante. Cuando fallas un ejercicio, te mostramos cómo mejorar rápidamente.</p></div></span></div><span class="left-line-container scroll-animate slide-in"><div class="challenges line"></div><div class="grading line"></div></span><span class="splash-icon computer "></span><span class="right-line-container scroll-animate slide-in"><div class="streak line"></div><div class="heart line"></div></span><div class="callout-container-right scroll-animate slide-in"><span class="callout streak"><span class="splash-icon streak"></span><div class="text"><h4>Tu racha</h4><p>Duolingo te motiva a ir bien registrando cuántos días seguidos aprendes un idioma.</p></div></span><span class="callout heart"><span class="splash-icon heart"></span><div class="text"><h4>Vidas</h4><p>¡Los corazones te mantienen vivo! Los pierdes cuando tu respuesta es incorrecta. Cuando se te acaban debes empezar de nuevo.</p></div></span></div></div></div></section>
-
+    <section dir="ltr" class="website">
+        <div class="section-inner">
+            <h2 class="splash">Cada lección es como un juego.</h2>
+            <div class="callout-wrapper">
+                <div class="callout-container-left scroll-animate slide-in"><span class="callout challenges"><span class="splash-icon challenges"></span>
+                    <div class="text">
+                        <h4>Leer, escuchar y escribir</h4>
+                        <p>Cada lección incluye una variedad de ejercicios de hablar, escuchar, traducción y opción múltiple.</p>
+                    </div>
+                    </span><span class="callout grading"><span class="splash-icon check"></span>
+                    <div class="text">
+                        <h4>Evaluación durante la lección</h4>
+                        <p>Puedes ver tus respuestas correctas al instante. Cuando fallas un ejercicio, te mostramos cómo mejorar rápidamente.</p>
+                    </div>
+                    </span>
+                </div><span class="left-line-container scroll-animate slide-in"><div class="challenges line"></div><div class="grading line"></div></span><span class="splash-icon computer "></span><span class="right-line-container scroll-animate slide-in"><div class="streak line"></div><div class="heart line"></div></span>
+                <div class="callout-container-right scroll-animate slide-in"><span class="callout streak"><span class="splash-icon streak"></span>
+                    <div class="text">
+                        <h4>Tu racha</h4>
+                        <p>Duolingo te motiva a ir bien registrando cuántos días seguidos aprendes un idioma.</p>
+                    </div>
+                    </span><span class="callout heart"><span class="splash-icon heart"></span>
+                    <div class="text">
+                        <h4>Vidas</h4>
+                        <p>¡Los corazones te mantienen vivo! Los pierdes cuando tu respuesta es incorrecta. Cuando se te acaban debes empezar de nuevo.</p>
+                    </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section dir="ltr" class="footer dark-theme">
         <div class="section-inner">
@@ -165,6 +226,8 @@
     <script src="assets/plugins/angular.min.js" type="text/javascript"></script>
     <script src="assets/plugins/angular-route.js" type="text/javascript"></script>
     <script src="assets/js/script.js" type="text/javascript"></script>
+    <script src="assets/js/script2.js" type="text/javascript"></script>
+    <script src="js/facebookSDK.js"></script>
     <script type="text/javascript">
      $("#loginpop").fadeOut();
         $(document).ready(function(){

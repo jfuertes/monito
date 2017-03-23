@@ -11,8 +11,10 @@
 	$id_curso= $rspta->id_curso;
 	
 
-	$q = 'SELECT *
-		from profecurso where id_curso=:id_curso';
+	$q = 'SELECT profecurso.*, mp_profesor.*
+		from profecurso inner join mp_profesor
+		on profecurso.username = mp_profesor.username
+where id_curso=:id_curso';
 	$stmt = $dbh->prepare($q);
 	$stmt->bindParam(':id_curso', $id_curso, PDO::PARAM_INT);
 	$stmt->execute();
