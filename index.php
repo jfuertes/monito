@@ -31,22 +31,6 @@
     <style  href="assets/css/miprofe.css" type="text/css"></style>
     </head>
     <body class="global-es logged-out splash-2014 compact-enabled" style="overflow: auto;">
-    <div id="fb-root" class=" fb_reset fb_reset fb_reset">
-        <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
-            <div>
-                <iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="https://staticxx.facebook.com/connect/xd_arbiter/r/1FegrZjPbq3.js?version=42#channel=f230bca32c29598&amp;origin=https%3A%2F%2Fwww.duolingo.com" style="border: none;"></iframe>
-            </div>
-        </div>
-        <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
-            <div></div>
-        </div>
-        <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
-            <div></div>
-        </div>
-        <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
-            <div></div>
-        </div>
-    </div>
     <div id="topbar">
         <header ng-controller="mainCtrl" class="topbar topbar-blue-dark">
         <div class="container">
