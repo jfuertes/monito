@@ -81,10 +81,21 @@ $scope.registroExitoso=false;
                           .success(function(data) {
                             console.log(data);
                             if(data.success){
+                              var mensaje ="bienvenida";
                                 console.log("data.succesees :)");
                                 document.getElementById("formNProfe").reset();
-                                delete $scope.nu;
-                                 window.location.href = '../#/loginprofesor'
+
+                                     $http.post('../api/email2/gmail.php', {reci: nu.email, mensaje: mensaje} )
+                                        .success(function(data) {
+                                          console.log(data);
+                                          delete $scope.nu;
+                                         window.location.href = '../#/loginprofesor'
+                                        })
+                                        .error(function(data) {
+                                          console.log('Error: ' + data);
+                                          });
+                               
+                               
                               //  $scope.registroExitoso=true;
                             }
                             else{
@@ -168,19 +179,21 @@ loginApp.controller('loginalumnoCtrl', function($scope, $http) {
                             if(data.success){
                                 console.log("data.succesees :)");
                                 document.getElementById("formNAlu").reset();
+                                var mensaje ="bienvenida";
                                 //delete $scope.nu;
                                 //$scope.registroExitoso=true;
                                 //redirigir
                                      
-                                       $http.post('../api/email2/gmail.php', {reci: nu.email, mensaje:"bienvenida"} )
+                                       $http.post('../api/email2/gmail.php', {reci: nu.email, mensaje: mensaje} )
                                         .success(function(data) {
                                           console.log(data);
-                                         // $scope.resp=data;
+                                          delete $scope.nu;
+                                         window.location.href = '../#/loginalumno'
                                         })
                                         .error(function(data) {
                                           console.log('Error: ' + data);
                                           });
-                               delete $scope.nu;
+                               
 //                              window.location.href = '../#/loginalumno'
                                
                             }

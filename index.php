@@ -227,7 +227,7 @@
     <script src="assets/plugins/angular-route.js" type="text/javascript"></script>
     <script src="assets/js/script.js" type="text/javascript"></script>
     <script src="assets/js/script2.js" type="text/javascript"></script>
-    <script src="js/facebookSDK.js"></script>
+
     <script type="text/javascript">
      $("#loginpop").fadeOut();
         $(document).ready(function(){

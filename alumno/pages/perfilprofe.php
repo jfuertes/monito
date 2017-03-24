@@ -81,6 +81,9 @@
                 <span class="real-name">{{pro.celular}} - {{pro.telefono}}</span>
                 <span class="real-name">{{pro.email}} }</span>
             </h2>
+            <div>
+                <button  type="submit" class="btn btn-green right" ng-click="contactar()">solicitar clase</button>
+            </div>
         </div>
         </section>
     </main>
