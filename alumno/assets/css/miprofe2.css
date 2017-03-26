@@ -13530,7 +13530,7 @@ html[dir=rtl] .loading-indicator.smaller-logo-schools {
     width: 158px;
     height: 40px;
     text-indent: -10000px;
-    background: url("//d7mj4aqfscim2.cloudfront.net/images/icon-sprite_mv_c48d5502fbb901f7ee2659f6ca560994.svg") 0 0;
+    background: url("miprof.png") 0 0;
     margin: 18px 0 0 0
 }
 html[dir=rtl] .topbar-brand {
@@ -13541,10 +13541,10 @@ html[dir=rtl] .topbar-brand {
     background-position: -160px 0
 }
 .topbar-brand.smaller-logo {
-    background-size: 900px;
-    background-position: -144px 0;
-    width: 142px;
-    height: 36px;
+    background-size: 1000px;
+    background-position: 0px 0;
+    width: 90px;
+    height: 60px;
     margin: 20px 0 0 0
 }
 .topbar-nav {
