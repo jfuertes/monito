@@ -7,8 +7,8 @@
                     <ul class="sidebar-stats">
                         <li>
                             <h3 class="gray">Puntuacion</h3>
-                            <span class="icon icon-streak-small-normal "></span>
-                            <strong>{{pro.puntuacion}}</strong> Estrellas
+                           
+                            <img src="../IMG/profes/{{pro.puntuacion}}estrellas.png" HEIGHT=16> Estrellas
                         </li>
                     </ul>
                     <h3 class="gray">Universidad</h3>
