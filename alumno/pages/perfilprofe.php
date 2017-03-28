@@ -73,7 +73,7 @@
  ?>
  <div ng-show="antesContactar">
  <p>para mostrar numeros telefonicos, correo y chat contactelo si esta seguro de quere hacerlo</p>
-             <button id="submit_button" type="submit" class="btn btn-green right" ng-click="antesContactar = false">Contactar</button></div>
+             <button id="submit_button" type="submit" class="btn btn-green right" ng-click="contactar()">Contactar</button></div>
 
 
         <div ng-show="!antesContactar">

@@ -101,6 +101,17 @@ demoApp.controller('mainCtrl', function($scope, $http) {
                   });
         };
       };
+       $http.post('api/checkperfilprofe.php' )
+                .success(function(data) {
+                  console.log(data);
+                  if(data!=0){
+                     window.location.href='#perfilprofe/'+data+'';
+                  }
+                 
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
 
       
     });
@@ -330,6 +341,14 @@ $scope.antesContactar=true;
                   });
               }
               $scope.init();
+        $scope.contactar = function () {
+           if (confirm("esta seguro que desea solicitar una clase?")) {
+            console.log("confirmaste!");
+              $scope.antesContactar = false
+              //funcion para generar clase que falta
+           }
+        }
+        
     
     });
 demoApp.controller('perfilCtrl', function($scope, $http, $rootScope, upload) {

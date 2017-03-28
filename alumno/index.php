@@ -1,10 +1,12 @@
-<?php/*
+<?php
     session_start();
-    if($_SESSION['type']!="alumno"){    
+    if($_SESSION['type']!="alumno"){
      header('location:../');
+
         //echo "entro";
         //echo "acceso correcto".$_SESSION['login'];
-    }*/
+    }
+   
  ?>
 
 <html ng-app="demoApp" class="mobile" dir="ltr" style="height: 100%" lang="es">

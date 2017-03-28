@@ -72,7 +72,7 @@ $routeProvider
 
             })
 
-             .when('/perfilprofe', {
+             .when('/perfilprofe/:id', {
                 templateUrl : 'pages/perfilprofe.html',
                 controller  : 'perfilprofeCtrl'
 
@@ -141,20 +141,43 @@ demoApp.controller('loginCtrl', function($scope, $http) {
       
     });
 
-demoApp.controller('perfilprofeCtrl', function($scope, $http) {
-   console.log("perfilprofe");
-    $scope.getProfe= function(){
-             $http.post('api/getProfe.php' )
+   demoApp.controller('perfilprofeCtrl', function($scope, $http, $rootScope, $routeParams) { 
+
+   $scope.init = function(){
+          var username = $routeParams.id;
+          //console.log(id);
+          
+        $http.post('api/getProfeByusername.php', {username: username} )
                 .success(function(data) {
                   console.log(data);
-                  $scope.Atributo=data;
+                  $rootScope.pro=data;
+                  if(data.length==0){
+                   
+                  }
+
                 })
                 .error(function(data) {
                   console.log('Error: ' + data);
                   });
-         };
-         $scope.getProfe();
+              }
+              $scope.init();
+   $scope.contactar =function(id) {
+               $http.post('api/getlinkprofe.php', {id: $routeParams.id} )
+                .success(function(data) {
+                  console.log(data);
+                  location.href=location.protocol+"//"+location.hostname+location.pathname+"#/loginalumno";
+                                    
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+          
+          } 
+       
+    
     });
+ 
+  
 
 
 demoApp.controller('alumnoCtrl', function($scope, $http, $rootScope) {
@@ -196,6 +219,8 @@ demoApp.controller('listaProfCtrl', function($scope, $http, $rootScope) {
                 .error(function(data) {
                   console.log('Error: ' + data);
                   });
+
+        
     });
 demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
       $scope.online=function(){
