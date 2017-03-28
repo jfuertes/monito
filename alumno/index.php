@@ -1,7 +1,8 @@
 <?php
     session_start();
-    if($_SESSION['type']!="alumno"){    
+    if($_SESSION['type']!="alumno"){
      header('location:../');
+
         //echo "entro";
         //echo "acceso correcto".$_SESSION['login'];
     }
