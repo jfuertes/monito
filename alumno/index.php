@@ -6,7 +6,6 @@
         //echo "entro";
         //echo "acceso correcto".$_SESSION['login'];
     }
-   
  ?>
 
 <html ng-app="demoApp" class="mobile" dir="ltr" style="height: 100%" lang="es">
