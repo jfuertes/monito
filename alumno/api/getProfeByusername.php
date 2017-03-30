@@ -23,7 +23,7 @@
 	$r = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	$r=$r[0];
 	
-	if(isset( $r["link"])){
+	if(isset( $r["link"]) && $r["link"]!=""){
 		$look_for = "watch?v=";
 		$change_to = "embed/";
 		//echo $r["link"];
