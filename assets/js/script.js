@@ -140,6 +140,10 @@ demoApp.controller('loginCtrl', function($scope, $http) {
 
       
     });
+demoApp.controller('login2Ctrl', function($scope, $http) {
+console.log("login2ctrl");
+      
+    });
 
    demoApp.controller('perfilprofeCtrl', function($scope, $http, $rootScope, $routeParams) { 
 
