@@ -1,0 +1,64 @@
+<div id="app" class="settings">
+  <main class="main-right">
+
+    <section class="page-sidebar sidebar-right">
+      <div class="inner">
+          <div class="box-colored bg-white">
+              <h2 class="view-profile-headline">
+                  <a href="/nombredeusuario" class="avatar avatar-small " title="nombredeusuario">  <img src="//s3.amazonaws.com/duolingo-images/avatar/default_2/large"><span class="ring"></span></a>  nombredeusuario <a href="#/" class="username">Ver tu perfil</a>
+              </h2>
+              <ul id="settings_tab" class="nav-sidebar">
+                  <li class="">
+                      <a href="#perfil">Perfil</a>
+                  </li>
+                  <li class="">
+                      <a href="#listcursos" >Cursos</a>
+                  </li>
+                  <li class="">
+                      <a href="#historial" >Clases Dictadas</a>
+                  </li>
+                  <li class="active">
+                      <a href="#pass">Contraseña</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+    </section>
+
+    <section class="page-main main-right">
+      <div id="tab-container">
+        <div id="password-content">
+        <form id="formNPass" ng-submit="formNewPass(us)">
+          <button id="submit_button" type="submit" class="btn btn-green right"  ng-if="us.newpassword==us.newpassword2 && us.newpassword!=null">Guardar cambios</button>
+          <!--mansaje de errores-->
+          <div id="confirmation-message" class="hidden save-message">Tus cambios han sido guardados.</div>
+          <div id="error-message" class="hidden error-message">Error</div>
+
+          <h1>Cambiar Contraseña</h1>
+          <ul class="list-settings">
+            <li>
+              <label class="label">Contraseña actual</label>
+              <div class="input">
+                <input class="large" id="current-password" name="current-password" size="30" type="password" ng-model="us.password">
+              </div>
+            </li>
+            <li>
+              <label class="label">Nueva contraseña</label>
+              <div class="input">
+                <input class="large" id="new-password" name="new-password" size="30" type="password" ng-model="us.newpassword">
+              </div>
+            </li>
+            <li>
+              <label class="label">Confirmar nueva contraseña</label><!--falta la verificacio nn-->
+              <div class="input">
+                <input class="large" id="confirm-new-password" name="confirm-new-password" size="30" type="password" ng-model="us.newpassword2">
+              </div>
+            </li>
+          </ul>
+          </form>
+          <button ng-show="error">Contraseña invalida</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
