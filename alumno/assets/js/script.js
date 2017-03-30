@@ -334,7 +334,6 @@ $scope.antesContactar=true;
                   if(data.length==0){
                     $scope.SinProfes=true;
                   }
-
                 })
                 .error(function(data) {
                   console.log('Error: ' + data);
@@ -345,6 +344,23 @@ $scope.antesContactar=true;
            if (confirm("esta seguro que desea solicitar una clase?")) {
             console.log("confirmaste!");
               $scope.antesContactar = false
+              //funcion para generar clase que falta
+           }
+        }
+           $scope.solicitarClase = function () {
+           if (confirm("esta seguro que desea solicitar una clase?")) {
+            console.log("confirmaste!");
+            //funcion para agregar clase
+                $http.post('api/addClase.php', {id_profe: $routeParams.id, id_curso: $rootScope.idcurso} )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.clasea=data;
+                   location.href=location.protocol+"//"+location.hostname+location.pathname+"#/clase/"+data.id;
+                  
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
               //funcion para generar clase que falta
            }
         }
