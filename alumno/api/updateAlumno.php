@@ -14,6 +14,15 @@
 	$distritos= $rspta->alu->distritos;
 	$email= $rspta->alu->email;
 
+	$type="alumno";
+
+ 	$q = "UPDATE  mp_login set email=:email where username=:username and type=:type";
+                            $stmt = $dbh->prepare($q);
+                            $stmt->bindParam(':email', $email, PDO::PARAM_INT);
+                            $stmt->bindParam(':type', $type, PDO::PARAM_INT);
+                            $stmt->execute();
+                      
+			//$rpta=array('success' => 'El usuario fue creado exitosamente');
 	
 	 $q = "UPDATE  mp_alumno set nombres=:nombres, ape_paterno=:ape_paterno, ape_materno=:ape_materno, distritos=:distritos, email=:email  where username=:username";
                             $stmt = $dbh->prepare($q);

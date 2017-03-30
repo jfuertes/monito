@@ -18,6 +18,14 @@
 	$online= $rspta->pro->online;
 	$celular= $rspta->pro->celular;
 
+	$type="profesor";
+
+$q = "UPDATE  mp_login set email=:email where username=:username and type=:type";
+                            $stmt = $dbh->prepare($q);
+                            $stmt->bindParam(':email', $email, PDO::PARAM_INT);
+                            $stmt->bindParam(':type', $type, PDO::PARAM_INT);
+                            $stmt->execute();
+                      
 	
 	 $q = "UPDATE  mp_profesor set nombres=:nombres, ape_paterno=:ape_paterno, ape_materno=:ape_materno, link=:link, descripcion=:descripcion, distritos=:distritos, email=:email, online=:online, celular=:celular   where username=:username";
                             $stmt = $dbh->prepare($q);

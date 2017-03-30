@@ -34,13 +34,14 @@
 
 		//////////////////////////////////
 
-		$q = 'INSERT into mp_login (username, password, type)
-				VALUES (:username, :password, :type)';
+		$q = 'INSERT into mp_login (username, password, type, email)
+				VALUES (:username, :password, :type, :email)';
 			
 			$stmt = $dbh->prepare($q);
 			$stmt->bindParam(':username',  $username, PDO::PARAM_STR);
 			$stmt->bindParam(':password',  $password, PDO::PARAM_INT);
 			$stmt->bindParam(':type',  $type, PDO::PARAM_INT);
+			$stmt->bindParam(':email',  $email, PDO::PARAM_INT);
 
 			$stmt->execute();
 			//ususario creado en 
