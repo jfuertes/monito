@@ -7,17 +7,19 @@
                         <h1 class="course-picker">Elige tu profesor favorito</h1>
                         <div class="login-signup-flag-list-container  ">
                             <div class="choose-language-flag-container choose-language" ng-repeat="p in Profes" >
-                                <a href="#perfilprofe/{{p.username}}">
+                               
                                     <div class="vertical-align">
+                                     <a href="#perfilprofe/{{p.username}}">
                                         <div class="flag-box">
                                             <img class="flag-svg-large flag-flex-size" src="../IMG/profes/{{p.username}}.{{p.extension_img}}">
                                         </div>
                                         <h2 class="white course-name">{{p.username}}</h2>
                                         <p>puntuacion:</p>
-                                        <img src="../IMG/profes/{{p.puntuacion}}estrellas.png" HEIGHT=16>
+                                        <!--<img src="../IMG/profes/{{p.puntuacion}}estrellas.png" HEIGHT=16>-->
                                     <!--<p class="num-learners">estudiantes</p>-->
+                                    </a>
                                     </div>
-                                </a> 
+                                 
                             </div>
                         </div>
 
