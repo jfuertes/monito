@@ -24,6 +24,7 @@ $q = "UPDATE  mp_login set email=:email where username=:username and type=:type"
                             $stmt = $dbh->prepare($q);
                             $stmt->bindParam(':email', $email, PDO::PARAM_INT);
                             $stmt->bindParam(':type', $type, PDO::PARAM_INT);
+                            $stmt->bindParam(':username', $username, PDO::PARAM_INT);
                             $stmt->execute();
                       
 	
