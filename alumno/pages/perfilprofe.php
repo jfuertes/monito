@@ -34,7 +34,7 @@
                 </ul>
             </div>
             <div class="inner">
-                <div class="box-gray box-achievements">
+                <div class="box-gray box-achievements"> 
                     <h2>Descripcion</h2>
                     <ul class="substat">
                         <li>
