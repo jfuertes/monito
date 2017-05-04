@@ -14,6 +14,8 @@
 	$link= $rspta->pro->link;
 	$descripcion= $rspta->pro->descripcion;
 	$distritos= $rspta->pro->distritos;
+	$id_uni= $rspta->pro->id_uni;
+
 	$email= $rspta->pro->email;
 	$online= $rspta->pro->online;
 	$celular= $rspta->pro->celular;
@@ -28,12 +30,13 @@ $q = "UPDATE  mp_login set email=:email where username=:username and type=:type"
                             $stmt->execute();
                       
 	
-	 $q = "UPDATE  mp_profesor set nombres=:nombres, ape_paterno=:ape_paterno, ape_materno=:ape_materno, link=:link, descripcion=:descripcion, distritos=:distritos, email=:email, online=:online, celular=:celular   where username=:username";
+	 $q = "UPDATE  mp_profesor set nombres=:nombres, ape_paterno=:ape_paterno, ape_materno=:ape_materno, link=:link, descripcion=:descripcion, distritos=:distritos, email=:email, online=:online, celular=:celular, id_uni=:id_uni  where username=:username";
                             $stmt = $dbh->prepare($q);
                             $stmt->bindParam(':nombres', $nombres, PDO::PARAM_INT);
                             $stmt->bindParam(':ape_paterno', $ape_paterno, PDO::PARAM_INT);
                             $stmt->bindParam(':ape_materno', $ape_materno, PDO::PARAM_INT);
                             $stmt->bindParam(':link', $link, PDO::PARAM_INT);
+                            $stmt->bindParam(':id_uni', $id_uni, PDO::PARAM_INT);
                             $stmt->bindParam(':descripcion', $descripcion, PDO::PARAM_INT);
                             $stmt->bindParam(':distritos', $distritos, PDO::PARAM_INT);
                             $stmt->bindParam(':email', $email, PDO::PARAM_INT);

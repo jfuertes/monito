@@ -22,7 +22,6 @@
 	$r=$r[0];
 
 	
-	
 $look_for = "watch?v=";
 $change_to = "embed/";
 

@@ -52,6 +52,30 @@
                 <input style="width: 334px;" class="large" id="Nombres" ng-model="pro.nombres" name="username" type="text" >
               </div>
             </li>
+            <li>
+              <label class="label">Apellido Paterno</label>
+              <div class="input">
+                <input style="width: 334px;" class="large" id="Nombres" ng-model="pro.ape_paterno" name="username" type="text" >
+              </div>
+            </li>
+            <li>
+              <label class="label">Apellido Materno</label>
+              <div class="input">
+                <input style="width: 334px;" class="large" id="Nombres" ng-model="pro.ape_materno" name="username" type="text" >
+              </div>
+            </li>
+
+              <li>
+              <label class="label">Universidad</label>
+              <div class="input">
+                <label class="blue-select no-focus smaller fixed-width">
+                   <select  ng-model="pro.id_uni" ng-value="pro.id_uni" required>
+                    
+                    <option ng-repeat="u in UNI" value="{{u.id_uni}}">{{u.nombre_uni}}</option>
+                  </select>
+                </label>
+              </div>
+               </li>
 
             <li>
               <label class="label">Enlace de youtube</label>
