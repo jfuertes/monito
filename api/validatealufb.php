@@ -20,5 +20,8 @@
 	{
 		echo "correcto";
 	}
+	else{
+		 echo "crear";
+	}
 
 ?>

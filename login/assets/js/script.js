@@ -14,12 +14,12 @@ $routeProvider
                 controller  : 'mainCtrl'
             })
 
-            .when('/loginalumno', {
+            .when('/loginalumno/:id', {
                 templateUrl : 'pages/loginalumno.html',
                 controller  : 'loginalumnoCtrl'
             })
 
-            .when('/loginprofesor', {
+            .when('/loginprofesor/:id', {
                 templateUrl : 'pages/loginprofesor.html',
                 controller  : 'loginprofesorCtrl'
             })
@@ -152,8 +152,13 @@ loginApp.controller('mainCtrl', function($scope) {
   $scope.message = 'Would you like to contact us?';
     });
 
-loginApp.controller('loginalumnoCtrl', function($scope, $http) {
- 
+loginApp.controller('loginalumnoCtrl', function($scope, $http, $routeParams) {
+ if($routeParams.id !=null){
+      console.log("se tiene el username de fb");
+     var username = $routeParams.id;
+     $scope.nu.username=username;
+ }
+
   $scope.errorCrear=false;
         // create a message to display in our view
         $scope.getDistritos= function(){
@@ -193,16 +198,11 @@ loginApp.controller('loginalumnoCtrl', function($scope, $http) {
                                         .error(function(data) {
                                           console.log('Error: ' + data);
                                           });
+}
+})
                                
 //                              window.location.href = '../#/loginalumno'
-                               
-                            }
-                            else{
-                               $scope.errorCrear=true;
-                                console.log("error!!");
-                            }
-                            
-                          })
+                
                           .error(function(data) {
                             console.log('Error: ' + data);
                             });
