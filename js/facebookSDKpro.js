@@ -49,8 +49,9 @@ var Facebook_correctLogin	= function () {
 					  data: { 'username': facebookUser.id}
 					})
 					  .done(function( msg ) {
-					    if(msg=="correcto"){
+					    
 					    	document.getElementById('fbStatus').innerHTML = '<a class="button" id="entraalufb">entra con tu fb</a>';//no le pongas button conflico con boton de ingresar con funcion de logingeneric
+							if(msg=="correcto"){
 							$("#entraalufb").click(function() {
 								//alert("ola");
       								$.ajax({ 
