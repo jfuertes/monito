@@ -67,7 +67,7 @@ var Facebook_correctLogin	= function () {
 								});
 					    }
 					    else if{
-					    	window.location.href='../login/#/loginalumno/'+facebookUser.id;
+					    	window.location.href='../login/#/loginalumno/'+facebookUser.id+'';
 					    }
 					  });
 			}

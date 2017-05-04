@@ -158,7 +158,7 @@ loginApp.controller('loginalumnoCtrl', function($scope, $http, $routeParams) {
      var username = $routeParams.id;
      $scope.nu.username=username;
  }
-else{
+
   $scope.errorCrear=false;
         // create a message to display in our view
         $scope.getDistritos= function(){
@@ -199,22 +199,15 @@ else{
                                           console.log('Error: ' + data);
                                           });
 }
-}
+})
                                
 //                              window.location.href = '../#/loginalumno'
-                               
-                            }
-                            else{
-                               $scope.errorCrear=true;
-                                console.log("error!!");
-                            }
-                            
-                          })
+                
                           .error(function(data) {
                             console.log('Error: ' + data);
                             });
                 };
-}
+
                     $scope.loginalu= function(us){
                   console.log(us);
 
