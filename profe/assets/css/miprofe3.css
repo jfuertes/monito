@@ -4446,17 +4446,18 @@ html[dir=rtl] .blue-select-inline:after {
         width: 63px
     }
     .compact-enabled #topbar .topbar .container .topbar-brand {
-        margin: 17px 0 0 5px;
+        /* margin: 17px 0 0 5px; */
         background-size: 660px;
-        height: 26px;
-        width: 105px
+        height: 50px;
+        width: 55px;
+        background-size: 52px;
     }
     html[dir=rtl] .compact-enabled #topbar .topbar .container .topbar-brand {
         margin: 17px 0 0 5px;
         margin: 17px 5px 0 0
     }
     .compact-enabled #topbar .topbar .container .topbar-brand.white {
-        background-position: -105px 0
+        background-position: 0 0
     }
     .compact-enabled #topbar .topbar .topbar-right {
         top: 23px;

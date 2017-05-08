@@ -34,7 +34,7 @@
     <div id="topbar">
         <header ng-controller="mainCtrl" class="topbar topbar-blue-dark">
         <div class="container">
-        <a href="#/" class="topbar-brand navigate-home track-click white smaller-logo"> <img src="IMG/logo.png" WIDTH=40 HEIGHT=40></a>
+        <a href="#/" class="topbar-brand navigate-home track-click white"></a>
             <div class="topbar-right">
                 
                 <div class="topbar-username dropdown click-trigger" style="padding-bottom: 15px;">
@@ -114,7 +114,7 @@
             </div>
         </section>
 
-    <section dir="ltr" class="website">
+    <!--<section dir="ltr" class="website">
         <div class="section-inner">
             <h2 class="splash">Cada lección es como un juego.</h2>
             <div class="callout-wrapper">
@@ -144,7 +144,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
     <section dir="ltr" class="footer dark-theme">
         <div class="section-inner">

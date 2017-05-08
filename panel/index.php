@@ -1,11 +1,4 @@
-<?php
-    session_start();
-    if($_SESSION['type']!="profesor"){    
-     header('location:../');
-        //echo "entro";
-        //echo "acceso correcto".$_SESSION['login'];
-    }
- ?>
+
 
 <html ng-app="demoApp" class="mobile" dir="ltr" style="height: 100%" lang="es">
     <head>
@@ -28,8 +21,7 @@
     <div id="topbar">
     <header ng-controller="mainCtrl" class="topbar topbar-blue-dark">
         <div class="container">
-            <a href="#/" class="topbar-brand navigate-home track-click white smaller-logo"> <img src="IMG/logo.png" WIDTH=100 HEIGHT=80>
-            </a>
+            <a href="#/" class="topbar-brand navigate-home track-click white "> </a>
             <div class="topbar-right">
                 <div class="topbar-username dropdown click-trigger" style="padding-bottom: 15px;">
                     <div id="showloginpop" class="topbar-buttons" style="margin-top: 1px;">
@@ -38,7 +30,7 @@
                             <img src="../IMG/profes/{{pro.username}}.{{pro.extension_img}}">
                             <span class="ring"></span>
                         </a>
-                        <span class="name"><?php echo $_SESSION['nombres']." ".$_SESSION['ape_paterno'] ?></span>
+                        <span class="name">usuario</span>
                         <span class="icon icon-arrow-down-white"></span>
                     </div>
                     <div id="loginpop">

@@ -28,7 +28,7 @@
     <div id="topbar">
     <header ng-controller="mainCtrl" class="topbar topbar-blue-dark">
         <div class="container">
-            <a href="#/" class="topbar-brand navigate-home track-click white smaller-logo"> <img src="IMG/logo.png" WIDTH=100 HEIGHT=80>
+            <a href="#/" class="topbar-brand navigate-home track-click white "> 
             </a>
             <div class="topbar-right">
                 <div class="topbar-username dropdown click-trigger" style="padding-bottom: 15px;">
