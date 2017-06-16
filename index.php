@@ -107,7 +107,7 @@
                     <div class="play-border">
                         <div class="play-button"></div>
                     </div><strong>Ve cómo lo hacemos</strong>
-                    <!--<div id="videoDemostrativo" ng-show="showvideohep"><iframe width="560" height="315" src="https://www.youtube.com/embed/4gr6_yOoMQc?autoplay=1" frameborder="0" allowfullscreen></iframe></div>-->
+                    <div id="videoDemostrativo" ng-show="showvideohep"><iframe width="560" height="315" src="https://www.youtube.com/embed/4gr6_yOoMQc?autoplay=1" frameborder="0" allowfullscreen></iframe></div>
 
                     </a>
                 </div>

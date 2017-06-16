@@ -14,12 +14,12 @@ $routeProvider
                 controller  : 'mainCtrl'
             })
 
-            .when('/loginalumno/:id', {
+            .when('/loginalumno', {
                 templateUrl : 'pages/loginalumno.html',
                 controller  : 'loginalumnoCtrl'
             })
 
-            .when('/loginprofesor/:id', {
+            .when('/loginprofesor', {
                 templateUrl : 'pages/loginprofesor.html',
                 controller  : 'loginprofesorCtrl'
             })
