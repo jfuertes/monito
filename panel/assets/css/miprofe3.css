@@ -13892,7 +13892,7 @@ html[dir=rtl] .course-splash-page .website .section-inner .heart.line {
 .course-splash-page .footer {
     background-color: none;
     background: -webkit-gradient(linear, left top, left bottom, #2fadeb, #2fadeb, #2fadeb);
-    background: -webkit-linear-gradient(top, #6c4696, #6c4696, #6c4696);
+    background: -webkit-linear-gradient(top, #da641d, #da641d, #da641d);
     background: -moz-linear-gradient(top, #2fadeb, #48c2f3, #4dccff);
     background: -ms-linear-gradient(top, #2fadeb, #48c2f3, #4dccff);
     background: -o-linear-gradient(top, #2fadeb, #48c2f3, #4dccff);

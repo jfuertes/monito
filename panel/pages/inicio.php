@@ -21,7 +21,7 @@
                                     <!--<div class="small-course-illustration layer-1"></div>
                                     <div class="small-course-illustration layer-2"></div>
                                     <div class="small-course-illustration layer-3"></div>-->
-                                    <div style='background-size:70px;height:80px; background-repeat: no-repeat; background-position:center; background-image: url("../IMG/logos-uni/{{pro.abreviatura_uni}}.png");'></div>
+                                    <div style='background-size:70px;height:80px; background-repeat: no-repeat; background-position:center; background-image: url("../IMG/logo.png");'></div>
                                 <!--</div>-->
                             </div>
                             <div class="language-info">

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tokenizando con Culqi Checkout</title>
+    <meta name="description" content="Integración de Culqi Checkout">
+    <meta name="author" content="Brayan Cruces">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div style="text-align: center;padding:20px">
+                <a id="buyButton" class="btn btn-primary" role="button">Pagar ahora</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incluyendo .js de Culqi Checkout-->
+    <script src="https://checkout.culqi.com/v2"></script>
+    <!-- Seteando valores de config-->
+    <script>
+        Culqi.publicKey = 'pk_test_e2POCPbwI5gR5xVC'; // Colocar tu Código de Comercio (llave pública)
+        Culqi.settings({
+            title: 'pago MiProfe.club',
+            currency: 'PEN', // Código de la moneda, 'PEN' o 'USD'
+            description: 'mensualidad', // Descripción acerca de la compra
+            amount: 5000 // Monto de la compra (sin punto decimal, en este caso 35.00 soles)
+        });
+    </script>
+
+    <script>
+        $('#buyButton').on('click', function(e) {
+            // Abre el formulario con las opciones de Culqi.settings
+            Culqi.open();
+            e.preventDefault();
+        });
+        // Recibimos el token desde los servidores de Culqi
+        function culqi() {
+            if (Culqi.token) { // Token creado exitosamente!
+                // Obtener el token ID
+                var token = Culqi.token.id;
+                alert('Se ha creado un token: '+token);
+            } else { // Hubo algun problema!
+                // Mostramos JSON de objeto error en consola
+                console.log(Culqi.error);
+                alert(Culqi.error.mensaje);
+            }
+        };
+    </script>
+
+
+
+</body>
+
+</html>

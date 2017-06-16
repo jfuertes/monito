@@ -10,7 +10,7 @@ $routeProvider
 
             // route for the home page
             .when('/', {
-                templateUrl : 'pages/inicio.php',
+                templateUrl : 'pages/perfil.html',
                 controller  : 'mainCtrl'
             })
 
