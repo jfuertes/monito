@@ -179,7 +179,7 @@ demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
 
 demoApp.controller('listaProfCtrl', function($scope, $http, $rootScope) { 
   $scope.SinProfes=false;
-    $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso} )
+    $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso, modalidad: $rootScope.modalidad} )
                 .success(function(data) {
                   console.log(data);
                   $scope.Profes=data;
@@ -200,7 +200,8 @@ demoApp.controller('listaProfCtrl', function($scope, $http, $rootScope) {
     });
 demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
       $scope.online=function(){
-            $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso} )
+        $rootScope.modalidad=1;
+            $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso, modalidad: $rootScope.modalidad} )
                         .success(function(data) {
                           console.log(data);
                           $scope.Profes=data;
@@ -213,7 +214,8 @@ demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
                           });
             };
               $scope.presencial=function(){
-            $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso} )
+                $rootScope.modalidad=0;
+            $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso, modalidad: $rootScope.modalidad} )
                         .success(function(data) {
                           console.log(data);
                           $scope.Profes=data;
@@ -227,6 +229,20 @@ demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
             };
     });
 demoApp.controller('historialCtrl', function($scope, $http, $rootScope) {
+  //agregar detalles
+     $scope.getAlumno= function(){
+         $http.post('api/getdataAlumno.php' )
+                          .success(function(data) {
+                            console.log(data);
+                            $scope.alu=data;
+
+                          })
+                          .error(function(data) {
+                            console.log('Error: ' + data);
+                            });
+    }
+    $scope.getAlumno();
+
       $scope.getclases=function(){
             $http.post('api/getclases.php' )
                         .success(function(data) {
@@ -300,6 +316,13 @@ demoApp.controller('passCtrl', function($scope, $http, $rootScope) {
                             console.log(data);
                             if(data.success){
                                 console.log("data.succesees :)");
+                                     $http.post('api/sendmail.php', {us :us} )
+                                        .success(function(data) {
+                                          console.log(data);
+                                        })
+                                        .error(function(data) {
+                                          console.log('Error: ' + data);
+                                          });
                                 delete $scope.us;
                                 
                                 $scope.newAlert('La importación se realizó correctamente','success','3000');

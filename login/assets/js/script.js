@@ -14,12 +14,12 @@ $routeProvider
                 controller  : 'mainCtrl'
             })
 
-            .when('/loginalumno/:id', {
+            .when('/loginalumno', {
                 templateUrl : 'pages/loginalumno.html',
                 controller  : 'loginalumnoCtrl'
             })
 
-            .when('/loginprofesor/:id', {
+            .when('/loginprofesor', {
                 templateUrl : 'pages/loginprofesor.html',
                 controller  : 'loginprofesorCtrl'
             })
@@ -88,8 +88,8 @@ $scope.registroExitoso=false;
                                      $http.post('../api/email2/gmail.php', {reci: nu.email, mensaje: mensaje} )
                                         .success(function(data) {
                                           console.log(data);
-                                          delete $scope.nu;
-                                         window.location.href = '../#/loginprofesor'
+                                          //delete $scope.nu;
+                                         //window.location.href = '../#/loginprofesor'
                                         })
                                         .error(function(data) {
                                           console.log('Error: ' + data);

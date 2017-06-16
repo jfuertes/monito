@@ -211,7 +211,7 @@ $scope.cambiarcurso=true;
 
 demoApp.controller('listaProfCtrl', function($scope, $http, $rootScope) {
   $scope.SinProfes=false;
-    $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso} )
+    $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso, modalidad: $rootScope.modalidad} )
                 .success(function(data) {
                   console.log(data);
                   $scope.Profes=data;
@@ -228,7 +228,8 @@ demoApp.controller('listaProfCtrl', function($scope, $http, $rootScope) {
     });
 demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
       $scope.online=function(){
-            $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso} )
+        $rootScope.modalidad=1;
+            $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso, modalidad: $rootScope.modalidad} )
                         .success(function(data) {
                           console.log(data);
                           $scope.Profes=data;
@@ -241,7 +242,8 @@ demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
                           });
             };
               $scope.presencial=function(){
-            $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso} )
+                $rootScope.modalidad=0;
+            $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso, modalidad: $rootScope.modalidad} )
                         .success(function(data) {
                           console.log(data);
                           $scope.Profes=data;
