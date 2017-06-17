@@ -83,13 +83,13 @@ $scope.registroExitoso=false;
                             if(data.success){
                               var mensaje ="bienvenida";
                                 console.log("data.succesees :)");
-                                document.getElementById("formNProfe").reset();
+                                //document.getElementById("formNProfe").reset();
 
-                                     $http.post('../api/email2/gmail.php', {reci: nu.email, mensaje: mensaje} )
+                                     $http.post('../api/email/gmail.php', {reci: nu.email, mensaje: mensaje} )
                                         .success(function(data) {
                                           console.log(data);
-                                          //delete $scope.nu;
-                                         //window.location.href = '../#/loginprofesor'
+                                          delete $scope.nu;
+                                         window.location.href = '../#/loginprofesor'
                                         })
                                         .error(function(data) {
                                           console.log('Error: ' + data);
@@ -189,7 +189,9 @@ loginApp.controller('loginalumnoCtrl', function($scope, $http, $routeParams) {
                                 //$scope.registroExitoso=true;
                                 //redirigir
                                      
-                                       $http.post('../api/email2/gmail.php', {reci: nu.email, mensaje: mensaje} )
+                                      //document.getElementById("formNProfe").reset();
+
+                                     $http.post('../api/email/gmail.php', {reci: nu.email, mensaje: mensaje} )
                                         .success(function(data) {
                                           console.log(data);
                                           delete $scope.nu;
