@@ -4,10 +4,10 @@
             <div class="inner">
                 <div class="box-colored bg-white">
                     <ul id="settings_tab" class="nav-sidebar">
-                        <li class="active">
+                        <li class="">
                             <a href="#listcursos">Cursos Existentes</a>
                         </li>
-                        <li class="">
+                        <li class="active">
                             <a href="#universidades">Universidades</a>
                         </li>
                         <li class="">
@@ -26,16 +26,16 @@
                     <div id="account-content" class="settings-content">
 
                         <h1 class="player">cursos</h1>
-                        <a href="#nivelcurso"><button    class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Agregar Cursos</button></a>
-                        <a href="#nivelbloque"><button    class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Agregar Bloque</button></a>
+                        <a href="#nivel"><button    class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Agregar Curso</button></a>
                         <hr></hr>
                                     <table class="table table-striped">
                         <thead>
                           <tr>
-                            <th>Nivel</th>
-                            <th>Bloque</th>
                             <th>Curso</th>
-                            <th>Opcion</th>
+                            <th>Nivel</th>
+                            <th>Sub-curso</th>
+                            <th>Sub-curso2</th>
+                            <th>Foto</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -45,13 +45,7 @@
                             <td>{{cu.nivel | filternivel}}</td>
                             <td>{{cu.modalidad | filtermodalidad}}</td>
                             <td><button ng-click="eliminar($index, cu.id_curso)" class="btn btn-green btn-pequeno has-tooltip redesign-check">eliminar</button></td>
-                          </tr> ejemplo:-->
-                            <tr >
-                            <td>matematica</td>
-                            <td>secundaria</td>
-                            <td>aritmetica</td>
-                            <td><button  class="btn btn-green btn-pequeno has-tooltip redesign-check">eliminar</button></td>
-                          </tr> 
+                          </tr> -->
                          </tbody>
                     </table>
                                 </div>
