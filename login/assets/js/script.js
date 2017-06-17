@@ -33,9 +33,13 @@ $routeProvider
 
 
             // route for the contact page
-            .when('/forgot_password', {
-                templateUrl : 'pages/forgot_password.html',
-                controller  : 'forgot_passwordCtrl'
+            .when('/forgot_password_alu', {
+                templateUrl : 'pages/forgot_password_alu.html',
+                controller  : 'forgot_password_aluCtrl'
+            })
+             .when('/forgot_password_pro', {
+                templateUrl : 'pages/forgot_password_pro.html',
+                controller  : 'forgot_password_proCtrl'
             })
             .otherwise({ templateUrl : 'pages/notfound.html' 
         });
@@ -144,9 +148,53 @@ loginApp.controller('formularioCtrl', function($scope) {
 
 
 
-loginApp.controller('forgot_passwordCtrl', function($scope) {
-  $scope.message = 'Would you like to contact us?';
+loginApp.controller('forgot_password_aluCtrl', function($scope) {
+    $scope.forgotalu= function(nu){
+      $scope.enviadocorreo=false;
+      $scope.errorcorreo=false;
+             $http.post('../api/email/forgotalu.php' , {nu :nu})
+                .success(function(data) {
+                  console.log(data);
+                  if(data.success){
+                    $scope.enviadocorreo=true;
+                  }
+                  else{
+                    $scope.errorcorreo=true;
+                  }
+                  
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+         };
+         $scope.forgotalu();
+
+
+
     });
+loginApp.controller('forgot_password_proCtrl', function($scope) {
+      $scope.forgotpro= function(nu){
+      $scope.enviadocorreo=false;
+      $scope.errorcorreo=false;
+             $http.post('../api/email/forgotpro.php', {nu :nu} )
+                .success(function(data) {
+                  console.log(data);
+                  if(data.success){
+                    $scope.enviadocorreo=true;
+                  }
+                  else{
+                    $scope.errorcorreo=true;
+                  }
+                  
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+         };
+         $scope.forgotpro();
+
+    });
+
 
 loginApp.controller('mainCtrl', function($scope) {
   $scope.message = 'Would you like to contact us?';
