@@ -14,22 +14,22 @@ $routeProvider
                 controller  : 'listcursosCtrl'
             })
 
+
             .when('/universidades', {
                 templateUrl : 'pages/universidades.html',
                 controller  : 'universidadesCtrl'
             })
-            .when('/bloquecurso', {
-                templateUrl : 'pages/bloquecurso.html',
-                controller  : 'bloquecursoCtrl'
+
+            .when('/pass', {
+                templateUrl : 'pages/pass.html',
+                controller  : 'passCtrl'
             })
-            .when('/nivelbloque', {
-                templateUrl : 'pages/nivelbloque.html',
-                controller  : 'nivelbloqueCtrl'
+
+            .when('/adduni', {
+                templateUrl : 'pages/adduni.html',
+                controller  : 'adduniCtrl'
             })
-            .when('/nivelcurso', {
-                templateUrl : 'pages/nivelcurso.html',
-                controller  : 'nivelcursoCtrl'
-            })
+
             .when('/addcurso', {
                 templateUrl : 'pages/addcurso.html',
                 controller  : 'addcursoCtrl'
@@ -43,18 +43,18 @@ $routeProvider
                 controller  : 'metodoCtrl'
 
             })
-                 .when('/listcursos', {
-                templateUrl : 'pages/listcursos.html',
-                controller  : 'listcursosCtrl'
+             .when('/listcursos', {
+            templateUrl : 'pages/listcursos.html',
+            controller  : 'listcursosCtrl'
 
             })
-            .when('/alumno', {
-                templateUrl : 'pages/alumno.html',
-                controller  : 'alumnoCtrl'
+            .when('/alumnos', {
+                templateUrl : 'pages/alumnos.html',
+                controller  : 'alumnosCtrl'
             })
-             .when('/clase', {
-                templateUrl : 'pages/clase.html',
-                controller  : 'claseCtrl'
+            .when('/profesores', {
+                templateUrl : 'pages/profesores.html',
+                controller  : 'profesoresCtrl'
             })
             .otherwise({ templateUrl : 'pages/notfound.html' 
         });

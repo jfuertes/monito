@@ -1,0 +1,100 @@
+<div id="app" class="settings">
+    <main class="main-right">
+        <section class="page-sidebar sidebar-right">
+            <div class="inner">
+                <div class="box-colored bg-white">
+                    <ul id="settings_tab" class="nav-sidebar">
+                        <li class="">
+                            <a href="#listcursos">Cursos Existentes</a>
+                        </li>
+                        <li class="">
+                            <a href="#universidades">Universidades</a>
+                        </li>
+                        <li class="">
+                            <a href="#profesores">Profesores</a>
+                        </li>
+                        <li class="active">
+                            <a href="#alumnos">Alumnos</a>
+                        </li>
+                        <li class="">
+                          <a href="#pass">Contraseña</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    <section class="page-main main-right">
+      <div id="tab-container">
+      <form ng-submit="updateProfesor(pro)">
+        <div id="account-content" class="settings-content">
+        <h1>Buscar Alumno</h1>
+          <ul class="list-settings">
+            <label class="label">Usuario</label>
+            <div class="input">
+              <input style="width: 334px;" class="large" id="username" ng-model="pro.username" name="username" type="text"  >
+              <button id="submit_button" type="submit" class="btn btn-green right" >Buscar:</button>
+            </div>
+            
+          </ul>
+          <!--mansaje de errores-->
+          <div id="confirmation-message" class="hidden save-message">Tus cambios han sido guardados.</div>
+          <div id="error-message" class="hidden error-message">Error</div>
+
+          
+
+          <button  class="btn btn-blue left" ng-show="correcto">Edicion Correcta</button>
+          <hr>
+          <ul class="list-settings">
+            <li>
+              <label class="label">Usuario</label>
+              <div class="input">
+                <input style="width: 334px;" class="large" id="username" ng-model="pro.username" name="username" type="text" disabled >
+              </div>
+            </li>
+            <li>
+              <label class="label">Nombres</label>
+              <div class="input">
+                <input style="width: 334px;" class="large" id="Nombres" ng-model="pro.nombres" name="username" type="text" disabled >
+              </div>
+            </li>
+            <li>
+              <label class="label">Apellido Paterno</label>
+              <div class="input">
+                <input style="width: 334px;" class="large" id="Nombres" ng-model="pro.ape_paterno" name="username" type="text" disabled >
+              </div>
+            </li>
+            <li>
+              <label class="label">Apellido Materno</label>
+              <div class="input">
+                <input style="width: 334px;" class="large" id="Nombres" ng-model="pro.ape_materno" name="username" type="text" disabled >
+              </div>
+            </li>
+            <li>
+              <label class="label">Numero de contacto</label>
+              <div class="input">
+                <input style="width: 334px;" class="large" id="email" name="email" ng-model="pro.celular" size="30" type="text" disabled >
+              </div>
+            </li>
+            <li>
+              <label class="label">email</label>
+              <div class="input">
+                <input style="width: 334px;" class="large" id="email" name="email" ng-model="pro.email" size="30" type="text" disabled >
+              </div>
+            </li>
+
+            <li>
+              <label class="label">Distrito</label>
+              <div class="input">
+                <input style="width: 334px;" class="large" id="email" name="email" ng-model="pro.email" size="30" type="text" disabled >
+              </div>
+            </li>
+            
+          </ul>
+          </form>
+           
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
