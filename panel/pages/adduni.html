@@ -4,10 +4,10 @@
             <div class="inner">
                 <div class="box-colored bg-white">
                     <ul id="settings_tab" class="nav-sidebar">
-                        <li class="active">
+                        <li class="">
                             <a href="#listcursos">Cursos Existentes</a>
                         </li>
-                        <li class="">
+                        <li class="active">
                             <a href="#universidades">Universidades</a>
                         </li>
                         <li class="">
@@ -34,44 +34,20 @@
           <div id="confirmation-message" class="hidden save-message">Tus cambios han sido guardados.</div>
           <div id="error-message" class="hidden error-message">Error</div>
 
-          <h1>Curso que desea agregar</h1>
+          <h1>Universidad que desea agregar</h1>
 
           <button  class="btn btn-blue left" ng-show="correcto">Edicion Correcta</button>
           <hr>
           <ul class="list-settings">
             <li>
-              <label class="label">Nombre del Curso</label>
+              <label class="label">Nombre </label>
               <div class="input">
                 <input style="width: 334px;" class="large" id="username" name="username" type="text" >
               </div>
             </li>
             <li>
-              <label class="label">Nivel donde se agregara</label>
-              <div class="input">
-                <label class="blue-select no-focus smaller fixed-width">
-                   <select >
-                    <option>primaria---etc</option>
-                    <option>secundaria---etc</option>
-                    <option>pre---etc</option>
-                  </select>
-                </label>
-              </div>
-            </li>
-            <li>
-              <label class="label">Bloque donde se agregara</label>
-              <div class="input">
-                <label class="blue-select no-focus smaller fixed-width">
-                   <select >
-                    <option>matematica---etc</option>
-                    <option>fisica---etc</option>
-                    <option>quimica---etc</option>
-                  </select>
-                </label>
-              </div>
-            </li>
-            <li>
              <div class="input">
-              <label class="label">Imagen png</label>
+              <label class="label">Logo png</label>
                   <input  type="file"  uploader-model="file"  />
                   </div>
            

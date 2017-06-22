@@ -16,6 +16,9 @@
                         <li class="">
                             <a href="#alumnos">Alumnos</a>
                         </li>
+                        <li class="">
+                          <a href="#pass">Contraseña</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -25,17 +28,14 @@
                 <form ng-submit="updateProfesor(pro)">
                     <div id="account-content" class="settings-content">
 
-                        <h1 class="player">cursos</h1>
-                        <a href="#nivel"><button    class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Agregar Curso</button></a>
+                        <h1 class="player">Universidades</h1>
+                        <a href="#adduni"><button    class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Agregar Universidad</button></a>
                         <hr></hr>
                                     <table class="table table-striped">
                         <thead>
                           <tr>
-                            <th>Curso</th>
-                            <th>Nivel</th>
-                            <th>Sub-curso</th>
-                            <th>Sub-curso2</th>
-                            <th>Foto</th>
+                            <th>Universidad</th>
+                            <th>Opcion</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -46,6 +46,14 @@
                             <td>{{cu.modalidad | filtermodalidad}}</td>
                             <td><button ng-click="eliminar($index, cu.id_curso)" class="btn btn-green btn-pequeno has-tooltip redesign-check">eliminar</button></td>
                           </tr> -->
+                        <tr >
+                            <td>Universidad 1</td>
+                            <td><button  class="btn btn-green btn-pequeno has-tooltip redesign-check">eliminar</button></td>
+                        </tr> 
+                        <tr >
+                            <td>Universidad 2</td>
+                            <td><button  class="btn btn-green btn-pequeno has-tooltip redesign-check">eliminar</button></td>
+                        </tr> 
                          </tbody>
                     </table>
                                 </div>
