@@ -1,11 +1,13 @@
 <?php
-  require_once('config/mysql.php');
+  require_once('../config/mysql.php');
 $rspta = json_decode(file_get_contents("php://input"));
 	//var_dump($rspta);
 
 	$email= $rspta->nu->email;
 	$type= "profesor";
 	
+	$db  = new dbConnect();
+	$dbh = $db->conectardb();
 
 	//verificando si usuario ya existe
 	$q = 'SELECT 1 as RESULTADO
@@ -20,10 +22,18 @@ $rspta = json_decode(file_get_contents("php://input"));
 	//var_dump($r);
 	if (isset($r['RESULTADO'])) {
 		$link= rand(10000, 99999);//genera link para recuperar contraseña
-		$mensaje="olvido"
-		$reci={'link'=> $link};
+		//insertar en base de datos el link
+		 $q = "UPDATE  mp_login set link=:link where email=:email and type=:type";
+                            $stmt = $dbh->prepare($q);
+                            $stmt->bindParam(':link', $link, PDO::PARAM_INT);
+                            $stmt->bindParam(':email', $email, PDO::PARAM_INT);
+                            $stmt->bindParam(':type', $type, PDO::PARAM_INT);
+                            $stmt->execute();
+                      
+		
+		
 		$url = 'http://52.43.220.123/trabajos/monito/email2/gmailforgot.php';
-		$data = array('mensaje' => $mensaje, 'reci' => $reci);
+		$data = array('mensaje' => $link, 'reci' => $email);
 
 		// use key 'http' even if you send the request to https://...
 		$options = array(
@@ -37,8 +47,9 @@ $rspta = json_decode(file_get_contents("php://input"));
 		$result = file_get_contents($url, false, $context);
 
 
-		$rpta=array('success' => 'se encontro correo en la base de datos de profesores');
-		echo $rpta;
+		$rpta= array('success' => 'se encontro correo en la base de datos de profesores');
+		//echo "oli";
+		print_r($rpta);
 	}
 
 ?>

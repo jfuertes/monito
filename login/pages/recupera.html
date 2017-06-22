@@ -1,0 +1,48 @@
+<div id="app" class="page-forgot">
+  <main class="main-center-narrow">
+    <section class="page-main">
+    <h3 class="label"><b> {{user.username}}</b> Estas a punto de cambiar tu contraseña como {{user.type}}</h3>
+      <form id="formNAlu" ng-submit="cambiarclave(np)">
+      <ul class="list-settings">
+          
+              
+              
+            <li>
+              <label class="label">Contraseña actual</label>
+              <div class="input">
+                <input class="large" id="current-password" name="current-password" size="30" type="password" ng-model="np.old">
+              </div>
+            </li>
+            <li>
+              <label class="label">Nueva contraseña</label>
+              <div class="input">
+                <input class="large" id="new-password" name="new-password" size="30" type="password" ng-model="np.newpassword">
+              </div> 
+            </li>
+            <li>
+              <label class="label">Confirmar nueva contraseña</label><!--falta la verificacio nn-->
+              <div class="input">
+                <input class="large" id="confirm-new-password" name="confirm-new-password" size="30" type="password" ng-model="np.newpassword2">
+              </div>
+            </li>
+            <button id="submit_button" type="submit" class="btn btn-green right"  ng-if="np.newpassword==np.newpassword2 && np.newpassword!=null">Guardar cambios</button>
+              <p class="btn btn-red right"  ng-if="np.newpassword!=np.newpassword2 || np.newpassword==null">no coinciden las nuevas contraseña</p>
+          </ul>
+      </form>
+<div ng-show="clavenocambiada">
+          <div class="warning-message " id="email-error" style="float: left; margin-top: 20px;">Error con contraseña antigua o link inadecuado, intentalo nuevamente</div>
+        <!--mensaje de falla de correo electronico-->
+</div>
+<div ng-show="clavecambiadacorrecto">
+          <div class="warning-message " id="email-error" style="float: left; margin-top: 20px;">Clave cambiada con exito espere 1 segundo para logearse</div>
+        <!--mensaje de falla de correo electronico-->
+</div>
+
+      <!--mensaje de confirmacion de correo enviado-->
+      <div ng-show="enviadocorreo">
+        <h1 style="font-size: 42px;">¡Gracias!</h1>
+        <h2 style="text-align: center; margin: 0;">Por favor revisa tu correo electrónico.</h2>
+      </div>
+    </section>
+  </main>
+</div>

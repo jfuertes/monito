@@ -17,7 +17,8 @@
 	$stmt->bindParam(':username', $_SESSION['username'], PDO::PARAM_STR);
 	$stmt->execute();
 	$r = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	
+	//var_dump($r);
+	//var_dump($_SESSION['username']);
 	$r=$r[0];
 	
 	
