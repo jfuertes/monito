@@ -162,7 +162,7 @@ loginApp.controller('forgot_password_aluCtrl', function($scope, $http) {
                   console.log(data);
                   $scope.enviadocorreo=true;
                   if(data.success){
-                    alert("funciono");
+                   // alert("funciono");
                     $scope.enviadocorreo=true;
                   }
                   else{
@@ -186,7 +186,7 @@ loginApp.controller('forgot_password_proCtrl', function($scope, $http) {
                   console.log(data);
                   $scope.enviadocorreo=true;
                   if(data.success){
-                    alert("funciono");
+                    //alert("funciono");
                     $scope.enviadocorreo=true;
                   }
                   else{
