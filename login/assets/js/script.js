@@ -82,7 +82,7 @@ $scope.registroExitoso=false;
                   });
          };
          $scope.getUNI();
-
+$scope.erroruser=false;
                 $scope.formNewProf= function(nu){
                   console.log(nu);
 
@@ -109,6 +109,9 @@ $scope.registroExitoso=false;
                             }
                             else{
                               $scope.errorCrear=true;
+                              
+                                    $scope.erroruser=true;
+                              
                                 console.log("error!!");
                             }
                             
@@ -266,6 +269,7 @@ loginApp.controller('loginalumnoCtrl', function($scope, $http, $routeParams) {
  }
 
   $scope.errorCrear=false;
+  $scope.erroruser=false;
         // create a message to display in our view
         $scope.getDistritos= function(){
              $http.post('api/getDistritos.php' )
@@ -306,7 +310,10 @@ loginApp.controller('loginalumnoCtrl', function($scope, $http, $routeParams) {
                                         .error(function(data) {
                                           console.log('Error: ' + data);
                                           });
-}
+                            }
+                              else{
+                                    $scope.erroruser=true;
+                              }
 })
                                
 //                              window.location.href = '../#/loginalumno'

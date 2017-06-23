@@ -26,9 +26,16 @@
 	$stmt->execute();
 	$r=$stmt->fetch(PDO::FETCH_ASSOC);
 
+$q = 'SELECT 1 as RESULTADO
+			FROM mp_alumno
+			where LOWER(email) = LOWER(:email)';
+	$stmt = $dbh->prepare($q);
+	$stmt->bindParam(':email',  $email, PDO::PARAM_STR);
+	$stmt->execute();
+	$s=$stmt->fetch(PDO::FETCH_ASSOC);
 	//var_dump($r);
-	if (isset($r['RESULTADO'])) {
-		$rpta=array('Error' => 'Error: El código de usuario ingresado ya existe.');
+	if (isset($r['RESULTADO']) || isset($s['RESULTADO'])) {
+		$rpta=array('Error' => 'Error: El código de usuario o correo ingresado ya existe.');
 	}
 	else{
 
