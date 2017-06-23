@@ -160,13 +160,16 @@ loginApp.controller('forgot_password_aluCtrl', function($scope, $http) {
              $http.post('../api/email/forgotalu.php', {nu :nu} )
                 .success(function(data) {
                   console.log(data);
-                  $scope.enviadocorreo=true;
+                  //$scope.enviadocorreo=true;
                   if(data.success){
                    // alert("funciono");
+                   $scope.errorcorreo=false;
                     $scope.enviadocorreo=true;
                   }
                   else{
+                     $scope.enviadocorreo=false;
                     $scope.errorcorreo=true;
+                    console.log("correo erroneo")
                   }
                   
                 })
@@ -184,13 +187,16 @@ loginApp.controller('forgot_password_proCtrl', function($scope, $http) {
              $http.post('../api/email/forgotpro.php', {nu :nu} )
                 .success(function(data) {
                   console.log(data);
-                  $scope.enviadocorreo=true;
-                  if(data.success){
-                    //alert("funciono");
+                 // $scope.enviadocorreo=true;
+                 if(data.success){
+                   // alert("funciono");
+                   $scope.errorcorreo=false;
                     $scope.enviadocorreo=true;
                   }
                   else{
+                     $scope.enviadocorreo=false;
                     $scope.errorcorreo=true;
+                    console.log("correo erroneo")
                   }
                   
                 })

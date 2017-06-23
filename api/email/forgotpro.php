@@ -51,5 +51,8 @@ $rspta = json_decode(file_get_contents("php://input"));
 		//echo "oli";
 		echo json_encode($rpta);
 	}
+	else{
+		echo "error contraseña erronea";
+	}
 
 ?>

@@ -48,8 +48,11 @@ $rspta = json_decode(file_get_contents("php://input"));
 
 
 		$rpta= array('success' => 'se encontro correo en la base de datos de profesores');
-		//echo "oli";
+		
 		echo json_encode($rpta);
+	}
+	else{
+		echo "error contraseña erronea";
 	}
 
 ?>
