@@ -36,7 +36,8 @@
                                         $_SESSION['username']=$rx[0]['username'];
                                         $_SESSION['nombres']=$rx1[0]['nombres'];
                                         $_SESSION['ape_paterno']=$rx1[0]['ape_paterno'];
-                                        $_SESSION['type']=$rx[0]['type'];;
+                                        $_SESSION['type']=$rx[0]['type'];
+                                        $_SESSION['email']=$rx[0]['email'];
                      
                                         //                  
                                         $rpta=array('success' => 'correcto :)');
@@ -52,7 +53,8 @@
                                         $_SESSION['username']=$rx[0]['username'];
                                         $_SESSION['nombres']=$rx1[0]['nombres'];
                                         $_SESSION['ape_paterno']=$rx1[0]['ape_paterno'];
-                                        $_SESSION['type']=$rx[0]['type'];;
+                                        $_SESSION['type']=$rx[0]['type'];
+                                         $_SESSION['email']=$rx[0]['email'];
                      
                                         //                  
                                         $rpta=array('success' => 'correcto :)');
