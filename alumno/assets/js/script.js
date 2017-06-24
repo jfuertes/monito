@@ -376,6 +376,7 @@ $scope.antesContactar=true;
             //funcion para agregar clase
                 $http.post('api/addClase.php', {id_profe: $routeParams.id, id_curso: $rootScope.idcurso} )
                 .success(function(data) {
+                  
                   console.log(data);
                   $scope.clasea=data;
                    location.href=location.protocol+"//"+location.hostname+location.pathname+"#/clase/"+data.id;
