@@ -26,13 +26,6 @@
                      </div>
                   </li>
                </ul>
-               <ul class="sidebar-stats">
-                  <li>
-                     <h3 class="gray">Cursos Que dicta:</h3>
-                     <strong>-</strong> Aritmetica
-                     <strong>-</strong> Algebra
-                  </li>
-               </ul>
             </div>
             <div class="inner">
                <div class="box-gray box-achievements">
