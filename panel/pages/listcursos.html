@@ -32,7 +32,7 @@
                         <a href="#addcurso"><button    class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Agregar Cursos</button></a>
                         <a href="#addbloque"><button    class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Agregar Bloque</button></a>
                         <hr></hr>
-                                    <table class="table table-striped">
+                         <table class="table table-striped">
                         <thead>
                           <tr>
                             <th>Nivel</th>
@@ -46,7 +46,7 @@
                             <tr ng-repeat="cu in cursosxprofe">
                             <td>{{cu.nombre}}</td>
                             <td>{{cu.nivel | filternivel}}</td>
-                            <td>{{cu.modalidad | filtermodalidad}}</td>
+                            <td>{{cu.modalidad | filtermodalidad}}</td> 
                             <td><button ng-click="eliminar($index, cu.id_curso)" class="btn btn-green btn-pequeno has-tooltip redesign-check">eliminar</button></td>
                           </tr> ejemplo:-->
                             <tr >
