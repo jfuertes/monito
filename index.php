@@ -30,72 +30,40 @@
     <style type="text/css"></style>
     <style  href="assets/css/miprofe.css" type="text/css"></style>
     </head>
+
     <body class="global-es logged-out splash-2014 compact-enabled" style="overflow: auto;">
     <div id="topbar">
         <header ng-controller="mainCtrl" class="topbar topbar-blue-dark">
-        <div class="container">
-        <a href="#/" class="topbar-brand navigate-home track-click white"></a>
-            <div class="topbar-right">
-                
-                <div class="topbar-username dropdown click-trigger" style="padding-bottom: 15px;">
-                   <div id="showloginpop" class="topbar-buttons" style="margin-top: 1px;" >
-                        <span class="sign-in relative"></span>
-                            <a href="#loginuser"><span class="btn sign-in-btn btn-white" id="sign-in-btn" data-track-click="topbar toggle" >Iniciar Sesion</span></a>
-                            </div>
-                             <div id="loginpop">
-                            <ul  class="popover arrow-top login-popover hidden" id="login-modal" style="width: 250px; top: 42px; right: 20px; left: auto; display: none;">
-
-                            <form id="login-form" action="" method="post" accept-charset="utf-8" style="margin: 0;" ng-submit="login(us)">
-                                
-                                <li>
-                                    <input class="signup-gplus btn btn-small btn-red btn-block btn-googlered-new" type="submit" value="google?" data-track-click="topbar login submit">
-                                </li>
-                                <li class="center">
-                                    <span> o </span>
-                                </li>
-                                <li>
-                                    <div class="form-row">
-                                    <input class="input-small input-block" placeholder="Nombre de Usuario" type="text" id="top_login" name="login" value="" autocomplete="on" ng-model="us.username" required=""></div>
-                                </li>
-
-                                <li>
-                                    <div class="form-row">
-                                        <input class="input-small input-block" placeholder="contraseña" type="password" id="top_password" name="password" value="" autocomplete="on" ng-model="us.password" required="">
-                                    </div>
-                                </li>
-                                <li id="message" class="login-fail hidden"></li>
-                                <li>
-                                    <button type="submit" class="btn btn-green-light btn-small sign-in btn-block" type="submit" data-track-click="topbar login submit">entrar</button> 
-                                </li>
-                                </form>
-                                <li class="center">
-                                    <a href="login/#forgot_password">Olide mi contraseña</a>
-                                </li>
-                                <li class="center">
-                                    <a href="#login">Registrate</a>
-                                </li>
-                            
-                        </ul></div>
+            <div class="container">
+            <a href="#/" class="topbar-brand navigate-home track-click white"></a>
+                <div class="topbar-right">
                     
+                    <div class="topbar-username dropdown click-trigger" style="padding-bottom: 15px;">
+                       <div id="showloginpop" class="topbar-buttons" style="margin-top: 1px;" >
+                            <span class="sign-in relative"></span>
+                                <a href="#loginuser"><span class="btn sign-in-btn btn-white" id="sign-in-btn" data-track-click="topbar toggle" >Iniciar Sesion</span></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-</div>
-
-<div id="mobile-menu" class="mobile-menu open">
-            <ul class="mobile-menu-listing">
-                <li><a href="#loginprofesor" class="show-log-in">Ingresar como Profesor</a>
-                </li>
-                <li><a href="#loginalumno">Ingresar como Alumno</a>
-                </li>
-                
-            </ul>
-</div>
-    <div id="main">
-        <div ng-view>
-        </div>
+        </header>
     </div>
+
+    <div id="mobile-menu" class="mobile-menu open">
+        <ul class="mobile-menu-listing">
+            <li><a href="#loginprofesor">Ingresar como Profesor</a>
+            </li>
+            <li><a href="#loginalumno">Ingresar como Alumno</a>
+            </li>
+            
+        </ul>
+    </div>
+
+        <!-- ANGULAR-->
+        <div id="main">
+            <div ng-view>
+            </div>
+        </div>
 
     <section dir="ltr" class="duo-info">
         <div class="section-inner">
@@ -113,38 +81,6 @@
                 </div>
             </div>
         </section>
-
-    <!--<section dir="ltr" class="website">
-        <div class="section-inner">
-            <h2 class="splash">Cada lección es como un juego.</h2>
-            <div class="callout-wrapper">
-                <div class="callout-container-left scroll-animate slide-in"><span class="callout challenges"><span class="splash-icon challenges"></span>
-                    <div class="text">
-                        <h4>Leer, escuchar y escribir</h4>
-                        <p>Cada lección incluye una variedad de ejercicios de hablar, escuchar, traducción y opción múltiple.</p>
-                    </div>
-                    </span><span class="callout grading"><span class="splash-icon check"></span>
-                    <div class="text">
-                        <h4>Evaluación durante la lección</h4>
-                        <p>Puedes ver tus respuestas correctas al instante. Cuando fallas un ejercicio, te mostramos cómo mejorar rápidamente.</p>
-                    </div>
-                    </span>
-                </div><span class="left-line-container scroll-animate slide-in"><div class="challenges line"></div><div class="grading line"></div></span><span class="splash-icon computer "></span><span class="right-line-container scroll-animate slide-in"><div class="streak line"></div><div class="heart line"></div></span>
-                <div class="callout-container-right scroll-animate slide-in"><span class="callout streak"><span class="splash-icon streak"></span>
-                    <div class="text">
-                        <h4>Tu racha</h4>
-                        <p>Duolingo te motiva a ir bien registrando cuántos días seguidos aprendes un idioma.</p>
-                    </div>
-                    </span><span class="callout heart"><span class="splash-icon heart"></span>
-                    <div class="text">
-                        <h4>Vidas</h4>
-                        <p>¡Los corazones te mantienen vivo! Los pierdes cuando tu respuesta es incorrecta. Cuando se te acaban debes empezar de nuevo.</p>
-                    </div>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </section>-->
 
     <section dir="ltr" class="footer dark-theme">
         <div class="section-inner">
