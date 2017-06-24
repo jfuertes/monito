@@ -72,7 +72,27 @@ $routeProvider
         });
               
     });
-
+demoApp.filter('filterfecha', function() {
+  return function(id){
+   var resultado = id.split(" ");
+      return resultado[0];
+    };
+ 
+    });
+demoApp.filter('filtermodalidad', function() {
+  return function(id){
+    var niveles = ['online', 'presencial'];
+      return niveles[id];
+    };
+ 
+    });
+demoApp.filter('filternivel', function() {
+  return function(id){
+    var niveles = ['Primaria', 'Secundaria', 'Pre', 'Universitario'];
+      return niveles[id-1];
+    };
+ 
+    });
     // create the controller and inject Angular's $scope
 demoApp.controller('mainCtrl', function($scope, $http) {
     $scope.getAlumno= function(){
@@ -376,7 +396,7 @@ $scope.antesContactar=true;
             //funcion para agregar clase
                 $http.post('api/addClase.php', {id_profe: $routeParams.id, id_curso: $rootScope.idcurso} )
                 .success(function(data) {
-                  
+
                   console.log(data);
                   $scope.clasea=data;
                    location.href=location.protocol+"//"+location.hostname+location.pathname+"#/clase/"+data.id;

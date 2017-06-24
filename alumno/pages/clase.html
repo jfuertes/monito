@@ -40,31 +40,53 @@
                             <div class="challenge-translate">
                                 <h1 class="player">Detalles:</h1>
                                 <table class="table table-striped">
-                                    <!--que sea table ordenadito-->
-                                    <ul ng-repeat="c in clase">
-                                        <li>{{c.username_pro}}</li>
-                                        <li>{{c.id_curso}}</li>
-                                        <li><img src="../IMG/profes/{{c.puntuacion}}estrellas.png" HEIGHT=16>
-                                        </li>
-                                        <li>{{c.comentario}}</li>
-                                        <li>{{c.fecha}}</li>
-                                        <li>{{c.status}}</li>
+                                
+                                <tbody ng-repeat="c in clase">
+                                  <tr>
+                                    <td>profesor:</td>
+                                    <td>{{c.username_pro}}</td>
+                                  </tr>
+                                  <tr>
+                                    <td>curso:</td>
+                                    <td>{{c.nombre}}</td>
+                                  </tr>
+                                   <tr>
+                                    <td>nivel:</td>
+                                    <td>{{c.nivel | filternivel}}</td>
+                                  </tr>
+                                  <tr>
+                                    <td>calificacion:</td>
+                                    <td><img src="../IMG/profes/{{c.puntuacion}}estrellas.png" HEIGHT=16></td>
+                                  </tr>
+                                    <tr>
+                                    <td>comentario:</td>
+                                    <td>{{c.comentario}}</td>
+                                  </tr>
+                                   <tr>
+                                    <td>fecha:</td>
+                                    <td>{{c.fecha}}</td>
+                                  </tr>
+                                   <tr>
+                                    <td>modalidad :</td>
+                                    <td>{{c.status | filtermodalidad}}</td>
+                                  </tr>
+                                 
+                                </tbody>
+                              </table>
+                                  <!--que sea table ordenadito-->
 
                                         <li>
-                                            <button class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20" ng-click="revisardetalle($index)">algo esta mal?</button>
+                                            <button class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20" ng-click="calificar()">calificar o comentar</button>
                                         </li>
-                                    </ul>
-                                    </tbody>
-                                </table>
-
                             </div>
                         </div>
                         <div class="intro"></div>
                     </div>
+  <br/> <br/> <br/> <br/> <br/>
                     <footer id="controls" class="player-footer " style="display: block;">
-                        <div class="col-right action-panel hidden" style="display: block;">
+                        <div class="col-right action-panel " style="display: block;">
                             <span class="more-padding-left">
-                                <a href="#/"><button    class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Volver</button></a>
+                                <a href="#/historial"><button    class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Volver</button></a>
                             </span>
                         </div>
                     </footer>
