@@ -19,6 +19,11 @@ $routeProvider
                 controller  : 'passCtrl'
             })
 
+            .when('/comentar', {
+                templateUrl : 'pages/comentar.html',
+                controller  : 'comentarCtrl'
+            })
+
             .when('/cursos', {
                 templateUrl : 'pages/cursos.html',
                 controller  : 'cursosCtrl'
