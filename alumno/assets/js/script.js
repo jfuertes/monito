@@ -410,6 +410,21 @@ $scope.antesContactar=true;
                   });
               }
               $scope.init();
+
+      $scope.getcursosxprofe =function(){
+                $http.post('api/getcursosxprofe.php', {id_profe: $routeParams.id} )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.getcursosxprofe=data;
+                
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+      };
+
+ $scope.getcursosxprofe();
+
         $scope.contactar = function () {
            if (confirm("esta seguro que desea solicitar una clase?")) {
             console.log("confirmaste!");
@@ -422,6 +437,24 @@ $scope.antesContactar=true;
             console.log("confirmaste!");
             //funcion para agregar clase
                 $http.post('api/addClase.php', {id_profe: $routeParams.id, id_curso: $rootScope.idcurso} )
+                .success(function(data) {
+
+                  console.log(data);
+                  $scope.clasea=data;
+                   location.href=location.protocol+"//"+location.hostname+location.pathname+"#/clase/"+data.id;
+                  
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+              //funcion para generar clase que falta
+           }
+        }
+           $scope.solicitarxtabla = function (id_curso) {
+           if (confirm("esta seguro que desea solicitar una clase?")) {
+            console.log("confirmaste!");
+            //funcion para agregar clase
+                $http.post('api/addClase.php', {id_profe: $routeParams.id, id_curso: id_curso} )
                 .success(function(data) {
 
                   console.log(data);
