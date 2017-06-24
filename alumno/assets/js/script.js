@@ -289,8 +289,10 @@ demoApp.controller('historialCtrl', function($scope, $http, $rootScope) {
     });
 
 demoApp.controller('claseCtrl', function($scope, $http, $rootScope, $routeParams) {
+    var id_clase = $routeParams.id;
    $scope.init = function(){
-          var id_clase = $routeParams.id;
+    $scope.viewcomentar=false;
+         
           //console.log(id);
         $http.post('api/getclase.php', {id_clase: id_clase} )
                 .success(function(data) {
@@ -302,6 +304,26 @@ demoApp.controller('claseCtrl', function($scope, $http, $rootScope, $routeParams
                   });
               }
               $scope.init();
+
+          $scope.calificar = function(){
+            $scope.viewcomentar=true;
+            console.log("comentar");
+
+          };
+          $scope.enviardata = function(co){
+            console.log(co);
+                $http.post('api/enviarcoment.php', {co: co, id_clase: id_clase} )
+                .success(function(data) {
+                  console.log(data);
+                  $rootScope.clase=data;
+                    location.reload();
+         
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+              }
+          
     });
 
 demoApp.controller('passCtrl', function($scope, $http, $rootScope) {

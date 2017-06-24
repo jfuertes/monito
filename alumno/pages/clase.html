@@ -23,7 +23,7 @@
     </section>
 
     <section class="page-main main-right">
-      <div id="tab-container">
+      <div id="tab-container" ng-hide="viewcomentar">
       <form ng-submit="updateAlumno(alu)">
         <div id="account-content" class="settings-content">
 
@@ -32,7 +32,7 @@
           <hr> </hr>
 
                     <div id="context-view">
-                    </div>
+                    
                     <div class="player-main">
                         <div id="prev-session-element-container" class="">
                         </div>
@@ -78,10 +78,88 @@
                                         <li>
                                             <button class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20" ng-click="calificar()">calificar o comentar</button>
                                         </li>
+                                          <div class="col-right action-panel " style="display: block;">
+                            <span class="more-padding-left">
+                                <a href="#/historial"><button    class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Volver</button></a>
+                            </span>
+                        </div>
                             </div>
                         </div>
                         <div class="intro"></div>
                     </div>
+                </div>
+                </div></form></div>
+
+
+
+
+ <div id="tab-container" ng-show="viewcomentar">
+      <form ng-submit="enviardata(co)">
+        <div id="account-content" class="settings-content">
+
+          <button id="submit_button" type="submit" class="btn btn-green right" >Enviar cambios</button>
+          <!--mansaje de errores-->
+          <div id="confirmation-message" class="hidden save-message">Tus cambios han sido guardados.</div>
+          <div id="error-message" class="hidden error-message">Error</div>
+
+          <h1>Comentar la clase</h1>
+
+          <button  class="btn btn-blue left" ng-show="correcto">Comentario Enviado</button>
+          <hr>
+          <ul class="list-settings">
+
+            <li>
+              <label class="label">Comentario</label>
+              <div class="input">
+                <textarea maxlength="100" id="bio" name="bio" rows="3" cols="40" ng-model="co.comentario" style="margin-bottom: 10px; width: 334px;">
+                </textarea>
+                <p class="gray">
+                <span id="bio-count"></span> 100 caracteres maximo</p>
+              </div>
+            </li>
+
+            <li>
+              <label class="label">Nivel de la clase</label>
+              <div class="input">
+                <ul class="radio-buttons">
+                  <li>
+                    <label>
+                      <input class="border" id="microphone_on" type="radio" name="online" value="1" ng-model="co.puntuacion" ng-checked="pro.online!=0"> 1</label>
+                  </li>
+
+                  <li>
+                    <label>
+                    <input class="border" id="microphone_off" type="radio" name="online" value="2" ng-model="co.puntuacion" ng-checked="pro.online==0"> 2</label>
+                  </li>
+                  <li>
+                    <label>
+                    <input class="border" id="microphone_off" type="radio" name="online" value="3" ng-model="co.puntuacion" ng-checked="pro.online==0"> 3</label>
+                  </li>
+                  <li>
+                    <label>
+                    <input class="border" id="microphone_off" type="radio" name="online" value="4" ng-model="co.puntuacion" ng-checked="pro.online==0"> 4</label>
+                  </li>
+                  <li>
+                    <label>
+                    <input class="border" id="microphone_off" type="radio" name="online" value="5" ng-model="co.puntuacion" ng-checked="pro.online==0"> 5</label>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            
+          </ul>
+          </form>
+           
+        </div>
+
+
+
+
+
+
+
+
   <br/> <br/> <br/> <br/> <br/>
                     <footer id="controls" class="player-footer " style="display: block;">
                         <div class="col-right action-panel " style="display: block;">
