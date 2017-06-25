@@ -1856,7 +1856,7 @@ html[dir=rtl] .classroom-teacher .classroom-title {
         font-size: 13px;
         width: 60%
     }
-    .compact-enabled #app.settings .list-settings .input input[type=text] {
+    .compact-enabled #app.settings .list-settings .input  input[type=email], input[type=password],input[type=text] {
         width: 100% !important
     }
     .compact-enabled #app.settings .list-settings .input .avatar-large {

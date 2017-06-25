@@ -2675,6 +2675,7 @@ html[dir=rtl] .fake-textarea {
     text-align: right
 }
 input[type=text],
+input[type=email],
 input[type=password],
 .fake-input {
     display: block;

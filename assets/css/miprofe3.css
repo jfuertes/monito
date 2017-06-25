@@ -13215,8 +13215,8 @@ html[dir=rtl] .course-splash-page .choose-course-by-flag .splash-signup-form .ui
 .splash-2014 .monument-carousel,
 .course-splash-page .monument-carousel {
     background-color: #239edb;
-    background: -webkit-gradient(linear, left top, left bottom, from(#4c4a73), to(#a1a2a0));
-    ackground: -webkit-linear-gradient(top, #239edb, #4dccff);
+    background: -webkit-gradient(linear, left top, left bottom, from(#090e25), to(#224894));
+    background: -webkit-linear-gradient(top, #239edb, #4dccff);
     background: -moz-linear-gradient(top, #239edb, #4dccff);
     background: -ms-linear-gradient(top, #239edb, #4dccff);
     background: -o-linear-gradient(top, #239edb, #4dccff);

@@ -8,19 +8,22 @@
                   <a class="avatar avatar-small " title="nombredeusuario">  <img src="../IMG/profes/{{pro.username}}.{{pro.extension_img}}"><span class="ring"></span></a>  {{pro.username}} <a href="#/" class="username">Ver tu perfil</a>
               </h2>
               <ul id="settings_tab" class="nav-sidebar">
-                  <li class="active">
-                      <a href="#perfil">Perfil</a>
-                  </li>
-                  <li class="">
-                      <a href="#listcursos" >Elije tus  cursos</a>
-                  </li>
-                  <li class="">
-                      <a href="#historial" >Historial de clases</a>
-                  </li>
-                  <li class="">
-                      <a href="#pass">Contraseña</a>
-                  </li>
-              </ul>
+                        <li class="active">
+                            <a href="#perfil">Perfil</a>
+                        </li>
+                        <li class="">
+                            <a href="#listcursos">Elije tus Cursos</a>
+                        </li>
+                        <li class="">
+                            <a href="#listdistritos">Elije tus Distritos</a>
+                        </li>
+                        <li class="">
+                            <a href="#historial">Historial de clases</a>
+                        </li>
+                        <li class="">
+                            <a href="#pass">Contraseña</a>
+                        </li>
+                    </ul>
           </div>
       </div>
     </section>
@@ -92,7 +95,7 @@
             <li>
               <label class="label">email</label>
               <div class="input">
-                <input style="width: 334px;" class="large" id="email" name="email" ng-model="pro.email" size="30" type="text" >
+                <input style="width: 334px;" class="large" id="email" name="email" ng-model="pro.email" size="30" type="text" disabled >
               </div>
             </li>
 
@@ -103,23 +106,6 @@
                 </textarea>
                 <p class="gray">
                 <span id="bio-count"></span> 100 caracteres maximo</p>
-              </div>
-            </li>
-
-            <li>
-              <label class="label">Clases Online</label>
-              <div class="input">
-                <ul class="radio-buttons">
-                  <li>
-                    <label>
-                      <input class="border" id="microphone_on" type="radio" name="online" value="1" ng-model="pro.online" ng-checked="pro.online!=0"> sí</label>
-                  </li>
-
-                  <li>
-                    <label>
-                    <input class="border" id="microphone_off" type="radio" name="online" value="0" ng-model="pro.online" ng-checked="pro.online==0"> no</label>
-                  </li>
-                </ul>
               </div>
             </li>
 

@@ -29,9 +29,18 @@ $routeProvider
                 controller  : 'comentarioCtrl'
             })
 
+            .when('/listdistritos', {
+                templateUrl : 'pages/listdistritos.html',
+                controller  : 'listdistritosCtrl'
+            })
+
             .when('/historial', {
                 templateUrl : 'pages/historial.html',
                 controller  : 'historialCtrl'
+            })
+            .when('/adddistritos', {
+                templateUrl : 'pages/adddistritos.html',
+                controller  : 'adddistritosCtrl'
             })
               .when('/nivel', {
                 templateUrl : 'pages/nivel.html',
