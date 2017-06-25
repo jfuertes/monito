@@ -60,31 +60,6 @@
           
          ?>
       <hr></hr>
-      <table class="table table-striped">
-      <thead>
-      <tr>
-      <th>Nivel</th>
-      <th>Bloque</th>
-      <th>Curso</th>
-      <th>Opcion</th>
-      </tr>
-      </thead>
-      <tbody>
-      <!--     Configuracion para modificar los cursos
-         <tr ng-repeat="cu in cursosxprofe">
-         <td>{{cu.nombre}}</td>
-         <td>{{cu.nivel | filternivel}}</td>
-         <td>{{cu.modalidad | filtermodalidad}}</td>
-         <td><button ng-click="eliminar($index, cu.id_curso)" class="btn btn-green btn-pequeno has-tooltip redesign-check">eliminar</button></td>
-         </tr> ejemplo:-->
-      <tr >
-      <td>matematica</td>
-      <td>secundaria</td>
-      <td>aritmetica</td>
-      <td><button  class="btn btn-green btn-pequeno has-tooltip redesign-check">eliminar</button></td>
-      </tr> 
-      </tbody>
-      </table>
       </div>
       </div>
       <div class="intro"></div>

@@ -49,6 +49,12 @@ $routeProvider
                 controller  : 'cursosProfCtrl'
 
             })
+            .when('/distritos', {
+                templateUrl : 'pages/distritos.html',
+                controller  : 'distritosCtrl'
+
+            })
+
             .when('/metodo', {
                 templateUrl : 'pages/metodo.html',
                 controller  : 'metodoCtrl'
@@ -247,7 +253,7 @@ demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
                         .success(function(data) {
                           console.log(data);
                           $scope.Profes=data;
-                          location.href=location.protocol+"//"+location.hostname+location.pathname+"#/listaprof";
+                          location.href=location.protocol+"//"+location.hostname+location.pathname+"#/distritos";
                           // window.location.href='#listaprof';
 
                         })

@@ -1,176 +1,147 @@
 <div  id="app" class="settings">
-  <main class="main-right">
-
-    <section class="page-sidebar sidebar-right">
-      <div class="inner">
-          <div class="box-colored bg-white">
-              <h2 class="view-profile-headline">
+   <main class="main-right">
+      <section class="page-sidebar sidebar-right">
+         <div class="inner">
+            <div class="box-colored bg-white">
+               <h2 class="view-profile-headline">
                   <a class="avatar avatar-small " title="nombredeusuario">  <img src="../IMG/alumnos/{{alu.username}}.{{alu.extension_img}}"><span class="ring"></span></a>  {{alu.username}} <a href="#/" class="username">Ver tu perfil</a>
-              </h2>
-              <ul id="settings_tab" class="nav-sidebar">
+               </h2>
+               <ul id="settings_tab" class="nav-sidebar">
                   <li class="">
-                      <a href="#perfil">Perfil</a>
+                     <a href="#perfil">Perfil</a>
                   </li>
                   <li class="active">
-                      <a href="#historial" >Historial</a>
+                     <a href="#historial" >Historial</a>
                   </li>
                   <li class="">
-                      <a href="#pass">Contraseña</a>
+                     <a href="#pass">Contraseña</a>
                   </li>
-              </ul>
-          </div>
-      </div>
-    </section>
-
-    <section class="page-main main-right">
-      <div id="tab-container" ng-hide="viewcomentar">
-      <form ng-submit="updateAlumno(alu)">
-        <div id="account-content" class="settings-content">
-
-          <!--<button id="submit_button" type="submit" class="btn btn-green right" >Guardar cambios</button>-->
-          <h1>Comentario</h1>
-          <hr> </hr>
-
-                    <div id="context-view">
-                    
-                    <div class="player-main">
+               </ul>
+            </div>
+         </div>
+      </section>
+      <section class="page-main main-right">
+         <div id="tab-container" ng-hide="viewcomentar">
+            <form ng-submit="updateAlumno(alu)">
+               <div id="account-content" class="settings-content">
+                  <!--<button id="submit_button" type="submit" class="btn btn-green right" >Guardar cambios</button>-->
+                  <h1>Comentario</h1>
+                  <hr>
+                  </hr>
+                  <div id="context-view">
+                     <div class="player-main">
                         <div id="prev-session-element-container" class="">
                         </div>
                         <div id="session-element-container" class="">
-                            <div class="challenge-translate">
-                                <h1 class="player">Detalles:</h1>
-                                <table class="table table-striped">
-                                
-                                <tbody ng-repeat="c in clase">
-                                  <tr>
-                                    <td>profesor:</td>
-                                    <td>{{c.username_pro}}</td>
-                                  </tr>
-                                  <tr>
-                                    <td>curso:</td>
-                                    <td>{{c.nombre}}</td>
-                                  </tr>
-                                   <tr>
-                                    <td>nivel:</td>
-                                    <td>{{c.nivel | filternivel}}</td>
-                                  </tr>
-                                  <tr>
-                                    <td>calificacion:</td>
-                                    <td><img src="../IMG/profes/{{c.puntuacion}}estrellas.png" HEIGHT=16></td>
-                                  </tr>
+                           <div class="challenge-translate">
+                              <h1 class="player">Detalles:</h1>
+                              <table class="table table-striped">
+                                 <tbody ng-repeat="c in clase">
                                     <tr>
-                                    <td>comentario:</td>
-                                    <td>{{c.comentario}}</td>
-                                  </tr>
-                                   <tr>
-                                    <td>fecha:</td>
-                                    <td>{{c.fecha}}</td>
-                                  </tr>
-                                   <tr>
-                                    <td>modalidad :</td>
-                                    <td>{{c.status | filtermodalidad}}</td>
-                                  </tr>
-                                 
-                                </tbody>
+                                       <td>profesor:</td>
+                                       <td>{{c.username_pro}}</td>
+                                    </tr>
+                                    <tr>
+                                       <td>curso:</td>
+                                       <td>{{c.nombre}}</td>
+                                    </tr>
+                                    <tr>
+                                       <td>nivel:</td>
+                                       <td>{{c.nivel | filternivel}}</td>
+                                    </tr>
+                                    <tr>
+                                       <td>calificacion:</td>
+                                       <td><img src="../IMG/profes/{{c.puntuacion}}estrellas.png" HEIGHT=16></td>
+                                    </tr>
+                                    <tr>
+                                       <td>comentario:</td>
+                                       <td>{{c.comentario}}</td>
+                                    </tr>
+                                    <tr>
+                                       <td>fecha:</td>
+                                       <td>{{c.fecha}}</td>
+                                    </tr>
+                                    <tr>
+                                       <td>modalidad :</td>
+                                       <td>{{c.status | filtermodalidad}}</td>
+                                    </tr>
+                                 </tbody>
                               </table>
-                                  <!--que sea table ordenadito-->
-
-                                        <li>
-                                            <button class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20" ng-click="calificar()">calificar o comentar</button>
-                                        </li>
-                                          <div class="col-right action-panel " style="display: block;">
-                            <span class="more-padding-left">
-                                <a href="#/historial"><button    class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Volver</button></a>
-                            </span>
-                        </div>
-                            </div>
+                              <!--que sea table ordenadito-->
+                              <li>
+                                 <a ><button class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20" ng-click="calificar()">Calificar la Clase</button> </a>
+                                 <a href="#/historial"><button    class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20"   >Volver</button></a>
+                              </li>
+                              <div class="col-right action-panel " style="display: block;">
+                              </div>
+                           </div>
                         </div>
                         <div class="intro"></div>
-                    </div>
-                </div>
-                </div></form></div>
-
-
-
-
- <div id="tab-container" ng-show="viewcomentar">
-      <form ng-submit="enviardata(co)">
-        <div id="account-content" class="settings-content">
-
-          <button id="submit_button" type="submit" class="btn btn-green right" >Enviar cambios</button>
-          <!--mansaje de errores-->
-          <div id="confirmation-message" class="hidden save-message">Tus cambios han sido guardados.</div>
-          <div id="error-message" class="hidden error-message">Error</div>
-
-          <h1>Comentar la clase</h1>
-
-          <button  class="btn btn-blue left" ng-show="correcto">Comentario Enviado</button>
-          <hr>
-          <ul class="list-settings">
-
-            <li>
-              <label class="label">Comentario</label>
-              <div class="input">
-                <textarea maxlength="100" id="bio" name="bio" rows="3" cols="40" ng-model="co.comentario" style="margin-bottom: 10px; width: 334px;">
+                     </div>
+                  </div>
+               </div>
+            </form>
+         </div>
+         <div id="tab-container" ng-show="viewcomentar">
+            <form ng-submit="enviardata(co)">
+               <div id="account-content" class="settings-content">
+                  <button id="submit_button" type="submit" class="btn btn-green right" >Enviar cambios</button>
+                  <!--mansaje de errores-->
+                  <div id="confirmation-message" class="hidden save-message">Tus cambios han sido guardados.</div>
+                  <div id="error-message" class="hidden error-message">Error</div>
+                  <h1>Comentar la clase</h1>
+                  <button  class="btn btn-blue left" ng-show="correcto">Comentario Enviado</button>
+                  <hr>
+                  <ul class="list-settings">
+                     <li>
+                        <label class="label">Comentario</label>
+                        <div class="input">
+                           <textarea maxlength="100" id="bio" name="bio" rows="3" cols="40" ng-model="co.comentario" style="margin-bottom: 10px; width: 334px;">
                 </textarea>
-                <p class="gray">
-                <span id="bio-count"></span> 100 caracteres maximo</p>
-              </div>
-            </li>
-
-            <li>
-              <label class="label">Nivel de la clase</label>
-              <div class="input">
-                <ul class="radio-buttons">
-                  <li>
-                    <label>
-                      <input class="border" id="microphone_on" type="radio" name="online" value="1" ng-model="co.puntuacion" ng-checked="pro.online!=0"> 1</label>
-                  </li>
-
-                  <li>
-                    <label>
-                    <input class="border" id="microphone_off" type="radio" name="online" value="2" ng-model="co.puntuacion" ng-checked="pro.online==0"> 2</label>
-                  </li>
-                  <li>
-                    <label>
-                    <input class="border" id="microphone_off" type="radio" name="online" value="3" ng-model="co.puntuacion" ng-checked="pro.online==0"> 3</label>
-                  </li>
-                  <li>
-                    <label>
-                    <input class="border" id="microphone_off" type="radio" name="online" value="4" ng-model="co.puntuacion" ng-checked="pro.online==0"> 4</label>
-                  </li>
-                  <li>
-                    <label>
-                    <input class="border" id="microphone_off" type="radio" name="online" value="5" ng-model="co.puntuacion" ng-checked="pro.online==0"> 5</label>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            
-          </ul>
-          </form>
-           
-        </div>
-
-
-
-
-
-
-
-
-  <br/> <br/> <br/> <br/> <br/>
-                    <footer id="controls" class="player-footer " style="display: block;">
-                        <div class="col-right action-panel " style="display: block;">
-                            <span class="more-padding-left">
-                                <a href="#/historial"><button    class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Volver</button></a>
-                            </span>
+                           <p class="gray">
+                              <span id="bio-count"></span> 100 caracteres maximo
+                           </p>
                         </div>
-                    </footer>
-                    <div id="modal-notification" class="modal hidden fade"></div>
-                
-      </div>
-    </section>
-  </main>
+                     </li>
+                     <li>
+                        <label class="label">Nivel de la clase</label>
+                        <div class="input">
+                           <ul class="radio-buttons">
+                              <li>
+                                 <label>
+                                 <input class="border" id="microphone_on" type="radio" name="online" value="1" ng-model="co.puntuacion" ng-checked="pro.online!=0"> 1</label>
+                              </li>
+                              <li>
+                                 <label>
+                                 <input class="border" id="microphone_off" type="radio" name="online" value="2" ng-model="co.puntuacion" ng-checked="pro.online==0"> 2</label>
+                              </li>
+                              <li>
+                                 <label>
+                                 <input class="border" id="microphone_off" type="radio" name="online" value="3" ng-model="co.puntuacion" ng-checked="pro.online==0"> 3</label>
+                              </li>
+                              <li>
+                                 <label>
+                                 <input class="border" id="microphone_off" type="radio" name="online" value="4" ng-model="co.puntuacion" ng-checked="pro.online==0"> 4</label>
+                              </li>
+                              <li>
+                                 <label>
+                                 <input class="border" id="microphone_off" type="radio" name="online" value="5" ng-model="co.puntuacion" ng-checked="pro.online==0"> 5</label>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                  </ul>
+            </form>
+            </div>
+            <footer id="controls" class="player-footer " style="display: block;">
+               <div class="col-right action-panel " style="display: block;">
+                  <span class="more-padding-left">
+                  <a href="#/historial"><button    class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Cancelar</button></a>
+                  </span>
+               </div>
+            </footer>
+            <div id="modal-notification" class="modal hidden fade"></div>
+         </div>
+      </section>
+   </main>
 </div>
