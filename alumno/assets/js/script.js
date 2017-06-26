@@ -112,6 +112,18 @@ demoApp.controller('mainCtrl', function($scope, $http) {
                             });
     }
     $scope.getAlumno();
+       $scope.getNClases= function(){
+         $http.post('api/getNClases.php' )
+                          .success(function(data) {
+                            console.log(data);
+                            $scope.nClases=data;
+
+                          })
+                          .error(function(data) {
+                            console.log('Error: ' + data);
+                            });
+    }
+    $scope.getNClases();
 
         $scope.logout=function() {
           if (confirm("esta seguro que desea salir?")) {
