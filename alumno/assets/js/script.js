@@ -302,20 +302,30 @@ demoApp.controller('historialCtrl', function($scope, $http, $rootScope) {
 
 demoApp.controller('claseCtrl', function($scope, $http, $rootScope, $routeParams) {
     var id_clase = $routeParams.id;
+   // $scope.yaCalificaste=true;
    $scope.init = function(){
     $scope.viewcomentar=false;
+    $scope.calificarnn=false;
          
           //console.log(id);
         $http.post('api/getclase.php', {id_clase: id_clase} )
                 .success(function(data) {
-                  console.log(data);
-                  $rootScope.clase=data;
+                    $scope.clase=data;
+                   
+                  if(data[0].comentario==null || data[0].puntuacion==null){
+                        $scope.calificarnn=true;
+                  }
+                 console.log(  data);
+                 
                 })
                 .error(function(data) {
                   console.log('Error: ' + data);
                   });
+
               }
               $scope.init();
+
+
 
           $scope.calificar = function(){
             $scope.viewcomentar=true;

@@ -73,7 +73,27 @@ $routeProvider
         });
               
     });
-
+demoApp.filter('filterfecha', function() {
+  return function(id){
+   var resultado = id.split(" ");
+      return resultado[0];
+    };
+ 
+    });
+demoApp.filter('filtermodalidad', function() {
+  return function(id){
+    var niveles = ['online', 'presencial'];
+      return niveles[id];
+    };
+ 
+    });
+demoApp.filter('filternivel', function() {
+  return function(id){
+    var niveles = ['Primaria', 'Secundaria', 'Pre', 'Universitario'];
+      return niveles[id-1];
+    };
+ 
+    });
     // create the controller and inject Angular's $scope
 demoApp.controller('mainCtrl', function($scope, $http, $rootScope) {
   

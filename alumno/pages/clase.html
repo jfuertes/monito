@@ -51,7 +51,10 @@
                                     </tr>
                                     <tr>
                                        <td>calificacion:</td>
-                                       <td><img src="../IMG/profes/{{c.puntuacion}}estrellas.png" HEIGHT=16></td>
+                                       <td ng-show="c.puntuacion"><img src="../IMG/profes/{{c.puntuacion}}estrellas.png" HEIGHT=16>
+                                       </td>
+                                       <td ng-show="!c.puntuacion">-
+                                       </td>
                                     </tr>
                                     <tr>
                                        <td>comentario:</td>
@@ -69,7 +72,7 @@
                               </table>
                               <!--que sea table ordenadito-->
                               <li>
-                                 <a ><button class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20" ng-click="calificar()">Calificar la Clase</button> </a>
+                                 <a ><button class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20" ng-click="calificar()" ng-show="calificarnn">Calificar la Clase</button> </a>
                                  <a href="#/historial"><button    class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20"   >Volver</button></a>
                               </li>
                               <div class="col-right action-panel " style="display: block;">

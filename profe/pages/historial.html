@@ -39,18 +39,22 @@
                                             <tr>
                                                 <th>alumno</th>
                                                 <th>curso</th>
+                                                <th>nivel</th>
                                                 <th>fecha</th>
+                                                <th>modalidad</th>
                                                 <th>opciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr ng-repeat="c in clases">
                                                 <td>{{c.username_alu}}</td>
-                                                <td>{{c.id_curso}}</td>
+                                                <td>{{c.nombre}}</td>
+                                                <td>{{c.nivel | filternivel}}</td>
 
                                                 <!--<td><img src="../IMG/profes/{{c.puntuacion}}estrellas.png" HEIGHT=16></td>
                              <td>{{c.comentario}}</td>-->
-                                                <td>{{c.fecha}}</td>
+                                                <td>{{c.fecha | filterfecha}}</td>
+                                                <td>{{c.status | filtermodalidad}}</td>
                                                 <td>
                                                     <button class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20" ng-click="revisardetalle(c.id)">revisar detalles</button>
                                                 </td>
