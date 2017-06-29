@@ -12,6 +12,7 @@
 	$ape_paterno= $rspta->nu->ape_paterno;
 	$ape_materno= $rspta->nu->ape_materno;
 	$distritos= $rspta->nu->distritos;
+	$celular= $rspta->nu->celular;
 	$password= md5($rspta->nu->password);
 	$email= $rspta->nu->email;
 	$id_uni= $rspta->nu->id_uni;
@@ -46,8 +47,8 @@
 
 			$stmt->execute();
 
-		$q = 'INSERT into mp_profesor (username, nombres, ape_paterno, ape_materno, email, id_uni, distritos)
-				VALUES (:username, :nombres, :ape_paterno, :ape_materno, :email, :id_uni, :distritos)';
+		$q = 'INSERT into mp_profesor (username, nombres, ape_paterno, ape_materno, email, id_uni, distritos, celular)
+				VALUES (:username, :nombres, :ape_paterno, :ape_materno, :email, :id_uni, :distritos, :celular)';
 			
 			$stmt = $dbh->prepare($q);
 			$stmt->bindParam(':username',  $username, PDO::PARAM_STR);
@@ -57,6 +58,7 @@
 			$stmt->bindParam(':email',  $email, PDO::PARAM_INT);
 			$stmt->bindParam(':id_uni',  $id_uni, PDO::PARAM_INT);
 			$stmt->bindParam(':distritos',  $distritos, PDO::PARAM_INT);
+			$stmt->bindParam(':celular',  $celular, PDO::PARAM_INT);
 		
 
 			$stmt->execute();

@@ -12,9 +12,12 @@
 	$ape_paterno= $rspta->nu->ape_paterno;
 	$ape_materno= $rspta->nu->ape_materno;
 	$distritos= $rspta->nu->distritos;
+	$celular= $rspta->nu->celular;
 	$password= md5($rspta->nu->password);
 	$email= $rspta->nu->email;
 	$type= "alumno";
+
+	$link_act= rand(10000, 99999);//genera link para recuperar contraseña
 	
 
 	//verificando si usuario ya existe
@@ -41,20 +44,38 @@ $q = 'SELECT 1 as RESULTADO
 
 		//////////////////////////////////
 
-		$q = 'INSERT into mp_login (username, password, type, email)
-				VALUES (:username, :password, :type, :email)';
+		$q = 'INSERT into mp_login (username, password, type, email, link_act)
+				VALUES (:username, :password, :type, :email, :link_act)';
 			
 			$stmt = $dbh->prepare($q);
 			$stmt->bindParam(':username',  $username, PDO::PARAM_STR);
 			$stmt->bindParam(':password',  $password, PDO::PARAM_INT);
 			$stmt->bindParam(':type',  $type, PDO::PARAM_INT);
 			$stmt->bindParam(':email',  $email, PDO::PARAM_INT);
+			$stmt->bindParam(':link_act',  $link_act, PDO::PARAM_INT);
 
 			$stmt->execute();
-			//ususario creado en 
 
-		$q = 'INSERT into mp_alumno (username, nombres, ape_paterno, ape_materno, email, distritos)
-				VALUES (:username, :nombres, :ape_paterno, :ape_materno, :email, :distritos)';
+			//================================================================
+			//enviar correo con el link de activacion
+						$url = 'http://52.43.220.123/trabajos/monito/email2/gmailact.php';
+						$data = array('mensaje' => $link_act, 'reci' => $email);
+
+						// use key 'http' even if you send the request to https://...
+						$options = array(
+						    'http' => array(
+						        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+						        'method'  => 'POST',
+						        'content' => http_build_query($data)
+						    )
+						);
+						$context  = stream_context_create($options);
+						$result = file_get_contents($url, false, $context);
+
+			//================================================================
+
+		$q = 'INSERT into mp_alumno (username, nombres, ape_paterno, ape_materno, email, distritos, celular)
+				VALUES (:username, :nombres, :ape_paterno, :ape_materno, :email, :distritos, :celular)';
 			
 			$stmt = $dbh->prepare($q);
 			$stmt->bindParam(':username',  $username, PDO::PARAM_STR);
@@ -63,10 +84,11 @@ $q = 'SELECT 1 as RESULTADO
 			$stmt->bindParam(':ape_materno',  $ape_materno, PDO::PARAM_STR);
 			$stmt->bindParam(':email',  $email, PDO::PARAM_INT);
 			$stmt->bindParam(':distritos',  $distritos, PDO::PARAM_INT);
+			$stmt->bindParam(':celular',  $celular, PDO::PARAM_INT);
 		
 
 			$stmt->execute();
-			$rpta=array('success' => 'El usuario fue creado exitosamente');
+			$rpta=array('success' => 'El usuario fue creado exitosamente', 'correoenviado' => $result);
 			copy("../../IMG/mono.png", "../../IMG/alumnos/".$username.".png");
 	}
 	echo json_encode($rpta);

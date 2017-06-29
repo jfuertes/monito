@@ -93,7 +93,7 @@
 
 <section dir="ltr" class="monument-cfondo  choose-course-by-flag fit-to-4-source-langs">
 
-  <div id="app" class="settings" >
+  <div id="app" class="settings" ng-show="!esperaActivacion">
   <main class="main-right">
     <section class="page-main main-right">
       <div id="tab-container">
@@ -132,11 +132,12 @@
                 <input style="width: 334px;" class="large" type="text" value="" placeholder="apellido materno" ng-model="nu.ape_materno" required>
               </div>
             </li>
-            <li>
-              <label class="label">Numero Telefonico</label>
+           
+             <li>
+              <label class="label">Celular</label>
               <div class="input">
               <!--configurar el angular con la base de datos-->
-                <input style="width: 334px;" class="large" type="text" value="" placeholder="numero telefonico" ng-model="nu.numero" required>
+                <input style="width: 334px;" class="large" type="text" value="" placeholder="numero telefonico" ng-model="nu.celular" required>
               </div>
             </li>
             <li>
@@ -170,6 +171,12 @@
       </div>
     </section>
   </main>
+</div>
+
+
+
+<div class="settings" ng-show="!esperaActivacion">
+ <p>Te hemos enviado un correo con un link de activacion para que puedas ingresar a la platforma</p> 
 </div>
 <!-- entrada ala mala
 <div id="app" class="page-login" ng-show="registroExitoso">

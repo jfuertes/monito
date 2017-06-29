@@ -270,6 +270,7 @@ loginApp.controller('loginalumnoCtrl', function($scope, $http, $routeParams) {
 
   $scope.errorCrear=false;
   $scope.erroruser=false;
+  $scope.esperaActivacion=false;
         // create a message to display in our view
         $scope.getDistritos= function(){
              $http.post('api/getDistritos.php' )
@@ -305,7 +306,8 @@ loginApp.controller('loginalumnoCtrl', function($scope, $http, $routeParams) {
                                         .success(function(data) {
                                           console.log(data);
                                           delete $scope.nu;
-                                         window.location.href = '../#/loginalumno'
+                                          $scope.esperaActivacion=true;
+                                        // window.location.href = '../#/loginalumno'
                                         })
                                         .error(function(data) {
                                           console.log('Error: ' + data);
