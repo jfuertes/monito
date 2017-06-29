@@ -1,0 +1,64 @@
+<div id="app" class="settings">
+    <main class="main-right">
+        <section class="page-sidebar sidebar-right">
+            <div class="inner">
+                <div class="box-colored bg-white">
+                    <h2 class="view-profile-headline">
+                  <a class="avatar avatar-small " title="nombredeusuario">  <img src="../IMG/profes/{{pro.username}}.{{pro.extension_img}}"><span class="ring"></span></a>  {{pro.username}} <a href="#/" class="username">Ver tu perfil</a>
+              </h2>
+                    <ul id="settings_tab" class="nav-sidebar">
+                        <li class="">
+                            <a href="#perfil">Perfil</a>
+                        </li>
+                        <li class="">
+                            <a href="#listcursos">Elije tus Cursos</a>
+                        </li>
+                        <li class="active">
+                            <a href="#listdistritos">Elije tus Distritos</a>
+                        </li>
+                        <li class="">
+                            <a href="#historial">Historial de clases</a>
+                        </li>
+                        <li class="">
+                            <a href="#pass">Contraseña</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    <section class="page-main main-right">
+      <div id="tab-container">
+      <form ng-submit="updateProfesor(pro)">
+        <div id="account-content" class="settings-content">
+
+          
+          <!--mansaje de errores-->
+          <div id="confirmation-message" class="hidden save-message">Tus cambios han sido guardados.</div>
+          <div id="error-message" class="hidden error-message">Error</div>
+
+          <h1>Distrito que desea agregar</h1>
+
+          <button  class="btn btn-blue left" ng-show="correcto">Edicion Correcta</button>
+          <hr>
+          <ul class="list-settings">
+            <li>
+              <label class="label">Distrito a Añadir</label>
+              <div class="input">
+                <label class="blue-select no-focus smaller fixed-width">
+                   <select >
+                    <option>san juan---etc</option>
+                    <option>san birja---etc</option>
+                    <option>pre---etc</option>
+                  </select>
+                </label>
+              </div>
+            </li>
+            <button id="submit_button" type="submit" class="btn btn-green right" >Guardar cambios</button>
+          </ul>
+          </form>
+           
+        </div>
+      </div>
+    </section>
+    </main>
+</div>

@@ -1,0 +1,60 @@
+<div id="app" class="settings">
+    <main class="main-right">
+        <section class="page-sidebar sidebar-right">
+            <div class="inner">
+                <div class="box-colored bg-white">
+                    <h2 class="view-profile-headline">
+                  <a class="avatar avatar-small " title="nombredeusuario">  <img src="../IMG/profes/{{pro.username}}.{{pro.extension_img}}"><span class="ring"></span></a>  {{pro.username}} <a href="#/" class="username">Ver tu perfil</a>
+              </h2>
+                    <ul id="settings_tab" class="nav-sidebar">
+                        <li class="">
+                            <a href="#perfil">Perfil</a>
+                        </li>
+                        <li class="">
+                            <a href="#listcursos">Elije tus Cursos</a>
+                        </li>
+                        <li class="active">
+                            <a href="#listdistritos">Elije tus Distritos</a>
+                        </li>
+                        <li class="">
+                            <a href="#historial">Historial de clases</a>
+                        </li>
+                        <li class="">
+                            <a href="#pass">Contraseña</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="page-main main-right">
+            <div id="tab-container">
+                <form ng-submit="updateProfesor(pro)">
+                    <div id="account-content" class="settings-content">
+
+                        <h1 class="player">Distritos Habiles</h1>
+                        <a href="#adddistritos"><button    class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Agregar Distrito</button></a>
+                        <hr></hr>
+                                    <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>Distrito</th>
+                            <th>Opcion</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="cu in cursosxprofe">
+                            <td>{{cu.nombre}}</td>
+                            <td><button ng-click="eliminar($index, cu.id_curso)" class="btn btn-green btn-pequeno has-tooltip redesign-check">Quitar</button></td>
+                          </tr>
+                         </tbody>
+                    </table>
+                                </div>
+                            </div>
+                            <div class="intro"></div>
+                        </div>
+                </form>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
