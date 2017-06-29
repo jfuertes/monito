@@ -15,17 +15,11 @@
                <li>
                   <div class="profile-language">
                      <div class="course-card en course-profile-badge">
-                        <!--<div class="course-card-header course-page-illustration-en gradient">-->
-                        <!--<div class="small-course-illustration layer-1"></div>
-                           <div class="small-course-illustration layer-2"></div>
-                           <div class="small-course-illustration layer-3"></div>-->
                         <div style='background-size:70px;height:80px; background-repeat: no-repeat; background-position:center; background-image: url("../IMG/logos-uni/{{pro.abreviatura_uni}}.png");'></div>
-                        <!--</div>-->
                      </div>
                      <div class="language-info">
                         <div class="language-name">{{pro.abreviatura_uni}}</div>
                         <div class="substat">{{pro.nombre_uni}}</div>
-                        <!--<div class="substat">Puntos: 1500</div>-->
                      </div>
                   </div>
                </li>
