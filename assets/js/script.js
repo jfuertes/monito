@@ -306,19 +306,29 @@ demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
 
 demoApp.controller('loginprofesorCtrl', function($scope, $http) {
  $scope.logeoIncorrecto=false;
+ $scope.linknoactivado=false;
   $scope.login= function(us){
           console.log(us);
 
-          $http.post('login/api/loginGeneric.php', {us :us} )
+          $http.post('login/api/loginGeneric.php', {us :us, type: "profesor"} )
                   .success(function(data) {
                     console.log(data);
-                    if(data.success){
-                        console.log("data.succesees :)");
-                        delete $scope.us;
-                       //location.reload();
-                       location.href=location.protocol+"//"+location.hostname+location.pathname+"profe/";
-                       //window.location.href='profe/';
-                    }
+                  
+                    if(data.activado==true){
+                               if(data.success){
+                               console.log("data.succesees :)");
+                                delete $scope.us;
+                               //location.reload();
+                               location.href=location.protocol+"//"+location.hostname+location.pathname+"profe/";
+                               //window.location.href='profe/';
+                            }
+
+                            }
+                    else if (data.activado==false){
+                       $scope.linknoactivado=true;
+                        console.log("error!!");
+                    
+                  }
                     else{
                        $scope.logeoIncorrecto=true;
                         console.log("error!!");
@@ -337,31 +347,38 @@ demoApp.controller('loginprofesorCtrl', function($scope, $http) {
 
 demoApp.controller('loginalumnoCtrl', function($scope, $http) {
   $scope.logeoIncorrecto=false;
+  $scope.linknoactivado=false;
   $scope.login= function(us){
           console.log(us);
 
-          $http.post('login/api/loginGeneric.php', {us :us} )
+          $http.post('login/api/loginGeneric.php', {us :us, type: "alumno"} )
                   .success(function(data) {
                     console.log(data);
-                    if(data.success){
-                        console.log("data.succesees :)");
-                        delete $scope.us;
-                         location.href=location.protocol+"//"+location.hostname+location.pathname+"alumno/";
-                       //location.reload();
-                    }
+                  
+                    if(data.activado==true){
+                               if(data.success){
+                               console.log("data.succesees :)");
+                                delete $scope.us;
+                               //location.reload();
+                               location.href=location.protocol+"//"+location.hostname+location.pathname+"alumno/";
+                               //window.location.href='profe/';
+                            }
+
+                            }
+                    else if (data.activado==false){
+                       $scope.linknoactivado=true;
+                        console.log("error!!");
+                    
+                  }
                     else{
                        $scope.logeoIncorrecto=true;
-                      // alert("cagao");
                         console.log("error!!");
                     }
                     
                   })
                   .error(function(data) {
                     console.log('Error: ' + data);
-                    });
-                               
-
+                    });                         
   };
-
 
     });

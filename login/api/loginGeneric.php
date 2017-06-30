@@ -7,25 +7,29 @@
 
  	$rspta = json_decode(file_get_contents("php://input"));
 	//var_dump($rspta);
-	$username= $rspta->us->username;
+    $username= $rspta->us->username;
+	$type= $rspta->type;
 	$password= md5($rspta->us->password);
 	//ver si es correo
-    $porciones = explode("@", $username);
+    $porciones = explode("@", $username);//hay arroba por ahi
     //list($antesarro, $desparro) = explode("@", $username);
     if(isset($porciones[1])){
         list($antesdot, $despdot) = explode(".", $porciones[1]);
-        if(isset($despdot)){
+        if(isset($despdot)){//se buscara por correo segun el usuario con arroba presente :)
                 $email= $username;  
-                 $csql="select * from mp_login where upper(email)=upper('$email')";
+                 $csql="select * from mp_login where upper(email)=upper(:email) and type=:type";
                     $stmt = $dbh->prepare($csql);
+                    $stmt->bindParam(':email',  $email, PDO::PARAM_STR);
+                    $stmt->bindParam(':type',  $type, PDO::PARAM_STR);
                     $stmt->execute();
                     $rx = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+                   //var_dump($rx[0]['link_act']!=666);
 
                       if(count($rx)==1){
                       
                             if($rx[0]['password']==$password){
-                                     if($rx[0]['type']=="alumno"){
+                                if($rx[0]['link_act']==666){
+                                    if($rx[0]['type']=="alumno"){
 
                                            $csql="select * from mp_alumno where upper(email)=upper('$email')";
                                             $stmt = $dbh->prepare($csql);
@@ -40,7 +44,7 @@
                                         $_SESSION['email']=$rx[0]['email'];
                      
                                         //                  
-                                        $rpta=array('success' => 'correcto :)');
+                                        $rpta=array('success' => 'correcto :)', 'activado' => true);
                                         echo json_encode($rpta);
                                     }
                                     else if ($rx[0]['type']=="profesor"){
@@ -57,9 +61,30 @@
                                          $_SESSION['email']=$rx[0]['email'];
                      
                                         //                  
-                                        $rpta=array('success' => 'correcto :)');
+                                        $rpta=array('success' => 'correcto :)', 'activado' => true);
                                         echo json_encode($rpta);
                                     }
+                                }
+                                else{
+                                        //se le reenvia el correo del link de activacion
+                                        $url = 'http://52.43.220.123/trabajos/monito/email2/gmailact.php';
+                                        $data = array('mensaje' => $rx[0]['link_act'], 'reci' => $rx[0]['email']);
+
+                                        // use key 'http' even if you send the request to https://...
+                                        $options = array(
+                                            'http' => array(
+                                                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                                                'method'  => 'POST',
+                                                'content' => http_build_query($data)
+                                            )
+                                        );
+                                        $context  = stream_context_create($options);
+                                        $result = file_get_contents($url, false, $context);
+                                        //se le reenvia el correo del link de activacion
+                                        $rpta=array('activado' => false, 'correo enviado' => $result);
+                                        echo json_encode($rpta);
+                                }
+                                     
                             }
                             else{
                                 echo "{\"acceso\":\"false\"}";
@@ -85,8 +110,10 @@
     else{
 
 
-	    $csql="select * from mp_login where upper(username)=upper('$username')";
+	    $csql="select * from mp_login where upper(username)=upper(:username) and type=:type";
         $stmt = $dbh->prepare($csql);
+        $stmt->bindParam(':username',  $email, PDO::PARAM_STR);
+        $stmt->bindParam(':type',  $type, PDO::PARAM_STR);
         $stmt->execute();
         $rx = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -94,6 +121,7 @@
           if(count($rx)==1){
           //var_dump($rx[0]);
                 if($rx[0]['password']==$password){
+                    if($rx[0]['link_act']==666){
                          if($rx[0]['type']=="alumno"){
 
                                $csql="select * from mp_alumno where upper(username)=upper('$username')";
@@ -108,7 +136,7 @@
                             $_SESSION['type']=$rx[0]['type'];;
          
                             //                  
-                            $rpta=array('success' => 'correcto :)');
+                            $rpta=array('success' => 'correcto :)', 'activado' => true);
                             echo json_encode($rpta);
                         }
                         else if ($rx[0]['type']=="profesor"){
@@ -124,9 +152,31 @@
                             $_SESSION['type']=$rx[0]['type'];;
          
                             //                  
-                            $rpta=array('success' => 'correcto :)');
+                            $rpta=array('success' => 'correcto :)', 'activado' => true);
                             echo json_encode($rpta);
                         }
+                    }
+                    else{
+                        
+                        //se le reenvia el correo del link de activacion
+                                $url = 'http://52.43.220.123/trabajos/monito/email2/gmailact.php';
+                                $data = array('mensaje' => $rx[0]['link_act'], 'reci' => $rx[0]['email']);
+
+                                // use key 'http' even if you send the request to https://...
+                                $options = array(
+                                    'http' => array(
+                                        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                                        'method'  => 'POST',
+                                        'content' => http_build_query($data)
+                                    )
+                                );
+                                $context  = stream_context_create($options);
+                                $result = file_get_contents($url, false, $context);
+                                //se le reenvia el correo del link de activacion
+                                $rpta=array('activado' => false, 'correo enviado' => $result);
+                                echo json_encode($rpta);
+                    }
+                        
                 }
                 else{
                     echo "{\"acceso\":\"false\"}";

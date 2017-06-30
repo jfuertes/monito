@@ -2,7 +2,7 @@
 
 <section dir="ltr" class="monument-cfondo  choose-course-by-flag fit-to-4-source-langs">
 
-  <div id="app" class="settings" >
+  <div id="app" class="settings"  ng-show="!esperaActivacion">
   <main class="main-right">
     <section class="page-main main-right">
       <div id="tab-container">
@@ -93,38 +93,16 @@
   </main>
 </div>
 
-<div id="app" class="page-login" ng-show="registroExitoso">
- <main class="main-center-narrow">
-    <section class="page-main">
-      <p>Registro Exitoso :D</p>
-       <form id="formNProfe" class="form-horizontal" role="form" ng-submit="login(us)">
 
-        <div class="form-group">
-            <label class="control-label col-lg-2" >Login de usuario:</label>
-            <div class="col-lg-4">
-              <input type="text"  class="form-control" placeholder="login" ng-model="us.username" required>
-            </div>
-        </div>
 
-        <div class="form-group" >
-            <label class="control-label col-lg-2" >Contraseña:</label>
-            <div class="col-lg-4">
-              <input type="password" class="form-control" placeholder="contraseña" ng-model="us.password">
-            </div>
-        </div>
-
-        <div class="form-group"> 
-            <div class="col-lg-offset-2 col-lg-6">
-              <button type="submit" class="btn btn-primary col-lg-4">Ingresar</button>
-              <div class="col-lg-2"></div>
-              
-            </div>
-        </div>
-    </form>
-       </section>
-  </main>
-
+<div class="settings" ng-show="esperaActivacion">
+<main class="main-right">
+    <section class="page-main main-right">
+      <div id="tab-container">
+        <div id="profile-content" class="settings-content"></br></br>
+        
+ <p>Te hemos enviado un correo con un link de activacion para que puedas ingresar a la platforma</p> 
+</div></div></section></main> 
 </div>
-
 </section>
 
