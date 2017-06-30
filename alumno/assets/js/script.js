@@ -220,7 +220,8 @@ demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
 
 
 demoApp.controller('listaProfCtrl', function($scope, $http, $rootScope) { 
-  $scope.SinProfes=false;
+  if ($rootScope.modalidad==1) {
+    $scope.SinProfes=false;
   $scope.SinProfesendistrito=false;
     $http.post('api/getProfeByCursoanddistrito.php', {id_curso: $rootScope.idcurso, modalidad: $rootScope.modalidad, distrito: $rootScope.dis} )
   //  $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso, modalidad: $rootScope.modalidad, distrito: $rootScope.dis} )
@@ -240,6 +241,30 @@ demoApp.controller('listaProfCtrl', function($scope, $http, $rootScope) {
                   console.log('Error: ' + data);
                   });
 
+  }
+  else{
+      $scope.SinProfes=false;
+        $scope.SinProfesendistrito=false;
+    $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso, modalidad: $rootScope.modalidad} )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.Profes=data;
+                  if(data.length==0){
+                    $scope.SinProfes=true;
+                  }
+
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+
+    $scope.ejecutar=function(username){
+         location.href=location.protocol+"//"+location.hostname+location.pathname+"#/perfilprofe";
+                //window.location.href='#metodo';
+                $rootScope.usernameprofe=username;
+    }
+  }
+  
     $scope.ejecutar=function(username){
          location.href=location.protocol+"//"+location.hostname+location.pathname+"#/perfilprofe";
                 //window.location.href='#metodo';
@@ -253,7 +278,7 @@ demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
                         .success(function(data) {
                           console.log(data);
                           $scope.Profes=data;
-                          location.href=location.protocol+"//"+location.hostname+location.pathname+"#/distritos";
+                          location.href=location.protocol+"//"+location.hostname+location.pathname+"#/listaprof";
                           // window.location.href='#listaprof';
 
                         })
