@@ -45,6 +45,10 @@ $routeProvider
                 templateUrl : 'pages/recupera.html',
                 controller  : 'recuperaCtrl'
             })
+              .when('/activa/:link', {
+                templateUrl : 'pages/activa.html',
+                controller  : 'activaCtrl'
+            })
              
             .otherwise({ templateUrl : 'pages/notfound.html' 
         });
@@ -58,6 +62,7 @@ loginApp.controller('mainCtrl', function($scope, $http) {
 loginApp.controller('loginprofesorCtrl', function($scope, $http) {
   $scope.errorCrear=false;
 $scope.registroExitoso=false;
+  $scope.esperaActivacion=false;
         // create a message to display in our view
         $scope.getDistritos= function(){
              $http.post('api/getDistritos.php' )
@@ -89,23 +94,27 @@ $scope.erroruser=false;
                   $http.post('api/nuevoprofe.php', {nu :nu} )
                           .success(function(data) {
                             console.log(data);
-                            if(data.success){
-                              var mensaje ="bienvenida";
+                    
+                              if(data.success){
                                 console.log("data.succesees :)");
-                                //document.getElementById("formNProfe").reset();
+                                
+                                var mensaje ="bienvenida";
+                                //delete $scope.nu;
+                                //$scope.registroExitoso=true;
+                                //redirigir
+                                     
+                                      //document.getElementById("formNProfe").reset();
 
                                      $http.post('../api/email/gmail.php', {reci: nu.email, mensaje: mensaje} )
                                         .success(function(data) {
                                           console.log(data);
                                           delete $scope.nu;
-                                         window.location.href = '../#/loginprofesor'
+                                          $scope.esperaActivacion=true;
+                                        // window.location.href = '../#/loginalumno'
                                         })
                                         .error(function(data) {
                                           console.log('Error: ' + data);
                                           });
-                               
-                               
-                              //  $scope.registroExitoso=true;
                             }
                             else{
                               $scope.errorCrear=true;
@@ -255,6 +264,36 @@ loginApp.controller('recuperaCtrl', function($scope, $http, $routeParams) {
 
     });
 
+loginApp.controller('activaCtrl', function($scope, $http, $routeParams) {
+  $scope.activacioncorrecta=false;
+   $scope.activacionerronea=false;
+      var link = $routeParams.link;
+      $scope.activar = function(pass){
+         console.log(pass);
+         $http.post('api/activacion.php', {link :link, pass:pass} )
+                  .success(function(data) {
+                    console.log(data);
+                    if(data.success){
+                     $scope.activacioncorrecta=true;
+                        if (data.type=="alumno") {
+                            setTimeout( window.location.href = '../#/loginalumno',1000);
+                        }
+                        else if (data.type=="profesor") {
+                            setTimeout( window.location.href = '../#/loginprofesor',1000);
+                        }
+                    }
+                    else{
+                      $scope.activacionerronea=true;
+                    }
+                    
+                  })
+                  .error(function(data) {
+                    console.log('Error: ' + data);
+                    });
+      }
+
+
+    });
 
 
 loginApp.controller('mainCtrl', function($scope) {

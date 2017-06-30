@@ -1,0 +1,35 @@
+<div id="app" class="page-forgot">
+  <main class="main-center-narrow">
+    <section class="page-main">
+    <h3 class="label">Ingresa tu contraseña para verificar y activar tu cuenta porfavor:</h3>
+      <form id="formNAlu" ng-submit="activar(pass)">
+      <ul class="list-settings">
+          
+              
+              
+            <li>
+              <label class="label">Contraseña </label>
+              <div class="input">
+                <input class="large" id="current-password" name="current-password" size="30" type="password" ng-model="pass">
+              </div>
+            </li>
+         
+            <button id="submit_button" type="submit" class="btn btn-green right"  >Activar</button>
+             
+          </ul>
+      </form>
+
+<div ng-show="activacioncorrecta">
+          <div class="warning-message " id="email-error" style="float: left; margin-top: 20px;">Activacion de cuenta correcta espere 1 segundo para logearse</div>
+        <!--mensaje de falla de correo electronico-->
+</div>
+<div ng-show="activacionerronea">
+          <div class="warning-message " id="email-error" style="float: left; margin-top: 20px;">Error no coincide la contraseña intentelo de nuevo.</div>
+        <!--mensaje de falla de correo electronico-->
+</div>
+
+      <!--mensaje de confirmacion de correo enviado-->
+     
+    </section>
+  </main>
+</div>
