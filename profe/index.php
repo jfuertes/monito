@@ -1,7 +1,7 @@
 <?php
     session_start();
     if($_SESSION['type']!="profesor"){    
-     //header('location:../');
+     header('location:../');
         //echo "entro";
         //echo "acceso correcto".$_SESSION['login'];
     }
@@ -15,13 +15,13 @@
     <title>MiProfe.club</title>
     <link rel="shortcut icon" href="IMG/logo.png">
     <link rel="stylesheet" href="../assets/css/estilos.css">
-    <link rel="stylesheet" href="assets/css/miprofe.css">
-    <link rel="stylesheet" href="assets/css/miprofe2.css">
-    <link rel="stylesheet" href="assets/css/miprofe3.css">
-    <link rel="stylesheet" href="assets/css/miprofe4.css">
+    <link rel="stylesheet" href="../alumno/assets/css/miprofe.css">
+    <link rel="stylesheet" href="../alumno/assets/css/miprofe2.css">
+    <link rel="stylesheet" href="../alumno/assets/css/miprofe3.css">
+    <link rel="stylesheet" href="../alumno/assets/css/miprofe4.css">
     <link href="/images/favicon.ico?v=3" rel="shortcut icon" type="image/x-icon">
     <style type="text/css"></style>
-    <style href="assets/css/miprofe.css" type="text/css"></style>
+    <style href="../alumno/assets/css/miprofe.css" type="text/css"></style>
 </head>
 
 <body class="global-es logged-out splash-2014 compact-enabled" style="overflow: auto;">

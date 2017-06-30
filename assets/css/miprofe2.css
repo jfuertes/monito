@@ -13602,7 +13602,7 @@ html[dir=rtl] .topbar-nav-main>li {
 .topbar-right {
     float: right;
     *zoom: 1;
-    margin: 15px -10px 0 0
+   /* margin: 15px -10px 0 0*/
 }
 html[dir=rtl] .topbar-right {
     float: right;

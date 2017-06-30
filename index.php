@@ -102,28 +102,6 @@
                             </ul>
                         </div>
                         <div class="footer-column">
-                            <h3>Productos</h3>
-                            <ul>
-                                <li>
-                                    <a href="nosotros/#miprofe">Miprofe</a>
-                                </li>
-                                <li>
-                                    <a href="nosotros/#miprofe_escuelas">Miprofe  para Escuelas</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="footer-column">
-                            <h3>Ayuda y Soporte</h3>
-                            <ul>
-                                <li>
-                                    <a href="nosotros/#soluciones">Solución de problemas</a>
-                                </li>
-                                <li>
-                                    <a href="nosotros/#ayuda_escuelas">Ayuda  Escuelas</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="footer-column">
                             <h3>Social</h3>
                             <ul>
                                 <li>
