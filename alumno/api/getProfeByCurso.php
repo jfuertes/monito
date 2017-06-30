@@ -22,7 +22,7 @@ where id_curso=:id_curso and modalidad=:modalidad';
 	$stmt->execute();
 	$r = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-	//var_dump($r);
+	var_dump($r);
 	echo json_encode($r);
 
 ?>
