@@ -20,80 +20,74 @@
             </div>
          </div>
       </section>
-      <section class="page-main main-right">
-         <div id="tab-container" ng-hide="viewcomentar">
-            <form ng-submit="updateAlumno(alu)">
+
+      <section ng-hide="viewcomentar" class="page-main main-right">
+            <div id="tab-container">
+                <form ng-submit="updateAlumno(alu)">
+                    <div id="account-content" class="settings-content">
+                        <h1 class="player">Detalles de Comentario</h1>
+                        <button class="btn btn-green btn-pequeno has-tooltip redesign-check" ng-show="calificarnn" data-margin="5" tabindex="20" ng-click="calificar()"  >Calificar la Clase</button>
+                        <a href="#/historial"><button     class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20"   >Volver</button>
+                                       </a>
+                        <hr>
+                        </hr>
+                        <table class="table table-striped">
+                              <tbody ng-repeat="c in clase">
+                                 <tr>
+                                    <td>profesor:</td>
+                                    <td>{{c.username_pro}}</td>
+                                 </tr>
+                                 <tr>
+                                    <td>curso:</td>
+                                    <td>{{c.nombre}}</td>
+                                 </tr>
+                                 <tr>
+                                    <td>nivel:</td>
+                                    <td>{{c.nivel | filternivel}}</td>
+                                 </tr>
+                                 <tr>
+                                    <td>calificacion:</td>
+                                    <td ng-show="c.puntuacion"><img src="../IMG/profes/{{c.puntuacion}}estrellas.png" HEIGHT=16>
+                                    </td>
+                                    <td ng-show="!c.puntuacion">--
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>comentario:</td>
+                                    <td ng-show="c.puntuacion">{{c.comentario}}
+                                    </td>
+                                    <td ng-show="!c.puntuacion">Sin Comentar
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>fecha:</td>
+                                    <td>{{c.fecha}}</td>
+                                 </tr>
+                                 <tr>
+                                    <td>modalidad :</td>
+                                    <td>{{c.status | filtermodalidad}}</td>
+                                 </tr>
+                                 <tr>
+                                    <td>estado :</td>
+                                    <td ng-show="!calificarnn">se califico</td>
+                                    <td ng-show="calificarnn">aun no se califico</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section ng-show="viewcomentar" class="page-main main-right">
+            <div id="tab-container">
+                <form ng-submit="enviardata(co)">
                <div id="account-content" class="settings-content">
-                  <!--<button id="submit_button" type="submit" class="btn btn-green right" >Guardar cambios</button>-->
-                  <h1>Comentario</h1>
-                  <hr>
-                  </hr>
-                  <div id="context-view">
-                     <div class="player-main">
-                        <div id="prev-session-element-container" class="">
-                        </div>
-                        <div id="session-element-container" class="">
-                           <div class="challenge-translate">
-                              <h1 class="player">Detalles:</h1>
-                              <table class="table table-striped">
-                                 <tbody ng-repeat="c in clase">
-                                    <tr>
-                                       <td>profesor:</td>
-                                       <td>{{c.username_pro}}</td>
-                                    </tr>
-                                    <tr>
-                                       <td>curso:</td>
-                                       <td>{{c.nombre}}</td>
-                                    </tr>
-                                    <tr>
-                                       <td>nivel:</td>
-                                       <td>{{c.nivel | filternivel}}</td>
-                                    </tr>
-                                    <tr>
-                                       <td>calificacion:</td>
-                                       <td ng-show="c.puntuacion"><img src="../IMG/profes/{{c.puntuacion}}estrellas.png" HEIGHT=16>
-                                       </td>
-                                       <td ng-show="!c.puntuacion">-
-                                       </td>
-                                    </tr>
-                                    <tr>
-                                       <td>comentario:</td>
-                                       <td>{{c.comentario}}</td>
-                                    </tr>
-                                    <tr>
-                                       <td>fecha:</td>
-                                       <td>{{c.fecha}}</td>
-                                    </tr>
-                                    <tr>
-                                       <td>modalidad :</td>
-                                       <td>{{c.status | filtermodalidad}}</td>
-                                    </tr>
-                                 </tbody>
-                              </table>
-                              <!--que sea table ordenadito-->
-                              <li>
-                                 <a ><button class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20" ng-click="calificar()" ng-show="calificarnn">Calificar la Clase</button><p ng-show="!calificarnn">ya calificaste</p> </a>
-                                 <a href="#/historial"><button    class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20"   >Volver</button></a>
-                              </li>
-                              <div class="col-right action-panel " style="display: block;">
-                              </div>
-                           </div>
-                        </div>
-                        <div class="intro"></div>
-                     </div>
-                  </div>
-               </div>
-            </form>
-         </div>
-         <div id="tab-container" ng-show="viewcomentar">
-            <form ng-submit="enviardata(co)">
-               <div id="account-content" class="settings-content">
-                  <button id="submit_button" type="submit" class="btn btn-green right" >Enviar cambios</button>
-                  <!--mansaje de errores-->
-                  <div id="confirmation-message" class="hidden save-message">Tus cambios han sido guardados.</div>
-                  <div id="error-message" class="hidden error-message">Error</div>
+                  
                   <h1>Comentar la clase</h1>
-                  <button  class="btn btn-blue left" ng-show="correcto">Comentario Enviado</button>
+                  
+                  <button id="submit_button" type="submit" class="btn btn-green right" >Enviar cambios</button>
+                  <a href="#/historial"><button    class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Volver</button></a>
                   <hr>
                   <ul class="list-settings">
                      <li>
@@ -136,15 +130,6 @@
                   </ul>
             </form>
             </div>
-            <footer id="controls" class="player-footer " style="display: block;">
-               <div class="col-right action-panel " style="display: block;">
-                  <span class="more-padding-left">
-                  <a href="#/historial"><button    class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Cancelar</button></a>
-                  </span>
-               </div>
-            </footer>
-            <div id="modal-notification" class="modal hidden fade"></div>
-         </div>
-      </section>
+        </section>
    </main>
 </div>

@@ -306,6 +306,19 @@ demoApp.controller('historialCtrl', function($scope, $http, $rootScope) {
     });
 
 demoApp.controller('claseCtrl', function($scope, $http, $rootScope, $routeParams) {
+  $scope.getProfe= function(){
+         $http.post('api/getdataProfe.php' )
+                          .success(function(data) {
+                            console.log(data);
+                            $scope.pros=data;
+
+                           
+                          })
+                          .error(function(data) {
+                            console.log('Error: ' + data);
+                            });
+    }
+    $scope.getProfe();
    $scope.init = function(){
           var id_clase = $routeParams.id;
           //console.log(id);

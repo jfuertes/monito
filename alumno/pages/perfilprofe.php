@@ -6,9 +6,15 @@
             <h2>Informacion</h2>
             <ul class="sidebar-stats">
                <li>
-                  <h3 class="gray">Puntuacion</h3>
+                  <h3 class="gray">Calificacion</h3>
                   <img src="../IMG/profes/{{pro.puntuacion}}estrellas.png" HEIGHT=16> Estrellas
                </li>
+            </ul>
+            <ul class="substat">
+                  <li>
+                    <h3 class="gray">Descripcion</h3>
+                     {{pro.descripcion}}
+                  </li>
             </ul>
             <h3 class="gray">Universidad</h3>
             <ul class="profile-language-list">
@@ -27,12 +33,19 @@
          </div>
          <div class="inner">
             <div class="box-gray box-achievements">
-               <h2>Descripcion</h2>
+               <h2>Comentarios</h2>
                <ul class="substat">
                   <li>
-                     {{pro.descripcion}}
+                    <h3 class="gray">alumno 1</h3>
+                     el profe esta hasta el pincho
                   </li>
-               </ul>
+              </ul>
+              <ul class="substat">
+                  <li>
+                    <h3 class="gray">jair fuuertes</h3>
+                     el profe me la pone dura
+                  </li>
+              </ul>
             </div>
          </div>
    </section>
@@ -63,7 +76,33 @@
    <p>para mostrar numeros telefonicos, correo y chat contactelo si esta seguro de quere hacerlo</p>
    <button id="submit_button" type="submit" class="btn btn-green right" ng-click="contactar()">Contactar</button>
    </div>
-   <div ng-show="!antesContactar">
+
+
+   <div ng-show="!antesContactar" class="settings-content">
+
+                        
+                        <hr></hr>
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>Numero</th>
+                            <th>Correo</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         
+                            <tr >
+                            <td>{{pro.celular}}  {{pro.telefono}}</td>
+                            <td>{{pro.email}}</td>
+                            <td><button  class="btn btn-green btn-pequeno has-tooltip redesign-check" ng-click="solicitarClase()">Solicitar Clase</button></td>
+                          </tr> 
+                        </tbody>
+                    </table>
+    </div>
+
+
+   <!--<div ng-show="!antesContactar">
    <h2 class="profile-header-subline ">
    <span class="real-name">{{pro.celular}} - {{pro.telefono}}</span>
    <span class="real-name">{{pro.email}}</span>
@@ -71,13 +110,13 @@
    <div>
    <button  type="submit" class="btn btn-green right" ng-click="solicitarClase()">solicitar clase</button>
    </div>
-   </div>
+   </div>-->
 
-   <div id="account-content" class="settings-content">
+                    <div id="account-content" class="settings-content">
 
                         <h1 class="player">cursos</h1>
                         <hr></hr>
-                         <table class="table table-striped">
+                      <table class="table table-striped">
                         <thead>
                           <tr>
                             <th>Curso</th>
@@ -94,9 +133,9 @@
                             <td>{{c.modalidad | filtermodalidad}}</td>
                             <td><button  class="btn btn-green btn-pequeno has-tooltip redesign-check" ng-click="solicitarxtabla(c.id_curso)">Solicitar</button></td>
                           </tr> 
-                         </tbody>
+                        </tbody>
                     </table>
-                                </div>
+                  </div>
    </div>
    </form>
    </div>

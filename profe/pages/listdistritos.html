@@ -28,7 +28,7 @@
         </section>
         <section class="page-main main-right">
             <div id="tab-container">
-                <form >
+                <form ng-submit="updateProfesor(pro)">
                     <div id="account-content" class="settings-content">
 
                         <h1 class="player">Distritos Habiles</h1>
@@ -42,9 +42,9 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr >
-                            <td>san juancho</td>
-                            <td><button  class="btn btn-green btn-pequeno has-tooltip redesign-check">Quitar</button></td>
+                          <tr ng-repeat="cu in cursosxprofe">
+                            <td>{{cu.nombre}}</td>
+                            <td><button ng-click="eliminar($index, cu.id_curso)" class="btn btn-green btn-pequeno has-tooltip redesign-check">Quitar</button></td>
                           </tr>
                          </tbody>
                     </table>

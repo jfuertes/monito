@@ -25,45 +25,53 @@
       </div>
     </section>
 
-    <section class="page-main main-right">
-      <div id="tab-container">
-      <form ng-submit="updateAlumno(alu)">
-        <div id="account-content" class="settings-content">
-
-          <!--<button id="submit_button" type="submit" class="btn btn-green right" >Guardar cambios</button>-->
-          <h1>Comentario</h1>
-          <hr> </hr>
-
-                    <div id="context-view">
+     <section class="page-main main-right">
+            <div id="tab-container">
+                <form ng-submit="updateAlumno(alu)">
+                    <div id="account-content" class="settings-content">
+                        <h1 class="player">Detalles de Comentario</h1>
+                        <a href="#/historial"><button     class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20"   >Volver</button> </a>
+                        <hr>
+                        </hr>
+                        <table class="table table-striped">
+                              <tbody ng-repeat="c in clase">
+                                 <tr>
+                                    <td>profesor:</td>
+                                    <td>{{c.username_alu}}</td>
+                                 </tr>
+                                 <tr>
+                                    <td>curso:</td>
+                                    <td>{{c.id_curso}}</td>
+                                 </tr>
+                                 <tr>
+                                    <td>calificacion:</td>
+                                    <td ng-show="c.puntuacion"><img src="../IMG/profes/{{c.puntuacion}}estrellas.png" HEIGHT=16>
+                                    </td>
+                                    <td ng-show="!c.puntuacion"> Aun no se ah puntuado
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>comentario:</td>
+                                    <td>{{c.comentario}}</td>
+                                 </tr>
+                                 <tr>
+                                    <td>fecha:</td>
+                                    <td>{{c.fecha}}</td>
+                                 </tr>
+                                 <tr>
+                                    <td>modalidad :</td>
+                                    <td>{{c.status | filtermodalidad}}</td>
+                                 </tr>
+                                 <tr>
+                                    <td>estado :</td>
+                                    <td ng-show="!calificarnn">se califico</td>
+                                    <td ng-show="calificarnn">aun no se califico</td>
+                                 </tr>
+                              </tbody>
+                           </table>
                     </div>
-                    <div class="player-main">
-                        <div id="prev-session-element-container" class="">
-                        </div>
-                        <div id="session-element-container" class="">
-                            <div class="challenge-translate">
-                                <h1 class="player">Detalles:</h1>
-                                <table class="table table-striped">
-                                    <!--que sea table ordenadito-->
-                                    <ul ng-repeat="c in clase">
-                                        <li>{{c.username_alu}}</li>
-                                        <li>{{c.id_curso}}</li>
-                                        <li><img src="../IMG/profes/{{c.puntuacion}}estrellas.png" HEIGHT=16></li>
-                                         <li>{{c.comentario}}</li>
-                                         <li>{{c.fecha}}</li>
-                                         <li>{{c.status}}</li>
-                                        <li>
-                                            <button class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20" ng-click="revisardetalle($index)">algo esta mal?</button>
-                                        </li>
-                                    </ul>
-                                    </tbody>
-                                </table>
-
-                            </div>
-                        </div>
-                        <div class="intro"></div>
-                    </div>
-                
-      </div>
-    </section>
+                </form>
+            </div>
+        </section>
   </main>
 </div>

@@ -237,7 +237,7 @@ demoApp.controller('listaProfCtrl', function($scope, $http, $rootScope) {
     });
 demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
       $scope.online=function(){
-        $rootScope.modalidad=1;
+        $rootScope.modalidad=0;
             $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso, modalidad: $rootScope.modalidad} )
                         .success(function(data) {
                           console.log(data);
@@ -251,7 +251,7 @@ demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
                           });
             };
               $scope.presencial=function(){
-                $rootScope.modalidad=0;
+                $rootScope.modalidad=1;
             $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso, modalidad: $rootScope.modalidad} )
                         .success(function(data) {
                           console.log(data);
