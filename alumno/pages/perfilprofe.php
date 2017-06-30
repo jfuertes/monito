@@ -34,18 +34,13 @@
          <div class="inner">
             <div class="box-gray box-achievements">
                <h2>Comentarios</h2>
-               <ul class="substat">
+               <ul class="substat" ng-repeat="co in Comentarios">
                   <li>
-                    <h3 class="gray">alumno 1</h3>
-                     el profe esta hasta el pincho
+                    <h3 class="gray">{{co.username_alu}}</h3>
+                     {{co.comentario}}
                   </li>
               </ul>
-              <ul class="substat">
-                  <li>
-                    <h3 class="gray">jair fuuertes</h3>
-                     el profe me la pone dura
-                  </li>
-              </ul>
+             
             </div>
          </div>
    </section>

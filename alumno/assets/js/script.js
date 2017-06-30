@@ -343,7 +343,7 @@ demoApp.controller('claseCtrl', function($scope, $http, $rootScope, $routeParams
                 .success(function(data) {
                   console.log(data);
                   $rootScope.clase=data;
-                    location.reload();
+                   // location.reload();//qwerty
          
                 })
                 .error(function(data) {
@@ -495,7 +495,18 @@ $scope.antesContactar=true;
               //funcion para generar clase que falta
            }
         }
-        
+        $scope.getComentsxprofe = function(){
+                $http.post('api/getComentsxprofe.php', {id_profe: $routeParams.id} )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.Comentarios=data;
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+        }
+        $scope.getComentsxprofe();
+
     
     });
 demoApp.controller('perfilCtrl', function($scope, $http, $rootScope, upload) {
