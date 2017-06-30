@@ -9,6 +9,7 @@
 	//var_dump($rspta);
     $username= $rspta->us->username;
 	$type= $rspta->type;
+   // var_dump($type);
 	$password= md5($rspta->us->password);
 	//ver si es correo
     $porciones = explode("@", $username);//hay arroba por ahi
@@ -23,7 +24,7 @@
                     $stmt->bindParam(':type',  $type, PDO::PARAM_STR);
                     $stmt->execute();
                     $rx = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                   //var_dump($rx[0]['link_act']!=666);
+                  // var_dump($rx);
 
                       if(count($rx)==1){
                       
@@ -112,14 +113,14 @@
 
 	    $csql="select * from mp_login where upper(username)=upper(:username) and type=:type";
         $stmt = $dbh->prepare($csql);
-        $stmt->bindParam(':username',  $email, PDO::PARAM_STR);
+        $stmt->bindParam(':username',  $username, PDO::PARAM_STR);
         $stmt->bindParam(':type',  $type, PDO::PARAM_STR);
         $stmt->execute();
         $rx = $stmt->fetchAll(PDO::FETCH_ASSOC);
+          //var_dump($rx);
 
 
           if(count($rx)==1){
-          //var_dump($rx[0]);
                 if($rx[0]['password']==$password){
                     if($rx[0]['link_act']==666){
                          if($rx[0]['type']=="alumno"){
