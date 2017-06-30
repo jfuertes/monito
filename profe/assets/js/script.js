@@ -38,10 +38,7 @@ $routeProvider
                 templateUrl : 'pages/historial.html',
                 controller  : 'historialCtrl'
             })
-            .when('/adddistritos', {
-                templateUrl : 'pages/adddistritos.html',
-                controller  : 'adddistritosCtrl'
-            })
+         
               .when('/nivel', {
                 templateUrl : 'pages/nivel.html',
                 controller  : 'nivelCtrl'
@@ -212,6 +209,79 @@ demoApp.controller('listcursosCtrl', function($scope, $http, $rootScope) {
                 //Materialize.toast('Se encontró un problema al tratar de eliminar el usuario.', 3000);
               });
         }
+         }
+
+    });
+demoApp.controller('listdistritosCtrl', function($scope, $http, $rootScope) {
+        
+         $scope.getDistritos= function(){
+             $http.post('api/getDistritose.php' )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.DistritosArray=data;
+                  //comenzamos a ver los distritos por cursos
+                    $http.post('api/getDistritosxProfe.php' )
+                      .success(function(data) {
+                        console.log(data.distritos);
+
+                        var distritosBrutos=data.distritos;//falta dividir por comas
+                        var distritosxprofeArray=distritosBrutos.split(",");
+                        $scope.distritosTabla=[];
+                        $.each(distritosxprofeArray, function( index, value ) {
+                         // console.log( index + ": " + value );
+                          $scope.distritosTabla.push({"id_distrito" : value, "nombre" : $scope.DistritosArray[value-1]})
+                        });
+                        console.log($scope.distritosTabla);
+
+
+                      })
+                      .error(function(data) {
+                        console.log('Error: ' + data);
+                        });
+             
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+         };
+         $scope.getDistritos();
+
+           $scope.getDistritoso= function(){
+             $http.post('../login/api/getDistritos.php' )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.distritos=data;
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+         };
+         $scope.getDistritoso();
+
+          
+         $scope.eliminar = function(index, codigo){
+               if ( confirm("¿Está seguro que desea eliminar el distrito seleccionado?") ) {
+            $scope.distritosTabla.splice(index,1);
+            $http.post('api/eliminardistrito.php', { id_distrito: codigo } )
+              .success(function(data) {
+                console.log(data);
+              })
+              .error(function(data) {
+                console.log('Error: ' + data);
+                //Materialize.toast('Se encontró un problema al tratar de eliminar el usuario.', 3000);
+              });
+        }
+         }
+         $scope.agregarDistrito = function(id_distrito){
+                $http.post('api/agregardistrito.php', { id_distrito: id_distrito } )
+              .success(function(data) {
+                console.log(data);
+                 $scope.getDistritos();
+              })
+              .error(function(data) {
+                console.log('Error: ' + data);
+                //Materialize.toast('Se encontró un problema al tratar de eliminar el usuario.', 3000);
+              });
          }
 
     });

@@ -28,11 +28,20 @@
         </section>
         <section class="page-main main-right">
             <div id="tab-container">
-                <form ng-submit="updateProfesor(pro)">
+                
                     <div id="account-content" class="settings-content">
 
                         <h1 class="player">Distritos Habiles</h1>
-                        <a href="#adddistritos"><button    class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Agregar Distrito</button></a>
+                        <form ng-submit="agregarDistrito(ndis)"> 
+                      <label class="blue-select no-focus smaller fixed-width">
+                           <select  ng-model="ndis" required>
+                            <option value="">- Selecciones el Distrito -</option>
+                            <option ng-repeat="d in distritos" value="{{d.id_distrito}}">{{d.nombre}}</option>
+                          </select>
+                        </label>
+                        <button   type="submit" class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Agregar Distrito</button>
+                        </form>
+                        
                         <hr></hr>
                                     <table class="table table-striped">
                         <thead>
@@ -42,9 +51,9 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr ng-repeat="cu in cursosxprofe">
-                            <td>{{cu.nombre}}</td>
-                            <td><button ng-click="eliminar($index, cu.id_curso)" class="btn btn-green btn-pequeno has-tooltip redesign-check">Quitar</button></td>
+                          <tr ng-repeat="di in distritosTabla">
+                            <td>{{di.nombre}}</td>
+                            <td><button ng-click="eliminar($index, di.id_distrito)" class="btn btn-green btn-pequeno has-tooltip redesign-check">Quitar</button></td>
                           </tr>
                          </tbody>
                     </table>
