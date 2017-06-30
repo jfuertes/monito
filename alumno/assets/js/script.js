@@ -338,7 +338,7 @@ demoApp.controller('claseCtrl', function($scope, $http, $rootScope, $routeParams
                 .success(function(data) {
                   console.log(data);
                   $rootScope.clase=data;
-                    location.reload();
+                   // location.reload();//qwerty
          
                 })
                 .error(function(data) {
