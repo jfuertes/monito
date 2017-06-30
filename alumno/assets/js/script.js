@@ -19,6 +19,11 @@ $routeProvider
                 controller  : 'passCtrl'
             })
 
+            .when('/distritos', {
+                templateUrl : 'pages/distritos.html',
+                controller  : 'distritosCtrl'
+            })
+
             .when('/comentar', {
                 templateUrl : 'pages/comentar.html',
                 controller  : 'comentarCtrl'
