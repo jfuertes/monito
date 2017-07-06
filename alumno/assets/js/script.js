@@ -360,6 +360,16 @@ demoApp.controller('historialCtrl', function($scope, $http, $rootScope) {
                          
            };
 
+           $scope.propertyName = 'fecha';
+          $scope.reverse = true;
+          
+
+          $scope.sortBy = function(propertyName) {
+            //alert(propertyName);
+            $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
+            $scope.propertyName = propertyName;
+          };
+
     });
 
 demoApp.controller('claseCtrl', function($scope, $http, $rootScope, $routeParams) {
@@ -400,7 +410,7 @@ demoApp.controller('claseCtrl', function($scope, $http, $rootScope, $routeParams
                 .success(function(data) {
                   console.log(data);
                   $rootScope.clase=data;
-                   // location.reload();//qwerty
+                    location.reload();//qwerty
          
                 })
                 .error(function(data) {

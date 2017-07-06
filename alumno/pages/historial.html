@@ -33,14 +33,27 @@
           <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Profesor</th>
+                                         <th>
+                                         <ng-click ng-click="sortBy('username_pro')">
+        Profesor
+        <span class="sortorder" ng-show="propertyName === 'username_pro'" ng-class="{reverse: reverse}"></span></ng-click>
+      </th>
+      <th><ng-click ng-click="sortBy('nombre')">
+        curso
+        <span class="sortorder" ng-show="propertyName === 'nombre'" ng-class="{reverse: reverse}"></span></ng-click>
+      </th>
+      <th><ng-click ng-click="sortBy('fecha')">
+        fecha
+        <span class="sortorder" ng-show="propertyName === 'fecha'" ng-class="{reverse: reverse}"></span></ng-click>
+      </th>
+                                            <!--<th>Profesor</th>
                                             <th>curso</th>
-                                            <th>fecha</th>
+                                            <th>fecha</th>-->
                                             <th>opciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr ng-repeat="c in clases">
+                                        <tr ng-repeat="c in clases | orderBy:propertyName:reverse">
                                         <td> <a href="#/perfilprofe/{{c.username_pro}}">{{c.username_pro}}</a> </td>  
                                             <td>{{c.nombre}}</td>
 

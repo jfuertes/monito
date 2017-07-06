@@ -6,6 +6,14 @@ text-align: left; font-size: 13px; }
 .footer-container a:hover { text-decoration: underline; } 
 .footer-container a:active { text-decoration: underline; } 
  /* The main sitemap part */ 
+ .sortorder:after {
+  content: '\25b2';   // BLACK UP-POINTING TRIANGLE
+}
+.sortorder.reverse:after {
+  content: '\25bc';   // BLACK DOWN-POINTING TRIANGLE
+}
+
+
 .sitemap {
     padding-right: 30px; 
     padding-left: 30px; 

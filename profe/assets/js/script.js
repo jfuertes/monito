@@ -101,6 +101,7 @@ demoApp.controller('mainCtrl', function($scope, $http, $rootScope) {
                           .success(function(data) {
                             console.log(data);
                             $scope.pro=data;
+                            $rootScope.pro=data;
 
                            
                           })
@@ -130,6 +131,7 @@ demoApp.controller('mainCtrl', function($scope, $http, $rootScope) {
 
 
 demoApp.controller('passCtrl', function($scope, $http, $rootScope) {
+  $scope.pros=$rootScope.pro;
   $scope.error=false;
 
           $scope.formNewPass= function(us){
@@ -185,6 +187,7 @@ $scope.cambiarcurso=true;
 
     });
 demoApp.controller('listcursosCtrl', function($scope, $http, $rootScope) {
+   $scope.pros=$rootScope.pro;
         
          $scope.getCursos= function(){
              $http.post('api/CursosxProfe.php' )
@@ -213,6 +216,7 @@ demoApp.controller('listcursosCtrl', function($scope, $http, $rootScope) {
 
     });
 demoApp.controller('listdistritosCtrl', function($scope, $http, $rootScope) {
+   $scope.pros=$rootScope.pro;
         
          $scope.getDistritos= function(){
              $http.post('api/getDistritose.php' )
@@ -355,6 +359,7 @@ demoApp.controller('cursosCtrl', function($scope, $http, $rootScope) {
          $scope.getCursos();
     });
 demoApp.controller('historialCtrl', function($scope, $http, $rootScope) {
+   $scope.pros=$rootScope.pro;
       $scope.getclases=function(){
             $http.post('api/getclases.php' )
                         .success(function(data) {
@@ -372,23 +377,21 @@ demoApp.controller('historialCtrl', function($scope, $http, $rootScope) {
                location.href=location.protocol+"//"+location.hostname+location.pathname+"#/clase/"+id;
                          
            };
+                  $scope.propertyName = 'fecha';
+          $scope.reverse = true;
+          
+
+          $scope.sortBy = function(propertyName) {
+            //alert(propertyName);
+            $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
+            $scope.propertyName = propertyName;
+          };
 
     });
 
 demoApp.controller('claseCtrl', function($scope, $http, $rootScope, $routeParams) {
-  $scope.getProfe= function(){
-         $http.post('api/getdataProfe.php' )
-                          .success(function(data) {
-                            console.log(data);
-                            $scope.pros=data;
 
-                           
-                          })
-                          .error(function(data) {
-                            console.log('Error: ' + data);
-                            });
-    }
-    $scope.getProfe();
+    $scope.pros=$rootScope.pro;
    $scope.init = function(){
           var id_clase = $routeParams.id;
           //console.log(id);
@@ -442,18 +445,7 @@ demoApp.controller('perfilCtrl', function($scope, $http, $rootScope, upload) {
                   });
          };
          $scope.getUNI();
-           $scope.getProfe= function(){
-         $http.post('api/getdataProfe.php' )
-                          .success(function(data) {
-                            console.log(data);
-                            $scope.pro=data;
-
-                          })
-                          .error(function(data) {
-                            console.log('Error: ' + data);
-                            });
-    }
-    $scope.getProfe();
+           $scope.pros=$rootScope.pro;
       $scope.updateProfesor =function(pro){ 
 
         if($scope.file!=null){

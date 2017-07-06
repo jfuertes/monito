@@ -5,7 +5,7 @@
             <div class="inner">
                 <div class="box-colored bg-white">
                     <h2 class="view-profile-headline">
-                  <a class="avatar avatar-small " title="nombredeusuario">  <img src="../IMG/profes/{{pro.username}}.{{pro.extension_img}}"><span class="ring"></span></a>  {{pro.username}} <a href="#/" class="username">Ver tu perfil</a>
+                  <a class="avatar avatar-small " title="nombredeusuario">  <img src="../IMG/profes/{{pros.username}}.{{pros.extension_img}}"><span class="ring"></span></a>  {{pros.username}} <a href="#/" class="username">Ver tu perfil</a>
               </h2>
                     <ul id="settings_tab" class="nav-sidebar">
                         <li class="">
@@ -37,16 +37,22 @@
                                     <table class="table table-striped">
                                         <thead>
                                             <tr>
-                                                <th>alumno</th>
-                                                <th>curso</th>
-                                                <th>nivel</th>
-                                                <th>fecha</th>
-                                                <th>modalidad</th>
+                                                <th><ng-click ng-click="sortBy('username_alu')">Alumno<span class="sortorder" ng-show="propertyName === 'username_alu'" ng-class="{reverse: reverse}"></span></ng-click></th>
+
+                                                <th><ng-click ng-click="sortBy('nombre')">Curso<span class="sortorder" ng-show="propertyName === 'nombre'" ng-class="{reverse: reverse}"></span></ng-click></th>
+
+                                                <th><ng-click ng-click="sortBy('nivel')">Nivel<span class="sortorder" ng-show="propertyName === 'nivel'" ng-class="{reverse: reverse}"></span></ng-click></th>
+
+                                                <th><ng-click ng-click="sortBy('fecha')">Fecha<span class="sortorder" ng-show="propertyName === 'fecha'" ng-class="{reverse: reverse}"></span></ng-click></th>
+
+                                                <th><ng-click ng-click="sortBy('status')">Modalidad<span class="sortorder" ng-show="propertyName === 'status'" ng-class="{reverse: reverse}"></span></ng-click></th>
+
+                                               
                                                 <th>opciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr ng-repeat="c in clases">
+                                            <tr ng-repeat="c in clases | orderBy:propertyName:reverse">
                                                 <td>{{c.username_alu}}</td>
                                                 <td>{{c.nombre}}</td>
                                                 <td>{{c.nivel | filternivel}}</td>
