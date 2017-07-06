@@ -213,6 +213,16 @@ demoApp.controller('listcursosCtrl', function($scope, $http, $rootScope) {
               });
         }
          }
+          //ordenamiento de tabla============
+          $scope.propertyName = 'nombre';
+          $scope.reverse = false;
+          
+
+          $scope.sortBy = function(propertyName) {
+            //alert(propertyName);
+            $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
+            $scope.propertyName = propertyName;
+          };
 
     });
 demoApp.controller('listdistritosCtrl', function($scope, $http, $rootScope) {
@@ -377,7 +387,8 @@ demoApp.controller('historialCtrl', function($scope, $http, $rootScope) {
                location.href=location.protocol+"//"+location.hostname+location.pathname+"#/clase/"+id;
                          
            };
-                  $scope.propertyName = 'fecha';
+           //ordenamiento de tabla============
+          $scope.propertyName = 'fecha';
           $scope.reverse = true;
           
 

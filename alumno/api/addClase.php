@@ -9,17 +9,17 @@
 	//var_dump($rspta);
 	$username_pro= $rspta->id_profe;
 	$id_curso= $rspta->id_curso;
+	$status= $rspta->status;
 	
 	session_start();
 	$username_alu= $_SESSION['username'];
 	
-	$status=0;
+	//$status=0;
 $link="clasealumno";
 $link2="claseprofe";
 
 	
-	 $q = "INSERT INTO clase  (id_curso, username_pro, username_alu, status)
-				VALUES (:id_curso, :username_pro, :username_alu, :status)";
+	 $q = "INSERT INTO clase  (id_curso, username_pro, username_alu, status)   				VALUES (:id_curso, :username_pro, :username_alu, :status)";
 			
                             $stmt = $dbh->prepare($q);
                             $stmt->bindParam(':id_curso', $id_curso, PDO::PARAM_INT);
@@ -27,13 +27,16 @@ $link2="claseprofe";
                             $stmt->bindParam(':username_alu', $username_alu, PDO::PARAM_INT);
                             $stmt->bindParam(':status', $status, PDO::PARAM_INT);
                             $stmt->execute();
+      $q = "SELECT MAX(id) FROM clase";
+			
+                            $stmt = $dbh->prepare($q);
+                            $stmt->execute();
+                       		$idmax = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                       		$idquery=$idmax[0]['MAX(id)'];//id de la nueva ingresada
 
-     $q = "SELECT * FROM clase where id_curso=:id_curso and username_pro=:username_pro and username_alu=:username_alu and status=:status";
+     $q = "SELECT * FROM clase where id=:idquery ";
                        $stmt = $dbh->prepare($q);
-                            $stmt->bindParam(':id_curso', $id_curso, PDO::PARAM_INT);
-                            $stmt->bindParam(':username_pro', $username_pro, PDO::PARAM_INT);
-                            $stmt->bindParam(':username_alu', $username_alu, PDO::PARAM_INT);
-                            $stmt->bindParam(':status', $status, PDO::PARAM_INT);
+                            $stmt->bindParam(':idquery', $idquery, PDO::PARAM_INT);
                             $stmt->execute();
 							$r = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			

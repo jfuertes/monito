@@ -42,6 +42,17 @@
         curso
         <span class="sortorder" ng-show="propertyName === 'nombre'" ng-class="{reverse: reverse}"></span></ng-click>
       </th>
+
+      <th><ng-click ng-click="sortBy('nivel')">
+        Nivel
+        <span class="sortorder" ng-show="propertyName === 'nivel'" ng-class="{reverse: reverse}"></span></ng-click>
+      </th>
+
+      <th><ng-click ng-click="sortBy('status')">
+        Modalidad
+        <span class="sortorder" ng-show="propertyName === 'status'" ng-class="{reverse: reverse}"></span></ng-click>
+      </th>
+
       <th><ng-click ng-click="sortBy('fecha')">
         fecha
         <span class="sortorder" ng-show="propertyName === 'fecha'" ng-class="{reverse: reverse}"></span></ng-click>
@@ -56,7 +67,12 @@
                                         <tr ng-repeat="c in clases | orderBy:propertyName:reverse">
                                         <td> <a href="#/perfilprofe/{{c.username_pro}}">{{c.username_pro}}</a> </td>  
                                             <td>{{c.nombre}}</td>
+                                         <td>{{c.nivel | filternivel}}</td>
 
+                                                <!--<td><img src="../IMG/profes/{{c.puntuacion}}estrellas.png" HEIGHT=16></td>
+                             <td>{{c.comentario}}</td>-->
+                                                
+                                                <td>{{c.status | filtermodalidad}}</td>
                                             <!--<td><img src="../IMG/profes/{{c.puntuacion}}estrellas.png" HEIGHT=16></td>
                              <td>{{c.comentario}}</td>-->
                                             <td>{{c.fecha | filterfecha}}</td>

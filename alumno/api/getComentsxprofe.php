@@ -12,7 +12,7 @@
 
 	$q = 'SELECT * from clase
 
-			where username_pro=:username_pro';
+			where username_pro=:username_pro and comentario IS NOT NULL;';
 			
 	$stmt = $dbh->prepare($q);
 	$stmt->bindParam(':username_pro', $username_pro, PDO::PARAM_STR);

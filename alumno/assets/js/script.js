@@ -374,6 +374,18 @@ demoApp.controller('historialCtrl', function($scope, $http, $rootScope) {
 
 demoApp.controller('claseCtrl', function($scope, $http, $rootScope, $routeParams) {
     var id_clase = $routeParams.id;
+      $scope.getAlumno= function(){
+         $http.post('api/getdataAlumno.php' )
+                          .success(function(data) {
+                            console.log(data);
+                            $scope.alus=data;
+
+                          })
+                          .error(function(data) {
+                            console.log('Error: ' + data);
+                            });
+    }
+    $scope.getAlumno();
    // $scope.yaCalificaste=true;
    $scope.init = function(){
     $scope.viewcomentar=false;
@@ -485,7 +497,16 @@ demoApp.controller('passCtrl', function($scope, $http, $rootScope) {
 
 
     });
-demoApp.controller('perfilprofeCtrl', function($scope, $http, $rootScope, $routeParams) { 
+demoApp.controller('perfilprofeCtrl', function($scope, $http, $rootScope, $routeParams) {
+  
+ 
+
+   $scope.haycursoenrootscope=false;
+if(typeof $rootScope.idcurso == 'undefined') {//en caso no exista guardado un curso desde atras en el rootscope
+  $scope.haycursoenrootscope=true;
+  //alert($rootScope.idcurso);
+}
+//alert(typeof $scope.idcurso == 'undefined');
 $scope.antesContactar=true;
    $scope.init = function(){
           var username = $routeParams.id;
@@ -510,7 +531,19 @@ $scope.antesContactar=true;
                 .success(function(data) {
                   console.log(data);
                   $scope.getcursosxprofe=data;
-                
+                 
+                    //asignar curso al que te estas metiendo en variables locales
+                  $scope.valoresactuales=[];
+                  $scope.valoresactuales.modalidad=$rootScope.modalidad
+                  $.each(data, function( k, v ) {
+                      if(v['id_curso']==$rootScope.idcurso){
+                            $scope.valoresactuales.nombre=v['nombre']
+                            $scope.valoresactuales.nivel=v['nivel']
+                      }
+                      
+                    });
+                  
+ 
                 })
                 .error(function(data) {
                   console.log('Error: ' + data);
@@ -520,17 +553,17 @@ $scope.antesContactar=true;
  $scope.getcursosxprofe();
 
         $scope.contactar = function () {
-           if (confirm("esta seguro que desea solicitar una clase?")) {
-            console.log("confirmaste!");
+          
+            console.log("mostrar numeros y datos");
               $scope.antesContactar = false
               //funcion para generar clase que falta
-           }
+           
         }
            $scope.solicitarClase = function () {
            if (confirm("esta seguro que desea solicitar una clase?")) {
             console.log("confirmaste!");
             //funcion para agregar clase
-                $http.post('api/addClase.php', {id_profe: $routeParams.id, id_curso: $rootScope.idcurso} )
+                $http.post('api/addClase.php', {id_profe: $routeParams.id, id_curso: $rootScope.idcurso, status: $rootScope.modalidad} )
                 .success(function(data) {
 
                   console.log(data);

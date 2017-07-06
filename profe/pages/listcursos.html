@@ -37,14 +37,17 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Curso</th>
-                                    <th>Nivel</th>
-                                    <th>Modalidad</th>
+                                <th><ng-click ng-click="sortBy('nombre')">Curso<span class="sortorder" ng-show="propertyName === 'nombre'" ng-class="{reverse: reverse}"></span></ng-click></th>
+
+                                <th><ng-click ng-click="sortBy('nivel')">Nivel<span class="sortorder" ng-show="propertyName === 'nivel'" ng-class="{reverse: reverse}"></span></ng-click></th>
+
+                                <th><ng-click ng-click="sortBy('modalidad')">Modalidad<span class="sortorder" ng-show="propertyName === 'modalidad'" ng-class="{reverse: reverse}"></span></ng-click></th>
+                                    
                                     <th>opciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="cu in cursosxprofe">
+                                <tr ng-repeat="cu in cursosxprofe | orderBy:propertyName:reverse">
                                     <td>{{cu.nombre}}</td>
                                     <td>{{cu.nivel | filternivel}}</td>
                                     <td>{{cu.modalidad | filtermodalidad}}</td>

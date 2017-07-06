@@ -51,7 +51,7 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr ng-repeat="di in distritosTabla">
+                          <tr ng-repeat="di in distritosTabla | orderBy:'nombre'">
                             <td>{{di.nombre}}</td>
                             <td><button ng-click="eliminar($index, di.id_distrito)" class="btn btn-green btn-pequeno has-tooltip redesign-check">Quitar</button></td>
                           </tr>

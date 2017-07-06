@@ -66,11 +66,12 @@
            
       
        
-      ?>
+      ?> <div ng-show="!haycursoenrootscope"><hr> </br></br>
+        <p>Usted a seleccionado el curso de {{valoresactuales.nombre}} de {{valoresactuales.nivel | filternivel}} en la modalidad {{valoresactuales.modalidad | filtermodalidad}} </p>
    <div ng-show="antesContactar">
-   <p>para mostrar numeros telefonicos, correo y chat contactelo si esta seguro de quere hacerlo</p>
-   <button id="submit_button" type="submit" class="btn btn-green right" ng-click="contactar()">Contactar</button>
-   </div>
+   <p>Contacte para mostrar numeros telefonicos y correo </p>
+   <button id="submit_button" type="submit" class="btn btn-green right" ng-click="contactar()">Contactar</button><hr></br></hr>
+   </div></div>
 
 
    <div ng-show="!antesContactar" class="settings-content">
@@ -82,6 +83,7 @@
                           <tr>
                             <th>Numero</th>
                             <th>Correo</th>
+                            <th>Profesor</th>
                             <th></th>
                           </tr>
                         </thead>
@@ -90,6 +92,7 @@
                             <tr >
                             <td>{{pro.celular}}  {{pro.telefono}}</td>
                             <td>{{pro.email}}</td>
+                            <td>{{pro.nombres}} {{pro.ape_paterno}} {{pro.ape_materno}}</td>
                             <td><button  class="btn btn-green btn-pequeno has-tooltip redesign-check" ng-click="solicitarClase()">Solicitar Clase</button></td>
                           </tr> 
                         </tbody>
@@ -108,9 +111,9 @@
    </div>-->
 
                     <div id="account-content" class="settings-content">
-
-                        <h1 class="player">cursos</h1>
-                        <hr></hr>
+</br></hr>
+                        <h1 class="player">Todos los cursos disponibles</h1>
+                        
                       <table class="table table-striped">
                         <thead>
                           <tr>
