@@ -34,33 +34,33 @@
                         <table class="table table-striped">
                               <tbody ng-repeat="c in clase">
                                  <tr>
-                                    <td>profesor:</td>
+                                    <td>Profesor:</td>
                                     <td>{{c.username_pro}}</td>
                                  </tr>
                                  <tr>
-                                    <td>curso:</td>
+                                    <td>Curso:</td>
                                     <td>{{c.nombre}}</td>
                                  </tr>
                                  <tr>
-                                    <td>nivel:</td>
+                                    <td>Nivel:</td>
                                     <td>{{c.nivel | filternivel}}</td>
                                  </tr>
                                  <tr>
-                                    <td>calificacion:</td>
+                                    <td>Calificacion:</td>
                                     <td ng-show="c.puntuacion"><img src="../IMG/profes/{{c.puntuacion}}estrellas.png" HEIGHT=16>
                                     </td>
                                     <td ng-show="!c.puntuacion">--
                                     </td>
                                  </tr>
                                  <tr>
-                                    <td>comentario:</td>
+                                    <td>Comentario:</td>
                                     <td ng-show="c.puntuacion">{{c.comentario}}
                                     </td>
                                     <td ng-show="!c.puntuacion">Sin Comentar
                                     </td>
                                  </tr>
                                  <tr>
-                                    <td>fecha:</td>
+                                    <td>Fecha:</td>
                                     <td>{{c.fecha}}</td>
                                  </tr>
                                  <tr>

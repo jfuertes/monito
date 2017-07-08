@@ -579,23 +579,44 @@ $scope.antesContactar=true;
               //funcion para generar clase que falta
            }
         }
-           $scope.solicitarxtabla = function (id_curso) {
-           if (confirm("esta seguro que desea solicitar una clase?")) {
-            console.log("confirmaste!");
-            //funcion para agregar clase
-                $http.post('api/addClase.php', {id_profe: $routeParams.id, id_curso: id_curso} )
-                .success(function(data) {
+           $scope.solicitarxtabla = function (id_curso, modalidad) {
+            if(modalidad==0){//filtrar por modalidad si es online solo cambia el texto
+                  if (confirm("esta seguro que desea solicitar una clase?")) {
+                      console.log("confirmaste!");
+                      //funcion para agregar clase
+                          $http.post('api/addClase.php', {id_profe: $routeParams.id, id_curso: id_curso, status: modalidad} )
+                          .success(function(data) {
 
-                  console.log(data);
-                  $scope.clasea=data;
-                   location.href=location.protocol+"//"+location.hostname+location.pathname+"#/clase/"+data.id;
-                  
-                })
-                .error(function(data) {
-                  console.log('Error: ' + data);
-                  });
-              //funcion para generar clase que falta
-           }
+                            console.log(data);
+                            $scope.clasea=data;
+                             location.href=location.protocol+"//"+location.hostname+location.pathname+"#/clase/"+data.id;
+                            
+                          })
+                          .error(function(data) {
+                            console.log('Error: ' + data);
+                            });
+                      //funcion para generar clase que falta
+                   } 
+            }
+            else{
+                   if (confirm("esta seguro que desea solicitar una clase? recuerda que solo esta disponible en esos distritos")) {
+                      console.log("confirmaste!");
+                      //funcion para agregar clase
+                          $http.post('api/addClase.php', {id_profe: $routeParams.id, id_curso: id_curso, status: modalidad} )
+                          .success(function(data) {
+
+                            console.log(data);
+                            $scope.clasea=data;
+                             location.href=location.protocol+"//"+location.hostname+location.pathname+"#/clase/"+data.id;
+                            
+                          })
+                          .error(function(data) {
+                            console.log('Error: ' + data);
+                            });
+                        //funcion para generar clase que falta
+                     }
+            }
+        
         }
         $scope.getComentsxprofe = function(){
                 $http.post('api/getComentsxprofe.php', {id_profe: $routeParams.id} )
@@ -609,7 +630,37 @@ $scope.antesContactar=true;
         }
         $scope.getComentsxprofe();
 
+         $scope.getDistritos= function(){
+             $http.post('api/getDistritosebyidprofe.php', {id_profe: $routeParams.id} )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.DistritosArray=data;
+                  //comenzamos a ver los distritos por cursos
+                    $http.post('api/getDistritosbyidprofe.php', {id_profe: $routeParams.id} )
+                      .success(function(data) {
+                        console.log(data.distritos);
 
+                        var distritosBrutos=data.distritos;//falta dividir por comas
+                        var distritosxprofeArray=distritosBrutos.split(",");
+                        $scope.distritosTabla=[];
+                        $.each(distritosxprofeArray, function( index, value ) {
+                         // console.log( index + ": " + value );
+                          $scope.distritosTabla.push({"id_distrito" : value, "nombre" : $scope.DistritosArray[value-1]})
+                        });
+                        console.log($scope.distritosTabla);
+
+
+                      })
+                      .error(function(data) {
+                        console.log('Error: ' + data);
+                        });
+             
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+         };
+         $scope.getDistritos();
 
     
     });

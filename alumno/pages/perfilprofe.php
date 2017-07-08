@@ -123,7 +123,22 @@
                             <td>{{c.nombre}}</td>
                             <td>{{c.nivel | filternivel}}</td>
                             <td>{{c.modalidad | filtermodalidad}}</td>
-                            <td><button  class="btn btn-green btn-pequeno has-tooltip redesign-check" ng-click="solicitarxtabla(c.id_curso)">Solicitar</button></td>
+                            <td><button  class="btn btn-green btn-pequeno has-tooltip redesign-check" ng-click="solicitarxtabla(c.id_curso, c.modalidad)">Solicitar</button></td>
+                          </tr> 
+                        </tbody>
+                    </table>
+
+
+                    </hr>
+                        <h1 class="player">Distritos disponibles</h1>
+                        
+                      <table class="table table-striped">
+                        
+                        <tbody>
+                         
+                            <tr ng-repeat="c in distritosTabla | orderBy:'nombre'">
+                            <td>{{c.nombre}}</td>
+                            
                           </tr> 
                         </tbody>
                     </table>

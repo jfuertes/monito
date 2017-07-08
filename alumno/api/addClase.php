@@ -41,6 +41,7 @@ $link2="claseprofe";
 							$r = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			
 
+
      $q = "SELECT * FROM mp_profesor where username=:username_pro ";
            $stmt = $dbh->prepare($q);
                 $stmt->bindParam(':username_pro', $username_pro, PDO::PARAM_INT);
@@ -54,8 +55,8 @@ $link2="claseprofe";
 
 $email= $rss[0]['email'];
 //var_dump($email);
-		$url = 'http://52.43.220.123/trabajos/monito/email2/gmailcorrecto.php';
-		$data = array('mensaje' => $link, 'reci' => $email);
+		$url = 'http://52.43.220.123/trabajos/monito/email2/gmailparaalumno.php';
+		$data = array('mensaje' => $rs, 'reci' => $email);
 
 		// use key 'http' even if you send the request to https://...
 		$options = array(
@@ -72,8 +73,8 @@ $email= $rss[0]['email'];
 $email2=$rs[0]['email'];
 
 
-		$url = 'http://52.43.220.123/trabajos/monito/email2/gmailcorrecto.php';
-		$data = array('mensaje' => $link2, 'reci' => $email2);
+		$url = 'http://52.43.220.123/trabajos/monito/email2/gmailparaprofesor.php';
+		$data = array('mensaje' => $rss, 'reci' => $email2);
 
 		// use key 'http' even if you send the request to https://...
 		$options = array(

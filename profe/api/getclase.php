@@ -11,9 +11,15 @@
 	
 	session_start();
 	
-		$q = 'SELECT * from clase
+		$q = 'SELECT  clase.*, mp_curso.* 
+		from clase inner join mp_curso
+				on clase.id_curso = mp_curso.id_curso
+
 			where username_pro=:username_alu and id=:id';
 			
+
+
+
 	$stmt = $dbh->prepare($q);
 	$stmt->bindParam(':username_alu', $_SESSION['username'], PDO::PARAM_STR);
 	$stmt->bindParam(':id', $id_clase, PDO::PARAM_STR);

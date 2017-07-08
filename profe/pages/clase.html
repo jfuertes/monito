@@ -36,34 +36,38 @@
                         <table class="table table-striped">
                               <tbody ng-repeat="c in clase">
                                  <tr>
-                                    <td>profesor:</td>
+                                    <td>Profesor:</td>
                                     <td>{{c.username_alu}}</td>
                                  </tr>
                                  <tr>
-                                    <td>curso:</td>
-                                    <td>{{c.id_curso}}</td>
+                                    <td>Curso:</td>
+                                    <td>{{c.nombre}}</td>
                                  </tr>
                                  <tr>
-                                    <td>calificacion:</td>
+                                    <td>Nivel:</td>
+                                    <td>{{c.nivel | filternivel}}</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Calificacion:</td>
                                     <td ng-show="c.puntuacion"><img src="../IMG/profes/{{c.puntuacion}}estrellas.png" HEIGHT=16>
                                     </td>
                                     <td ng-show="!c.puntuacion"> Aun no se ah puntuado
                                     </td>
                                  </tr>
                                  <tr>
-                                    <td>comentario:</td>
+                                    <td>Comentario:</td>
                                     <td>{{c.comentario}}</td>
                                  </tr>
                                  <tr>
-                                    <td>fecha:</td>
+                                    <td>Fecha:</td>
                                     <td>{{c.fecha}}</td>
                                  </tr>
                                  <tr>
-                                    <td>modalidad :</td>
+                                    <td>Modalidad :</td>
                                     <td>{{c.status | filtermodalidad}}</td>
                                  </tr>
                                  <tr>
-                                    <td>estado :</td>
+                                    <td>Estado :</td>
                                     <td ng-show="!calificarnn">se califico</td>
                                     <td ng-show="calificarnn">aun no se califico</td>
                                  </tr>
