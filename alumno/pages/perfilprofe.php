@@ -55,18 +55,12 @@
    </a>
    <h1 class="profile-header-username">{{pro.username}}</h1>
    <h2 class="profile-header-subline ">
-   <span class="real-name">{{pro.nombres}}  {{pro.ape_paterno}}</span>
+   <span class="real-name">{{pro.nombres}}  {{pro.ape_paterno}} {{pro.link2view}}</span>
    </h2>
    </header>
-   <?php
-      session_start();
-      if(isset($_SESSION['link2view'])){
-       echo '<iframe width="560" height="315" src="'.$_SESSION['link2view'].'" frameborder="0" allowfullscreen></iframe>';
-      }
-           
-      
-       
-      ?> <div ng-show="!haycursoenrootscope"><hr> </br></br>
+  <div class="agregarvideo">
+  </div>
+      <div ng-show="!haycursoenrootscope"><hr> </br></br>
         <p>Usted a seleccionado el curso de {{valoresactuales.nombre}} de {{valoresactuales.nivel | filternivel}} en la modalidad {{valoresactuales.modalidad | filtermodalidad}} </p>
    <div ng-show="antesContactar">
    <p>Contacte para mostrar numeros telefonicos y correo </p>
