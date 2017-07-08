@@ -1,31 +1,21 @@
 <?php
-	  require_once('config/mysql.php');
+	  require_once('../../api/config/mysql.php');
 
 	  
 	$db  = new dbConnect();
 	$dbh = $db->conectardb();
 
 
-  	session_start();
-	
-	if(isset($_SESSION['username'])){
-
 		$rspta = json_decode(file_get_contents("php://input"));
-		$id_curso=$rspta->id;
+		$id_uni	=$rspta->id;
 
-		$q = 'DELETE FROM profecurso
+		$q = 'DELETE FROM mp_uni
 			
-			where username=:username AND id_curso=:id_curso';
+			where id_uni=:id_uni';
 
 		$stmt = $dbh->prepare($q);
-		$stmt->bindParam(':id_curso',  $id_curso, PDO::PARAM_STR);
-		$stmt->bindParam(':username',  $_SESSION['username'], PDO::PARAM_STR);
-
+		$stmt->bindParam(':id_uni',  $id_uni, PDO::PARAM_STR);
 		$valor = $stmt->execute();
 		echo json_encode($valor);
-	}
-	else{
-		$valor= FALSE;
-		echo json_encode($valor);
-	}
+
 ?>

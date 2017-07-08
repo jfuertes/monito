@@ -24,45 +24,76 @@
             </div>
         </section>
         <section class="page-main main-right">
-            <div id="tab-container">
-                <form ng-submit="updateProfesor(pro)">
+            <div id="tab-container" ng-show="!agregarUniversidad">
+                
                     <div id="account-content" class="settings-content">
 
                         <h1 class="player">Universidades</h1>
-                        <a href="#adduni"><button    class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Agregar Universidad</button></a>
+                        <button    class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"  ng-click="agregaruni()" >Agregar Universidad</button>
                         <hr></hr>
-                                    <table class="table table-striped">
-                        <thead>
-                          <tr>
-                            <th>Universidad</th>
-                            <th>Opcion</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <!--     Configuracion para modificar los cursos
-                            <tr ng-repeat="cu in cursosxprofe">
-                            <td>{{cu.nombre}}</td>
-                            <td>{{cu.nivel | filternivel}}</td>
-                            <td>{{cu.modalidad | filtermodalidad}}</td>
-                            <td><button ng-click="eliminar($index, cu.id_curso)" class="btn btn-green btn-pequeno has-tooltip redesign-check">eliminar</button></td>
-                          </tr> -->
-                        <tr >
-                            <td>Universidad 1</td>
-                            <td><button  class="btn btn-green btn-pequeno has-tooltip redesign-check">eliminar</button></td>
-                        </tr> 
-                        <tr >
-                            <td>Universidad 2</td>
-                            <td><button  class="btn btn-green btn-pequeno has-tooltip redesign-check">eliminar</button></td>
-                        </tr> 
-                         </tbody>
-                    </table>
-                                </div>
-                            </div>
+                            <table class="table table-striped">
+                                <thead>
+                                  <tr>
+                                    <th>id_uni</th>
+                                    <th>Universidad</th>
+                                    <th>Abreviatura</th>
+                                    <th>Logo</th>
+                                    <th>Opcion</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="uni in universidades | orderBy:'id_uni'">
+                                        <td>{{uni.id_uni}}</td>
+                                        <td>{{uni.nombre_uni}}</td>
+                                        <td>{{uni.abreviatura_uni}}</td>
+                                        <td><img src="../IMG/logos-uni/{{uni.abreviatura_uni}}.png" height="100px"> </td>
+                                        <td><button  class="btn btn-green btn-pequeno has-tooltip redesign-check" ng-click="eliminar($index,uni.id_uni)">eliminar</button></td>
+                                    </tr> 
+                                 </tbody>
+                            </table>
+                               
+                    </div>
                             <div class="intro"></div>
-                        </div>
-                </form>
-                </div>
             </div>
+            <div ng-show="agregarUniversidad">
+                <h1>Agregar Universidad</h1>
+                <p>*recuerda que la imagen debe estar en formato png unicamente</p>
+                <form ng-submit="agregarUniversidad(nuni)">
+                    <div id="account-content" class="settings-content">
+
+                      <button id="submit_button" type="submit" class="btn btn-green right" >Agregar</button>
+                      <!--mansaje de errores-->
+                      <div id="confirmation-message" class="hidden save-message">Tus cambios han sido guardados.</div>
+                      <div id="error-message" class="hidden error-message">Error</div>
+
+                      <button  class="btn btn-blue left" ng-show="correcto">Edicion Correcta</button>
+                      <hr>
+                      <ul class="list-settings">
+                        <li>
+                          <label class="label">Nombre Completo</label>
+                          <div class="input">
+                            <input style="width: 334px;" class="large" id="username" ng-model="nuni.nombre_uni" placeholder="Universidad Nacional de Ingenieria" type="text" >
+                          </div>
+                        </li>
+                        <li>
+                          <label class="label">Abreviatura</label>
+                          <div class="input">
+                            <input style="width: 334px;" class="large" id="Nombres" ng-model="nuni.abreviatura_uni" placeholder="UNI" type="text" >
+                          </div>
+                        </li>
+
+                     
+                          <div class="input">
+                          <label class="label">Logo en .png</label>
+                              <input  type="file"  uploader-model="file"  />
+                              </div>
+                       
+                        </li>
+                        
+                      </ul>
+                      </form>
+            </div>   
+              
         </section>
     </main>
 </div>
