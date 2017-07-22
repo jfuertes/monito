@@ -1,0 +1,59 @@
+<section dir="ltr" class="monument-carousel  choose-course-by-flag fit-to-4-source-langs">
+    <div dir="ltr" class="signup">
+        <div class="hidden splash-signup-form" id="signup-language" style="display: block;">
+            <section class="section-white space slide-in">
+                <div class="section-inner-wide section-inner">
+                  <div class="language-selection-container" ng-show="SinProfesendistrito">
+                        </br></br></br><h1 class="course-picker">lastimosamente ningun profesor en este distrito pero tenemos en otros distritos:</h1>
+                        
+                    </div>
+                    <div class="language-selection-container" ng-hide="SinProfesendistrito">
+                        <h1 class="course-picker">Elige tu profesor favorito</h1>
+                        <div class="login-signup-flag-list-container  ">
+                            <div class="choose-language-flag-container choose-language" ng-repeat="p in Profes" >
+                               
+                                    <div class="vertical-align">
+                                     <a href="#perfilprofe/{{p.username}}">
+                                        <div class="flag-box">
+                                            <img class="flag-svg-large flag-flex-size" src="../IMG/profes/{{p.username}}.{{p.extension_img}}">
+                                        </div>
+                                        <h2 class="white course-name">{{p.username}}</h2>
+                                        <img src="../IMG/profes/{{p.puntuacion}}estrellas.png" HEIGHT=16>
+                                    </a>
+                                    </div>
+                                 
+                            </div>
+                        </div>
+
+                    </div>
+                     <div class="language-selection-container" ng-hide="SinProfes">
+                        <h1 class="course-picker">Elige tu profesor favorito</h1>
+                        <div class="login-signup-flag-list-container  ">
+                            <div class="choose-language-flag-container choose-language" ng-repeat="p in ProfesGenericos" >
+                               
+                                    <div class="vertical-align">
+                                     <a href="#perfilprofe/{{p.username}}">
+                                        <div class="flag-box">
+                                            <img class="flag-svg-large flag-flex-size" src="../IMG/profes/{{p.username}}.{{p.extension_img}}">
+                                        </div>
+                                        <h2 class="white course-name">{{p.username}}</h2>
+                                        <img src="../IMG/profes/{{p.puntuacion}}estrellas.png" HEIGHT=16>
+                                    </a>
+                                    </div>
+                                 
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="language-selection-container" ng-show="SinProfes">
+                        <h1 class="course-picker">Profesores No Disponibles</h1>
+                        <a class="btn btn-green sign-up signup-trial" href="#alumno" id="signup-link" style="margin-bottom: 15px;" data-track-click="splash page register facebook">Volver a Buscar</a>
+                        
+                    </div>
+                  
+
+                </div>
+            </section>
+        </div>
+    </div>
+</section>

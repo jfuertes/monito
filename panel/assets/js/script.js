@@ -1,8 +1,8 @@
-// script.js
+ // script.js
 
 
     // include ngRoute for all our routing needs
-var demoApp = angular.module('demoApp', ['ngRoute']);
+var demoApp = angular.module('demoApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap']);
 
     // configure our routes
 demoApp.config(function($routeProvider) {
@@ -74,15 +74,16 @@ $routeProvider
       $scope.agregarUniversidad=false;
 
       $scope.uploadFile = function()
-  {
-    var name = $scope.name;
-    var file = $scope.file;
-    
-    upload.uploadFile(file, name).then(function(res)
-    {
-      console.log(res);
-    })
-  }
+      {
+        var name = $scope.name;
+        var file = $scope.file;
+        
+        upload.uploadFile(file, name).then(function(res)
+        {
+          console.log(res);
+        })
+      }
+
 
        $scope.init = function(){
          
@@ -119,7 +120,7 @@ $routeProvider
        
      $scope.updateProfesor =function(nuni){ 
 
-        if($scope.file!=null){
+      if($scope.file!=null){
           var name = $scope.name;
           var file = $scope.file;
           
@@ -128,8 +129,9 @@ $routeProvider
             console.log(res);
           })
         }
+        
         console.log(nuni);
-               $http.post('api/updateUniversidad.php', {nuni:nuni} )
+               $http.post('api/updateAlumno.php', {nuni:nuni} )
                           .success(function(data) {
                             console.log(data);
                             $scope.correcto=true;
@@ -139,13 +141,12 @@ $routeProvider
                             console.log('Error: ' + data);
                             });
 
-      };
+      }
 
           
     })
 
-
-  .directive('uploaderModel', ["$parse", function ($parse) {
+.directive('uploaderModel', ["$parse", function ($parse) {
   return {
     restrict: 'A',
     link: function (scope, iElement, iAttrs) 
@@ -182,5 +183,3 @@ $routeProvider
     return deferred.promise;
   } 
 }]);
-
- 

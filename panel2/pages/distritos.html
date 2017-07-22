@@ -1,0 +1,30 @@
+<section dir="ltr" class="monument-carousel  choose-course-by-flag fit-to-4-source-langs">
+    <div dir="ltr" class="signup">
+        <div class="hidden splash-signup-form" id="signup-language" style="display: block;">
+            <section class="section-white space slide-in">
+                <div class="section-inner-wide section-inner">
+                    <div class="language-selection-container">
+                        <h1 class="course-picker">Que tipo de clase buscas...</h1>
+                        <div class="login-signup-flag-list-container  ">
+                             
+                            
+                            
+
+
+                        <h1 class="course-picker">Distritos Habiles</h1>
+                        <form ng-submit="agregarDistrito(ndis)"> 
+                      <label class="blue-select no-focus smaller fixed-width">
+                           <select  ng-model="ndis" required>
+                            <option value="">- Selecciones el Distrito -</option>
+                            <option ng-repeat="d in Distritos" value="{{d.id_distrito}}">{{d.nombre}}</option>
+                          </select>
+                        </label>
+                        <button   type="submit" class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Buscar en  Distrito</button>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>

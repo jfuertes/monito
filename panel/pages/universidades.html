@@ -34,7 +34,7 @@
                             <table class="table table-striped">
                                 <thead>
                                   <tr>
-                                    <th>id_uni</th>
+                                    <th>id uni</th>
                                     <th>Universidad</th>
                                     <th>Abreviatura</th>
                                     <th>Logo</th>
@@ -46,7 +46,7 @@
                                         <td>{{uni.id_uni}}</td>
                                         <td>{{uni.nombre_uni}}</td>
                                         <td>{{uni.abreviatura_uni}}</td>
-                                        <td><img src="../IMG/logos-uni/{{uni.abreviatura_uni}}.png" height="100px"> </td>
+                                        <td><img src="../IMG/logos-uni/{{uni.abreviatura_uni}}.png" height="60px"> </td>
                                         <td><button  class="btn btn-green btn-pequeno has-tooltip redesign-check" ng-click="eliminar($index,uni.id_uni)">eliminar</button></td>
                                     </tr> 
                                  </tbody>
@@ -85,7 +85,7 @@
                      
                           <div class="input">
                           <label class="label">Logo en .png</label>
-                              <input  type="file"  uploader-model="file"  />
+                              <input  type="file" name="file" uploader-model="file"  />
                               </div>
                        
                         </li>

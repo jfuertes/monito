@@ -1,0 +1,23 @@
+<section dir="ltr" class="monument-carousel  choose-course-by-flag fit-to-4-source-langs">
+    <div dir="ltr" class="signup">
+        <div class="hidden splash-signup-form" id="signup-language" style="display: block;">
+            <section class="section-white space slide-in">
+                <div class="section-inner-wide section-inner">
+                    <div class="language-selection-container">
+                        <h1 class="course-picker">Quiero aprender...alumno</h1>
+                        <div class="login-signup-flag-list-container  ">
+                            <div class="choose-language-flag-container choose-language scroll-animate" ng-repeat="n in Nivel" >
+                                <div class="vertical-align" ng-click="cursos(n.id_nivel)">
+                                    <div class="flag-box">
+                                        <img class="flag-svg-dibujos flag-flex-dibujos" src="IMG/temas/{{n.nombre}}.png">
+                                    </div>
+                                    <h2 class="white course-name">{{n.nombre}}</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,135 @@
+<div  id="app" class="settings">
+   <main class="main-right">
+      <section class="page-sidebar sidebar-right">
+         <div class="inner">
+            <div class="box-colored bg-white">
+               <h2 class="view-profile-headline">
+                  <a class="avatar avatar-small " title="nombredeusuario">  <img src="../IMG/alumnos/{{alus.username}}.{{alus.extension_img}}"><span class="ring"></span></a>  {{alus.username}} <a href="#/" class="username">Ver tu perfil</a>
+               </h2>
+               <ul id="settings_tab" class="nav-sidebar">
+                  <li class="">
+                     <a href="#perfil">Perfil</a>
+                  </li>
+                  <li class="active">
+                     <a href="#historial" >Historial</a>
+                  </li>
+                  <li class="">
+                     <a href="#pass">Contraseña</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </section>
+
+      <section ng-hide="viewcomentar" class="page-main main-right">
+            <div id="tab-container">
+                <form ng-submit="updateAlumno(alu)">
+                    <div id="account-content" class="settings-content">
+                        <h1 class="player">Detalles de Comentario</h1>
+                        <button class="btn btn-green btn-pequeno has-tooltip redesign-check" ng-show="calificarnn" data-margin="5" tabindex="20" ng-click="calificar()"  >Calificar la Clase</button>
+                        <a href="#/historial"><button     class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20"   >Volver</button>
+                                       </a>
+                        <hr>
+                        </hr>
+                        <table class="table table-striped">
+                              <tbody ng-repeat="c in clase">
+                                 <tr>
+                                    <td>Profesor:</td>
+                                    <td>{{c.username_pro}}</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Curso:</td>
+                                    <td>{{c.nombre}}</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Nivel:</td>
+                                    <td>{{c.nivel | filternivel}}</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Calificacion:</td>
+                                    <td ng-show="c.puntuacion"><img src="../IMG/profes/{{c.puntuacion}}estrellas.png" HEIGHT=16>
+                                    </td>
+                                    <td ng-show="!c.puntuacion">--
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>Comentario:</td>
+                                    <td ng-show="c.puntuacion">{{c.comentario}}
+                                    </td>
+                                    <td ng-show="!c.puntuacion">Sin Comentar
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>Fecha:</td>
+                                    <td>{{c.fecha}}</td>
+                                 </tr>
+                                 <tr>
+                                    <td>modalidad :</td>
+                                    <td>{{c.status | filtermodalidad}}</td>
+                                 </tr>
+                                 <tr>
+                                    <td>estado :</td>
+                                    <td ng-show="!calificarnn">se califico</td>
+                                    <td ng-show="calificarnn">aun no se califico</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section ng-show="viewcomentar" class="page-main main-right">
+            <div id="tab-container">
+                <form ng-submit="enviardata(co)">
+               <div id="account-content" class="settings-content">
+                  
+                  <h1>Comentar la clase</h1>
+                  
+                  <button id="submit_button" type="submit" class="btn btn-green right" >Enviar cambios</button>
+                  <a href="#/historial"><button    class="btn btn-green btn-lg has-tooltip redesign-check" data-margin="5" tabindex="20"   >Volver</button></a>
+                  <hr>
+                  <ul class="list-settings">
+                     <li>
+                        <label class="label">Comentario</label>
+                        <div class="input">
+                           <textarea maxlength="100" id="bio" name="bio" rows="3" cols="40" ng-model="co.comentario" style="margin-bottom: 10px; width: 334px;">
+                </textarea>
+                           <p class="gray">
+                              <span id="bio-count"></span> 100 caracteres maximo
+                           </p>
+                        </div>
+                     </li>
+                     <li>
+                        <label class="label">Nivel de la clase</label>
+                        <div class="input">
+                           <ul class="radio-buttons">
+                              <li>
+                                 <label>
+                                 <input class="border" id="microphone_on" type="radio" name="online" value="1" ng-model="co.puntuacion" ng-checked="pro.online!=0"> 1</label>
+                              </li>
+                              <li>
+                                 <label>
+                                 <input class="border" id="microphone_off" type="radio" name="online" value="2" ng-model="co.puntuacion" ng-checked="pro.online==0"> 2</label>
+                              </li>
+                              <li>
+                                 <label>
+                                 <input class="border" id="microphone_off" type="radio" name="online" value="3" ng-model="co.puntuacion" ng-checked="pro.online==0"> 3</label>
+                              </li>
+                              <li>
+                                 <label>
+                                 <input class="border" id="microphone_off" type="radio" name="online" value="4" ng-model="co.puntuacion" ng-checked="pro.online==0"> 4</label>
+                              </li>
+                              <li>
+                                 <label>
+                                 <input class="border" id="microphone_off" type="radio" name="online" value="5" ng-model="co.puntuacion" ng-checked="pro.online==0"> 5</label>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                  </ul>
+            </form>
+            </div>
+        </section>
+   </main>
+</div>
