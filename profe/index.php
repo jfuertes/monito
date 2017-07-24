@@ -41,19 +41,14 @@
                         <span class="name"><?php echo $_SESSION['nombres']." ".$_SESSION['ape_paterno'] ?></span>
                         <span class="icon icon-arrow-down-white"></span>
                     </div>
-                    <div id="loginpop">
-                        <ul class="dropdown-menu arrow-top" role="menu" aria-labelledby="dLabel" style="display: block;">
-                            <li>
-                                <a href="#/">Perfil Profesor</a>
-                            </li>
-                            <li>
-                                <a href="#/perfil">Configuracion</a>
-                            </li>
-                            <li>
-                                <a ng-click="logout()">Cerrar sesión</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <div class="btn-group">
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li><a href="#/">Perfil Profesor</a></li>
+                            <li><a href="#/perfil">Configuracion</a></li>
+                            <li><a ng-click="logout()">Cerrar sesión</a></li>
+                          </ul>
+                        </div>
 
 
                 </div>
@@ -95,19 +90,6 @@
     <script src="assets/plugins/angular.min.js" type="text/javascript"></script>
     <script src="assets/plugins/angular-route.js" type="text/javascript"></script>
     <script src="assets/js/script.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        $("#loginpop").fadeOut();
-        $(document).ready(function() {
-            $("#loginpop").fadeOut(0);
-            $("#showloginpop").click(function() {
-                if ($('#loginpop').is(":visible") == false) {
-                    $("#loginpop").fadeIn();
-                } else {
-                    $("#loginpop").fadeOut();
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>
