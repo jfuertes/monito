@@ -9,7 +9,7 @@
                         <h1 class="course-picker">Distritos Habiles</h1>
                         <form ng-submit="agregarDistrito(ndis)"> 
                       <label style="border: 2px solid #ffffff;" class="blue-select no-focus smaller fixed-width"> 
-                            <select  ng-model="ndis" required>
+                            <select  style="color: #100e4c;" ng-model="ndis" required> 
                             <option value="">- Selecciones el Distrito -</option>
                             <option ng-repeat="d in distritos" value="{{d.id_distrito}}">{{d.nombre}}</option>
                           </select>
