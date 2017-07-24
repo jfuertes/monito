@@ -6,15 +6,10 @@
                     <div class="language-selection-container">
                         <h1 class="course-picker">Que tipo de clase buscas...</h1>
                         <div class="login-signup-flag-list-container  ">
-                             
-                            
-                            
-
-
                         <h1 class="course-picker">Distritos Habiles</h1>
                         <form ng-submit="agregarDistrito(ndis)"> 
-                      <label class="blue-select no-focus smaller fixed-width">
-                           <select  ng-model="ndis" required>
+                      <label  style="border: 2px solid #ffffff;" class="blue-select no-focus smaller fixed-width">
+                           <select  style="color: #100e4c;" ng-model="ndis" required>
                             <option value="">- Selecciones el Distrito -</option>
                             <option ng-repeat="d in Distritos" value="{{d.id_distrito}}">{{d.nombre}}</option>
                           </select>

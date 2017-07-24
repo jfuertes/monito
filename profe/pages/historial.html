@@ -9,7 +9,7 @@
               </h2>
                     <ul id="settings_tab" class="nav-sidebar">
                         <li class="">
-                            <a href="#perfil">Perfil</a>
+                            <a href="#perfil">Configuracion de Perfil</a>
                         </li>
                         <li class="">
                             <a href="#listcursos">Elije tus Cursos</a>
@@ -45,7 +45,7 @@
 
                                                 <th><ng-click ng-click="sortBy('fecha')">Fecha<span class="sortorder" ng-show="propertyName === 'fecha'" ng-class="{reverse: reverse}"></span></ng-click></th>
 
-                                                <th><ng-click ng-click="sortBy('status')">Modalidad<span class="sortorder" ng-show="propertyName === 'status'" ng-class="{reverse: reverse}"></span></ng-click></th>
+                                                <th><ng-click ng-click="sortBy('status')">Modo<span class="sortorder" ng-show="propertyName === 'status'" ng-class="{reverse: reverse}"></span></ng-click></th>
 
                                                
                                                 <th>opciones</th>
@@ -62,7 +62,7 @@
                                                 <td>{{c.fecha | filterfecha}}</td>
                                                 <td>{{c.status | filtermodalidad}}</td>
                                                 <td>
-                                                    <button class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20" ng-click="revisardetalle(c.id)">revisar detalles</button>
+                                                    <button class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20" ng-click="revisardetalle(c.id)">detalles</button>
                                                 </td>
                                             </tr>
 

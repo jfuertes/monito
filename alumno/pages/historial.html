@@ -49,7 +49,7 @@
       </th>
 
       <th><ng-click ng-click="sortBy('status')">
-        Modalidad
+        Modo
         <span class="sortorder" ng-show="propertyName === 'status'" ng-class="{reverse: reverse}"></span></ng-click>
       </th>
 
@@ -77,7 +77,7 @@
                              <td>{{c.comentario}}</td>-->
                                             <td>{{c.fecha | filterfecha}}</td>
                                             <td>
-                                                <button class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20" ng-click="revisardetalle(c.id)">revisar detalles</button>
+                                                <button class="btn btn-green btn-pequeno has-tooltip redesign-check" data-margin="5" tabindex="20" ng-click="revisardetalle(c.id)">detalles</button>
                                             </td>
                                         </tr>
                                     </tbody>

@@ -1,0 +1,110 @@
+<div  id="app" class="settings">
+  <main class="main-right">
+
+    <section class="page-sidebar sidebar-right">
+      <div class="inner">
+          <div class="box-colored bg-white">
+              <h2 class="view-profile-headline">
+                  <a class="avatar avatar-small " title="nombredeusuario">  <img src="../IMG/alumnos/{{alu.username}}.{{alu.extension_img}}"><span class="ring"></span></a>  {{alu.username}} <a href="#/" class="username">Ver tu perfil</a>
+              </h2>
+              <ul id="settings_tab" class="nav-sidebar">
+                  <li class="active">
+                      <a href="#perfil">Perfil</a>
+                  </li>
+                  <li class="">
+                      <a href="#historial" >Historial</a>
+                  </li>
+                  <li class="">
+                      <a href="#pass">Contraseña</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+    </section>
+
+    <section class="page-main main-right">
+      <div id="tab-container">
+      <form ng-submit="updateAlumno(alu)">
+        <div id="account-content" class="settings-content">
+
+          <button id="submit_button" type="submit" class="btn btn-green right" >Guardar cambios</button>
+          <!--mansaje de errores-->
+          <div id="confirmation-message" class="hidden save-message">Tus cambios han sido guardados.</div>
+          <div id="error-message" class="hidden error-message">Error</div>
+
+          <h1>Configuración de cuenta</h1>
+
+          <button  class="btn btn-blue left" ng-show="correcto">Edicion Correcta</button>
+          <hr>
+          <ul class="list-settings">
+            <li>
+              <label class="label">Usuario</label>
+              <div class="input">
+                <input style="width: 334px;" class="large" id="username" ng-model="alu.username" name="username" type="text" disabled>
+              </div>
+            </li>
+            <li>
+              <label class="label">Nombres</label>
+              <div class="input">
+                <input style="width: 334px;" class="large" id="Nombres" ng-model="alu.nombres" name="username" type="text" >
+              </div>
+            </li>
+               <li>
+              <label class="label">Apellido paterno</label>
+              <div class="input">
+                <input style="width: 334px;" class="large" id="Nombres" ng-model="alu.ape_paterno" name="username" type="text" >
+              </div>
+            </li>
+               <li>
+              <label class="label">Apellido materno</label>
+              <div class="input">
+                <input style="width: 334px;" class="large" id="Nombres" ng-model="alu.ape_materno" name="username" type="text" >
+              </div>
+            </li>
+            <li>
+              <label class="label">Telefono</label>
+              <div class="input">
+                <input style="width: 334px;" class="large" id="Nombres" ng-model="alu.celular" name="username" type="text" >
+              </div>
+            </li>
+               <li>
+              <label class="label">Email</label>
+              <div class="input">
+                <input style="width: 334px;" class="large" id="Nombres" ng-model="alu.email" name="username" type="text" disabled >
+              </div>
+            </li>
+
+          
+           
+           
+
+            <li>
+              <label class="label">Distrito</label>
+              <div class="input">
+                <label class="blue-select no-focus smaller fixed-width">
+                   <select  ng-model="alu.distritos" ng-value="alu.distritos" required>
+                    
+                    <option ng-repeat="d in Distritos" value="{{d.id_distrito}}">{{d.nombre}}</option>
+                  </select>
+                </label>
+              </div>
+              </li>
+            
+          <li>
+            
+          <div class="input">
+              <label class="label">Imagen de perfil</label>
+              
+                  <input type="file" name="file" uploader-model="file" /> <br>
+                  </div>
+            </li>
+            
+            <button ng-show="correcto">cambios actualizados</button>
+          </ul>
+          </form>
+           
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
