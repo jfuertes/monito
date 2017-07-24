@@ -27,12 +27,12 @@
     <div id="topbar">
     <header ng-controller="mainCtrl" class="topbar topbar-blue-dark">
         <div class="container">
-        <a href="#/" class="topbar-brand navigate-home track-click white"> </a>
+        <a href="#/perfil" class="topbar-brand navigate-home track-click white"> </a>
         <div class="topbar-right">
             <div class="topbar-username dropdown click-trigger" style="padding-bottom: 15px;">
                <div id="showloginpop" class="topbar-buttons" style="margin-top: 1px;" >
                     <span class="sign-in relative"></span>
-                        <a href="#/" class="avatar avatar-small " title="monito">
+                        <a href="#/perfil" class="avatar avatar-small " title="monito">
                         <img src="../IMG/alumnos/{{alu.username}}.{{alu.extension_img}}">
                         <span class="ring"></span>
                         </a>
@@ -41,10 +41,7 @@
                         </div>
                         <div id="loginpop">
                          <ul class="dropdown-menu arrow-top" role="menu" aria-labelledby="dLabel" style="display: block;">
-                            <li>
-                                <a href="#/">Perfil De Alumno</a>
-                            </li>
-                            <li>
+                            
                                 <a href="#/perfil">Configuracion</a>
                             </li>
                             <li>
