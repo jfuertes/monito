@@ -219,32 +219,7 @@ $scope.cambiarcurso=true;
     });
 
 demoApp.controller('listaProfCtrl', function($scope, $http, $rootScope) {
-  $scope.SinProfes=false;
-  $scope.showlistprofes=function(){
-        $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso, modalidad: $rootScope.modalidad} )
-                .success(function(data) {
-                  console.log(data);
-                  $scope.Profes=data;
-                  if(data.length==0){
-                    $scope.SinProfes=true;
-                  }
-
-                })
-                .error(function(data) {
-                  console.log('Error: ' + data);
-                  });
-  }
-  
-  $scope.showlistprofes();
-
-      $scope.showNivel=$rootScope.nivel;
-         $scope.showIdcurso=$rootScope.idcurso;
-         $scope.showMetodo=$rootScope.modalidad;
-        
-         
-        $scope.optionsNivel=$rootScope.Nivel;
-
-        $scope.getCursosByNivel= function(showNivel){
+          $scope.getCursosByNivel= function(showNivel){
             $http.post('api/getsCursosByNivel.php',{nivel: showNivel} )
                 .success(function(data) {
                   console.log(data);
@@ -254,7 +229,39 @@ demoApp.controller('listaProfCtrl', function($scope, $http, $rootScope) {
                   console.log('Error: ' + data);
                   });
               };
-              $scope.getCursosByNivel( $scope.showNivel);
+              $scope.getCursosByNivel( $rootScope.nivel);
+
+  
+  $scope.showlistprofes=function(){
+    $scope.SinProfes=false;
+        $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso, modalidad: $rootScope.modalidad} )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.Profes=data;
+                  if(data.length==0){
+                    $scope.SinProfes=true;
+                  }
+
+                }) 
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+  }
+  
+  $scope.showlistprofes();
+
+  $scope.show=[];
+    $scope.optionsNivel=$rootScope.Nivel;
+      //$scope.show.Nivel=$rootScope.nivel;
+      $scope.show.Nivel=2;
+
+         $scope.show.Idcurso=$rootScope.idcurso;
+         $scope.show.Metodo=$rootScope.modalidad;
+        
+         
+       
+
+
 
            $scope.getDistritos= function(){
              $http.post('login/api/getDistritos.php' )
@@ -262,7 +269,7 @@ demoApp.controller('listaProfCtrl', function($scope, $http, $rootScope) {
                   console.log(data);
                   $scope.optionsDistritos=data;
                    $scope.showIddistrito=$rootScope.dis;
-                   alert($scope.showIddistrito);
+                  // alert($scope.showIddistrito);
                 })
                 .error(function(data) {
                   console.log('Error: ' + data);
@@ -273,8 +280,8 @@ demoApp.controller('listaProfCtrl', function($scope, $http, $rootScope) {
          $scope.newsearchprofe=function(){
           //alert("ola");
           console.log("nueva busqueda");
-         $rootScope.idcurso= $scope.showIdcurso;
-         $rootScope.modalidad= $scope.showMetodo;
+         $rootScope.idcurso= $scope.show.Idcurso;
+         $rootScope.modalidad= $scope.show.Metodo;
 
           $scope.showlistprofes();
          };

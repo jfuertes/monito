@@ -1,5 +1,5 @@
 <?php
-$url = 'http://52.43.220.123/trabajos/monito/email2/gmail.php';
+$url = 'http://www.solucionestraduccion.com/monito/email2/gmail.php';
 $data = array('key1' => 'value1', 'key2' => 'value2');
 
 // use key 'http' even if you send the request to https://...

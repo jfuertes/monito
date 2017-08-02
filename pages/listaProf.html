@@ -3,25 +3,29 @@
         <div style="display: block; " class="hidden splash-signup-form" id="signup-language" > 
           
             <section class="section-white space slide-in">
-                    <form ng-submit="newsearchprofe()">  
+                    <form ng-submit="newsearchprofe(show)">  
                         <label  style="border: 2px solid #ffffff; width: 150px;" class="blue-select no-focus smaller fixed-width"> 
-                            <select  style="color: #100e4c;" ng-model="showNivel" ng-click="getCursosByNivel(showNivel)" required> 
-                                <option ng-repeat="on in optionsNivel" value="{{on.id_nivel}}">{{on.nombre}} </option> 
+                            <select  style="color: #100e4c;" ng-model="show.Nivel" ng-change="getCursosByNivel(show.Nivel)" required> 
+                                <option ng-repeat="on in optionsNivel" value="{{on.id_nivel}}">{{on.nombre}} </option>
+                               <!--  <option value="1">Primaria</option> 
+                                 <option value="2">Secundaria</option> 
+                                 <option value="3">Postulante</option> 
+                                 <option value="4">Universitario</option>  -->
                             </select> 
                         </label> 
                         <label  style="border: 2px solid #ffffff; width: 150px;" class="blue-select no-focus smaller fixed-width"> 
-                            <select  style="color: #100e4c;" ng-model="showIdcurso" required> 
+                            <select  style="color: #100e4c;" ng-model="show.Idcurso" required> 
                                 <option ng-repeat="oc in optionsCursos" value="{{oc.id_curso}}">{{oc.nombre}}</option> 
                             </select> 
                         </label> 
                         <label  style="border: 2px solid #ffffff; width: 150px;" class="blue-select no-focus smaller fixed-width"> 
-                            <select  style="color: #100e4c;" ng-model="showMetodo" required> 
+                            <select  style="color: #100e4c;" ng-model="show.Metodo" required> 
                                 <option value="0">Online</option> 
                                 <option value="1">Presencial</option> 
                             </select> 
                         </label> 
                         <label ng-show="showMetodo==1" style="border: 2px solid #ffffff; width: 150px;" class="blue-select no-focus smaller fixed-width"> 
-                            <select  style="color: #100e4c;" ng-model="showIddistrito" > 
+                            <select  style="color: #100e4c;" ng-model="show.Iddistrito" > 
                                 <option ng-repeat="od in optionsDistritos" value="{{od.id_distrito}}">{{od.nombre}}</option> 
                             </select> 
                         </label> 

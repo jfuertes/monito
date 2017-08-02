@@ -38,7 +38,7 @@
 
 			//================================================================
 			//enviar correo con el link de activacion
-						$url = 'http://52.43.220.123/trabajos/monito/email2/gmailcorrecto.php';
+						$url = 'http://www.solucionestraduccion.com/monito/email2/gmailcorrecto.php';
 						$data = array('mensaje' => "activate", 'reci' => $email);
 
 						// use key 'http' even if you send the request to https://...
