@@ -42,7 +42,6 @@
                         <span class="icon icon-arrow-down-white"></span>
                     </div>
                     <div class="btn-group">
-                          </button>
                           <ul class="dropdown-menu">
                             <li><a href="#/">Perfil Profesor</a></li>
                             <li><a href="#/perfil">Configuracion</a></li>
@@ -73,6 +72,7 @@
             </li>
         </ul>
     </div>
+
     <div id="main">
         <div ng-view>
         </div>

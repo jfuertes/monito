@@ -4103,7 +4103,6 @@ html[dir=rtl] .blue-select:after {
     font-size: 15px
 }
 .blue-select.fixed-width {
-    width: 330px;
     margin-left: 0
 }
 .blue-select.fixed-width select {

@@ -30,18 +30,20 @@
         <a href="#/perfil" class="topbar-brand navigate-home track-click white"> </a>
         <div class="topbar-right">
             <div class="topbar-username dropdown click-trigger" style="padding-bottom: 15px;">
-               <div id="showloginpop" class="topbar-buttons" style="margin-top: 1px;" >
-                    <span class="sign-in relative"></span>
+               <div  class="topbar-buttons" style="margin-top: 1px;" >
+                    
+
+                          
+                        
+                        <span class="sign-in relative"></span>
                         <a href="#/perfil" class="avatar avatar-small " title="monito">
                         <img src="../IMG/alumnos/{{alu.username}}.{{alu.extension_img}}">
                         <span class="ring"></span>
                         </a>
                         <span class="name"><?php echo $_SESSION['nombres']." ".$_SESSION['ape_paterno'] ?></span>
                         <span class="icon icon-arrow-down-white"></span>
-                        </div>
                         <!-- Single button -->
-                        <div class="btn-group">
-                          </button>
+                        <div >
                           <ul class="dropdown-menu">
                             <li><a href="#/perfil">Configuracion</a></li>
                             <li><a href="#/alumno">Buscar Cursos</a></li>
@@ -53,6 +55,13 @@
                 </div>
             </div>
         </div>
+
+        <div class="redes">
+            
+            <a href="#/alumno" style="display:scroll;position:fixed;top:149px;right:0px;" target="_blank"><img border="0" src="../IMG/buscar.png" width="150" title="BUSCAR"></a>
+            <a href="#/alumno" style="display:scroll;position:fixed;top:190px;right:0px;"><img border="0" src="../IMG/buscar2.png" width="150" title="BUSCAR PROFESOR"></a>
+        </div>
+
     </header>
     </div>
     <div id="mobile-menu" class="mobile-menu open">
