@@ -10,7 +10,7 @@
 	$rspta = json_decode(file_get_contents("php://input"));
 	$id_curso= $rspta->id_curso;
 	$modalidad= $rspta->modalidad;
-	
+	//var_dump($rspta);
 	$q = 'SELECT profecurso.*, mp_profesor.*
 		from profecurso inner join mp_profesor
 		on profecurso.username = mp_profesor.username
