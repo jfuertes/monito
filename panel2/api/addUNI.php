@@ -9,6 +9,8 @@
 	//var_dump($rspta);
 	$nombre_uni= $rspta->nuni->nombre_uni;
 	$abreviatura_uni= $rspta->nuni->abreviatura_uni;
+	session_start();
+	$_SESSION['abreviatura_uni']=$abreviatura_uni;
 
 	 $q = "INSERT INTO mp_uni  ( nombre_uni, abreviatura_uni) 	VALUES ( :nombre_uni, :abreviatura_uni)";
                             $stmt = $dbh->prepare($q);

@@ -32,7 +32,7 @@ $rspta = json_decode(file_get_contents("php://input"));
                       
 		
 		
-		$url = 'http://52.43.220.123/trabajos/monito/email2/gmailforgot.php';
+		$url = 'http://www.solucionestraduccion.com/monito/email2/gmailforgot.php';
 		$data = array('mensaje' => $link, 'reci' => $email);
 
 		// use key 'http' even if you send the request to https://...

@@ -26,7 +26,7 @@ echo "=============";
 // 0 = off (for production use)
 // 1 = client messages
 // 2 = client and server messages
-$url = 'http://52.43.220.123/trabajos/monito/email2/gmailcorrecto.php';
+$url = 'http://www.solucionestraduccion.com/monito/email2/gmailcorrecto.php';
 $data = array('mensaje' => $mensaje, 'reci' => $reci);
 
 // use key 'http' even if you send the request to https://...

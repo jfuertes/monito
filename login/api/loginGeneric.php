@@ -68,7 +68,7 @@
                                 }
                                 else{
                                         //se le reenvia el correo del link de activacion
-                                        $url = 'http://52.43.220.123/trabajos/monito/email2/gmailact.php';
+                                        $url = 'http://www.solucionestraduccion.com/monito/email2/gmailact.php';
                                         $data = array('mensaje' => $rx[0]['link_act'], 'reci' => $rx[0]['email']);
 
                                         // use key 'http' even if you send the request to https://...
@@ -160,7 +160,7 @@
                     else{
                         
                         //se le reenvia el correo del link de activacion
-                                $url = 'http://52.43.220.123/trabajos/monito/email2/gmailact.php';
+                                $url = 'http://www.solucionestraduccion.com/monito/email2/gmailact.php';
                                 $data = array('mensaje' => $rx[0]['link_act'], 'reci' => $rx[0]['email']);
 
                                 // use key 'http' even if you send the request to https://...

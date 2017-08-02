@@ -208,6 +208,7 @@ $scope.cambiarcurso=true;
                 .success(function(data) {
                   console.log(data);
                   $scope.Nivel=data;
+                  $rootScope.Nivel=data;
                 })
                 .error(function(data) {
                   console.log('Error: ' + data);
@@ -218,8 +219,22 @@ $scope.cambiarcurso=true;
     });
 
 demoApp.controller('listaProfCtrl', function($scope, $http, $rootScope) {
-  $scope.SinProfes=false;
-    $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso, modalidad: $rootScope.modalidad} )
+          $scope.getCursosByNivel= function(showNivel){
+            $http.post('api/getsCursosByNivel.php',{nivel: showNivel} )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.optionsCursos=data;
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+              };
+              $scope.getCursosByNivel( $rootScope.nivel);
+
+  
+  $scope.showlistprofes=function(){
+    $scope.SinProfes=false;
+        $http.post('api/getProfeByCurso.php', {id_curso: $rootScope.idcurso, modalidad: $rootScope.modalidad} )
                 .success(function(data) {
                   console.log(data);
                   $scope.Profes=data;
@@ -227,10 +242,49 @@ demoApp.controller('listaProfCtrl', function($scope, $http, $rootScope) {
                     $scope.SinProfes=true;
                   }
 
+                }) 
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+  }
+  
+  $scope.showlistprofes();
+
+  $scope.show=[];
+    $scope.optionsNivel=$rootScope.Nivel;
+      //$scope.show.Nivel=$rootScope.nivel;
+      $scope.show.Nivel=2;
+
+         $scope.show.Idcurso=$rootScope.idcurso;
+         $scope.show.Metodo=$rootScope.modalidad;
+        
+         
+       
+
+
+
+           $scope.getDistritos= function(){
+             $http.post('login/api/getDistritos.php' )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.optionsDistritos=data;
+                   $scope.showIddistrito=$rootScope.dis;
+                  // alert($scope.showIddistrito);
                 })
                 .error(function(data) {
                   console.log('Error: ' + data);
                   });
+         };
+         $scope.getDistritos();
+
+         $scope.newsearchprofe=function(){
+          //alert("ola");
+          console.log("nueva busqueda");
+         $rootScope.idcurso= $scope.show.Idcurso;
+         $rootScope.modalidad= $scope.show.Metodo;
+
+          $scope.showlistprofes();
+         };
 
         
     });
@@ -265,7 +319,31 @@ demoApp.controller('metodoCtrl', function($scope, $http, $rootScope) {
             };
     });
 
+demoApp.controller('distritosCtrl', function($scope, $http, $rootScope) {
 
+     $scope.getDistritos= function(){
+             $http.post('login/api/getDistritos.php' )
+                .success(function(data) {
+                  console.log(data);
+                  $scope.Distritos=data;
+                })
+                .error(function(data) {
+                  console.log('Error: ' + data);
+                  });
+         };
+         $scope.getDistritos();
+
+
+      $scope.agregarDistrito= function(dis){
+        $rootScope.dis=dis;
+          console.log( "distrito seleccionado originalemnet"+$rootScope.dis);
+                    location.href=location.protocol+"//"+location.hostname+location.pathname+"#/listaprof";
+                    // window.location.href='#listaprof';
+
+              
+      }
+
+    });
 demoApp.controller('temasCtrl', function($scope) {
     });
 

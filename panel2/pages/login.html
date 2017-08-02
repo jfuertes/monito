@@ -1,0 +1,22 @@
+<SCRIPT  language=JavaScript> 
+function go(){
+if (document.form.password.value=='admin' && document.form.login.value=='admin'){ 
+         location.href=location.protocol+"//"+location.hostname+location.pathname+"#/universidad";
+    } 
+    else{ 
+         alert("Porfavor ingrese, nombre de usuario y contraseña correctos."); 
+    } 
+} 
+</SCRIPT> 
+</br>
+</br>
+</br>
+</br>
+<h2>logeese para acceder</h2>
+<form name=form action="TU_PAGINA_WEB.HTML">
+
+<P>Usuario:    <INPUT type=text name=login> 
+<P>Contraseña: <INPUT type=password name=password> 
+<INPUT onclick=go() type=button value=Acceder>
+
+</form> 

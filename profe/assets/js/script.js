@@ -456,7 +456,7 @@ demoApp.controller('perfilCtrl', function($scope, $http, $rootScope, upload) {
                   });
          };
          $scope.getUNI();
-           $scope.pros=$rootScope.pro;
+           $scope.pros=$rootScope.pro; 
       $scope.updateProfesor =function(pro){ 
 
         if($scope.file!=null){
